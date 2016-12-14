@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideoPlayerController" customModule="NLL" customModuleProvider="target">
+            <connections>
+                <outlet property="videoContainerView" destination="f1q-xe-Smw" id="Rhg-RS-xSw"/>
+                <outlet property="view" destination="iN0-l3-epB" id="fPd-UY-OE2"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1q-xe-Smw">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7GO-oy-bS2" userLabel="Done">
+                    <rect key="frame" x="486" y="29" width="30" height="30"/>
+                    <state key="normal" image="Cancel_icon.png"/>
+                    <connections>
+                        <action selector="donePressed:" destination="-1" eventType="touchUpInside" id="ajV-87-d0Y"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="f1q-xe-Smw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Eok-LE-zio"/>
+                <constraint firstAttribute="trailing" secondItem="7GO-oy-bS2" secondAttribute="trailing" constant="25" id="fpi-W3-OHE"/>
+                <constraint firstAttribute="trailing" secondItem="f1q-xe-Smw" secondAttribute="trailing" id="kQA-mA-3ak"/>
+                <constraint firstItem="f1q-xe-Smw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tw7-hd-dKb"/>
+                <constraint firstItem="7GO-oy-bS2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="vDQ-3C-QhI"/>
+                <constraint firstAttribute="bottom" secondItem="f1q-xe-Smw" secondAttribute="bottom" id="xAh-7w-Mcd"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="Cancel_icon.png" width="20" height="20"/>
+    </resources>
+</document>

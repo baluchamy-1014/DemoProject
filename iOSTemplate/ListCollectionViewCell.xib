@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="listCell" id="19L-N6-VOL" customClass="ListCollectionViewCell" customModule="NLL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="374" height="134"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="374" height="134"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32s-dY-bNW">
+                        <rect key="frame" x="0.0" y="3" width="116" height="128"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="105" id="ezk-r8-uL9"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERs-5v-CG7" customClass="ArtifactTitleLabel" customModule="NLL" customModuleProvider="target">
+                        <rect key="frame" x="78" y="10" width="246" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axG-iD-81W" userLabel="Author Label" customClass="AuthorLabel" customModule="NLL" customModuleProvider="target">
+                        <rect key="frame" x="166" y="57" width="158" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="158" id="z3d-hY-17C"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GiT-Hv-vCG" userLabel="Timestamp Label" customClass="AddedAtLabel" customModule="NLL" customModuleProvider="target">
+                        <rect key="frame" x="166" y="105" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="ERs-5v-CG7" firstAttribute="top" secondItem="19L-N6-VOL" secondAttribute="top" constant="10" id="1NU-JQ-Rhb"/>
+                <constraint firstAttribute="bottom" secondItem="GiT-Hv-vCG" secondAttribute="bottom" constant="8" id="8Jg-qV-xrF"/>
+                <constraint firstItem="32s-dY-bNW" firstAttribute="top" secondItem="19L-N6-VOL" secondAttribute="top" constant="11" id="9Ce-3U-g2N"/>
+                <constraint firstItem="axG-iD-81W" firstAttribute="leading" secondItem="32s-dY-bNW" secondAttribute="trailing" constant="10" id="DXI-VW-lFB"/>
+                <constraint firstItem="ERs-5v-CG7" firstAttribute="leading" secondItem="32s-dY-bNW" secondAttribute="trailing" constant="10" id="Jnr-zR-Y57"/>
+                <constraint firstAttribute="trailing" secondItem="ERs-5v-CG7" secondAttribute="trailing" constant="50" id="ah7-RG-awH"/>
+                <constraint firstAttribute="bottom" secondItem="32s-dY-bNW" secondAttribute="bottom" constant="11" id="bdN-2a-HLx"/>
+                <constraint firstAttribute="bottom" secondItem="axG-iD-81W" secondAttribute="bottom" constant="8" id="rPk-6W-LQy"/>
+                <constraint firstAttribute="trailing" secondItem="GiT-Hv-vCG" secondAttribute="trailing" constant="20" id="xJl-Vi-mhV"/>
+                <constraint firstItem="32s-dY-bNW" firstAttribute="leading" secondItem="19L-N6-VOL" secondAttribute="leading" constant="10" id="zBd-ow-8x2"/>
+            </constraints>
+            <size key="customSize" width="374" height="134"/>
+            <connections>
+                <outlet property="artifactNameLabel" destination="ERs-5v-CG7" id="7tY-b6-kFw"/>
+                <outlet property="authorLabel" destination="axG-iD-81W" id="Du7-9C-2hk"/>
+                <outlet property="imageView" destination="32s-dY-bNW" id="7K9-DX-k2i"/>
+                <outlet property="timestampLabel" destination="GiT-Hv-vCG" id="5v8-3V-xqz"/>
+            </connections>
+            <point key="canvasLocation" x="227" y="351"/>
+        </collectionViewCell>
+    </objects>
+</document>
