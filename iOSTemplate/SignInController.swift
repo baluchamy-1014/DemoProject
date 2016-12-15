@@ -31,11 +31,25 @@ class SignInController: UIViewController {
     })
     self.alertViewController!.addAction(self.alertAction!)
     self.activityIndicator.hidden = true
+    
+    self.signInButton.enabled = false
+    
+    NSNotificationCenter.defaultCenter().addObserver(self,
+                                                     selector: #selector(SignInController.textFieldDidChange(_:)),
+                                                     name: UITextFieldTextDidChangeNotification,
+                                                     object: nil)
 
     super.viewDidLoad()
   }
   
-
+  func textFieldDidChange(sender: AnyObject){
+    if EmailValidator().isValidEmail(self.usernameField.text!) && passwordLengthMet() {
+      self.signInButton.enabled = true
+    }
+    else {
+      self.signInButton.enabled = false
+    }
+  }
   
   @IBAction func signInTapped(sender: AnyObject) {
     self.activityIndicator.hidden = false
@@ -54,6 +68,10 @@ class SignInController: UIViewController {
       self.activityIndicator.stopAnimating()
       self.activityIndicator.hidden = true
     }
+  }
+  
+  private func passwordLengthMet() -> Bool {
+    return (self.passwordField.text?.characters.count >= 8)
   }
 
 }
