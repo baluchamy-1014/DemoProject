@@ -30,11 +30,11 @@
                         </activityIndicatorView>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xpZ-qz-49k">
                             <rect key="frame" x="30" y="49" width="314" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="Hxg-xc-FYl"/>
+                                <constraint firstAttribute="height" constant="30" id="Hxg-xc-FYl"/>
                                 <constraint firstAttribute="width" constant="314" id="jwS-fb-FLw"/>
                             </constraints>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             <variation key="default">
@@ -51,11 +51,11 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zRb-8d-l95">
                             <rect key="frame" x="30" y="135" width="314" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="Axc-vi-gJ6"/>
+                                <constraint firstAttribute="height" constant="30" id="Axc-vi-gJ6"/>
                                 <constraint firstAttribute="width" constant="314" id="ywa-hl-PTr"/>
                             </constraints>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             <variation key="default">
@@ -93,11 +93,11 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KxK-R7-YvD">
                             <rect key="frame" x="30" y="194" width="314" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="314" id="VZn-5d-4M7"/>
-                                <constraint firstAttribute="height" constant="40" id="ZbO-9O-foe"/>
+                                <constraint firstAttribute="height" constant="30" id="ZbO-9O-foe"/>
                             </constraints>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             <variation key="default">
@@ -128,7 +128,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="CMg-sb-i5S" firstAttribute="trailing" secondItem="qIj-33-6P3" secondAttribute="trailing" id="02O-np-yEt"/>
-                        <constraint firstItem="CMg-sb-i5S" firstAttribute="top" secondItem="zRb-8d-l95" secondAttribute="bottom" constant="40" id="0t0-Zf-F7F"/>
+                        <constraint firstItem="CMg-sb-i5S" firstAttribute="top" secondItem="zRb-8d-l95" secondAttribute="bottom" constant="20" id="0t0-Zf-F7F"/>
                         <constraint firstItem="KxK-R7-YvD" firstAttribute="width" secondItem="zRb-8d-l95" secondAttribute="width" id="1xO-5i-gR5"/>
                         <constraint firstItem="EQo-SL-xyb" firstAttribute="centerY" secondItem="pSB-Q6-uaG" secondAttribute="centerY" constant="30" id="5yI-c2-CbZ"/>
                         <constraint firstItem="EQo-SL-xyb" firstAttribute="centerX" secondItem="pSB-Q6-uaG" secondAttribute="centerX" id="7nd-pr-PPq"/>
@@ -143,7 +143,7 @@
                         <constraint firstItem="zRb-8d-l95" firstAttribute="leading" secondItem="pSB-Q6-uaG" secondAttribute="leading" constant="30" id="Q0W-HU-GuO"/>
                         <constraint firstAttribute="trailing" secondItem="qIj-33-6P3" secondAttribute="trailing" constant="30" id="T5G-H0-542"/>
                         <constraint firstItem="zRb-8d-l95" firstAttribute="top" secondItem="NWf-zX-gqt" secondAttribute="bottom" constant="8" symbolic="YES" id="TKx-ib-Z2o"/>
-                        <constraint firstItem="a56-KG-qkw" firstAttribute="top" secondItem="pSB-Q6-uaG" secondAttribute="top" constant="40" id="XoW-hC-Szh"/>
+                        <constraint firstItem="a56-KG-qkw" firstAttribute="top" secondItem="pSB-Q6-uaG" secondAttribute="top" constant="20" id="XoW-hC-Szh"/>
                         <constraint firstItem="CMg-sb-i5S" firstAttribute="leading" secondItem="qIj-33-6P3" secondAttribute="leading" id="Xyg-OQ-9JF"/>
                         <constraint firstItem="zRb-8d-l95" firstAttribute="top" secondItem="NWf-zX-gqt" secondAttribute="bottom" constant="5" id="Yvr-FI-S0V"/>
                         <constraint firstItem="xpZ-qz-49k" firstAttribute="trailing" secondItem="zRb-8d-l95" secondAttribute="trailing" id="aDp-Cd-4fC"/>
@@ -163,9 +163,9 @@
                         <constraint firstItem="KxK-R7-YvD" firstAttribute="leading" secondItem="CMg-sb-i5S" secondAttribute="leading" id="s7x-rU-4ln"/>
                         <constraint firstItem="NWf-zX-gqt" firstAttribute="leading" secondItem="zRb-8d-l95" secondAttribute="leading" id="sox-lU-3bb"/>
                         <constraint firstItem="NWf-zX-gqt" firstAttribute="leading" secondItem="pSB-Q6-uaG" secondAttribute="leading" constant="30" id="ugb-Xl-rUR"/>
-                        <constraint firstItem="qIj-33-6P3" firstAttribute="top" secondItem="uSI-ZZ-6kt" secondAttribute="bottom" constant="40" id="wzw-eh-Kr4"/>
+                        <constraint firstItem="qIj-33-6P3" firstAttribute="top" secondItem="uSI-ZZ-6kt" secondAttribute="bottom" constant="25" id="wzw-eh-Kr4"/>
                         <constraint firstItem="KxK-R7-YvD" firstAttribute="top" secondItem="CMg-sb-i5S" secondAttribute="bottom" constant="5" id="yG7-e7-4fo"/>
-                        <constraint firstItem="NWf-zX-gqt" firstAttribute="top" secondItem="xpZ-qz-49k" secondAttribute="bottom" constant="40" id="zdI-46-6GK"/>
+                        <constraint firstItem="NWf-zX-gqt" firstAttribute="top" secondItem="xpZ-qz-49k" secondAttribute="bottom" constant="20" id="zdI-46-6GK"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
