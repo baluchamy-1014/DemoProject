@@ -28,12 +28,27 @@ class SignUpController: UIViewController {
   
   override func viewDidLoad() {
     self.activityIndicator.hidden = true
+    self.signUpButton.enabled = false
+    
+    NSNotificationCenter.defaultCenter().addObserver(self,
+                                                     selector: #selector(SignUpController.textFieldDidChange(_:)),
+                                                     name: UITextFieldTextDidChangeNotification,
+                                                     object: nil)
 
     super.viewDidLoad()
   }
 
   override func viewWillDisappear(animated: Bool) {
     clearErrorLabels()
+  }
+  
+  func textFieldDidChange(sender: AnyObject){
+    if EmailValidator().isValidEmail(self.emailTextField.text!) && passwordLengthMet() && (passwordsMatch())
+    {
+      self.signUpButton.enabled = true
+    } else {
+      self.signUpButton.enabled = false
+    }
   }
   
   @IBAction func signUpTapped(sender: AnyObject) {
