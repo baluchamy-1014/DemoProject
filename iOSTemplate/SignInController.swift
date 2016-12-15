@@ -19,7 +19,7 @@ class SignInController: UIViewController {
   @IBOutlet weak var passwordField: UITextField!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var invalidLabel: UILabel!
-  @IBOutlet weak var signInButton: UIButton!
+  @IBOutlet weak var signInButton: SignInUpButton!
   
   
   override func viewDidLoad() {
@@ -31,7 +31,7 @@ class SignInController: UIViewController {
     })
     self.alertViewController!.addAction(self.alertAction!)
     self.activityIndicator.hidden = true
-    self.signInButton.layer.cornerRadius = 5.0
+
     super.viewDidLoad()
   }
   

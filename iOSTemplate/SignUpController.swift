@@ -19,7 +19,7 @@ class SignUpController: UIViewController {
   @IBOutlet weak var emailErrorLabel: UILabel!
   @IBOutlet weak var passwordErrorLabel: UILabel!
   
-  @IBOutlet weak var signUpButton: UIButton!
+  @IBOutlet weak var signUpButton: SignInUpButton!
   
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   var successViewController: SignUpSuccessViewController?
@@ -28,7 +28,7 @@ class SignUpController: UIViewController {
   
   override func viewDidLoad() {
     self.activityIndicator.hidden = true
-    self.signUpButton.layer.cornerRadius = 5.0
+
     super.viewDidLoad()
   }
 
