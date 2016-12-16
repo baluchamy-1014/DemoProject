@@ -31,11 +31,11 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xpZ-qz-49k">
                             <rect key="frame" x="30" y="49" width="314" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="314" id="N5T-ST-dGx"/>
-                                <constraint firstAttribute="height" constant="40" id="oMv-cF-adT"/>
+                                <constraint firstAttribute="height" constant="30" id="oMv-cF-adT"/>
                             </constraints>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             <variation key="default">
@@ -52,11 +52,11 @@
                         </label>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zRb-8d-l95">
                             <rect key="frame" x="30" y="106" width="314" height="40"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="piQ-DP-qdD"/>
+                                <constraint firstAttribute="height" constant="30" id="piQ-DP-qdD"/>
                                 <constraint firstAttribute="width" constant="314" id="sa7-zz-QVu"/>
                             </constraints>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             <variation key="default">
@@ -112,7 +112,7 @@
                         <constraint firstItem="iES-Xm-tlw" firstAttribute="top" secondItem="qIj-33-6P3" secondAttribute="bottom" constant="8" symbolic="YES" id="9Nh-oQ-u8f"/>
                         <constraint firstItem="a56-KG-qkw" firstAttribute="top" secondItem="pSB-Q6-uaG" secondAttribute="top" constant="50" id="9yk-Xi-teM"/>
                         <constraint firstAttribute="trailing" secondItem="xpZ-qz-49k" secondAttribute="trailing" constant="30" id="An0-av-0tg"/>
-                        <constraint firstItem="NWf-zX-gqt" firstAttribute="top" secondItem="xpZ-qz-49k" secondAttribute="bottom" constant="50" id="Dyu-P3-0U5"/>
+                        <constraint firstItem="NWf-zX-gqt" firstAttribute="top" secondItem="xpZ-qz-49k" secondAttribute="bottom" constant="20" id="Dyu-P3-0U5"/>
                         <constraint firstItem="a56-KG-qkw" firstAttribute="leading" secondItem="pSB-Q6-uaG" secondAttribute="leading" constant="30" id="FOC-sD-tCG"/>
                         <constraint firstItem="9En-4K-CcF" firstAttribute="leading" secondItem="pSB-Q6-uaG" secondAttribute="leading" constant="30" id="Hin-1W-0PH"/>
                         <constraint firstItem="OqI-Nt-xhD" firstAttribute="top" secondItem="iES-Xm-tlw" secondAttribute="bottom" constant="8" symbolic="YES" id="JDj-Rg-STf"/>
@@ -121,11 +121,11 @@
                         <constraint firstItem="a56-KG-qkw" firstAttribute="centerX" secondItem="pSB-Q6-uaG" secondAttribute="centerX" id="P5T-7x-ovL"/>
                         <constraint firstItem="zRb-8d-l95" firstAttribute="leading" secondItem="qIj-33-6P3" secondAttribute="leading" id="Q9S-PM-F94"/>
                         <constraint firstAttribute="trailing" secondItem="qIj-33-6P3" secondAttribute="trailing" constant="30" id="TL0-Nz-qni"/>
-                        <constraint firstItem="a56-KG-qkw" firstAttribute="top" secondItem="pSB-Q6-uaG" secondAttribute="top" constant="50" id="Vw8-4r-DGB"/>
+                        <constraint firstItem="a56-KG-qkw" firstAttribute="top" secondItem="pSB-Q6-uaG" secondAttribute="top" constant="20" id="Vw8-4r-DGB"/>
                         <constraint firstItem="xpZ-qz-49k" firstAttribute="top" secondItem="a56-KG-qkw" secondAttribute="bottom" constant="5" id="Vzv-Ig-6GW"/>
                         <constraint firstItem="xpZ-qz-49k" firstAttribute="top" secondItem="a56-KG-qkw" secondAttribute="bottom" constant="5" id="WYR-rD-vko"/>
                         <constraint firstItem="9En-4K-CcF" firstAttribute="leading" secondItem="zRb-8d-l95" secondAttribute="leading" id="XwX-ge-6Pj"/>
-                        <constraint firstItem="qIj-33-6P3" firstAttribute="top" secondItem="zRb-8d-l95" secondAttribute="bottom" constant="65" id="Yd5-p2-q5U"/>
+                        <constraint firstItem="qIj-33-6P3" firstAttribute="top" secondItem="zRb-8d-l95" secondAttribute="bottom" constant="30" id="Yd5-p2-q5U"/>
                         <constraint firstItem="qIj-33-6P3" firstAttribute="leading" secondItem="pSB-Q6-uaG" secondAttribute="leading" constant="30" id="aL8-Rq-p0L"/>
                         <constraint firstItem="xpZ-qz-49k" firstAttribute="leading" secondItem="pSB-Q6-uaG" secondAttribute="leading" constant="30" id="bwo-X9-9FC"/>
                         <constraint firstItem="xpZ-qz-49k" firstAttribute="leading" secondItem="NWf-zX-gqt" secondAttribute="leading" id="ecC-AZ-djP"/>

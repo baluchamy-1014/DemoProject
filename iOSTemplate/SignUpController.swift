@@ -46,7 +46,8 @@ class SignUpController: UIViewController {
     if EmailValidator().isValidEmail(self.emailTextField.text!) && passwordLengthMet() && (passwordsMatch())
     {
       self.signUpButton.enabled = true
-    } else {
+    }
+    else {
       self.signUpButton.enabled = false
     }
   }
