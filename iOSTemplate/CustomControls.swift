@@ -184,3 +184,42 @@ class UserScreenButton: UIButton {
     self.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
   }
 }
+
+class SignInUpButton: UIButton {
+  required override init(frame: CGRect) {
+    super.init(frame: frame)
+  }
+  
+  required init(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)!
+    
+    self.setBackgroundImage(self.imageWithColor(UIColor(red: 127/255, green: 127/255, blue: 127/255, alpha: 1.0)), forState: .Disabled)
+    self.setTitleColor(UIColor.lightGrayColor(), forState: .Disabled)
+    
+    self.setBackgroundImage(self.imageWithColor(UIColor(red: 106/255, green: 154/255, blue: 50/255, alpha: 1.0)), forState: .Normal)
+    self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+    
+    self.layer.cornerRadius = 5.0
+    self.clipsToBounds = true
+  }
+  
+  func imageWithColor(color: UIColor) -> UIImage {
+    let rect = CGRectMake(0.0, 0.0, 1.0, self.frame.size.height)
+    UIGraphicsBeginImageContext(rect.size)
+    let context = UIGraphicsGetCurrentContext()
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    let image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image
+  }
+}
+
+class EmailValidator {
+  func isValidEmail(testStr:String) -> Bool {
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+    
+    return emailTest.evaluateWithObject(testStr)
+  }
+}

@@ -19,7 +19,7 @@ class SignUpController: UIViewController {
   @IBOutlet weak var emailErrorLabel: UILabel!
   @IBOutlet weak var passwordErrorLabel: UILabel!
   
-  @IBOutlet weak var signUpButton: UIButton!
+  @IBOutlet weak var signUpButton: SignInUpButton!
   
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   var successViewController: SignUpSuccessViewController?
@@ -28,7 +28,13 @@ class SignUpController: UIViewController {
   
   override func viewDidLoad() {
     self.activityIndicator.hidden = true
-    self.signUpButton.layer.cornerRadius = 5.0
+    self.signUpButton.enabled = false
+    
+    NSNotificationCenter.defaultCenter().addObserver(self,
+                                                     selector: #selector(SignUpController.textFieldDidChange(_:)),
+                                                     name: UITextFieldTextDidChangeNotification,
+                                                     object: nil)
+
     super.viewDidLoad()
   }
 
@@ -36,9 +42,19 @@ class SignUpController: UIViewController {
     clearErrorLabels()
   }
   
+  func textFieldDidChange(sender: AnyObject){
+    if EmailValidator().isValidEmail(self.emailTextField.text!) && passwordLengthMet() && (passwordsMatch())
+    {
+      self.signUpButton.enabled = true
+    }
+    else {
+      self.signUpButton.enabled = false
+    }
+  }
+  
   @IBAction func signUpTapped(sender: AnyObject) {
     clearErrorLabels()
-    if isValidEmail(self.emailTextField.text!) {
+    if EmailValidator().isValidEmail(self.emailTextField.text!) {
       if (passwordsMatch()) {
         if passwordLengthMet() {
           let resourceOwner: NSDictionary = [
@@ -99,13 +115,6 @@ class SignUpController: UIViewController {
     self.passwordConfirmationTextField.text = ""
   }
   
-  func isValidEmail(testStr:String) -> Bool {
-    // print("validate calendar: \(testStr)")
-    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-    
-    let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-    return emailTest.evaluateWithObject(testStr)
-  }
 }
 
 
