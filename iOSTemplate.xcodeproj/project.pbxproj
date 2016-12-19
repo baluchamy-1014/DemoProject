@@ -14,14 +14,14 @@
 		621DD25D1DD61A9600D87855 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25C1DD61A9600D87855 /* UserController.swift */; };
 		621DD25F1DD62CBF00D87855 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25E1DD62CBF00D87855 /* SignInController.swift */; };
 		621DD2611DD62CD200D87855 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD2601DD62CD200D87855 /* SignUpController.swift */; };
-		6228840D1E009D1D0053402F /* BoxxspringVideoPlayerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 622884091E009D1D0053402F /* BoxxspringVideoPlayerSDK.bundle */; };
-		6228840E1E009D1D0053402F /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6228840A1E009D1D0053402F /* BoxxspringVideoPlayerSDK.framework */; };
-		6228840F1E009D1D0053402F /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6228840B1E009D1D0053402F /* UnimatrixAnalyticsObjcSDK.framework */; };
-		622884101E009D1D0053402F /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6228840C1E009D1D0053402F /* UnimatrixObjcSDK.framework */; };
 		6253BDCD1DE34F58001CE859 /* SignUpSuccess.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */; };
 		6296FA5C1DD4E7170096B04D /* SignIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5B1DD4E7170096B04D /* SignIn.xib */; };
 		6296FA601DD50EFB0096B04D /* SignUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5F1DD50EFB0096B04D /* SignUp.xib */; };
 		6296FA641DD533510096B04D /* UserAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA631DD533510096B04D /* UserAccount.xib */; };
+		62E138BA1E08395D0002873B /* BoxxspringVideoPlayerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 62E138B61E08395D0002873B /* BoxxspringVideoPlayerSDK.bundle */; };
+		62E138BB1E08395D0002873B /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E138B71E08395D0002873B /* BoxxspringVideoPlayerSDK.framework */; };
+		62E138BC1E08395D0002873B /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E138B81E08395D0002873B /* UnimatrixAnalyticsObjcSDK.framework */; };
+		62E138BD1E08395D0002873B /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E138B91E08395D0002873B /* UnimatrixObjcSDK.framework */; };
 		780578521DC299690011BBE8 /* play_button@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7805784F1DC299690011BBE8 /* play_button@1x.png */; };
 		780578531DC299690011BBE8 /* play_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780578501DC299690011BBE8 /* play_button@2x.png */; };
 		780578541DC299690011BBE8 /* play_button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780578511DC299690011BBE8 /* play_button@3x.png */; };
@@ -108,14 +108,14 @@
 		621DD25C1DD61A9600D87855 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		621DD25E1DD62CBF00D87855 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		621DD2601DD62CD200D87855 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
-		622884091E009D1D0053402F /* BoxxspringVideoPlayerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BoxxspringVideoPlayerSDK.bundle; sourceTree = "<group>"; };
-		6228840A1E009D1D0053402F /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
-		6228840B1E009D1D0053402F /* UnimatrixAnalyticsObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixAnalyticsObjcSDK.framework; sourceTree = "<group>"; };
-		6228840C1E009D1D0053402F /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpSuccess.xib; sourceTree = "<group>"; };
 		6296FA5B1DD4E7170096B04D /* SignIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignIn.xib; sourceTree = "<group>"; };
 		6296FA5F1DD50EFB0096B04D /* SignUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUp.xib; sourceTree = "<group>"; };
 		6296FA631DD533510096B04D /* UserAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAccount.xib; sourceTree = "<group>"; };
+		62E138B61E08395D0002873B /* BoxxspringVideoPlayerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BoxxspringVideoPlayerSDK.bundle; sourceTree = "<group>"; };
+		62E138B71E08395D0002873B /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
+		62E138B81E08395D0002873B /* UnimatrixAnalyticsObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixAnalyticsObjcSDK.framework; sourceTree = "<group>"; };
+		62E138B91E08395D0002873B /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		7805784F1DC299690011BBE8 /* play_button@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_button@1x.png"; path = "iOSTemplate/Assets.xcassets/play_button@1x.png"; sourceTree = "<group>"; };
 		780578501DC299690011BBE8 /* play_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_button@2x.png"; path = "iOSTemplate/Assets.xcassets/play_button@2x.png"; sourceTree = "<group>"; };
 		780578511DC299690011BBE8 /* play_button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "play_button@3x.png"; path = "iOSTemplate/Assets.xcassets/play_button@3x.png"; sourceTree = "<group>"; };
@@ -202,9 +202,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6228840F1E009D1D0053402F /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
-				6228840E1E009D1D0053402F /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
-				622884101E009D1D0053402F /* UnimatrixObjcSDK.framework in Frameworks */,
+				62E138BC1E08395D0002873B /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
+				62E138BB1E08395D0002873B /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
+				62E138BD1E08395D0002873B /* UnimatrixObjcSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,10 +333,10 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
-				622884091E009D1D0053402F /* BoxxspringVideoPlayerSDK.bundle */,
-				6228840A1E009D1D0053402F /* BoxxspringVideoPlayerSDK.framework */,
-				6228840B1E009D1D0053402F /* UnimatrixAnalyticsObjcSDK.framework */,
-				6228840C1E009D1D0053402F /* UnimatrixObjcSDK.framework */,
+				62E138B61E08395D0002873B /* BoxxspringVideoPlayerSDK.bundle */,
+				62E138B71E08395D0002873B /* BoxxspringVideoPlayerSDK.framework */,
+				62E138B81E08395D0002873B /* UnimatrixAnalyticsObjcSDK.framework */,
+				62E138B91E08395D0002873B /* UnimatrixObjcSDK.framework */,
 				788C43A21DA46D1000F342B9 /* Assets */,
 				78E31EB11D9C7BA100CB59D3 /* bridge.h */,
 				78E31E731D99F3F400CB59D3 /* iOSTemplate */,
@@ -455,7 +455,7 @@
 				78B3120B1DBE80C60064EE88 /* slider_bar@2x.png in Resources */,
 				782E3AB01DF9307700FCF5CC /* NLL_Loading_Animation@3x.gif in Resources */,
 				788C43981DA45F9D00F342B9 /* ExpandIndicator.png in Resources */,
-				6228840D1E009D1D0053402F /* BoxxspringVideoPlayerSDK.bundle in Resources */,
+				62E138BA1E08395D0002873B /* BoxxspringVideoPlayerSDK.bundle in Resources */,
 				787867D01DB99DB900958C1B /* NewsIcon@3x.png in Resources */,
 				782E3A8C1DF7928800FCF5CC /* TabSlider.png in Resources */,
 				787867CA1DB99CC700958C1B /* TVIcon@3x.png in Resources */,
