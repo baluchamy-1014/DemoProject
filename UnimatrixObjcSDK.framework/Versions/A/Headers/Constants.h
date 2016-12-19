@@ -14,7 +14,7 @@
 #define ACCEPTANCE 3
 #define LOCAL 4
 
-#define SR_ENV STAGING
+#define SR_ENV PRODUCTION
 
 #define kPlayerVersion @"1.0.2"
 #define kBoxxspringApiVersion @"1.0.1"
