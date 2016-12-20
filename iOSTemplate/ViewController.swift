@@ -33,7 +33,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     self.pageController.view.frame = CGRectMake(0, 45, self.view.frame.size.width, self.view.frame.size.height-45)
     self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     if self.pageController.viewControllers![0].isKindOfClass(ArticleViewController) {
-       teamFilterButton.setTitle("All Teams", forState: .Normal)
+       teamFilterButton.setTitle("NLL TV", forState: .Normal)
        teamFilterButton.setImage(nil, forState: .Normal)
     }
     else {
@@ -131,7 +131,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   
   func teamFilterButtonRestoreTeamName() {
     if (selectedTeam == nil) {
-      teamFilterButton.setTitle("All Teams", forState: .Normal)
+      teamFilterButton.setTitle("NLL TV", forState: .Normal)
     }
     else {
       teamFilterButton.setTitle(selectedTeam, forState: .Normal)
@@ -141,7 +141,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   
   func resetTeamFilterButtonAllTeams() {
     teamFilterButton.setImage(nil, forState: .Normal)
-    teamFilterButton.setTitle("All Teams", forState: .Normal)
+    teamFilterButton.setTitle("NLL TV", forState: .Normal)
   }
 
   @IBAction func unwindSegue(segue: UIStoryboardSegue) {
@@ -151,7 +151,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     dispatch_async(dispatch_get_main_queue(), {
       if segue.identifier == "selectTeamSegue" {
         let teamsFilterListViewController: TeamsFilterListViewController = segue.sourceViewController as! TeamsFilterListViewController
-        self.teamID = (teamsFilterListViewController.teamName == "All Teams") ? nil : teamsFilterListViewController.teamID
+        self.teamID = (teamsFilterListViewController.teamName == "NLL TV") ? nil : teamsFilterListViewController.teamID
         self.selectedTeam = teamsFilterListViewController.teamName
         let currentController = self.pageController.viewControllers![0]
         if currentController.isKindOfClass(LatestViewController) {
