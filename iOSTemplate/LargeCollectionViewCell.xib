@@ -9,37 +9,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="largeCell" id="cHh-8C-55Y" customClass="LargeCollectionViewCell" customModule="NLL" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="391" height="307"/>
+            <rect key="frame" x="0.0" y="0.0" width="374" height="307"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="391" height="307"/>
+                <rect key="frame" x="0.0" y="0.0" width="374" height="307"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDQ-ij-WzP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RDQ-ij-WzP">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="210"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="RDQ-ij-WzP" secondAttribute="height" multiplier="16:9" id="4qL-6C-S7K"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ig-nX-G1a" customClass="ArtifactTitleLabel" customModule="NLL" customModuleProvider="target">
-                        <rect key="frame" x="8" y="187" width="330" height="42"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ig-nX-G1a" customClass="ArtifactTitleLabel" customModule="NLL" customModuleProvider="target">
+                        <rect key="frame" x="8" y="187" width="366" height="52"/>
                         <color key="backgroundColor" red="0.3157961755" green="0.67762881519999996" blue="0.12838841679999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="42" id="WwO-gG-eRN"/>
+                            <constraint firstAttribute="height" constant="52" id="WwO-gG-eRN"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMP-cZ-L2F" customClass="AddedAtLabel" customModule="NLL" customModuleProvider="target">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMP-cZ-L2F" customClass="AddedAtLabel" customModule="NLL" customModuleProvider="target">
                         <rect key="frame" x="341" y="278" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Say-jG-mnt">
-                        <rect key="frame" x="8" y="231" width="42" height="21"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -49,25 +42,22 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Say-jG-mnt" firstAttribute="top" secondItem="6Ig-nX-G1a" secondAttribute="bottom" constant="2" id="3hK-fx-o4y"/>
-                <constraint firstItem="6Ig-nX-G1a" firstAttribute="top" secondItem="RDQ-ij-WzP" secondAttribute="bottom" constant="3" id="LVH-9b-bjn"/>
+                <constraint firstItem="6Ig-nX-G1a" firstAttribute="top" secondItem="RDQ-ij-WzP" secondAttribute="bottom" constant="10" id="LVH-9b-bjn"/>
                 <constraint firstItem="RDQ-ij-WzP" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" id="OhS-Ua-Bca"/>
-                <constraint firstItem="Say-jG-mnt" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" constant="8" id="Vf1-OE-6AH"/>
-                <constraint firstAttribute="trailing" secondItem="6Ig-nX-G1a" secondAttribute="trailing" constant="8" id="WWM-Kr-e3P"/>
+                <constraint firstAttribute="trailing" secondItem="6Ig-nX-G1a" secondAttribute="trailing" constant="20" id="WWM-Kr-e3P"/>
                 <constraint firstAttribute="bottom" secondItem="DMP-cZ-L2F" secondAttribute="bottom" constant="8" id="m0m-kr-XCv"/>
-                <constraint firstItem="6Ig-nX-G1a" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" constant="8" id="sch-bX-aCC"/>
+                <constraint firstItem="6Ig-nX-G1a" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" constant="20" id="sch-bX-aCC"/>
                 <constraint firstItem="RDQ-ij-WzP" firstAttribute="top" secondItem="cHh-8C-55Y" secondAttribute="top" id="xsv-Z3-UAf"/>
                 <constraint firstAttribute="trailing" secondItem="DMP-cZ-L2F" secondAttribute="trailing" constant="8" id="y6f-P5-989"/>
                 <constraint firstItem="RDQ-ij-WzP" firstAttribute="width" secondItem="cHh-8C-55Y" secondAttribute="width" id="zUD-H5-Be3"/>
             </constraints>
-            <size key="customSize" width="391" height="307"/>
+            <size key="customSize" width="374" height="307"/>
             <connections>
-                <outlet property="descriptionLabel" destination="Say-jG-mnt" id="EeV-63-WNB"/>
                 <outlet property="imageView" destination="RDQ-ij-WzP" id="OcG-6Z-zzG"/>
                 <outlet property="timeElapsedLabel" destination="DMP-cZ-L2F" id="VFe-gy-HzN"/>
                 <outlet property="titleLabel" destination="6Ig-nX-G1a" id="dv6-ii-BVO"/>
             </connections>
-            <point key="canvasLocation" x="344.5" y="312.5"/>
+            <point key="canvasLocation" x="336" y="312.5"/>
         </collectionViewCell>
     </objects>
 </document>
