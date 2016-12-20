@@ -131,12 +131,14 @@ class TagButton:UIButton {
   
   convenience init(frame: CGRect, text: String) {
     self.init(frame: frame)
-    self.backgroundColor = UIColor(red: 74/255, green: 144/255, blue: 226/255, alpha: 1.0)
+    self.backgroundColor = UIColor(red: 37/255, green: 38/255, blue: 39/255, alpha: 1.0)
     
     self.setTitle(text, forState: UIControlState.Normal)
-    self.titleLabel?.font = UIFont(name:"NimbusSan-Bla", size: 10.0)
+    self.titleLabel?.font = UIFont.systemFontOfSize(15)
     self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     self.titleColorForState(UIControlState.Normal)
+    
+    self.layer.cornerRadius = 2.0
     
     self.addTarget(nil, action: "openTag:", forControlEvents: UIControlEvents.TouchUpInside)
   }
