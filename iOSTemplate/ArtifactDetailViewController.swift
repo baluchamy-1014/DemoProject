@@ -152,7 +152,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       reusableHeaderView = artifactDetailCollectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as UICollectionReusableView
       reusableHeaderView.backgroundColor = UIColor.whiteColor()
       
-      let headerImageView = UIImageView(frame: CGRectMake(0, 20, reusableHeaderView.frame.size.width, 200))
+      let headerImageView = UIImageView(frame: CGRectMake(0, 0, reusableHeaderView.frame.size.width, 200))
       headerImageView.userInteractionEnabled = true
       reusableHeaderView.addSubview(headerImageView)
       
