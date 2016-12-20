@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,8 +15,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="307"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDQ-ij-WzP">
-                        <rect key="frame" x="0.0" y="0.0" width="391" height="178"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDQ-ij-WzP">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="210"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="RDQ-ij-WzP" secondAttribute="height" multiplier="16:9" id="4qL-6C-S7K"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ig-nX-G1a" customClass="ArtifactTitleLabel" customModule="NLL" customModuleProvider="target">
                         <rect key="frame" x="8" y="187" width="330" height="42"/>
@@ -56,17 +60,15 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Say-jG-mnt" firstAttribute="top" secondItem="6Ig-nX-G1a" secondAttribute="bottom" constant="2" id="3hK-fx-o4y"/>
-                <constraint firstAttribute="bottom" secondItem="RDQ-ij-WzP" secondAttribute="bottom" constant="76" id="F0H-nd-Pob"/>
                 <constraint firstItem="6Ig-nX-G1a" firstAttribute="top" secondItem="RDQ-ij-WzP" secondAttribute="bottom" constant="3" id="LVH-9b-bjn"/>
-                <constraint firstAttribute="trailing" secondItem="RDQ-ij-WzP" secondAttribute="trailing" id="SuF-VR-8cE"/>
                 <constraint firstItem="Say-jG-mnt" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" constant="8" id="Vf1-OE-6AH"/>
                 <constraint firstAttribute="trailing" secondItem="6Ig-nX-G1a" secondAttribute="trailing" constant="8" id="WWM-Kr-e3P"/>
-                <constraint firstItem="RDQ-ij-WzP" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" id="eo4-u6-NPj"/>
                 <constraint firstAttribute="bottom" secondItem="DMP-cZ-L2F" secondAttribute="bottom" constant="8" id="m0m-kr-XCv"/>
                 <constraint firstItem="6Ig-nX-G1a" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" constant="8" id="sch-bX-aCC"/>
                 <constraint firstAttribute="bottom" secondItem="vMa-LL-3fg" secondAttribute="bottom" constant="8" id="ug0-p2-gSq"/>
                 <constraint firstItem="RDQ-ij-WzP" firstAttribute="top" secondItem="cHh-8C-55Y" secondAttribute="top" id="xsv-Z3-UAf"/>
                 <constraint firstAttribute="trailing" secondItem="DMP-cZ-L2F" secondAttribute="trailing" constant="8" id="y6f-P5-989"/>
+                <constraint firstItem="RDQ-ij-WzP" firstAttribute="width" secondItem="cHh-8C-55Y" secondAttribute="width" id="zUD-H5-Be3"/>
             </constraints>
             <size key="customSize" width="391" height="307"/>
             <connections>

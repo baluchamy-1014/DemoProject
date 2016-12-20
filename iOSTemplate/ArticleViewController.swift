@@ -156,7 +156,7 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
     if indexPath.row == 0 || indexPath.row == 1 {
-      return CGSize(width: self.view.frame.width, height: 331)
+      return CGSize(width: self.view.frame.width, height: 305)
     } else {
       return CGSize(width: self.view.frame.width, height: 120)
     }
