@@ -170,6 +170,7 @@
                     <size key="freeformSize" width="600" height="600"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="tj1-Lb-Fao" customClass="CustomTabBar" customModule="NLL" customModuleProvider="target">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="6Ad-x1-cLX" kind="relationship" relationship="viewControllers" id="SWu-Zt-UWD"/>
