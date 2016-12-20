@@ -158,7 +158,7 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
     if indexPath.row == 0 || indexPath.row == 1 {
       return CGSize(width: self.view.frame.width, height: 331)
     } else {
-      return CGSize(width: self.view.frame.width, height: 95)
+      return CGSize(width: self.view.frame.width, height: 120)
     }
   }
   
