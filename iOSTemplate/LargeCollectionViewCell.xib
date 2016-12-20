@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="391" height="307"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDQ-ij-WzP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RDQ-ij-WzP">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="210"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="RDQ-ij-WzP" secondAttribute="height" multiplier="16:9" id="4qL-6C-S7K"/>
@@ -44,16 +44,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMa-LL-3fg" customClass="AuthorLabel" customModule="NLL" customModuleProvider="target">
-                        <rect key="frame" x="8" y="278" width="233" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="233" id="5pW-4j-2n6"/>
-                            <constraint firstAttribute="height" constant="21" id="cpS-H7-2aO"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -61,18 +51,17 @@
             <constraints>
                 <constraint firstItem="Say-jG-mnt" firstAttribute="top" secondItem="6Ig-nX-G1a" secondAttribute="bottom" constant="2" id="3hK-fx-o4y"/>
                 <constraint firstItem="6Ig-nX-G1a" firstAttribute="top" secondItem="RDQ-ij-WzP" secondAttribute="bottom" constant="3" id="LVH-9b-bjn"/>
+                <constraint firstItem="RDQ-ij-WzP" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" id="OhS-Ua-Bca"/>
                 <constraint firstItem="Say-jG-mnt" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" constant="8" id="Vf1-OE-6AH"/>
                 <constraint firstAttribute="trailing" secondItem="6Ig-nX-G1a" secondAttribute="trailing" constant="8" id="WWM-Kr-e3P"/>
                 <constraint firstAttribute="bottom" secondItem="DMP-cZ-L2F" secondAttribute="bottom" constant="8" id="m0m-kr-XCv"/>
                 <constraint firstItem="6Ig-nX-G1a" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" constant="8" id="sch-bX-aCC"/>
-                <constraint firstAttribute="bottom" secondItem="vMa-LL-3fg" secondAttribute="bottom" constant="8" id="ug0-p2-gSq"/>
                 <constraint firstItem="RDQ-ij-WzP" firstAttribute="top" secondItem="cHh-8C-55Y" secondAttribute="top" id="xsv-Z3-UAf"/>
                 <constraint firstAttribute="trailing" secondItem="DMP-cZ-L2F" secondAttribute="trailing" constant="8" id="y6f-P5-989"/>
                 <constraint firstItem="RDQ-ij-WzP" firstAttribute="width" secondItem="cHh-8C-55Y" secondAttribute="width" id="zUD-H5-Be3"/>
             </constraints>
             <size key="customSize" width="391" height="307"/>
             <connections>
-                <outlet property="authorLabel" destination="vMa-LL-3fg" id="32e-Dv-9Gr"/>
                 <outlet property="descriptionLabel" destination="Say-jG-mnt" id="EeV-63-WNB"/>
                 <outlet property="imageView" destination="RDQ-ij-WzP" id="OcG-6Z-zzG"/>
                 <outlet property="timeElapsedLabel" destination="DMP-cZ-L2F" id="VFe-gy-HzN"/>

@@ -98,14 +98,6 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
         cell.imageView.image = placeholderImage
       }
       
-      if let aAuthor = item.author() {
-        let authorString = aAuthor.name
-        cell.authorLabel.text = authorString
-      }
-      else {
-        cell.authorLabel.text = ""
-      }
-
       cell.titleLabel.numberOfLines = 0
       cell.titleLabel.font = UIFont.systemFontOfSize(18)
       cell.titleLabel.textColor = UIColor.blackColor()
