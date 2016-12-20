@@ -186,7 +186,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   func collectionView(collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    return CGSizeMake(collectionView.bounds.size.width, CGFloat(95))
+    return CGSizeMake(collectionView.bounds.size.width, CGFloat(120))
   }
   
   func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
