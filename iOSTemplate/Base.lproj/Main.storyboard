@@ -103,12 +103,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t61-Aj-QuE">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t61-Aj-QuE">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem id="BBy-JY-Ebp">
+                                    <navigationItem title="Filter By Team" id="BBy-JY-Ebp">
                                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="afg-KG-p7e">
                                             <connections>
                                                 <segue destination="S3Z-p9-OZP" kind="unwind" identifier="cancelSegue" unwindAction="unwindSegue:" id="jIZ-eO-e0z"/>
@@ -123,6 +126,7 @@
                             <constraint firstAttribute="trailing" secondItem="6ib-Hy-5OQ" secondAttribute="trailing" id="3hy-Jc-jLg"/>
                             <constraint firstItem="6ib-Hy-5OQ" firstAttribute="leading" secondItem="Xjq-tI-abs" secondAttribute="leading" id="KJS-jC-6aA"/>
                             <constraint firstItem="rAP-6F-grB" firstAttribute="top" secondItem="6ib-Hy-5OQ" secondAttribute="bottom" id="efz-dr-7zp"/>
+                            <constraint firstItem="t61-Aj-QuE" firstAttribute="width" secondItem="Xjq-tI-abs" secondAttribute="width" id="fbf-p9-6gH"/>
                             <constraint firstItem="6ib-Hy-5OQ" firstAttribute="top" secondItem="ym8-dz-9RP" secondAttribute="bottom" constant="45" id="fuU-Wj-QWs"/>
                         </constraints>
                     </view>
