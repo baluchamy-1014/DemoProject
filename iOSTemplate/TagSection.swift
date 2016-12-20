@@ -12,7 +12,7 @@ class TagSection: NSObject {
   let view:UIView
   let tags:Array<AnyObject>
   let sectionWidth: CGFloat  = 259.0
-  let buttonPadding: CGFloat = 24.0
+  let buttonPadding: CGFloat = 0.0
   let xGap: CGFloat          = 5.0
   var sectionHeight: CGFloat
   
@@ -30,7 +30,7 @@ class TagSection: NSObject {
   
   func setupTags() {
     var x: CGFloat
-    let btnHeight: CGFloat = 26
+    let btnHeight: CGFloat = 32
     let sectionGap: CGFloat = 15
     
     for tag in tags {
