@@ -33,7 +33,7 @@ class CustomSegmentedControl: UISegmentedControl {
     
     self.setBackgroundImage(self.imageWithColor(UIColor.clearColor()), forState:UIControlState.Normal, barMetrics:UIBarMetrics.Default)
     // TODO: theme
-    self.setBackgroundImage(UIImage(named: "slider_trans"), forState:UIControlState.Selected, barMetrics:UIBarMetrics.Default);   
+    self.setBackgroundImage(UIImage(named: "TabSlider"), forState:UIControlState.Selected, barMetrics:UIBarMetrics.Default);   
   }
 }
 
