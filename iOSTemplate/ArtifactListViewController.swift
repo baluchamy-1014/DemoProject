@@ -12,7 +12,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   var collectionView: UICollectionView!
   var items = [Artifact]()
   var artifactID: Int?
-  let placeholderImage = UIImage(named: "placeholder_nll_shield.jpg")
+  let placeholderImage = UIImage(named: "Placeholder_nll_logo")
   var refreshControl: CustomRefreshControl!
   var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
 

@@ -389,7 +389,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="placeholder_nll_shield.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-f7-fsd">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Placeholder_nll_logo" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-f7-fsd">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -450,8 +450,8 @@
     </scenes>
     <resources>
         <image name="NewsIcon.png" width="25" height="25"/>
+        <image name="Placeholder_nll_logo" width="21" height="7"/>
         <image name="expand_indicator.png" width="21" height="7"/>
         <image name="no_live_feed.png" width="152" height="105"/>
-        <image name="placeholder_nll_shield.jpg" width="2304" height="1380"/>
     </resources>
 </document>

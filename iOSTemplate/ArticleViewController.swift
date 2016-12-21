@@ -12,7 +12,7 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
   var artifactItems: [Artifact] = Array()
   var refreshControl: CustomRefreshControl!
   var collectionView: UICollectionView!
-  let placeholderImage = UIImage(named: "placeholder_nll_shield.jpg")
+  let placeholderImage = UIImage(named: "Placeholder_nll_logo")
 
     override func viewDidLoad() {
       // TODO: move out in CollectionView setup

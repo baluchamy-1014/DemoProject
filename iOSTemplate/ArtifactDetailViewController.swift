@@ -17,7 +17,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
   var headerHeight: CGFloat = 500.0
   var counter: Int = 0
-  let placeholderImage = UIImage(named: "placeholder_nll_shield.jpg")
+  let placeholderImage = UIImage(named: "Placeholder_nll_logo")
   
   init(artifact anArtifact: Artifact) {
     super.init(nibName:nil, bundle:nil)
