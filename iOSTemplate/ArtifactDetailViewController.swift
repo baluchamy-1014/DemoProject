@@ -206,15 +206,14 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
         reusableHeaderView.addSubview(tagSection.view)
       }
       
-      // TODO: tags
       if counter != 0 {
-      let relatedVideosLabel = UILabel(frame: CGRectMake(10, reusableHeaderView.frame.size.height-50, 400, 26))
+      let relatedVideosLabel = UILabel(frame: CGRectMake(10, reusableHeaderView.frame.size.height-40, 400, 26))
       relatedVideosLabel.font = UIFont.boldSystemFontOfSize(24)
       relatedVideosLabel.textColor = UIColor.blackColor()
       relatedVideosLabel.text = "Related Content"
       reusableHeaderView.addSubview(relatedVideosLabel)
       
-      let horizontalLine = UIView(frame: CGRectMake(0, reusableHeaderView.frame.size.height-10, self.view.frame.size.width, 0.5))
+      let horizontalLine = UIView(frame: CGRectMake(0, reusableHeaderView.frame.size.height, self.view.frame.size.width, 0.5))
       // TODO: theme
       horizontalLine.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
       reusableHeaderView.addSubview(horizontalLine)
@@ -237,7 +236,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
-    return CGSizeMake(collectionView.bounds.size.width, CGFloat(100))
+    return CGSizeMake(collectionView.bounds.size.width, CGFloat(120))
   }
   
   func articleTapped(recognizer: UITapGestureRecognizer) {
