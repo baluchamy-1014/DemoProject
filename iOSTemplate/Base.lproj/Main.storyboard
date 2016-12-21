@@ -29,7 +29,7 @@
                                 <segments>
                                     <segment title="Featured"/>
                                     <segment title="Latest"/>
-                                    <segment title="Live"/>
+                                    <segment title="Live Video"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="17p-Md-xGU"/>
@@ -39,11 +39,12 @@
                         <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="centerX" secondItem="TnR-Kh-l0W" secondAttribute="centerX" id="AqO-tf-Wo3"/>
+                            <constraint firstItem="TnR-Kh-l0W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="LaC-gy-fSO"/>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="TnR-Kh-l0W" secondAttribute="bottom" constant="17" id="N9q-n0-wuv"/>
-                            <constraint firstItem="TnR-Kh-l0W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PB9-g3-bC5"/>
-                            <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="57" id="fAG-af-1vq"/>
+                            <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="40" id="fAG-af-1vq"/>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qCp-l8-b5z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cL0-Eg-7hx" secondAttribute="bottom" constant="-10" id="y1C-bD-tD9"/>
+                            <constraint firstAttribute="trailing" secondItem="TnR-Kh-l0W" secondAttribute="trailing" constant="5" id="zWE-fi-tSA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I2A-JP-NPx">
