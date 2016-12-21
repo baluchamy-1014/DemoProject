@@ -185,6 +185,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
     
       let articleDescriptionTextView = UITextView(frame: CGRectMake(7, 300, reusableHeaderView.frame.size.width-20, 160))
       articleDescriptionTextView.backgroundColor = UIColor.whiteColor()
+      articleDescriptionTextView.font = UIFont.systemFontOfSize(15)
       articleDescriptionTextView.editable = false
       articleDescriptionTextView.scrollEnabled = false
       if let longDescriptionString = artifact.longDescription
