@@ -52,9 +52,8 @@ class AuthorLabel: UILabel {
 class ArtifactTitleLabel: UILabel {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-  
-    self.font = UIFont.systemFontOfSize(12)
-    self.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1.0)
+
+    self.textColor = UIColor(red: 22/255, green: 22/255, blue: 22/255, alpha: 1.0)
     self.numberOfLines = 0
     self.backgroundColor = UIColor.whiteColor()
     self.textAlignment = .Left
@@ -65,10 +64,9 @@ class AddedAtLabel: UILabel {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    self.font = UIFont.systemFontOfSize(10)
     self.textAlignment = .Right
     self.backgroundColor = UIColor.whiteColor()
-    self.textColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
+    self.textColor = UIColor(red: 149/255, green: 149/255, blue: 149/255, alpha: 1.0)
   }
   
   required override init(frame: CGRect) {
