@@ -27,7 +27,7 @@ class CustomSegmentedControl: UISegmentedControl {
   
   func customize() {
     self.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFontOfSize(18), NSForegroundColorAttributeName:UIColor(red: 136/266, green: 136/255, blue: 136/255, alpha: 1.0)], forState:UIControlState.Normal)
-    self.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFontOfSize(18), NSForegroundColorAttributeName:UIColor.whiteColor()], forState:UIControlState.Selected)
+    self.setTitleTextAttributes([NSFontAttributeName:UIFont.boldSystemFontOfSize(18), NSForegroundColorAttributeName:UIColor.whiteColor()], forState:UIControlState.Selected)
     
     self.setDividerImage(self.imageWithColor(UIColor.clearColor()), forLeftSegmentState: UIControlState.Normal, rightSegmentState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
     
