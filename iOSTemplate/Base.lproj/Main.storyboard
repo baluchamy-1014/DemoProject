@@ -142,11 +142,11 @@
             </objects>
             <point key="canvasLocation" x="4187" y="390"/>
         </scene>
-        <!--Home-->
+        <!--Videos-->
         <scene sceneID="tJe-ZD-e3s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Ad-x1-cLX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="NewsIcon.png" id="LQd-lt-23I"/>
+                    <tabBarItem key="tabBarItem" title="Videos" image="VideosIconInactive.png" selectedImage="VideosIconActive.png" id="LQd-lt-23I"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bHT-EN-isW">
@@ -456,8 +456,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NewsIcon.png" width="25" height="25"/>
         <image name="Placeholder_nll_logo" width="21" height="7"/>
+        <image name="VideosIconActive.png" width="27" height="26"/>
+        <image name="VideosIconInactive.png" width="27" height="26"/>
         <image name="expand_indicator.png" width="21" height="7"/>
         <image name="no_live_feed.png" width="152" height="105"/>
     </resources>
