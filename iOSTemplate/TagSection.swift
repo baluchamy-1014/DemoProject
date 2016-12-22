@@ -11,9 +11,9 @@ import UIKit
 class TagSection: NSObject {
   let view:UIView
   let tags:Array<AnyObject>
-  let sectionWidth: CGFloat  = 259.0
+  let sectionWidth: CGFloat  = UIScreen.mainScreen().bounds.size.width - 40
   let buttonPadding: CGFloat = 0.0
-  let xGap: CGFloat          = 5.0
+  let xGap: CGFloat          = 10.0
   var sectionHeight: CGFloat
   
   var previousBtnXOrigin:CGFloat = 10.0
