@@ -54,7 +54,6 @@ class ArtifactTitleLabel: UILabel {
     super.init(coder: aDecoder)
 
     self.textColor = UIColor(red: 22/255, green: 22/255, blue: 22/255, alpha: 1.0)
-    self.numberOfLines = 0
     self.backgroundColor = UIColor.whiteColor()
     self.textAlignment = .Left
   }
