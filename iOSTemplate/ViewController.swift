@@ -30,7 +30,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     pages.append(page3)
 
     self.pageController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-    self.pageController.view.frame = CGRectMake(0, 23, self.view.frame.size.width, self.view.frame.size.height)
+    self.pageController.view.frame = CGRectMake(0, 29, self.view.frame.size.width, self.view.frame.size.height)
     self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     if self.pageController.viewControllers![0].isKindOfClass(ArticleViewController) {
        teamFilterButton.setTitle("NLL TV", forState: .Normal)
