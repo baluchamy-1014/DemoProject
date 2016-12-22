@@ -108,7 +108,7 @@ class PlayButton: UIButton {
   required override init(frame: CGRect) {
     super.init(frame: frame)
     
-    self.setImage(UIImage(named: "play_button"), forState: .Normal)
+    self.setImage(UIImage(named: "PlayButton"), forState: .Normal)
     self.backgroundColor = UIColor.clearColor()
   }
   
