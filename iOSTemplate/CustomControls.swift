@@ -63,7 +63,7 @@ class AddedAtLabel: UILabel {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    self.textAlignment = .Right
+    self.textAlignment = .Left
     self.backgroundColor = UIColor.whiteColor()
     self.textColor = UIColor(red: 149/255, green: 149/255, blue: 149/255, alpha: 1.0)
   }
@@ -72,7 +72,7 @@ class AddedAtLabel: UILabel {
     super.init(frame: frame)
     
     self.font = UIFont.systemFontOfSize(10)
-    self.textAlignment = .Right
+    self.textAlignment = .Left
     self.backgroundColor = UIColor.whiteColor()
     self.textColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
   }

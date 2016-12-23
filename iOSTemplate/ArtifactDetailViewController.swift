@@ -183,7 +183,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
         authorLabel.text = authorString.name
       }
     
-      let articleDescriptionTextView = UITextView(frame: CGRectMake(7, 300, reusableHeaderView.frame.size.width-20, 160))
+      let articleDescriptionTextView = UITextView(frame: CGRectMake(16, 300, reusableHeaderView.frame.size.width-32, 160))
       articleDescriptionTextView.backgroundColor = UIColor.whiteColor()
       articleDescriptionTextView.font = UIFont.systemFontOfSize(15)
       articleDescriptionTextView.editable = false
@@ -195,7 +195,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       articleDescriptionTextView.sizeToFit()
       reusableHeaderView.addSubview(articleDescriptionTextView)
       
-      let dateLabel = AddedAtLabel(frame: CGRectMake(reusableHeaderView.frame.width - 70, 261, 60, 16))
+      let dateLabel = AddedAtLabel(frame: CGRectMake(20, 261, 160, 16))
       dateLabel.font = UIFont.systemFontOfSize(12)
       dateLabel.backgroundColor = UIColor.whiteColor()
       if let publishedAtString = artifact.publishedAt {
@@ -208,7 +208,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       }
       
       if counter != 0 {
-      let relatedVideosLabel = UILabel(frame: CGRectMake(10, reusableHeaderView.frame.size.height-40, 400, 26))
+      let relatedVideosLabel = UILabel(frame: CGRectMake(20, reusableHeaderView.frame.size.height-40, 400, 26))
       relatedVideosLabel.font = UIFont.boldSystemFontOfSize(24)
       relatedVideosLabel.textColor = UIColor.blackColor()
       relatedVideosLabel.text = "Related Content"
