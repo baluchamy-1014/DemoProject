@@ -137,11 +137,17 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
       teamFilterButton.setTitle(selectedTeam, forState: .Normal)
     }
     teamFilterButton.setImage(UIImage(named: "expand_indicator"), forState: .Normal)
+    
+    teamFilterButton.sizeToFit()
+    teamFilterButton.imageEdgeInsets = UIEdgeInsetsMake(0, teamFilterButton.frame.size.width-10, 0, 0)
+    teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 10)
   }
   
   func resetTeamFilterButtonAllTeams() {
     teamFilterButton.setImage(nil, forState: .Normal)
     teamFilterButton.setTitle("NLL TV", forState: .Normal)
+    teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+    teamFilterButton.sizeToFit()
   }
 
   @IBAction func unwindSegue(segue: UIStoryboardSegue) {
@@ -167,6 +173,9 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         else {
           self.teamFilterButton.setTitle("All Team", forState: .Normal)
         }
+        self.teamFilterButton.sizeToFit()
+        self.teamFilterButton.imageEdgeInsets = UIEdgeInsetsMake(0, self.teamFilterButton.frame.size.width-10, 0, 0)
+        self.teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 10)
       }
     })
   }
