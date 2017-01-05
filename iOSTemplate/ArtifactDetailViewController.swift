@@ -169,16 +169,19 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       }
       
       // Todo: Create custom labels
-      let articleLabel = UILabel(frame: CGRectMake(10, 220, reusableHeaderView.frame.size.width-20, 26))
-      articleLabel.font = UIFont.boldSystemFontOfSize(24)
+      let articleLabel = UILabel(frame: CGRectMake(20, 220, reusableHeaderView.frame.size.width-40, 45))
+      articleLabel.font = UIFont.boldSystemFontOfSize(20)
+      articleLabel.numberOfLines = 2
       articleLabel.text = artifact.name
+      articleLabel.sizeToFit()
       reusableHeaderView.addSubview(articleLabel)
       
       let authorLabel = UILabel(frame: CGRectMake(10, 261, 200, 16))
       authorLabel.font = UIFont.systemFontOfSize(12)
       authorLabel.backgroundColor = UIColor.whiteColor()
       authorLabel.textColor = UIColor.blackColor()
-      reusableHeaderView.addSubview(authorLabel)
+      // hiding hiding author label
+      //      reusableHeaderView.addSubview(authorLabel)
       if let authorString = artifact.author() {
         authorLabel.text = authorString.name
       }
@@ -195,7 +198,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       articleDescriptionTextView.sizeToFit()
       reusableHeaderView.addSubview(articleDescriptionTextView)
       
-      let dateLabel = AddedAtLabel(frame: CGRectMake(20, 261, 160, 16))
+      let dateLabel = AddedAtLabel(frame: CGRectMake(20, articleLabel.frame.height + 230, 160, 16))
       dateLabel.font = UIFont.systemFontOfSize(12)
       dateLabel.backgroundColor = UIColor.whiteColor()
       if let publishedAtString = artifact.publishedAt {
