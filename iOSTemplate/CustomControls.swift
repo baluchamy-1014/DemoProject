@@ -26,14 +26,14 @@ class CustomSegmentedControl: UISegmentedControl {
   }
   
   func customize() {
-    self.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFontOfSize(14), NSForegroundColorAttributeName:UIColor(red: 136/266, green: 136/255, blue: 136/255, alpha: 1.0)], forState:UIControlState.Normal)
-    self.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFontOfSize(14), NSForegroundColorAttributeName:UIColor.whiteColor()], forState:UIControlState.Selected)
+    self.setTitleTextAttributes([NSFontAttributeName:UIFont.systemFontOfSize(18), NSForegroundColorAttributeName:UIColor(red: 136/266, green: 136/255, blue: 136/255, alpha: 1.0)], forState:UIControlState.Normal)
+    self.setTitleTextAttributes([NSFontAttributeName:UIFont.boldSystemFontOfSize(18), NSForegroundColorAttributeName:UIColor.whiteColor()], forState:UIControlState.Selected)
     
     self.setDividerImage(self.imageWithColor(UIColor.clearColor()), forLeftSegmentState: UIControlState.Normal, rightSegmentState: UIControlState.Normal, barMetrics: UIBarMetrics.Default)
     
     self.setBackgroundImage(self.imageWithColor(UIColor.clearColor()), forState:UIControlState.Normal, barMetrics:UIBarMetrics.Default)
     // TODO: theme
-    self.setBackgroundImage(UIImage(named: "slider_trans"), forState:UIControlState.Selected, barMetrics:UIBarMetrics.Default);   
+    self.setBackgroundImage(UIImage(named: "TabSlider"), forState:UIControlState.Selected, barMetrics:UIBarMetrics.Default);   
   }
 }
 
@@ -52,10 +52,8 @@ class AuthorLabel: UILabel {
 class ArtifactTitleLabel: UILabel {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
-  
-    self.font = UIFont.systemFontOfSize(12)
-    self.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1.0)
-    self.numberOfLines = 0
+
+    self.textColor = UIColor(red: 22/255, green: 22/255, blue: 22/255, alpha: 1.0)
     self.backgroundColor = UIColor.whiteColor()
     self.textAlignment = .Left
   }
@@ -65,17 +63,16 @@ class AddedAtLabel: UILabel {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    self.font = UIFont.systemFontOfSize(10)
-    self.textAlignment = .Right
+    self.textAlignment = .Left
     self.backgroundColor = UIColor.whiteColor()
-    self.textColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
+    self.textColor = UIColor(red: 149/255, green: 149/255, blue: 149/255, alpha: 1.0)
   }
   
   required override init(frame: CGRect) {
     super.init(frame: frame)
     
     self.font = UIFont.systemFontOfSize(10)
-    self.textAlignment = .Right
+    self.textAlignment = .Left
     self.backgroundColor = UIColor.whiteColor()
     self.textColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
   }
@@ -102,7 +99,7 @@ class TeamFilterButton: UIButton {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    self.setTitle("All Teams", forState: .Normal)
+    self.setTitle("NLL TV", forState: .Normal)
     self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
   }
 }
@@ -111,7 +108,7 @@ class PlayButton: UIButton {
   required override init(frame: CGRect) {
     super.init(frame: frame)
     
-    self.setImage(UIImage(named: "play_button"), forState: .Normal)
+    self.setImage(UIImage(named: "PlayButton"), forState: .Normal)
     self.backgroundColor = UIColor.clearColor()
   }
   
@@ -131,12 +128,14 @@ class TagButton:UIButton {
   
   convenience init(frame: CGRect, text: String) {
     self.init(frame: frame)
-    self.backgroundColor = UIColor(red: 74/255, green: 144/255, blue: 226/255, alpha: 1.0)
+    self.backgroundColor = UIColor(red: 37/255, green: 38/255, blue: 39/255, alpha: 1.0)
     
     self.setTitle(text, forState: UIControlState.Normal)
-    self.titleLabel?.font = UIFont(name:"NimbusSan-Bla", size: 10.0)
+    self.titleLabel?.font = UIFont.systemFontOfSize(15)
     self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     self.titleColorForState(UIControlState.Normal)
+    
+    self.layer.cornerRadius = 2.0
     
     self.addTarget(nil, action: "openTag:", forControlEvents: UIControlEvents.TouchUpInside)
   }
