@@ -17,7 +17,7 @@ class TagSection: NSObject {
   var sectionHeight: CGFloat
   
   var previousBtnXOrigin:CGFloat = 10.0
-  var previousBtnYOrigin:CGFloat = 22.0
+  var previousBtnYOrigin:CGFloat = 0.0
   var previousBtnLength:CGFloat  = 0
   
   init(x:CGFloat, y:CGFloat, width:CGFloat, height:CGFloat, tags:Array<AnyObject>) {
@@ -31,7 +31,7 @@ class TagSection: NSObject {
   func setupTags() {
     var x: CGFloat
     let btnHeight: CGFloat = 32
-    let sectionGap: CGFloat = 15
+    let sectionGap: CGFloat = 0
     
     for tag in tags {
       let btnString:String = tag.name
@@ -42,7 +42,7 @@ class TagSection: NSObject {
       if (previousBtnXOrigin + previousBtnLength + btnStringSize.width + xGap) > sectionWidth
       {
         // reset values
-        previousBtnYOrigin += 36
+        previousBtnYOrigin += 40
         previousBtnXOrigin = 10.0
         previousBtnLength  = 0.0
       }
