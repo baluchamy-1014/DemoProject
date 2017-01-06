@@ -15,7 +15,6 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   var artifact: Artifact!
   var items: [Artifact] = Array()
   let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-  var headerHeight: CGFloat = 500.0
   var counter: Int = 0
   let placeholderImage = UIImage(named: "Placeholder_nll_logo")
   
@@ -69,7 +68,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
           if error == nil && relatedArtifact.tags() != nil && relatedArtifact.tags().count > 0 {
             let tag = relatedArtifact.tags()[0]
 
-            self.tagSection = TagSection(x: 0, y: self.headerHeight - 160, width: 299, height: 100, tags: relatedArtifact.tags())
+            self.tagSection = TagSection(x: 0, y: 340, width: 299, height: 100, tags: relatedArtifact.tags())
             self.tagSection.view.backgroundColor = UIColor.clearColor()
             self.tagSection.setupTags()
 
@@ -185,18 +184,6 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       if let authorString = artifact.author() {
         authorLabel.text = authorString.name
       }
-    
-      let articleDescriptionTextView = UITextView(frame: CGRectMake(16, 300, reusableHeaderView.frame.size.width-32, 160))
-      articleDescriptionTextView.backgroundColor = UIColor.whiteColor()
-      articleDescriptionTextView.font = UIFont.systemFontOfSize(15)
-      articleDescriptionTextView.editable = false
-      articleDescriptionTextView.scrollEnabled = false
-      if let longDescriptionString = artifact.longDescription
-      {
-        articleDescriptionTextView.text = longDescriptionString
-      }
-      articleDescriptionTextView.sizeToFit()
-      reusableHeaderView.addSubview(articleDescriptionTextView)
       
       let dateLabel = AddedAtLabel(frame: CGRectMake(20, articleLabel.frame.height + 230, 160, 16))
       dateLabel.font = UIFont.systemFontOfSize(12)
@@ -205,6 +192,20 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
         dateLabel.displayDateTime(publishedAtString)
       }
       reusableHeaderView.addSubview(dateLabel)
+
+      let articleDescriptionTextView = UITextView(frame: CGRectMake(16, dateLabel.frame.origin.y + dateLabel.frame.height + 10, reusableHeaderView.frame.size.width - 32, 0))
+      articleDescriptionTextView.backgroundColor = UIColor.whiteColor()
+      articleDescriptionTextView.font = UIFont.systemFontOfSize(15)
+      articleDescriptionTextView.editable = false
+      articleDescriptionTextView.scrollEnabled = false
+      if let longDescriptionString = artifact.longDescription
+      {
+        articleDescriptionTextView.text = longDescriptionString
+        if articleDescriptionTextView.text != "" {
+          articleDescriptionTextView.sizeToFit()
+        }
+      }
+      reusableHeaderView.addSubview(articleDescriptionTextView)
 
       if tagSection != nil {
         reusableHeaderView.addSubview(tagSection.view)
@@ -224,8 +225,9 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       }
       counter += 1
       reusableHeaderView.backgroundColor = UIColor.whiteColor()
-      
-      headerHeight = articleDescriptionTextView.frame.height + 450
+      if tagSection != nil {
+        tagSection.view.frame.origin.y = articleDescriptionTextView.frame.height + articleLabel.frame.height + 271
+      }
       return reusableHeaderView
     }
     return reusableHeaderView
@@ -233,7 +235,27 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   
   func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, referenceSizeForHeaderInSection section: Int) -> CGSize
   {
-      return CGSizeMake(self.view.frame.width, headerHeight)
+    let articleDescriptionTextView = UITextView(frame: CGRectMake(41, 220, self.view.frame.width - 32, 0))
+    articleDescriptionTextView.font = UIFont.systemFontOfSize(15)
+    if let artifactDescription = artifact.longDescription {
+      articleDescriptionTextView.text = artifactDescription
+      if articleDescriptionTextView.text != "" {
+        articleDescriptionTextView.sizeToFit()
+      }
+    }
+
+    let articleLabel = UILabel(frame: CGRectMake(20, 220, self.view.frame.width - 40, 45))
+    articleLabel.font = UIFont.boldSystemFontOfSize(20)
+    articleLabel.numberOfLines = 2
+    articleLabel.text = artifact.name
+    articleLabel.sizeToFit()
+ 
+    if tagSection != nil {
+      return CGSizeMake(self.view.frame.width, articleDescriptionTextView.frame.height + articleLabel.frame.height + tagSection.view.frame.height + 335)
+    }
+    else {
+      return CGSizeMake(self.view.frame.width, articleDescriptionTextView.frame.height + articleLabel.frame.height + 333)
+    }
   }
   
   func collectionView(collectionView: UICollectionView,
