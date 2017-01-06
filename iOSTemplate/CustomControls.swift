@@ -99,7 +99,7 @@ class TeamFilterButton: UIButton {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    self.setTitle("NLL TV", forState: .Normal)
+    self.setTitle("All Teams", forState: .Normal)
     self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
   }
 }

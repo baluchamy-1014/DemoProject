@@ -34,7 +34,7 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
           if (error == nil) && (group != nil) {
             Artifact.getRelatedArtifacts(Int32(Int(group.id)), forProperty: group.propertyID, filter: [:], onCompletion: { (menuItems, error) in
               self.items = menuItems as! [AnyObject]
-              self.items.insert("NLL TV", atIndex: 0)
+              self.items.insert("All Teams", atIndex: 0)
               self.teamsTableView.reloadData()
             })
           }
@@ -80,7 +80,7 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
     
     let item = self.items[indexPath.row]
     if indexPath.row == 0 {
-      cell.textLabel?.text = "NLL TV"
+      cell.textLabel?.text = "All Teams"
       tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
     }
     else {
@@ -99,7 +99,7 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
       let selectedPath: NSIndexPath = self.teamsTableView.indexPathForCell(sender as! UITableViewCell)!
       self.selectedRow = selectedPath
       if selectedPath.row == 0 {
-        let item = "NLL TV"
+        let item = "All Teams"
         self.teamName = item
       }
       else {

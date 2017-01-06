@@ -131,7 +131,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   
   func teamFilterButtonRestoreTeamName() {
     if (selectedTeam == nil) {
-      teamFilterButton.setTitle("NLL TV", forState: .Normal)
+      teamFilterButton.setTitle("All Teams", forState: .Normal)
     }
     else {
       teamFilterButton.setTitle(selectedTeam, forState: .Normal)
@@ -157,7 +157,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     dispatch_async(dispatch_get_main_queue(), {
       if segue.identifier == "selectTeamSegue" {
         let teamsFilterListViewController: TeamsFilterListViewController = segue.sourceViewController as! TeamsFilterListViewController
-        self.teamID = (teamsFilterListViewController.teamName == "NLL TV") ? nil : teamsFilterListViewController.teamID
+        self.teamID = (teamsFilterListViewController.teamName == "All Teams") ? nil : teamsFilterListViewController.teamID
         self.selectedTeam = teamsFilterListViewController.teamName
         let currentController = self.pageController.viewControllers![0]
         if currentController.isKindOfClass(LatestViewController) {
