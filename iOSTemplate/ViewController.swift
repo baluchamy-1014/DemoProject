@@ -76,18 +76,12 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     case 1:
 //      print("page 1")
       teamFilterButtonRestoreTeamName()
-      if let _ = self.teamID {
-        (page2 as! LatestViewController).artifactID = self.teamID!
-      }
-      (page2 as! LatestViewController).loadData()
+      loadDataForCurrentPageIndex(sender.selectedSegmentIndex)
       self.pageController.setViewControllers([page2], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     case 2:
 //      print("page 2")
       teamFilterButtonRestoreTeamName()
-      if let _ = self.teamID {
-        (page3 as! StreamListViewController).artifactID = self.teamID!
-      }
-      (page3 as! StreamListViewController).loadData()
+      loadDataForCurrentPageIndex(sender.selectedSegmentIndex)
       self.pageController.setViewControllers([page3], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     default: break
     }
@@ -111,6 +105,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
     else {
       teamFilterButtonRestoreTeamName()
+      loadDataForCurrentPageIndex(currentIndex)
     }
     return pages[previousIndex]
   }
@@ -125,6 +120,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
     else {
       teamFilterButtonRestoreTeamName()
+      loadDataForCurrentPageIndex(currentIndex)
     }
     return pages[nextIndex]
   }
@@ -148,6 +144,21 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     teamFilterButton.setTitle("NLL TV", forState: .Normal)
     teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
     teamFilterButton.sizeToFit()
+  }
+  
+  func loadDataForCurrentPageIndex(currentPageIndex: Int) {
+    if currentPageIndex == 1 {
+      if let _ = self.teamID {
+        (page2 as! LatestViewController).artifactID = self.teamID!
+      }
+      (page2 as! LatestViewController).loadData()
+    }
+    else {
+      if let _ = self.teamID {
+        (page3 as! StreamListViewController).artifactID = self.teamID!
+      }
+      (page3 as! StreamListViewController).loadData()
+    }
   }
 
   @IBAction func unwindSegue(segue: UIStoryboardSegue) {
