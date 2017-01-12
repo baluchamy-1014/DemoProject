@@ -37,7 +37,7 @@ class MoreTableViewController: UITableViewController {
             Artifact.getRelatedArtifacts(Int32(Int(group.id)), forProperty: group.propertyID, filter: [:], onCompletion: { (tags, error) in
 //            print(tags)
             self.moreItems = tags as! [AnyObject]
-            self.moreItems.append("Sign In")
+            self.moreItems.insert("Sign In", atIndex: 0)
             self.moreItems.append("Feedback")
             self.tableView.reloadData()
             })
@@ -84,7 +84,7 @@ class MoreTableViewController: UITableViewController {
     } else {
       cell.textLabel!.text = moreItems[indexPath.row].name
     }
-    cell.textLabel?.font = UIFont.systemFontOfSize(12)
+    cell.textLabel?.font = UIFont.systemFontOfSize(17)
     cell.accessoryType = .DisclosureIndicator
     
     let backgroundColorView = SelectedCellBackgroundColorView(frame: cell.frame)
