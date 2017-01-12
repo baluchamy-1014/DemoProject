@@ -116,7 +116,7 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
       let collectionViewWidth = self.collectionView.bounds.size.width
       relatedCell.frame.size.width = collectionViewWidth
       
-      if let thumbnailURL = item.pictureURLwithWidth(105, height: 72) {
+      if let thumbnailURL = item.pictureURLwithWidth(320, height: 180) {
         relatedCell.imageView.setImageWithURL(thumbnailURL, placeholderImage: placeholderImage)
       } else {
         relatedCell.imageView.image = placeholderImage
