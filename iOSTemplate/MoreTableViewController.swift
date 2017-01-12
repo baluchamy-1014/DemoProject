@@ -15,7 +15,7 @@ class MoreTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     // TODO: theme
-    self.navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 64/255, blue: 65/255, alpha: 1.0)
+    self.navigationController?.navigationBar.barTintColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
     self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     
     tableView.separatorColor = UIColor(red: 37/255, green: 35/255, blue: 38/255, alpha: 1.0)
