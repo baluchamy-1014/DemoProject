@@ -99,7 +99,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
     let collectionViewWidth = artifactDetailCollectionView.bounds.size.width
     cell.frame.size.width = collectionViewWidth
     
-    if let imageURL = item.pictureURLwithWidth(105, height: 72) {
+    if let imageURL = item.pictureURLwithWidth(320, height: 180) {
       cell.imageView.setImageWithURL(imageURL, placeholderImage: placeholderImage)
     }
     else {
