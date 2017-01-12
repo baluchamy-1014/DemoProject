@@ -12,7 +12,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   var collectionView: UICollectionView!
   var items = [Artifact]()
   var artifactID: Int?
-  let placeholderImage = UIImage(named: "placeholder_nll_shield.jpg")
+  let placeholderImage = UIImage(named: "Placeholder_nll_logo")
   var refreshControl: CustomRefreshControl!
   var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
 
@@ -186,7 +186,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   func collectionView(collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    return CGSizeMake(collectionView.bounds.size.width, CGFloat(95))
+    return CGSizeMake(collectionView.bounds.size.width, CGFloat(120))
   }
   
   func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

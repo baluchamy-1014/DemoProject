@@ -30,10 +30,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     pages.append(page3)
 
     self.pageController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-    self.pageController.view.frame = CGRectMake(0, 45, self.view.frame.size.width, self.view.frame.size.height-45)
+    self.pageController.view.frame = CGRectMake(0, 29, self.view.frame.size.width, self.view.frame.size.height)
     self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     if self.pageController.viewControllers![0].isKindOfClass(ArticleViewController) {
-       teamFilterButton.setTitle("All Teams", forState: .Normal)
+       teamFilterButton.setTitle("NLL TV", forState: .Normal)
        teamFilterButton.setImage(nil, forState: .Normal)
     }
     else {
@@ -76,18 +76,12 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     case 1:
 //      print("page 1")
       teamFilterButtonRestoreTeamName()
-      if let _ = self.teamID {
-        (page2 as! LatestViewController).artifactID = self.teamID!
-      }
-      (page2 as! LatestViewController).loadData()
+      loadDataForCurrentPageIndex(sender.selectedSegmentIndex)
       self.pageController.setViewControllers([page2], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     case 2:
 //      print("page 2")
       teamFilterButtonRestoreTeamName()
-      if let _ = self.teamID {
-        (page3 as! StreamListViewController).artifactID = self.teamID!
-      }
-      (page3 as! StreamListViewController).loadData()
+      loadDataForCurrentPageIndex(sender.selectedSegmentIndex)
       self.pageController.setViewControllers([page3], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     default: break
     }
@@ -111,6 +105,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
     else {
       teamFilterButtonRestoreTeamName()
+      loadDataForCurrentPageIndex(currentIndex)
     }
     return pages[previousIndex]
   }
@@ -125,6 +120,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
     else {
       teamFilterButtonRestoreTeamName()
+      loadDataForCurrentPageIndex(currentIndex)
     }
     return pages[nextIndex]
   }
@@ -137,11 +133,32 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
       teamFilterButton.setTitle(selectedTeam, forState: .Normal)
     }
     teamFilterButton.setImage(UIImage(named: "expand_indicator"), forState: .Normal)
+    
+    teamFilterButton.sizeToFit()
+    teamFilterButton.imageEdgeInsets = UIEdgeInsetsMake(0, teamFilterButton.frame.size.width-10, 0, 0)
+    teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 10)
   }
   
   func resetTeamFilterButtonAllTeams() {
     teamFilterButton.setImage(nil, forState: .Normal)
-    teamFilterButton.setTitle("All Teams", forState: .Normal)
+    teamFilterButton.setTitle("NLL TV", forState: .Normal)
+    teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
+    teamFilterButton.sizeToFit()
+  }
+  
+  func loadDataForCurrentPageIndex(currentPageIndex: Int) {
+    if currentPageIndex == 1 {
+      if let _ = self.teamID {
+        (page2 as! LatestViewController).artifactID = self.teamID!
+      }
+      (page2 as! LatestViewController).loadData()
+    }
+    else {
+      if let _ = self.teamID {
+        (page3 as! StreamListViewController).artifactID = self.teamID!
+      }
+      (page3 as! StreamListViewController).loadData()
+    }
   }
 
   @IBAction func unwindSegue(segue: UIStoryboardSegue) {
@@ -167,6 +184,9 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         else {
           self.teamFilterButton.setTitle("All Team", forState: .Normal)
         }
+        self.teamFilterButton.sizeToFit()
+        self.teamFilterButton.imageEdgeInsets = UIEdgeInsetsMake(0, self.teamFilterButton.frame.size.width-10, 0, 0)
+        self.teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 10)
       }
     })
   }

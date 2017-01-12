@@ -29,7 +29,7 @@
                                 <segments>
                                     <segment title="Featured"/>
                                     <segment title="Latest"/>
-                                    <segment title="Live"/>
+                                    <segment title="Live Video"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="17p-Md-xGU"/>
@@ -39,11 +39,12 @@
                         <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="centerX" secondItem="TnR-Kh-l0W" secondAttribute="centerX" id="AqO-tf-Wo3"/>
+                            <constraint firstItem="TnR-Kh-l0W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="LaC-gy-fSO"/>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="TnR-Kh-l0W" secondAttribute="bottom" constant="17" id="N9q-n0-wuv"/>
-                            <constraint firstItem="TnR-Kh-l0W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PB9-g3-bC5"/>
-                            <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="57" id="fAG-af-1vq"/>
+                            <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="46" id="fAG-af-1vq"/>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qCp-l8-b5z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cL0-Eg-7hx" secondAttribute="bottom" constant="-10" id="y1C-bD-tD9"/>
+                            <constraint firstAttribute="trailing" secondItem="TnR-Kh-l0W" secondAttribute="trailing" constant="5" id="zWE-fi-tSA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I2A-JP-NPx">
@@ -51,6 +52,7 @@
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="q3K-eX-dEh" customClass="TeamFilterButton" customModule="NLL" customModuleProvider="target">
                             <rect key="frame" x="197" y="11" width="21" height="22"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" image="expand_indicator.png">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -103,12 +105,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t61-Aj-QuE">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t61-Aj-QuE">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="barTintColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem id="BBy-JY-Ebp">
+                                    <navigationItem title="Filter By Team" id="BBy-JY-Ebp">
                                         <barButtonItem key="leftBarButtonItem" style="done" systemItem="cancel" id="afg-KG-p7e">
                                             <connections>
                                                 <segue destination="S3Z-p9-OZP" kind="unwind" identifier="cancelSegue" unwindAction="unwindSegue:" id="jIZ-eO-e0z"/>
@@ -123,6 +128,7 @@
                             <constraint firstAttribute="trailing" secondItem="6ib-Hy-5OQ" secondAttribute="trailing" id="3hy-Jc-jLg"/>
                             <constraint firstItem="6ib-Hy-5OQ" firstAttribute="leading" secondItem="Xjq-tI-abs" secondAttribute="leading" id="KJS-jC-6aA"/>
                             <constraint firstItem="rAP-6F-grB" firstAttribute="top" secondItem="6ib-Hy-5OQ" secondAttribute="bottom" id="efz-dr-7zp"/>
+                            <constraint firstItem="t61-Aj-QuE" firstAttribute="width" secondItem="Xjq-tI-abs" secondAttribute="width" id="fbf-p9-6gH"/>
                             <constraint firstItem="6ib-Hy-5OQ" firstAttribute="top" secondItem="ym8-dz-9RP" secondAttribute="bottom" constant="45" id="fuU-Wj-QWs"/>
                         </constraints>
                     </view>
@@ -136,11 +142,11 @@
             </objects>
             <point key="canvasLocation" x="4187" y="390"/>
         </scene>
-        <!--Home-->
+        <!--Videos-->
         <scene sceneID="tJe-ZD-e3s">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Ad-x1-cLX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="NewsIcon.png" id="LQd-lt-23I"/>
+                    <tabBarItem key="tabBarItem" title="Videos" image="VideosIconInactive.png" selectedImage="VideosIconActive.png" id="LQd-lt-23I"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bHT-EN-isW">
@@ -166,6 +172,7 @@
                     <size key="freeformSize" width="600" height="600"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="tj1-Lb-Fao" customClass="CustomTabBar" customModule="NLL" customModuleProvider="target">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="6Ad-x1-cLX" kind="relationship" relationship="viewControllers" id="SWu-Zt-UWD"/>
@@ -389,7 +396,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="placeholder_nll_shield.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-f7-fsd">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Placeholder_nll_logo" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-f7-fsd">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
                                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -449,9 +456,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="NewsIcon.png" width="25" height="25"/>
+        <image name="Placeholder_nll_logo" width="21" height="7"/>
+        <image name="VideosIconActive.png" width="27" height="26"/>
+        <image name="VideosIconInactive.png" width="27" height="26"/>
         <image name="expand_indicator.png" width="21" height="7"/>
         <image name="no_live_feed.png" width="152" height="105"/>
-        <image name="placeholder_nll_shield.jpg" width="2304" height="1380"/>
     </resources>
 </document>

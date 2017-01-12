@@ -15,9 +15,8 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   var artifact: Artifact!
   var items: [Artifact] = Array()
   let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-  var headerHeight: CGFloat = 500.0
   var counter: Int = 0
-  let placeholderImage = UIImage(named: "placeholder_nll_shield.jpg")
+  let placeholderImage = UIImage(named: "Placeholder_nll_logo")
   
   init(artifact anArtifact: Artifact) {
     super.init(nibName:nil, bundle:nil)
@@ -69,7 +68,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
           if error == nil && relatedArtifact.tags() != nil && relatedArtifact.tags().count > 0 {
             let tag = relatedArtifact.tags()[0]
 
-            self.tagSection = TagSection(x: 0, y: self.headerHeight - 160, width: 299, height: 100, tags: relatedArtifact.tags())
+            self.tagSection = TagSection(x: 0, y: 340, width: 299, height: 100, tags: relatedArtifact.tags())
             self.tagSection.view.backgroundColor = UIColor.clearColor()
             self.tagSection.setupTags()
 
@@ -152,7 +151,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       reusableHeaderView = artifactDetailCollectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as UICollectionReusableView
       reusableHeaderView.backgroundColor = UIColor.whiteColor()
       
-      let headerImageView = UIImageView(frame: CGRectMake(0, 20, reusableHeaderView.frame.size.width, 200))
+      let headerImageView = UIImageView(frame: CGRectMake(0, 0, reusableHeaderView.frame.size.width, 200))
       headerImageView.userInteractionEnabled = true
       reusableHeaderView.addSubview(headerImageView)
       
@@ -169,32 +168,24 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       }
       
       // Todo: Create custom labels
-      let articleLabel = UILabel(frame: CGRectMake(10, 220, reusableHeaderView.frame.size.width-20, 26))
-      articleLabel.font = UIFont.boldSystemFontOfSize(24)
+      let articleLabel = UILabel(frame: CGRectMake(20, 220, reusableHeaderView.frame.size.width-40, 45))
+      articleLabel.font = UIFont.boldSystemFontOfSize(20)
+      articleLabel.numberOfLines = 2
       articleLabel.text = artifact.name
+      articleLabel.sizeToFit()
       reusableHeaderView.addSubview(articleLabel)
       
       let authorLabel = UILabel(frame: CGRectMake(10, 261, 200, 16))
       authorLabel.font = UIFont.systemFontOfSize(12)
       authorLabel.backgroundColor = UIColor.whiteColor()
       authorLabel.textColor = UIColor.blackColor()
-      reusableHeaderView.addSubview(authorLabel)
+      // hiding hiding author label
+      //      reusableHeaderView.addSubview(authorLabel)
       if let authorString = artifact.author() {
         authorLabel.text = authorString.name
       }
-    
-      let articleDescriptionTextView = UITextView(frame: CGRectMake(7, 300, reusableHeaderView.frame.size.width-20, 160))
-      articleDescriptionTextView.backgroundColor = UIColor.whiteColor()
-      articleDescriptionTextView.editable = false
-      articleDescriptionTextView.scrollEnabled = false
-      if let longDescriptionString = artifact.longDescription
-      {
-        articleDescriptionTextView.text = longDescriptionString
-      }
-      articleDescriptionTextView.sizeToFit()
-      reusableHeaderView.addSubview(articleDescriptionTextView)
       
-      let dateLabel = AddedAtLabel(frame: CGRectMake(reusableHeaderView.frame.width - 70, 261, 60, 16))
+      let dateLabel = AddedAtLabel(frame: CGRectMake(20, articleLabel.frame.height + 230, 160, 16))
       dateLabel.font = UIFont.systemFontOfSize(12)
       dateLabel.backgroundColor = UIColor.whiteColor()
       if let publishedAtString = artifact.publishedAt {
@@ -202,27 +193,41 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
       }
       reusableHeaderView.addSubview(dateLabel)
 
+      let articleDescriptionTextView = UITextView(frame: CGRectMake(16, dateLabel.frame.origin.y + dateLabel.frame.height + 10, reusableHeaderView.frame.size.width - 32, 0))
+      articleDescriptionTextView.backgroundColor = UIColor.whiteColor()
+      articleDescriptionTextView.font = UIFont.systemFontOfSize(15)
+      articleDescriptionTextView.editable = false
+      articleDescriptionTextView.scrollEnabled = false
+      if let longDescriptionString = artifact.longDescription
+      {
+        articleDescriptionTextView.text = longDescriptionString
+        if articleDescriptionTextView.text != "" {
+          articleDescriptionTextView.sizeToFit()
+        }
+      }
+      reusableHeaderView.addSubview(articleDescriptionTextView)
+
       if tagSection != nil {
         reusableHeaderView.addSubview(tagSection.view)
       }
       
-      // TODO: tags
       if counter != 0 {
-      let relatedVideosLabel = UILabel(frame: CGRectMake(10, reusableHeaderView.frame.size.height-50, 400, 26))
+      let relatedVideosLabel = UILabel(frame: CGRectMake(20, reusableHeaderView.frame.size.height-40, 400, 26))
       relatedVideosLabel.font = UIFont.boldSystemFontOfSize(24)
       relatedVideosLabel.textColor = UIColor.blackColor()
       relatedVideosLabel.text = "Related Content"
       reusableHeaderView.addSubview(relatedVideosLabel)
       
-      let horizontalLine = UIView(frame: CGRectMake(0, reusableHeaderView.frame.size.height-10, self.view.frame.size.width, 0.5))
+      let horizontalLine = UIView(frame: CGRectMake(0, reusableHeaderView.frame.size.height, self.view.frame.size.width, 0.5))
       // TODO: theme
       horizontalLine.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
       reusableHeaderView.addSubview(horizontalLine)
       }
       counter += 1
       reusableHeaderView.backgroundColor = UIColor.whiteColor()
-      
-      headerHeight = articleDescriptionTextView.frame.height + 450
+      if tagSection != nil {
+        tagSection.view.frame.origin.y = articleDescriptionTextView.frame.height + articleLabel.frame.height + 271
+      }
       return reusableHeaderView
     }
     return reusableHeaderView
@@ -230,14 +235,34 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   
   func collectionView(collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, referenceSizeForHeaderInSection section: Int) -> CGSize
   {
-      return CGSizeMake(self.view.frame.width, headerHeight)
+    let articleDescriptionTextView = UITextView(frame: CGRectMake(41, 220, self.view.frame.width - 32, 0))
+    articleDescriptionTextView.font = UIFont.systemFontOfSize(15)
+    if let artifactDescription = artifact.longDescription {
+      articleDescriptionTextView.text = artifactDescription
+      if articleDescriptionTextView.text != "" {
+        articleDescriptionTextView.sizeToFit()
+      }
+    }
+
+    let articleLabel = UILabel(frame: CGRectMake(20, 220, self.view.frame.width - 40, 45))
+    articleLabel.font = UIFont.boldSystemFontOfSize(20)
+    articleLabel.numberOfLines = 2
+    articleLabel.text = artifact.name
+    articleLabel.sizeToFit()
+ 
+    if tagSection != nil {
+      return CGSizeMake(self.view.frame.width, articleDescriptionTextView.frame.height + articleLabel.frame.height + tagSection.view.frame.height + 335)
+    }
+    else {
+      return CGSizeMake(self.view.frame.width, articleDescriptionTextView.frame.height + articleLabel.frame.height + 333)
+    }
   }
   
   func collectionView(collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
-    return CGSizeMake(collectionView.bounds.size.width, CGFloat(100))
+    return CGSizeMake(collectionView.bounds.size.width, CGFloat(120))
   }
   
   func articleTapped(recognizer: UITapGestureRecognizer) {

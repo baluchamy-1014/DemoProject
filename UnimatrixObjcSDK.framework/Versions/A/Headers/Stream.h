@@ -17,9 +17,10 @@
 
 @interface Stream : Resource
 
-@property (nonatomic, strong) NSString     *name;
-@property (nonatomic, strong) NSString     *uuid;
-@property (nonatomic, strong) NSString     *state;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *uuid;
+@property (nonatomic, strong) NSString *state;
+@property (nonatomic, strong) NSString *hostURL;
 
 + (Attributes *)attributes;
 + (void)getStream:(NSString *)streamID onCompletion:(APIQueryCompletionBlock)callback;

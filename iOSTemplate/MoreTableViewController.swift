@@ -15,7 +15,7 @@ class MoreTableViewController: UITableViewController {
   
   override func viewDidLoad() {
     // TODO: theme
-    self.navigationController?.navigationBar.barTintColor = UIColor(red: 63/255, green: 64/255, blue: 65/255, alpha: 1.0)
+    self.navigationController?.navigationBar.barTintColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
     self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
     
     tableView.separatorColor = UIColor(red: 37/255, green: 35/255, blue: 38/255, alpha: 1.0)
@@ -37,7 +37,7 @@ class MoreTableViewController: UITableViewController {
             Artifact.getRelatedArtifacts(Int32(Int(group.id)), forProperty: group.propertyID, filter: [:], onCompletion: { (tags, error) in
 //            print(tags)
             self.moreItems = tags as! [AnyObject]
-            self.moreItems.append("Sign In")
+            self.moreItems.insert("Sign In", atIndex: 0)
             self.moreItems.append("Feedback")
             self.tableView.reloadData()
             })
@@ -84,7 +84,7 @@ class MoreTableViewController: UITableViewController {
     } else {
       cell.textLabel!.text = moreItems[indexPath.row].name
     }
-    cell.textLabel?.font = UIFont.systemFontOfSize(12)
+    cell.textLabel?.font = UIFont.systemFontOfSize(17)
     cell.accessoryType = .DisclosureIndicator
     
     let backgroundColorView = SelectedCellBackgroundColorView(frame: cell.frame)
