@@ -25,7 +25,8 @@ class SignUpController: UIViewController {
   var successViewController: SignUpSuccessViewController?
   
   var successView: UIView?
-  
+  let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
   override func viewDidLoad() {
     self.activityIndicator.hidden = true
     self.signUpButton.enabled = false
@@ -67,6 +68,7 @@ class SignUpController: UIViewController {
             if (error == nil) {
               if let _ = response as? SRUser {
                 if (Session.sharedSession().isValid()) {
+                  self.appDelegate.keymakerOrganizer.saveKeymakerToken(Session.sharedSession().accessToken)
                   self.clearTextFields()
                   self.successViewController = SignUpSuccessViewController(nibName: "SignUpSuccess", bundle: nil)
                   self.presentViewController(self.successViewController!, animated: true, completion: nil)

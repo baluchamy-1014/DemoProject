@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   var viewController: UITabBarController?
+  let keymakerOrganizer = KeymakerOrganizer()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
@@ -29,10 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let environment    = appConfiguration["AppEnvironment"] as! NSString
     let configurations = appConfiguration["Configurations"] as! NSDictionary
     let configValues   = configurations[environment]! as! NSDictionary
-    
+
     Session.sharedSession().clientID = configValues["clientID"] as! String
     Session.sharedSession().clientSecret = configValues["clientSecret"] as! String
     Session.sharedSession().propertyCode = appConfiguration["propertyCode"] as! String
+
+    if let value: String = keymakerOrganizer.fileContents()?.objectForKey("token") as? String {
+      Session.sharedSession().accessToken = value;
+    }
+
     return true
   
   }
@@ -71,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return UIInterfaceOrientationMask.Portrait;
     }
   }
+
 
 }
 

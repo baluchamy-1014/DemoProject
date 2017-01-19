@@ -58,6 +58,7 @@ class SignInController: UIViewController {
       if ((session) != nil) {
         self.invalidLabel.text = ""
         if (session.isValid()) {
+          self.appDelegate.keymakerOrganizer.saveKeymakerToken(Session.sharedSession().accessToken)
           self.containerController!.presentViewController(self.alertViewController!, animated: true, completion: nil)
         } else {
           self.invalidLabel.text = "The username or password is incorrect."
