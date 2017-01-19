@@ -11,13 +11,13 @@
 		6209A2E41DC398EC00B278B9 /* VideoPlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */; };
 		620C89F01DF7242100DAC962 /* LatestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620C89EF1DF7242100DAC962 /* LatestViewController.swift */; };
 		620C89F21DF726B400DAC962 /* StreamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620C89F11DF726B400DAC962 /* StreamListViewController.swift */; };
+		6215C3CA1E2E8984003BAD0F /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6215C3C91E2E8984003BAD0F /* UnimatrixObjcSDK.framework */; };
 		621DD25D1DD61A9600D87855 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25C1DD61A9600D87855 /* UserController.swift */; };
 		621DD25F1DD62CBF00D87855 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25E1DD62CBF00D87855 /* SignInController.swift */; };
 		621DD2611DD62CD200D87855 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD2601DD62CD200D87855 /* SignUpController.swift */; };
 		623068C11E26EE1F005C7CBE /* BoxxspringVideoPlayerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 623068BD1E26EE1F005C7CBE /* BoxxspringVideoPlayerSDK.bundle */; };
 		623068C21E26EE1F005C7CBE /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623068BE1E26EE1F005C7CBE /* BoxxspringVideoPlayerSDK.framework */; };
 		623068C31E26EE1F005C7CBE /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623068BF1E26EE1F005C7CBE /* UnimatrixAnalyticsObjcSDK.framework */; };
-		623068C41E26EE1F005C7CBE /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623068C01E26EE1F005C7CBE /* UnimatrixObjcSDK.framework */; };
 		6253BDCD1DE34F58001CE859 /* SignUpSuccess.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */; };
 		6296FA5C1DD4E7170096B04D /* SignIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5B1DD4E7170096B04D /* SignIn.xib */; };
 		6296FA601DD50EFB0096B04D /* SignUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5F1DD50EFB0096B04D /* SignUp.xib */; };
@@ -105,6 +105,7 @@
 		78E31EAA1D9B443A00CB59D3 /* NewsIconInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E31EA51D9B443A00CB59D3 /* NewsIconInactive.png */; };
 		78E31EAB1D9B443A00CB59D3 /* NewsIconInactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E31EA61D9B443A00CB59D3 /* NewsIconInactive@2x.png */; };
 		78E31EDE1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E31EDD1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift */; };
+		CA473A34D224D5536EEC11F7 /* KeymakerOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,13 +113,13 @@
 		6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPlayerController.xib; sourceTree = "<group>"; };
 		620C89EF1DF7242100DAC962 /* LatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestViewController.swift; sourceTree = "<group>"; };
 		620C89F11DF726B400DAC962 /* StreamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamListViewController.swift; sourceTree = "<group>"; };
+		6215C3C91E2E8984003BAD0F /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		621DD25C1DD61A9600D87855 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		621DD25E1DD62CBF00D87855 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		621DD2601DD62CD200D87855 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		623068BD1E26EE1F005C7CBE /* BoxxspringVideoPlayerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BoxxspringVideoPlayerSDK.bundle; sourceTree = "<group>"; };
 		623068BE1E26EE1F005C7CBE /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
 		623068BF1E26EE1F005C7CBE /* UnimatrixAnalyticsObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixAnalyticsObjcSDK.framework; sourceTree = "<group>"; };
-		623068C01E26EE1F005C7CBE /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpSuccess.xib; sourceTree = "<group>"; };
 		6296FA5B1DD4E7170096B04D /* SignIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignIn.xib; sourceTree = "<group>"; };
 		6296FA5F1DD50EFB0096B04D /* SignUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUp.xib; sourceTree = "<group>"; };
@@ -209,6 +210,7 @@
 		78E31EA61D9B443A00CB59D3 /* NewsIconInactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewsIconInactive@2x.png"; path = "iOSTemplate/Assets.xcassets/NewsIconInactive@2x.png"; sourceTree = "<group>"; };
 		78E31EB11D9C7BA100CB59D3 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = bridge.h; path = iOSTemplate/bridge.h; sourceTree = "<group>"; };
 		78E31EDD1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtifactDetailViewController.swift; sourceTree = "<group>"; };
+		CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeymakerOrganizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +220,7 @@
 			files = (
 				623068C31E26EE1F005C7CBE /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
 				623068C21E26EE1F005C7CBE /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
-				623068C41E26EE1F005C7CBE /* UnimatrixObjcSDK.framework in Frameworks */,
+				6215C3CA1E2E8984003BAD0F /* UnimatrixObjcSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,10 +356,10 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
+				6215C3C91E2E8984003BAD0F /* UnimatrixObjcSDK.framework */,
 				623068BD1E26EE1F005C7CBE /* BoxxspringVideoPlayerSDK.bundle */,
 				623068BE1E26EE1F005C7CBE /* BoxxspringVideoPlayerSDK.framework */,
 				623068BF1E26EE1F005C7CBE /* UnimatrixAnalyticsObjcSDK.framework */,
-				623068C01E26EE1F005C7CBE /* UnimatrixObjcSDK.framework */,
 				788C43A21DA46D1000F342B9 /* Assets */,
 				78E31EB11D9C7BA100CB59D3 /* bridge.h */,
 				78E31E731D99F3F400CB59D3 /* iOSTemplate */,
@@ -384,6 +386,7 @@
 				78E31E7D1D99F3F400CB59D3 /* LaunchScreen.storyboard */,
 				78E31E801D99F3F400CB59D3 /* Info.plist */,
 				6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */,
+				CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */,
 			);
 			path = iOSTemplate;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				78E31E891D9A01DE00CB59D3 /* CustomControls.swift in Sources */,
 				787867D21DBD557800958C1B /* MoreTableViewController.swift in Sources */,
 				784AFE061DADC18800FA157B /* ArtifactListViewController.swift in Sources */,
+				CA473A34D224D5536EEC11F7 /* KeymakerOrganizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
