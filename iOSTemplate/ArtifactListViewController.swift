@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
+class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate {
   var collectionView: UICollectionView!
   var items = [Artifact]()
   var artifactID: Int?
@@ -80,6 +80,31 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
       loadAllTeams()
     }
   }
+  
+  func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    var params = NSDictionary()
+    if (artifactID != nil) {
+      params = ["type_name.in": self.artifactTypes(), "parent_id": artifactID!, "provider": "Boxxspring"]
+    }
+    else {
+      params = ["type_name.in": self.artifactTypes(), "provider": "Boxxspring"]
+    }
+    
+    let actualPosition = scrollView.panGestureRecognizer.translationInView(scrollView.superview)
+    if (actualPosition.y < 0){
+      let artifact = items[items.count-1]
+      Session.sharedSession().getProperty { (aProperty, error) in
+        Artifact.queryPrevious(params as [NSObject : AnyObject], count: 20, offset: 0, reference: artifact, onCompletion: { (artifactObjects, error) in
+          print(artifactObjects)
+          if error == nil {
+            let newStories: [Artifact] = (artifactObjects as! Array)
+            self.items = self.items + newStories
+            self.collectionView.reloadData()
+          }
+        })
+      }
+    }
+  }
 
   func loadAllTeams() {
     let params = ["type_name.in": artifactTypes(), "provider": "Boxxspring"]
@@ -102,7 +127,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   }
   
   func filterTeams(atagID:Int) {
-    // if no filter/all teams, pass params, otherwise, pass params2
+    artifactID = atagID
     let params = ["type_name.in": self.artifactTypes(), "parent_id": atagID, "provider": "Boxxspring"]
     // latest w/ both video and article
 
@@ -149,7 +174,6 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     let item = self.items[indexPath.row]
     cell.backgroundColor = UIColor.whiteColor()
     
-//    print(item)
     let collectionViewWidth = self.collectionView.bounds.size.width
     cell.frame.size.width = collectionViewWidth
     
