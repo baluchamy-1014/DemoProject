@@ -95,7 +95,6 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
       let artifact = items[items.count-1]
       Session.sharedSession().getProperty { (aProperty, error) in
         Artifact.queryPrevious(params as [NSObject : AnyObject], count: 20, offset: 0, reference: artifact, onCompletion: { (artifactObjects, error) in
-          print(artifactObjects)
           if error == nil {
             let newStories: [Artifact] = (artifactObjects as! Array)
             self.items = self.items + newStories
