@@ -110,7 +110,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     let params = ["type_name.in": artifactTypes(), "provider": "Boxxspring"]
     Session.sharedSession().getProperty { (aProperty, error) in
       if (error == nil) {
-        Artifact.query(params as [NSObject : AnyObject], propertyID: Int32(Int(aProperty.id)), count: 50, offset: 0, onCompletion: { (artifacts, error) in
+        Artifact.query(params as [NSObject : AnyObject], propertyID: Int32(Int(aProperty.id)), count: 20, offset: 0, onCompletion: { (artifacts, error) in
           if (error == nil) {
             self.items = artifacts as! [Artifact]
             self.collectionView.reloadData()
@@ -133,7 +133,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
 
     Session.sharedSession().getProperty { (aProperty, error) in
       if (error == nil) {
-        Artifact.query(params as [NSObject : AnyObject], propertyID: Int32(Int(aProperty.id)), count: 50, offset: 0, onCompletion: { (artifacts, error) in
+        Artifact.query(params as [NSObject : AnyObject], propertyID: Int32(Int(aProperty.id)), count: 20, offset: 0, onCompletion: { (artifacts, error) in
           if (error == nil) {
             self.items = artifacts as! [Artifact]
             self.collectionView.reloadData()
