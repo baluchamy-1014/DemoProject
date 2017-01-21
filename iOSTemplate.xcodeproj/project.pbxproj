@@ -30,6 +30,7 @@
 		780B686E1DC7CC62007F206F /* expand_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686B1DC7CC62007F206F /* expand_indicator.png */; };
 		780B686F1DC7CC62007F206F /* expand_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686C1DC7CC62007F206F /* expand_indicator@2x.png */; };
 		780B68701DC7CC62007F206F /* expand_indicator@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686D1DC7CC62007F206F /* expand_indicator@3x.png */; };
+		7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */; };
 		782D4DBD1E0A08520078FEC1 /* Placeholder_nll_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */; };
 		782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */; };
 		782D4DBF1E0A08520078FEC1 /* Placeholder_nll_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBC1E0A08520078FEC1 /* Placeholder_nll_logo@3x.png */; };
@@ -132,6 +133,7 @@
 		780B686B1DC7CC62007F206F /* expand_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expand_indicator.png; path = iOSTemplate/Assets.xcassets/expand_indicator.png; sourceTree = "<group>"; };
 		780B686C1DC7CC62007F206F /* expand_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expand_indicator@2x.png"; path = "iOSTemplate/Assets.xcassets/expand_indicator@2x.png"; sourceTree = "<group>"; };
 		780B686D1DC7CC62007F206F /* expand_indicator@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expand_indicator@3x.png"; path = "iOSTemplate/Assets.xcassets/expand_indicator@3x.png"; sourceTree = "<group>"; };
+		7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SignInSignUpBGImage.png; path = iOSTemplate/Assets.xcassets/SignInSignUpBGImage.png; sourceTree = "<group>"; };
 		782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder_nll_logo.png; path = iOSTemplate/Assets.xcassets/Placeholder_nll_logo.png; sourceTree = "<group>"; };
 		782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder_nll_logo@2x.png"; path = "iOSTemplate/Assets.xcassets/Placeholder_nll_logo@2x.png"; sourceTree = "<group>"; };
 		782D4DBC1E0A08520078FEC1 /* Placeholder_nll_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder_nll_logo@3x.png"; path = "iOSTemplate/Assets.xcassets/Placeholder_nll_logo@3x.png"; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		788C43A21DA46D1000F342B9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */,
 				782D4DC81E0C97040078FEC1 /* PlayButton.png */,
 				782D4DC91E0C97040078FEC1 /* PlayButton@2x.png */,
 				782D4DCA1E0C97040078FEC1 /* PlayButton@3x.png */,
@@ -460,6 +463,7 @@
 				78B3120A1DBE80C60064EE88 /* slider_bar.png in Resources */,
 				782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */,
 				784C3FF71DB9955C001AECD3 /* VideosIconActive@2x.png in Resources */,
+				7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */,
 				784C3FEF1DB8348D001AECD3 /* LargeCollectionViewCell.xib in Resources */,
 				782E3AA51DF9250A00FCF5CC /* slider_trans@2x.png in Resources */,
 				6209A2E41DC398EC00B278B9 /* VideoPlayerController.xib in Resources */,
