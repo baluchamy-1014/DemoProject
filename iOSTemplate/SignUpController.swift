@@ -12,9 +12,9 @@ import UIKit
 
 class SignUpController: UIViewController {
   
-  @IBOutlet weak var emailTextField: UITextField!
-  @IBOutlet weak var passwordTextField: UITextField!
-  @IBOutlet weak var passwordConfirmationTextField: UITextField!
+  @IBOutlet weak var emailTextField: SignInUpTextField!
+  @IBOutlet weak var passwordTextField: SignInUpTextField!
+  @IBOutlet weak var passwordConfirmationTextField: SignInUpTextField!
   
   @IBOutlet weak var emailErrorLabel: UILabel!
   @IBOutlet weak var passwordErrorLabel: UILabel!
@@ -37,6 +37,12 @@ class SignUpController: UIViewController {
                                                      object: nil)
 
     super.viewDidLoad()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    emailTextField.createBottomBorder()
+    passwordTextField.createBottomBorder()
+    passwordConfirmationTextField.createBottomBorder()
   }
 
   override func viewWillDisappear(animated: Bool) {
