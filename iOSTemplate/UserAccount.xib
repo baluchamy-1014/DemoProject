@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserController" customModule="NLL" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImageView" destination="jwO-g7-b18" id="4cr-nH-3RM"/>
                 <outlet property="formView" destination="VPt-b1-sFN" id="rNp-wf-gz5"/>
                 <outlet property="signInButton" destination="bnH-bM-CId" id="sxO-uK-PLd"/>
                 <outlet property="signUpButton" destination="vp9-F9-JoA" id="iSR-f4-dd6"/>
@@ -18,7 +19,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="top" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hVQ-tO-77I">
+                <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="hVQ-tO-77I">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bnH-bM-CId" customClass="UserScreenButton" customModule="NLL" customModuleProvider="target">
@@ -59,7 +60,17 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VPt-b1-sFN">
                     <rect key="frame" x="0.0" y="36" width="600" height="564"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SignInSignUpBGImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="jwO-g7-b18">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="564"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.3157961755" green="0.67762881519999996" blue="0.12838841679999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="jwO-g7-b18" firstAttribute="centerY" secondItem="VPt-b1-sFN" secondAttribute="centerY" constant="125" id="Tva-sw-kmw"/>
+                        <constraint firstItem="jwO-g7-b18" firstAttribute="centerX" secondItem="VPt-b1-sFN" secondAttribute="centerX" id="fRF-Tx-z3V"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,9 +81,13 @@
                 <constraint firstAttribute="trailing" secondItem="VPt-b1-sFN" secondAttribute="trailing" id="fYi-h1-YBr"/>
                 <constraint firstAttribute="bottom" secondItem="VPt-b1-sFN" secondAttribute="bottom" id="grH-Aq-7At"/>
                 <constraint firstItem="VPt-b1-sFN" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="18" id="oHR-HS-mnb"/>
+                <constraint firstItem="VPt-b1-sFN" firstAttribute="top" secondItem="hVQ-tO-77I" secondAttribute="bottom" constant="1" id="rJ8-yG-qWa"/>
                 <constraint firstItem="hVQ-tO-77I" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="scZ-yf-9p3"/>
                 <constraint firstItem="VPt-b1-sFN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="u6l-Pk-8N2"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="SignInSignUpBGImage.png" width="380" height="670"/>
+    </resources>
 </document>

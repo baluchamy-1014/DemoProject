@@ -13,6 +13,7 @@ class UserController: UIViewController {
   @IBOutlet weak var formView: UIView!
   @IBOutlet weak var signInButton: UserScreenButton!
   @IBOutlet weak var signUpButton: UserScreenButton!
+  @IBOutlet weak var backgroundImageView: UIImageView!
   
   let signInController: SignInController
   let signUpController: SignUpController
@@ -46,15 +47,27 @@ class UserController: UIViewController {
   @IBAction func switchToSignUpView(sender: AnyObject) {
     self.removeSubviews()
     signUpController.view.frame = CGRectMake(0, 0, self.formView.bounds.size.width, self.formView.bounds.size.height)
+    self.formView.addSubview(backgroundImageView)
+    self.addBackgroundImageViewConstraints()
     self.formView.addSubview(signUpController.view)
+
     self.signInButton.selected = false
     self.signUpButton.selected = true
   }
   @IBAction func switchToSignInView(sender: AnyObject) {
     self.removeSubviews()
+    self.formView.addSubview(backgroundImageView)
+    self.addBackgroundImageViewConstraints()
     self.formView.addSubview(signInController.view)
+    
     self.signInButton.selected = true
     self.signUpButton.selected = false
+  }
+  
+  func addBackgroundImageViewConstraints() {
+    backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: formView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: formView, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 125))
   }
   
   private func removeSubviews() {

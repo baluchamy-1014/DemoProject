@@ -23,9 +23,6 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSB-Q6-uaG">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="SignInSignUpBGImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pnn-d1-jXk">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a56-KG-qkw">
                             <rect key="frame" x="30" y="20" width="500" height="24"/>
                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -99,7 +96,7 @@
                             </state>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="qIj-33-6P3" firstAttribute="top" secondItem="9En-4K-CcF" secondAttribute="bottom" constant="8" symbolic="YES" placeholder="YES" id="12V-SY-3VF"/>
                         <constraint firstItem="xpZ-qz-49k" firstAttribute="trailing" secondItem="zRb-8d-l95" secondAttribute="trailing" id="2LY-aH-Gua"/>
@@ -107,7 +104,6 @@
                         <constraint firstItem="a56-KG-qkw" firstAttribute="leading" secondItem="xpZ-qz-49k" secondAttribute="leading" id="85b-Xn-Dg1"/>
                         <constraint firstItem="iES-Xm-tlw" firstAttribute="top" secondItem="qIj-33-6P3" secondAttribute="bottom" constant="8" symbolic="YES" id="9Nh-oQ-u8f"/>
                         <constraint firstItem="a56-KG-qkw" firstAttribute="top" secondItem="pSB-Q6-uaG" secondAttribute="top" constant="50" id="9yk-Xi-teM"/>
-                        <constraint firstItem="Pnn-d1-jXk" firstAttribute="width" secondItem="pSB-Q6-uaG" secondAttribute="width" id="AAw-D6-bYB"/>
                         <constraint firstAttribute="trailing" secondItem="xpZ-qz-49k" secondAttribute="trailing" constant="30" id="An0-av-0tg"/>
                         <constraint firstItem="a56-KG-qkw" firstAttribute="leading" secondItem="pSB-Q6-uaG" secondAttribute="leading" constant="30" id="FOC-sD-tCG"/>
                         <constraint firstItem="a56-KG-qkw" firstAttribute="centerX" secondItem="pSB-Q6-uaG" secondAttribute="centerX" id="GdA-7g-rNk"/>
@@ -129,7 +125,6 @@
                         <constraint firstItem="9En-4K-CcF" firstAttribute="top" secondItem="zRb-8d-l95" secondAttribute="bottom" constant="8" symbolic="YES" id="gqE-qM-Wxg"/>
                         <constraint firstAttribute="trailing" secondItem="zRb-8d-l95" secondAttribute="trailing" constant="30" id="knb-kx-qK4"/>
                         <constraint firstItem="zRb-8d-l95" firstAttribute="top" secondItem="xpZ-qz-49k" secondAttribute="bottom" constant="24" id="pUD-Bm-gRP"/>
-                        <constraint firstItem="Pnn-d1-jXk" firstAttribute="height" secondItem="pSB-Q6-uaG" secondAttribute="height" id="qv9-vB-Wuo"/>
                         <constraint firstItem="OqI-Nt-xhD" firstAttribute="centerX" secondItem="pSB-Q6-uaG" secondAttribute="centerX" id="vcy-3a-c3j"/>
                         <constraint firstItem="qIj-33-6P3" firstAttribute="trailing" secondItem="iES-Xm-tlw" secondAttribute="trailing" id="wlN-ou-qQd"/>
                     </constraints>
@@ -151,7 +146,7 @@
                     </variation>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="pSB-Q6-uaG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="LPO-sX-rRR"/>
                 <constraint firstAttribute="trailing" secondItem="pSB-Q6-uaG" secondAttribute="trailing" id="fvH-qX-T9H"/>
@@ -160,7 +155,4 @@
             </constraints>
         </view>
     </objects>
-    <resources>
-        <image name="SignInSignUpBGImage.png" width="380" height="670"/>
-    </resources>
 </document>
