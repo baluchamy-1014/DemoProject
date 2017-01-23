@@ -23,7 +23,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSB-Q6-uaG">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xpZ-qz-49k" customClass="SignInUpTextField" customModule="NLL" customModuleProvider="target">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xpZ-qz-49k" customClass="SignInUpTextField" customModule="NLL" customModuleProvider="target">
                             <rect key="frame" x="30" y="49" width="314" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -39,7 +39,7 @@
                                 </mask>
                             </variation>
                         </textField>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zRb-8d-l95" customClass="SignInUpTextField" customModule="NLL" customModuleProvider="target">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Your Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zRb-8d-l95" customClass="SignInUpTextField" customModule="NLL" customModuleProvider="target">
                             <rect key="frame" x="30" y="106" width="314" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
