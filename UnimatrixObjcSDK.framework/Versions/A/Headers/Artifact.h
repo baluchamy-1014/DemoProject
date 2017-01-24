@@ -95,6 +95,13 @@ typedef void (^APIQueryCompletionBlock) (id response, NSError *error);
             reference:(id)reference
          onCompletion:(APIQueryCompletionBlock) callback;
 
+
+// POST methods
++ (void) create:(NSDictionary *)params
+    forProperty:(int)propertyID
+withAccessToken:(NSString *)accessToken
+   onCompletion:(APIQueryCompletionBlock)callback;
+
 @end
 
 #endif /* Artifact_h */
