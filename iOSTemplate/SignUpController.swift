@@ -17,6 +17,7 @@ class SignUpController: UIViewController {
   @IBOutlet weak var passwordConfirmationTextField: SignInUpTextField!
   
   @IBOutlet weak var emailErrorLabel: UILabel!
+  @IBOutlet weak var passwordCharErrorLabel: UILabel!
   @IBOutlet weak var passwordErrorLabel: UILabel!
   
   @IBOutlet weak var signUpButton: SignInUpButton!
@@ -31,11 +32,10 @@ class SignUpController: UIViewController {
     self.activityIndicator.hidden = true
     self.signUpButton.enabled = false
     
-    NSNotificationCenter.defaultCenter().addObserver(self,
-                                                     selector: #selector(SignUpController.textFieldDidChange(_:)),
-                                                     name: UITextFieldTextDidChangeNotification,
-                                                     object: nil)
-
+    self.emailTextField.addTarget(self, action: #selector(SignUpController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingDidEnd)
+    self.passwordTextField.addTarget(self, action: #selector(SignUpController.textFieldDidChange(_:)), forControlEvents: .EditingChanged)
+    self.passwordConfirmationTextField.addTarget(self, action: #selector(SignUpController.textFieldDidChange(_:)), forControlEvents: .EditingChanged)
+    
     super.viewDidLoad()
   }
   
@@ -49,13 +49,38 @@ class SignUpController: UIViewController {
     clearErrorLabels()
   }
   
-  func textFieldDidChange(sender: AnyObject){
+  func textFieldDidChange(textField: UITextField){
     if EmailValidator().isValidEmail(self.emailTextField.text!) && passwordLengthMet() && (passwordsMatch())
     {
       self.signUpButton.enabled = true
     }
     else {
       self.signUpButton.enabled = false
+      switch textField.tag {
+      case 0:
+        if !EmailValidator().isValidEmail(self.emailTextField.text!) {
+          self.emailErrorLabel.text = "Email is invalid"
+        }
+        else {
+          self.emailErrorLabel.text = ""
+        }
+      case 1:
+        if !passwordLengthMet() {
+          self.passwordCharErrorLabel.text = "Password should be at least 8 characters"
+        }
+        else {
+          self.passwordCharErrorLabel.text = ""
+        }        
+      case 2:
+        if !passwordsMatch() {
+          self.passwordErrorLabel.text = "Password don't match"
+        }
+        else {
+          self.passwordErrorLabel.text = ""
+        }
+      default:
+        break
+      }
     }
   }
   
@@ -115,6 +140,7 @@ class SignUpController: UIViewController {
   
   private func clearErrorLabels() {
     self.emailErrorLabel.text = ""
+    self.passwordCharErrorLabel.text = ""
     self.passwordErrorLabel.text = ""
   }
   
