@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="backgroundImageView" destination="jwO-g7-b18" id="4cr-nH-3RM"/>
                 <outlet property="formView" destination="VPt-b1-sFN" id="rNp-wf-gz5"/>
+                <outlet property="selectionView" destination="hVQ-tO-77I" id="L0y-hT-qua"/>
                 <outlet property="signInButton" destination="bnH-bM-CId" id="sxO-uK-PLd"/>
                 <outlet property="signUpButton" destination="vp9-F9-JoA" id="iSR-f4-dd6"/>
                 <outlet property="view" destination="iN0-l3-epB" id="DAE-z8-QCC"/>
@@ -68,8 +69,9 @@
                     </subviews>
                     <color key="backgroundColor" red="0.3157961755" green="0.67762881519999996" blue="0.12838841679999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="jwO-g7-b18" firstAttribute="centerY" secondItem="VPt-b1-sFN" secondAttribute="centerY" constant="125" id="Tva-sw-kmw"/>
-                        <constraint firstItem="jwO-g7-b18" firstAttribute="centerX" secondItem="VPt-b1-sFN" secondAttribute="centerX" id="fRF-Tx-z3V"/>
+                        <constraint firstAttribute="bottom" secondItem="jwO-g7-b18" secondAttribute="bottom" id="1SE-82-uzr"/>
+                        <constraint firstItem="jwO-g7-b18" firstAttribute="leading" secondItem="VPt-b1-sFN" secondAttribute="leading" id="XUM-ER-hmY"/>
+                        <constraint firstAttribute="trailing" secondItem="jwO-g7-b18" secondAttribute="trailing" id="ZB2-7Z-UCj"/>
                     </constraints>
                 </view>
             </subviews>
@@ -84,6 +86,7 @@
                 <constraint firstItem="VPt-b1-sFN" firstAttribute="top" secondItem="hVQ-tO-77I" secondAttribute="bottom" constant="1" id="rJ8-yG-qWa"/>
                 <constraint firstItem="hVQ-tO-77I" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="scZ-yf-9p3"/>
                 <constraint firstItem="VPt-b1-sFN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="u6l-Pk-8N2"/>
+                <constraint firstItem="jwO-g7-b18" firstAttribute="top" secondItem="hVQ-tO-77I" secondAttribute="bottom" id="yru-Cv-uhY"/>
             </constraints>
         </view>
     </objects>

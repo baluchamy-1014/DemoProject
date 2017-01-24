@@ -10,6 +10,7 @@ import UIKit
 
 class UserController: UIViewController {
   
+  @IBOutlet weak var selectionView: UIView!
   @IBOutlet weak var formView: UIView!
   @IBOutlet weak var signInButton: UserScreenButton!
   @IBOutlet weak var signUpButton: UserScreenButton!
@@ -66,8 +67,10 @@ class UserController: UIViewController {
   
   func addBackgroundImageViewConstraints() {
     backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: formView, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: formView, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 125))
+    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: formView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: formView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: formView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: selectionView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0))
   }
   
   private func removeSubviews() {
