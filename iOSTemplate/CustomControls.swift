@@ -59,6 +59,29 @@ class ArtifactTitleLabel: UILabel {
   }
 }
 
+class SignInUpTextField: UITextField {
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
+  func createBottomBorder() {
+    let border = CALayer()
+    let width = CGFloat(2.0)
+    border.borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0).CGColor
+
+    border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: self.frame.size.height)
+    border.borderWidth = width
+    self.layer.addSublayer(border)
+    self.layer.masksToBounds = true
+    
+    
+    if let _ = self.placeholder{
+      self.self.attributedPlaceholder = NSAttributedString(string:self.placeholder!,
+                                                                    attributes:[NSForegroundColorAttributeName: UIColor(red: 211/255, green: 211/255, blue: 211/255, alpha: 1.0)])
+    }
+  }
+}
+
 class AddedAtLabel: UILabel {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)

@@ -15,8 +15,8 @@ class SignInController: UIViewController {
   var alertAction: UIAlertAction?
   var containerController: UIViewController?
   
-  @IBOutlet weak var usernameField: UITextField!
-  @IBOutlet weak var passwordField: UITextField!
+  @IBOutlet weak var usernameField: SignInUpTextField!
+  @IBOutlet weak var passwordField: SignInUpTextField!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
   @IBOutlet weak var invalidLabel: UILabel!
   @IBOutlet weak var signInButton: SignInUpButton!
@@ -33,13 +33,18 @@ class SignInController: UIViewController {
     self.activityIndicator.hidden = true
     
     self.signInButton.enabled = false
-    
+  
     NSNotificationCenter.defaultCenter().addObserver(self,
                                                      selector: #selector(SignInController.textFieldDidChange(_:)),
                                                      name: UITextFieldTextDidChangeNotification,
                                                      object: nil)
 
     super.viewDidLoad()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    usernameField.createBottomBorder()
+    passwordField.createBottomBorder()
   }
   
   func textFieldDidChange(sender: AnyObject){
