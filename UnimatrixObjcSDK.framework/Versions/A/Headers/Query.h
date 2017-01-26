@@ -29,6 +29,8 @@ typedef void (^APIQueryCompletionBlock) (id response, NSError *error);
 - (void)executeWithParams:(NSDictionary *)params onCompletion:(APIQueryCompletionBlock)callback;
 
 - (void)post:(NSMutableDictionary *)params onCompletion:(APIQueryCompletionBlock)callback;
+- (void)create:(NSMutableDictionary *)params onCompletion:(APIQueryCompletionBlock)callback;
+
 @end
 
 

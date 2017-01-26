@@ -12,7 +12,10 @@ import MessageUI
 class MoreTableViewController: UITableViewController {
   var moreItems: [AnyObject] = Array()
   var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
-  
+  let signInText: String = "Sign In"
+  let signOutText: String = "Sign Out"
+  let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+
   override func viewDidLoad() {
     // TODO: theme
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
@@ -36,10 +39,14 @@ class MoreTableViewController: UITableViewController {
           if (error == nil) && (group != nil) {
             Artifact.getRelatedArtifacts(Int32(Int(group.id)), forProperty: group.propertyID, filter: [:], onCompletion: { (tags, error) in
 //            print(tags)
-            self.moreItems = tags as! [AnyObject]
-            self.moreItems.insert("Sign In", atIndex: 0)
-            self.moreItems.append("Feedback")
-            self.tableView.reloadData()
+              self.moreItems = tags as! [AnyObject]
+              if Session.sharedSession().isValid() {
+                self.moreItems.insert(self.signOutText, atIndex: 0)
+              } else {
+                self.moreItems.insert(self.signInText, atIndex: 0)
+              }
+              self.moreItems.append("Feedback")
+              self.tableView.reloadData()
             })
           }
         })
@@ -55,6 +62,11 @@ class MoreTableViewController: UITableViewController {
       
     super.viewDidLoad()
 
+  }
+
+  override func viewWillAppear(animated: Bool) {
+    self.displaySignOut()
+    super.viewWillAppear(animated)
   }
 
   override func didReceiveMemoryWarning() {
@@ -97,20 +109,16 @@ class MoreTableViewController: UITableViewController {
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let item = moreItems[indexPath.row]
     if let stringValue = item as? String {
-      if (stringValue == "Sign In") {
+      if (stringValue == signInText) || stringValue == signOutText {
         if Session.sharedSession().isValid() {
-          let alertViewController = UIAlertController.init(title: "Login Status", message: "You are already logged in.", preferredStyle: UIAlertControllerStyle.Alert)
-          let alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) in
-            alertViewController.dismissViewControllerAnimated(true, completion: nil)
-          })
-          alertViewController.addAction(alertAction)
-          self.presentViewController(alertViewController, animated: true, completion: nil)
+          self.signOut()
         } else {
           let userController = UserController(nibName: "UserAccount", bundle: nil)
           self.navigationController?.pushViewController(userController, animated: true)
           self.navigationController?.title = "Back"
         }
         clearSelectedTableViewCellOnLeave()
+        tableView.reloadData()
       }
       else if (stringValue == "Feedback") {
         if (MFMailComposeViewController.canSendMail()) {
@@ -163,5 +171,30 @@ class MoreTableViewController: UITableViewController {
   func clearSelectedTableViewCellOnLeave() {
     tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: false)
   }
-  
+
+
+  private func displaySignOut() {
+    if (Session.sharedSession().isValid()) {
+      if self.moreItems.count > 0 {
+        self.moreItems[0] = signOutText
+        tableView.reloadData()
+      }
+    }
+  }
+
+  private func signOut() {
+    Session.sharedSession().resetSession();
+    self.appDelegate.keymakerOrganizer.clearKeymakerToken()
+
+    let alertViewController = UIAlertController.init(title: "Sign Out Successful!", message: "You will now be redirected to home screen", preferredStyle: UIAlertControllerStyle.Alert)
+    let alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) in
+      alertViewController.dismissViewControllerAnimated(true, completion: nil)
+      self.appDelegate.viewController!.selectedIndex = 0
+    })
+    alertViewController.addAction(alertAction)
+    self.activityIndicator.hidden = true
+    self.presentViewController(alertViewController, animated: true, completion: nil)
+    self.moreItems[0] = self.signInText
+  }
+
 }

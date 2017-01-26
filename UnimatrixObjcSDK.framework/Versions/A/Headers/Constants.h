@@ -27,6 +27,12 @@
 #define kPictureHost @"https://pictures.boxxspring.net"
 #define kGatekeeperHost @"https://gatekeeper.boxxspring.com"
 #define kStreamHost @"https://stream.boxxspring.com/live/"
+#define kStreamWriteUrlWest @"rtmp://us-west-2.in.stream.staging.boxxspring.com/stream/"
+#define kStreamReadUrlWest @"//us-west-2-staging.stream.boxxspring.net"
+#define kStreamWriteUrlEast @"rtmp://us-east-1.in.stream.staging.boxxspring.com/stream/"
+#define kStreamReadUrlEast @"//us-east-1-staging.stream.boxxspring.net"
+#define kStreamWriteUrlEurope @"rtmp://eu-west-1.in.stream.boxxspring.com/stream/"
+#define kStreamReadUrlEurope @"//eu-west-1.stream.boxxspring.com"
 #endif
 
 
@@ -38,6 +44,12 @@
 #define kPictureHost @"http://pictures.staging.boxxspring.com"
 #define kGatekeeperHost @"http://gatekeeper.staging.boxxspring.com"
 #define kStreamHost @"http://stream.staging.boxxspring.com/live/"
+#define kStreamWriteUrlWest @"rtmp://us-west-2.in.stream.staging.boxxspring.com/stream/"
+#define kStreamReadUrlWest @"//us-west-2-staging.stream.boxxspring.net"
+#define kStreamWriteUrlEast @"rtmp://us-east-1.in.stream.staging.boxxspring.com/stream/"
+#define kStreamReadUrlEast @"//us-east-1-staging.stream.boxxspring.net"
+#define kStreamWriteUrlEurope @"rtmp://us-east-1.in.stream.staging.boxxspring.com/stream/"
+#define kStreamReadUrlEurope @"//us-east-1-staging.stream.boxxspring.net"
 #endif
 
 #if SR_ENV == ACCEPTANCE

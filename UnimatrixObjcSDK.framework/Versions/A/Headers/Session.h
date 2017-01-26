@@ -33,6 +33,7 @@ typedef void (^APIQueryCompletionBlock) (id response, NSError *error);
         onCompletion:(APIQueryCompletionBlock)callback;
 - (BOOL)isValid;
 - (void)getProperty:(APIQueryCompletionBlock)callback;
+- (void)resetSession;
 
 @end
 
