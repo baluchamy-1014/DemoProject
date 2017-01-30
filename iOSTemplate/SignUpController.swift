@@ -161,7 +161,7 @@ class SignUpSuccessViewController: UIViewController {
   }
   
   @IBAction func letsGoTapped(sender: AnyObject) {
-    self.appDelegate.viewController!.selectedIndex = 0
+//    self.appDelegate.viewController!.selectedIndex = 0
     self.dismissViewControllerAnimated(false) {
     }
   }

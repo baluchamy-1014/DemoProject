@@ -22,6 +22,7 @@
 		6296FA5C1DD4E7170096B04D /* SignIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5B1DD4E7170096B04D /* SignIn.xib */; };
 		6296FA601DD50EFB0096B04D /* SignUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5F1DD50EFB0096B04D /* SignUp.xib */; };
 		6296FA641DD533510096B04D /* UserAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA631DD533510096B04D /* UserAccount.xib */; };
+		62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B233831E368B2D00A7643F /* SWRevealViewController.m */; };
 		780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780578551DC2AA1F0011BBE8 /* TagSection.swift */; };
 		78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A931DC951BE00FAB2B8 /* Cancel_icon.png */; };
 		78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */; };
@@ -106,7 +107,10 @@
 		78E31EAA1D9B443A00CB59D3 /* NewsIconInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E31EA51D9B443A00CB59D3 /* NewsIconInactive.png */; };
 		78E31EAB1D9B443A00CB59D3 /* NewsIconInactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E31EA61D9B443A00CB59D3 /* NewsIconInactive@2x.png */; };
 		78E31EDE1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E31EDD1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift */; };
+		CA47329CD3426049E916B50D /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4737ED53F39E19B1E2506B /* reveal-icon.png */; };
+		CA4739D1B419C9A665CA934A /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA473BE3662F550EF175913B /* reveal-icon@2x.png */; };
 		CA473A34D224D5536EEC11F7 /* KeymakerOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */; };
+		CA473D5F0D27A77DE7F9C674 /* BurgerMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA473B36478C1AADAD8D51A6 /* BurgerMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +129,8 @@
 		6296FA5B1DD4E7170096B04D /* SignIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignIn.xib; sourceTree = "<group>"; };
 		6296FA5F1DD50EFB0096B04D /* SignUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUp.xib; sourceTree = "<group>"; };
 		6296FA631DD533510096B04D /* UserAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAccount.xib; sourceTree = "<group>"; };
+		62B233821E368B2D00A7643F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		62B233831E368B2D00A7643F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		780578551DC2AA1F0011BBE8 /* TagSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSection.swift; sourceTree = "<group>"; };
 		78095A931DC951BE00FAB2B8 /* Cancel_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel_icon.png; path = iOSTemplate/Assets.xcassets/Cancel_icon.png; sourceTree = "<group>"; };
 		78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Cancel_icon@2x.png"; sourceTree = "<group>"; };
@@ -212,7 +218,10 @@
 		78E31EA61D9B443A00CB59D3 /* NewsIconInactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewsIconInactive@2x.png"; path = "iOSTemplate/Assets.xcassets/NewsIconInactive@2x.png"; sourceTree = "<group>"; };
 		78E31EB11D9C7BA100CB59D3 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = bridge.h; path = iOSTemplate/bridge.h; sourceTree = "<group>"; };
 		78E31EDD1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtifactDetailViewController.swift; sourceTree = "<group>"; };
+		CA4737ED53F39E19B1E2506B /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reveal-icon.png"; path = "iOSTemplate/Assets.xcassets/reveal-icon.png"; sourceTree = "<group>"; };
 		CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeymakerOrganizer.swift; sourceTree = "<group>"; };
+		CA473B36478C1AADAD8D51A6 /* BurgerMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BurgerMenuController.swift; sourceTree = "<group>"; };
+		CA473BE3662F550EF175913B /* reveal-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reveal-icon@2x.png"; path = "iOSTemplate/Assets.xcassets/reveal-icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +249,15 @@
 			name = User;
 			sourceTree = "<group>";
 		};
+		62B233811E368B2D00A7643F /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				62B233821E368B2D00A7643F /* SWRevealViewController.h */,
+				62B233831E368B2D00A7643F /* SWRevealViewController.m */,
+			);
+			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		784AFDFD1DAD57F600FA157B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +276,7 @@
 				620C89F11DF726B400DAC962 /* StreamListViewController.swift */,
 				784B76DC1DFB42CE00076E8D /* FeedbackViewController.swift */,
 				7834C4B91DFBA8DB00E285B3 /* ArticleArtifactViewController.swift */,
+				CA473B36478C1AADAD8D51A6 /* BurgerMenuController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -352,6 +371,8 @@
 				788C43901DA45F9D00F342B9 /* MoreIconActive@3x.png */,
 				788C43911DA45F9D00F342B9 /* MoreIconInactive@3x.png */,
 				788C43921DA45F9D00F342B9 /* NewsIconActive@3x.png */,
+				CA4737ED53F39E19B1E2506B /* reveal-icon.png */,
+				CA473BE3662F550EF175913B /* reveal-icon@2x.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -381,6 +402,7 @@
 		78E31E731D99F3F400CB59D3 /* iOSTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				62B233811E368B2D00A7643F /* SWRevealViewController */,
 				78E31E741D99F3F400CB59D3 /* AppDelegate.swift */,
 				784AFDFD1DAD57F600FA157B /* Controllers */,
 				784C3FED1DB73F78001AECD3 /* View */,
@@ -527,6 +549,8 @@
 				78E31EAB1D9B443A00CB59D3 /* NewsIconInactive@2x.png in Resources */,
 				782D4DBF1E0A08520078FEC1 /* Placeholder_nll_logo@3x.png in Resources */,
 				782E3AAE1DF9307700FCF5CC /* NLL_Loading_Animation.gif in Resources */,
+				CA47329CD3426049E916B50D /* reveal-icon.png in Resources */,
+				CA4739D1B419C9A665CA934A /* reveal-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +572,7 @@
 				78E31E771D99F3F400CB59D3 /* ViewController.swift in Sources */,
 				78E31EDE1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift in Sources */,
 				620C89F01DF7242100DAC962 /* LatestViewController.swift in Sources */,
+				62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */,
 				784B76DD1DFB42CE00076E8D /* FeedbackViewController.swift in Sources */,
 				78E31E8B1D9A0ABA00CB59D3 /* PageViewController.swift in Sources */,
 				78E31E931D9AEC2600CB59D3 /* ArticleViewController.swift in Sources */,
@@ -560,6 +585,7 @@
 				787867D21DBD557800958C1B /* MoreTableViewController.swift in Sources */,
 				784AFE061DADC18800FA157B /* ArtifactListViewController.swift in Sources */,
 				CA473A34D224D5536EEC11F7 /* KeymakerOrganizer.swift in Sources */,
+				CA473D5F0D27A77DE7F9C674 /* BurgerMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

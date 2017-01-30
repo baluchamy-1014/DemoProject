@@ -133,7 +133,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   }
   
   func openVideoPlayer(sender: UIButton) {
-    appDelegate.viewController?.tabBar.hidden = true
+//    appDelegate.viewController?.tabBar.hidden = true
     self.navigationController?.setNavigationBarHidden(true, animated: false)
     
     let videoPlayerController = VideoPlayerController()

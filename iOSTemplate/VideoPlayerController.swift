@@ -61,7 +61,7 @@ class VideoPlayerController: UIViewController {
     isPresented = false
     dismissViewControllerAnimated(true, completion: nil)
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    appDelegate.viewController?.tabBar.hidden = false
+//    appDelegate.viewController?.tabBar.hidden = false
     self.delegateController?.setNavigationBarHidden(false, animated: false)
   }
 }

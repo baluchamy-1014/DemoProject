@@ -9,20 +9,17 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDelegate {
   var window: UIWindow?
-  var viewController: UITabBarController?
+  var viewController: SWRevealViewController?
   let keymakerOrganizer = KeymakerOrganizer()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    viewController = mainStoryboard.instantiateViewControllerWithIdentifier("tabBar") as? UITabBarController
     self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-    self.window!.rootViewController = viewController
-    self.window?.makeKeyAndVisible()
-    
+
     UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
     
     
@@ -39,6 +36,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       Session.sharedSession().accessToken = value;
     }
 
+    let frontVC: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("featuredController")
+    let rearVC = BurgerMenuController()
+
+    let frontNC = UINavigationController(rootViewController: frontVC)
+    let rearNC = UINavigationController(rootViewController: rearVC)
+    
+    let revealVC = SWRevealViewController(rearViewController: rearNC, frontViewController: frontNC);
+    revealVC.delegate = self;
+    
+    revealVC.panGestureRecognizer()
+    revealVC.tapGestureRecognizer()
+    revealVC.rearViewRevealWidth = 160
+
+    let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon.png"), style: UIBarButtonItemStyle.Plain, target: revealVC, action: #selector(revealVC.revealToggle(_:)))
+    frontVC.navigationItem.leftBarButtonItem = revealButtomItem
+    frontVC.navigationItem.title = "All Teams"
+
+    self.viewController = revealVC
+    
+    self.window!.rootViewController = self.viewController;
+
+    self.window!.rootViewController = self.viewController
+    self.window!.makeKeyAndVisible()
+    
     return true
   
   }

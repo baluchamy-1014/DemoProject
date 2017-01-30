@@ -189,7 +189,7 @@ class MoreTableViewController: UITableViewController {
     let alertViewController = UIAlertController.init(title: "Sign Out Successful!", message: "You will now be redirected to home screen", preferredStyle: UIAlertControllerStyle.Alert)
     let alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) in
       alertViewController.dismissViewControllerAnimated(true, completion: nil)
-      self.appDelegate.viewController!.selectedIndex = 0
+//      self.appDelegate.viewController!.selectedIndex = 0
     })
     alertViewController.addAction(alertAction)
     self.activityIndicator.hidden = true
