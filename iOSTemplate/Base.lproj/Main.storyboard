@@ -9,13 +9,13 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NLL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="containerViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="NLL" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="414" height="484"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="597"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cL0-Eg-7hx">
@@ -41,7 +41,7 @@
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="centerX" secondItem="TnR-Kh-l0W" secondAttribute="centerX" id="AqO-tf-Wo3"/>
                             <constraint firstItem="TnR-Kh-l0W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="LaC-gy-fSO"/>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="TnR-Kh-l0W" secondAttribute="bottom" constant="17" id="N9q-n0-wuv"/>
-                            <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="46" id="fAG-af-1vq"/>
+                            <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="97" id="fAG-af-1vq"/>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qCp-l8-b5z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cL0-Eg-7hx" secondAttribute="bottom" constant="-10" id="y1C-bD-tD9"/>
                             <constraint firstAttribute="trailing" secondItem="TnR-Kh-l0W" secondAttribute="trailing" constant="5" id="zWE-fi-tSA"/>
@@ -145,7 +145,7 @@
         <!--Videos-->
         <scene sceneID="tJe-ZD-e3s">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Ad-x1-cLX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="videosNavController" automaticallyAdjustsScrollViewInsets="NO" id="6Ad-x1-cLX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Videos" image="VideosIconInactive.png" selectedImage="VideosIconActive.png" id="LQd-lt-23I"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -155,33 +155,10 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Cgy-Fr-JUP"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ub8-Qs-N5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1252" y="306"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="1Ng-gi-fxd">
-            <objects>
-                <tabBarController storyboardIdentifier="tabBar" automaticallyAdjustsScrollViewInsets="NO" id="1P6-ql-0vG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="tj1-Lb-Fao" customClass="CustomTabBar" customModule="NLL" customModuleProvider="target">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="6Ad-x1-cLX" kind="relationship" relationship="viewControllers" id="SWu-Zt-UWD"/>
-                        <segue destination="ePj-wo-q2J" kind="relationship" relationship="viewControllers" id="C1f-0U-Z6j"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xVL-OT-nll" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="396" y="306"/>
         </scene>
         <!--Page View Controller-->
         <scene sceneID="Gg9-dy-MTa">
@@ -215,7 +192,7 @@
             <objects>
                 <tableViewController id="21E-6Y-6MJ" customClass="MoreTableViewController" customModule="NLL" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="v5v-dS-7Zd">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

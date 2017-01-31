@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
       Session.sharedSession().accessToken = value;
     }
 
-    let frontVC: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("featuredController")
+    let frontVC: UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("containerViewController")
     let rearVC = BurgerMenuController()
 
     let frontNC = UINavigationController(rootViewController: frontVC)
