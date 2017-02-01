@@ -16,7 +16,7 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     override func viewDidLoad() {
       // TODO: move out in CollectionView setup
-      collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-110), collectionViewLayout: CustomCollectionViewFlowLayout())
+      collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-95), collectionViewLayout: CustomCollectionViewFlowLayout())
       self.view.addSubview(collectionView)
       collectionView.allowsSelection = true
       collectionView.delegate = self

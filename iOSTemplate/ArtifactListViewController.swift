@@ -20,7 +20,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     super.viewDidLoad()
     self.navigationController?.navigationBar.backItem?.title = ""
     
-    collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-110), collectionViewLayout: CustomCollectionViewFlowLayout())
+    collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: CustomCollectionViewFlowLayout())
     self.view.addSubview(collectionView)
     
     collectionView.alwaysBounceVertical = true

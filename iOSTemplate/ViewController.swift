@@ -30,7 +30,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     pages.append(page3)
 
     self.pageController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-    self.pageController.view.frame = CGRectMake(0, 80, self.view.frame.size.width, self.view.frame.size.height)
+    self.pageController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height)
     self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
     if self.pageController.viewControllers![0].isKindOfClass(ArticleViewController) {
        teamFilterButton.setTitle("NLL TV", forState: .Normal)
@@ -48,8 +48,16 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
 
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
     self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+  }
+  
+  override func viewWillAppear(animated: Bool) {
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
+  }
+  
+  override func viewDidDisappear(animated: Bool) {
+    self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+    self.navigationController?.navigationBar.shadowImage = nil
   }
 
   override func didReceiveMemoryWarning() {

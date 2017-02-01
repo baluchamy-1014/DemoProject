@@ -32,7 +32,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    artifactDetailCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-110), collectionViewLayout: CustomCollectionViewFlowLayout())
+    artifactDetailCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: CustomCollectionViewFlowLayout())
     artifactDetailCollectionView.registerNib(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
     artifactDetailCollectionView.delegate = self
     artifactDetailCollectionView.dataSource = self
