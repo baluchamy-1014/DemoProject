@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
 
     UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
-    
+    UINavigationBar.appearance().tintColor = UIColor.whiteColor()
     
     let appConfiguration = NSBundle.mainBundle().infoDictionary! as NSDictionary
     let environment    = appConfiguration["AppEnvironment"] as! NSString
