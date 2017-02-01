@@ -142,24 +142,6 @@
             </objects>
             <point key="canvasLocation" x="4187" y="390"/>
         </scene>
-        <!--Videos-->
-        <scene sceneID="tJe-ZD-e3s">
-            <objects>
-                <navigationController storyboardIdentifier="videosNavController" automaticallyAdjustsScrollViewInsets="NO" id="6Ad-x1-cLX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Videos" image="VideosIconInactive.png" selectedImage="VideosIconActive.png" id="LQd-lt-23I"/>
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="bHT-EN-isW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ub8-Qs-N5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1252" y="306"/>
-        </scene>
         <!--Page View Controller-->
         <scene sceneID="Gg9-dy-MTa">
             <objects>
@@ -434,8 +416,6 @@
     </scenes>
     <resources>
         <image name="Placeholder_nll_logo" width="21" height="7"/>
-        <image name="VideosIconActive.png" width="27" height="26"/>
-        <image name="VideosIconInactive.png" width="27" height="26"/>
         <image name="expand_indicator.png" width="21" height="7"/>
         <image name="no_live_feed.png" width="152" height="105"/>
     </resources>
