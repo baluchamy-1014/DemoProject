@@ -13,7 +13,6 @@
 		620C89F21DF726B400DAC962 /* StreamListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620C89F11DF726B400DAC962 /* StreamListViewController.swift */; };
 		6214C1541E37FE32002FD9E6 /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6214C1511E37FE32002FD9E6 /* BoxxspringVideoPlayerSDK.framework */; };
 		6214C1551E37FE32002FD9E6 /* BoxxspringVideoPlayerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6214C1521E37FE32002FD9E6 /* BoxxspringVideoPlayerSDK.bundle */; };
-		6214C1581E380175002FD9E6 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6214C1571E380175002FD9E6 /* UnimatrixObjcSDK.framework */; };
 		621DD25D1DD61A9600D87855 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25C1DD61A9600D87855 /* UserController.swift */; };
 		621DD25F1DD62CBF00D87855 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25E1DD62CBF00D87855 /* SignInController.swift */; };
 		621DD2611DD62CD200D87855 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD2601DD62CD200D87855 /* SignUpController.swift */; };
@@ -23,6 +22,7 @@
 		6296FA601DD50EFB0096B04D /* SignUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5F1DD50EFB0096B04D /* SignUp.xib */; };
 		6296FA641DD533510096B04D /* UserAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA631DD533510096B04D /* UserAccount.xib */; };
 		62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B233831E368B2D00A7643F /* SWRevealViewController.m */; };
+		62C2B6761E43AE6800FAD844 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62C2B6751E43AE6800FAD844 /* UnimatrixObjcSDK.framework */; };
 		780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780578551DC2AA1F0011BBE8 /* TagSection.swift */; };
 		78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A931DC951BE00FAB2B8 /* Cancel_icon.png */; };
 		78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */; };
@@ -120,7 +120,6 @@
 		620C89F11DF726B400DAC962 /* StreamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamListViewController.swift; sourceTree = "<group>"; };
 		6214C1511E37FE32002FD9E6 /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
 		6214C1521E37FE32002FD9E6 /* BoxxspringVideoPlayerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BoxxspringVideoPlayerSDK.bundle; sourceTree = "<group>"; };
-		6214C1571E380175002FD9E6 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		621DD25C1DD61A9600D87855 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		621DD25E1DD62CBF00D87855 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		621DD2601DD62CD200D87855 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		6296FA631DD533510096B04D /* UserAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAccount.xib; sourceTree = "<group>"; };
 		62B233821E368B2D00A7643F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		62B233831E368B2D00A7643F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		62C2B6751E43AE6800FAD844 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		780578551DC2AA1F0011BBE8 /* TagSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSection.swift; sourceTree = "<group>"; };
 		78095A931DC951BE00FAB2B8 /* Cancel_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel_icon.png; path = iOSTemplate/Assets.xcassets/Cancel_icon.png; sourceTree = "<group>"; };
 		78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Cancel_icon@2x.png"; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 			files = (
 				6214C1541E37FE32002FD9E6 /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
 				623068C31E26EE1F005C7CBE /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
-				6214C1581E380175002FD9E6 /* UnimatrixObjcSDK.framework in Frameworks */,
+				62C2B6761E43AE6800FAD844 /* UnimatrixObjcSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +380,7 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
-				6214C1571E380175002FD9E6 /* UnimatrixObjcSDK.framework */,
+				62C2B6751E43AE6800FAD844 /* UnimatrixObjcSDK.framework */,
 				6214C1511E37FE32002FD9E6 /* BoxxspringVideoPlayerSDK.framework */,
 				6214C1521E37FE32002FD9E6 /* BoxxspringVideoPlayerSDK.bundle */,
 				623068BF1E26EE1F005C7CBE /* UnimatrixAnalyticsObjcSDK.framework */,
@@ -449,6 +449,7 @@
 					78E31E701D99F3F400CB59D3 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4DDS5PKU9U;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -712,6 +713,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportsrocket.nll.iphone;
 				PRODUCT_NAME = NLL;
 				SWIFT_OBJC_BRIDGING_HEADER = iOSTemplate/bridge.h;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -734,6 +736,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.sportsrocket.nll.iphone;
 				PRODUCT_NAME = NLL;
 				SWIFT_OBJC_BRIDGING_HEADER = iOSTemplate/bridge.h;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

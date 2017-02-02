@@ -9,8 +9,8 @@
 import UIKit
 
 class CustomTabBar: UITabBar {
-  override func drawRect(rect: CGRect) {
+  override func draw(_ rect: CGRect) {
     // TODO: Theme
-    self.tintColor = UIColor.whiteColor()
+    self.tintColor = UIColor.white
   }
 }

@@ -16,6 +16,8 @@
 
 @interface Property : Resource
 
+typedef void (^APIQueryCompletionPropertyBlock) (Property *property, NSError *error);
+
 @property (nonatomic, strong) NSString     *name;
 @property (nonatomic, strong) NSString     *typeName;
 @property (nonatomic, strong) NSString     *domainName;
@@ -26,7 +28,7 @@
 
 + (Attributes *)attributes;
 + (void)getProperty:(id)propertyIdentifier
-       onCompletion:(APIQueryCompletionBlock)callback;
+       onCompletion:(APIQueryCompletionPropertyBlock)callback;
 
 - (NSString *)mediaHostString;
 - (Setting *)streamSetting;

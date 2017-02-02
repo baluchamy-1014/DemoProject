@@ -15,10 +15,10 @@ class VideoPlayerController: UIViewController {
   
   @IBOutlet weak var videoContainerView: UIView!
   var videoUID = String()
-  private var player: BoxxspringVideoPlayer?
+  fileprivate var player: BoxxspringVideoPlayer?
   var delegateController: UINavigationController?
   
-  func passString(videoUID: String) {
+  func passString(_ videoUID: String) {
     self.videoUID = videoUID
   }
   
@@ -27,40 +27,40 @@ class VideoPlayerController: UIViewController {
     
     if let containerView = videoContainerView {
       let player = BoxxspringVideoPlayer(videoUID, withFrame: containerView.bounds)
-      containerView.backgroundColor = UIColor.blackColor()
-      containerView.addSubview(player.view())
+      containerView.backgroundColor = UIColor.black
+      containerView.addSubview((player?.view())!)
       self.player = player
     }
     
   }
   
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     player?.fullScreen = true
-    player?.fullScreenControls = .Limited
+    player?.fullScreenControls = .limited
   }
   
-  override func viewWillDisappear(animated: Bool) {
+  override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
   }
   
-  override func viewDidAppear(animated: Bool) {
-    let orientation = UIDevice.currentDevice().orientation.rawValue
-    if orientation == UIInterfaceOrientation.LandscapeRight.rawValue {
-      UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeLeft.rawValue, forKey: "orientation")
+  override func viewDidAppear(_ animated: Bool) {
+    let orientation = UIDevice.current.orientation.rawValue
+    if orientation == UIInterfaceOrientation.landscapeRight.rawValue {
+      UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
     } else {
-      UIDevice.currentDevice().setValue(UIInterfaceOrientation.LandscapeRight.rawValue, forKey: "orientation")
+      UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
     }
     player?.play()
-    UIDevice.currentDevice().setValue(orientation, forKey: "orientation")
+    UIDevice.current.setValue(orientation, forKey: "orientation")
     super.viewDidAppear(animated)
   }
   
-  @IBAction func donePressed(sender: AnyObject) {
+  @IBAction func donePressed(_ sender: AnyObject) {
     player?.pause()
     isPresented = false
-    dismissViewControllerAnimated(true, completion: nil)
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    dismiss(animated: true, completion: nil)
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 //    appDelegate.viewController?.tabBar.hidden = false
     self.delegateController?.setNavigationBarHidden(false, animated: false)
   }

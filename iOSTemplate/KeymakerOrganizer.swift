@@ -8,40 +8,40 @@ import Foundation
 class KeymakerOrganizer {
 
   var path: String!
-  let fileManager = NSFileManager.defaultManager()
+  let fileManager = FileManager.default
   var documentsDirectory: NSString!
   var environment: String!
 
   init() {
-    let appConfiguration = NSBundle.mainBundle().infoDictionary! as NSDictionary
+    let appConfiguration = Bundle.main.infoDictionary! as NSDictionary
     environment    = appConfiguration["AppEnvironment"] as! String
-    let paths: NSArray = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-    documentsDirectory = paths.objectAtIndex(0) as! NSString
-    path = documentsDirectory.stringByAppendingPathComponent(environment + "_keymaker.plist")
+    let paths: NSArray = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
+    documentsDirectory = paths.object(at: 0) as! NSString
+    path = documentsDirectory.appendingPathComponent(environment + "_keymaker.plist")
   }
 
   func clearKeymakerToken() {
-    if (fileManager.fileExistsAtPath(path)) {
+    if (fileManager.fileExists(atPath: path)) {
       do {
-        try fileManager.removeItemAtPath(path)
+        try fileManager.removeItem(atPath: path)
       } catch {
 
       }
     }
   }
 
-  func saveKeymakerToken(accessToken: String) {
+  func saveKeymakerToken(_ accessToken: String) {
 
     var data: NSMutableDictionary
 
-    if (fileManager.fileExistsAtPath(path)) {
+    if (fileManager.fileExists(atPath: path)) {
       data = NSMutableDictionary(contentsOfFile: path)!
     } else {
       data = NSMutableDictionary()
     }
 
-    data.setObject(accessToken, forKey: "token")
-    data.writeToFile(path, atomically: true)
+    data.setObject(accessToken, forKey: "token" as NSCopying)
+    data.write(toFile: path, atomically: true)
 
   }
 

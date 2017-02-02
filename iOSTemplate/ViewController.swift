@@ -22,22 +22,22 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    page1 = (storyboard?.instantiateViewControllerWithIdentifier("featuredController"))!
-    page2 = (storyboard?.instantiateViewControllerWithIdentifier("latestController"))!
-    page3 = (storyboard?.instantiateViewControllerWithIdentifier("liveController"))!
+    page1 = (storyboard?.instantiateViewController(withIdentifier: "featuredController"))!
+    page2 = (storyboard?.instantiateViewController(withIdentifier: "latestController"))!
+    page3 = (storyboard?.instantiateViewController(withIdentifier: "liveController"))!
     pages.append(page1)
     pages.append(page2)
     pages.append(page3)
 
-    self.pageController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-    self.pageController.view.frame = CGRectMake(0, 100, self.view.frame.size.width, self.view.frame.size.height)
-    self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
-    if self.pageController.viewControllers![0].isKindOfClass(ArticleViewController) {
-       teamFilterButton.setTitle("NLL TV", forState: .Normal)
-       teamFilterButton.setImage(nil, forState: .Normal)
+    self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+    self.pageController.view.frame = CGRect(x: 0, y: 100, width: self.view.frame.size.width, height: self.view.frame.size.height)
+    self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
+    if self.pageController.viewControllers![0].isKind(of: ArticleViewController.self) {
+       teamFilterButton.setTitle("NLL TV", for: UIControlState())
+       teamFilterButton.setImage(nil, for: UIControlState())
     }
     else {
-      teamFilterButton.setTitle(selectedTeam, forState: .Normal)
+      teamFilterButton.setTitle(selectedTeam, for: UIControlState())
     }
     self.addChildViewController(self.pageController)
     self.view.addSubview(self.pageController.view)
@@ -47,16 +47,16 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     self.view.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
 
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
-    self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
   }
   
-  override func viewWillAppear(animated: Bool) {
-    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+  override func viewWillAppear(_ animated: Bool) {
+    self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
   }
   
-  override func viewDidDisappear(animated: Bool) {
-    self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+  override func viewDidDisappear(_ animated: Bool) {
+    self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = nil
   }
 
@@ -65,40 +65,40 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     // Dispose of any resources that can be recreated.
   }
 
-  @IBAction func userDidTapTeamFilterButton(sender: UIButton) {
-    if self.pageController.viewControllers![0].isKindOfClass(ArticleViewController) {
+  @IBAction func userDidTapTeamFilterButton(_ sender: UIButton) {
+    if self.pageController.viewControllers![0].isKind(of: ArticleViewController.self) {
       // do nothing
     }
     else {
-      let teamVC = storyboard!.instantiateViewControllerWithIdentifier("teamviewcontroller")
-      presentViewController(teamVC, animated: true, completion: nil)
+      let teamVC = storyboard!.instantiateViewController(withIdentifier: "teamviewcontroller")
+      present(teamVC, animated: true, completion: nil)
     }
   }
   
-  @IBAction func segmentChanged(sender: AnyObject) {
+  @IBAction func segmentChanged(_ sender: AnyObject) {
     switch sender.selectedSegmentIndex {
     case 0:
 //      print("page 0")
       resetTeamFilterButtonAllTeams()
-      self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+      self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     case 1:
 //      print("page 1")
       teamFilterButtonRestoreTeamName()
       loadDataForCurrentPageIndex(sender.selectedSegmentIndex)
-      self.pageController.setViewControllers([page2], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+      self.pageController.setViewControllers([page2], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     case 2:
 //      print("page 2")
       teamFilterButtonRestoreTeamName()
       loadDataForCurrentPageIndex(sender.selectedSegmentIndex)
-      self.pageController.setViewControllers([page3], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+      self.pageController.setViewControllers([page3], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     default: break
     }
   }
   
-  func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+  func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     var previousIndex = Int()
     Swift.print("pages count \(pages.count)")
-    let currentIndex = pages.indexOf(viewController)!
+    let currentIndex = pages.index(of: viewController)!
     if currentIndex == 0 {
       previousIndex = 2
     }
@@ -118,8 +118,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     return pages[previousIndex]
   }
   
-  func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-    let currentIndex = pages.indexOf(viewController)!
+  func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+    let currentIndex = pages.index(of: viewController)!
     let nextIndex = abs((currentIndex + 1) % pages.count)
     customSegmentedControl.selectedSegmentIndex = currentIndex
 //    print(currentIndex)
@@ -135,12 +135,12 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   
   func teamFilterButtonRestoreTeamName() {
     if (selectedTeam == nil) {
-      teamFilterButton.setTitle("All Teams", forState: .Normal)
+      teamFilterButton.setTitle("All Teams", for: UIControlState())
     }
     else {
-      teamFilterButton.setTitle(selectedTeam, forState: .Normal)
+      teamFilterButton.setTitle(selectedTeam, for: UIControlState())
     }
-    teamFilterButton.setImage(UIImage(named: "expand_indicator"), forState: .Normal)
+    teamFilterButton.setImage(UIImage(named: "expand_indicator"), for: UIControlState())
     
     teamFilterButton.sizeToFit()
     teamFilterButton.imageEdgeInsets = UIEdgeInsetsMake(0, teamFilterButton.frame.size.width-10, 0, 0)
@@ -148,13 +148,13 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   }
   
   func resetTeamFilterButtonAllTeams() {
-    teamFilterButton.setImage(nil, forState: .Normal)
-    teamFilterButton.setTitle("NLL TV", forState: .Normal)
+    teamFilterButton.setImage(nil, for: UIControlState())
+    teamFilterButton.setTitle("NLL TV", for: UIControlState())
     teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
     teamFilterButton.sizeToFit()
   }
   
-  func loadDataForCurrentPageIndex(currentPageIndex: Int) {
+  func loadDataForCurrentPageIndex(_ currentPageIndex: Int) {
     if currentPageIndex == 1 {
       if let _ = self.teamID {
         (page2 as! LatestViewController).artifactID = self.teamID!
@@ -169,28 +169,28 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
   }
 
-  @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+  @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
 //    print(segue.identifier)
     // TODO: add LIVE functionality
     self.navigationController?.navigationBar.topItem?.title = ""
-    dispatch_async(dispatch_get_main_queue(), {
+    DispatchQueue.main.async(execute: {
       if segue.identifier == "selectTeamSegue" {
-        let teamsFilterListViewController: TeamsFilterListViewController = segue.sourceViewController as! TeamsFilterListViewController
+        let teamsFilterListViewController: TeamsFilterListViewController = segue.source as! TeamsFilterListViewController
         self.teamID = (teamsFilterListViewController.teamName == "All Teams") ? nil : teamsFilterListViewController.teamID
         self.selectedTeam = teamsFilterListViewController.teamName
         let currentController = self.pageController.viewControllers![0]
-        if currentController.isKindOfClass(LatestViewController) {
+        if currentController.isKind(of: LatestViewController.self) {
           let latestViewController = self.pageController.viewControllers![0] as! LatestViewController
           self.teamID != nil ? latestViewController.filterTeams(teamsFilterListViewController.teamID) : latestViewController.loadAllTeams()
           latestViewController.collectionView.reloadData()
-          latestViewController.collectionView.setContentOffset(CGPointZero, animated: false)
-          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, forState: .Normal)
-        } else if currentController.isKindOfClass(StreamListViewController) {
+          latestViewController.collectionView.setContentOffset(CGPoint.zero, animated: false)
+          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, for: UIControlState())
+        } else if currentController.isKind(of: StreamListViewController.self) {
           self.teamID != nil ? (currentController as! StreamListViewController).filterTeams(teamsFilterListViewController.teamID) : (currentController as! StreamListViewController).loadAllTeams()
-          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, forState: .Normal)
+          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, for: UIControlState())
         }
         else {
-          self.teamFilterButton.setTitle("All Team", forState: .Normal)
+          self.teamFilterButton.setTitle("All Team", for: UIControlState())
         }
         self.teamFilterButton.sizeToFit()
         self.teamFilterButton.imageEdgeInsets = UIEdgeInsetsMake(0, self.teamFilterButton.frame.size.width-10, 0, 0)

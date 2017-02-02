@@ -11,7 +11,7 @@ import UIKit
 class TagSection: NSObject {
   let view:UIView
   let tags:Array<AnyObject>
-  let sectionWidth: CGFloat  = UIScreen.mainScreen().bounds.size.width - 40
+  let sectionWidth: CGFloat  = UIScreen.main.bounds.size.width - 40
   let buttonPadding: CGFloat = 0.0
   let xGap: CGFloat          = 10.0
   var sectionHeight: CGFloat
@@ -21,8 +21,8 @@ class TagSection: NSObject {
   var previousBtnLength:CGFloat  = 0
   
   init(x:CGFloat, y:CGFloat, width:CGFloat, height:CGFloat, tags:Array<AnyObject>) {
-    self.view            = UIView(frame: CGRectMake(x, y, width, height))
-    view.backgroundColor = UIColor.clearColor()
+    self.view            = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
+    view.backgroundColor = UIColor.clear
     
     self.tags            = tags
     sectionHeight        = y
@@ -36,8 +36,8 @@ class TagSection: NSObject {
     for tag in tags {
       let btnString:String = tag.name
       let btnNSString: NSString = btnString as NSString
-      let font = UIFont.systemFontOfSize(18, weight: UIFontWeightMedium)
-      let btnStringSize: CGSize = btnNSString.sizeWithAttributes([NSFontAttributeName: font])
+      let font = UIFont.systemFont(ofSize: 18, weight: UIFontWeightMedium)
+      let btnStringSize: CGSize = btnNSString.size(attributes: [NSFontAttributeName: font])
       
       if (previousBtnXOrigin + previousBtnLength + btnStringSize.width + xGap) > sectionWidth
       {
@@ -49,7 +49,7 @@ class TagSection: NSObject {
       
       x = previousBtnLength + previousBtnXOrigin + xGap
       
-      let btn = TagButton(frame: CGRectMake(x, previousBtnYOrigin, btnStringSize.width + buttonPadding, btnHeight),
+      let btn = TagButton(frame: CGRect(x: x, y: previousBtnYOrigin, width: btnStringSize.width + buttonPadding, height: btnHeight),
                           text: tag.name)
       btn.tag = Int(tag.id)
       
@@ -59,7 +59,7 @@ class TagSection: NSObject {
     }
     
     let totalBtnHeight: CGFloat = previousBtnYOrigin + btnHeight + sectionGap
-    self.view.frame = CGRectMake(0, sectionHeight, sectionWidth, totalBtnHeight)    
+    self.view.frame = CGRect(x: 0, y: sectionHeight, width: sectionWidth, height: totalBtnHeight)    
   }
   
 }

@@ -14,7 +14,7 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
   var items = [AnyObject]()
   var teamID = Int()
   var teamName = String()
-  var selectedRow: NSIndexPath?
+  var selectedRow: IndexPath?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,13 +28,13 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
     teamsTableView.dataSource = self
     teamsTableView.allowsMultipleSelection = false
 
-    Session.sharedSession().getProperty { property, error in
+    Session.shared().getProperty { property, error in
       if (error == nil) {
-        Group.getGroup("/team-filter", forProperty: Int32(Int(property.id))) { (group, error) in
+        Group.getGroup("/team-filter", forProperty: Int32(Int((property?.id)!))) { (group, error) in
           if (error == nil) && (group != nil) {
-            Artifact.getRelatedArtifacts(Int32(Int(group.id)), forProperty: group.propertyID, filter: [:], onCompletion: { (menuItems, error) in
+            Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: [:], onCompletion: { (menuItems, error) in
               self.items = menuItems as! [AnyObject]
-              self.items.insert("All Teams", atIndex: 0)
+              self.items.insert("All Teams" as AnyObject, at: 0)
               self.teamsTableView.reloadData()
             })
           }
@@ -46,11 +46,11 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
   }
 
   func setupActivitySpinner() {
-    activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+    activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
     teamsTableView.addSubview(activityIndicator)
     activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
 
     activityIndicator.startAnimating()
   }
@@ -60,19 +60,19 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
     // Dispose of any resources that can be recreated.
   }
   
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.items.count;
   }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("teamsCell", forIndexPath: indexPath)
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "teamsCell", for: indexPath)
     // TODO: theme
     tableView.backgroundColor = UIColor(red: 37/255, green: 35/255, blue: 38/255, alpha: 1.0)
     tableView.separatorColor = UIColor(red: 37/255, green: 35/255, blue: 38/255, alpha: 1.0)
     cell.preservesSuperviewLayoutMargins = false
-    cell.separatorInset = UIEdgeInsetsZero
-    cell.layoutMargins = UIEdgeInsetsZero
-    cell.textLabel?.textColor = UIColor.whiteColor()
+    cell.separatorInset = UIEdgeInsets.zero
+    cell.layoutMargins = UIEdgeInsets.zero
+    cell.textLabel?.textColor = UIColor.white
     cell.backgroundColor = UIColor(red: 37/255, green: 35/255, blue: 38/255, alpha: 1.0)
     
     let backgroundColorView = SelectedCellBackgroundColorView(frame: cell.frame)
@@ -81,22 +81,22 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
     let item = self.items[indexPath.row]
     if indexPath.row == 0 {
       cell.textLabel?.text = "All Teams"
-      tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
+      tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
     }
     else {
       cell.textLabel!.text = item.name
       Swift.print(item.id)
       self.teamID = Int(item.id)
       
-      tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
+      tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
     }
     activityIndicator.stopAnimating()
     return cell
   }
   
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "selectTeamSegue" {
-      let selectedPath: NSIndexPath = self.teamsTableView.indexPathForCell(sender as! UITableViewCell)!
+      let selectedPath: IndexPath = self.teamsTableView.indexPath(for: sender as! UITableViewCell)!
       self.selectedRow = selectedPath
       if selectedPath.row == 0 {
         let item = "All Teams"
@@ -110,12 +110,12 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
     }
   }
   
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
   }
 
-  func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-    tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
+  func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    tableView.cellForRow(at: indexPath)?.accessoryType = .none
   }
 
 }

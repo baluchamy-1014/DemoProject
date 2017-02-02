@@ -22,14 +22,14 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
       collectionView.delegate = self
       collectionView.dataSource = self
       collectionView.canCancelContentTouches = false
-      collectionView.userInteractionEnabled = true
-      collectionView.registerNib(UINib(nibName: "LargeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "largeCell")
-      collectionView.registerNib(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
+      collectionView.isUserInteractionEnabled = true
+      collectionView.register(UINib(nibName: "LargeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "largeCell")
+      collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
       // TODO: Theme
       collectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
       collectionView!.alwaysBounceVertical = true
       
-      self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+      self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
       
       setup()
       loadFeatured()
@@ -38,11 +38,11 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
   
   func loadFeatured() {
-    Session.sharedSession().getProperty { (aProperty, error) in
+    Session.shared().getProperty { (aProperty, error) in
       if (error == nil) {
-        Group.getGroup("/featured", forProperty: Int32(Int(aProperty.id)), onCompletion: { (group, error) in
+        Group.getGroup("/featured", forProperty: Int32(Int((aProperty?.id)!)), onCompletion: { (group, error) in
           if (error == nil) && (group != nil) {
-            Artifact.getRelatedArtifacts(Int32(Int(group.id)), forProperty: group.propertyID, filter: [:], onCompletion: { (tags, error) in
+            Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: [:], onCompletion: { (tags, error) in
               self.artifactItems = tags as! [Artifact]
 //              print("stories count \(self.artifactItems.count)")
               self.collectionView.reloadData()
@@ -61,13 +61,13 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
     collectionView.addGestureRecognizer(tapRecognizer)
     
     refreshControl = CustomRefreshControl()
-    refreshControl.addTarget(self, action: #selector(ArticleViewController.loadFeatured), forControlEvents: .ValueChanged)
+    refreshControl.addTarget(self, action: #selector(ArticleViewController.loadFeatured), for: .valueChanged)
     collectionView!.addSubview(refreshControl)
   }
   
-  func articleTapped(recognizer: UITapGestureRecognizer) {
-    let point: CGPoint = recognizer.locationInView(recognizer.view)
-    if let indexPath: NSIndexPath = collectionView.indexPathForItemAtPoint(point) {
+  func articleTapped(_ recognizer: UITapGestureRecognizer) {
+    let point: CGPoint = recognizer.location(in: recognizer.view)
+    if let indexPath: IndexPath = collectionView.indexPathForItem(at: point) {
       let item = self.artifactItems[indexPath.row]
       self.navigationController?.navigationBar.topItem?.title = ""
 
@@ -82,23 +82,23 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
       // Dispose of any resources that can be recreated.
   }
 
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return artifactItems.count
   }
 
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     if indexPath.row == 0 || indexPath.row == 1 {
       
-      let cell = collectionView.dequeueReusableCellWithReuseIdentifier("largeCell", forIndexPath: indexPath) as! LargeCollectionViewCell
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeCell", for: indexPath) as! LargeCollectionViewCell
       let item = artifactItems[indexPath.row]
 
       if let thumbnailURL = item.pictureURLwithWidth(Int32(cell.frame.width), height: Int32(cell.imageView.frame.height)) {
-        cell.imageView.setImageWithURL(thumbnailURL, placeholderImage: placeholderImage)
+        cell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
       } else {
         cell.imageView.image = placeholderImage
       }
       
-      cell.titleLabel.textColor = UIColor.blackColor()
+      cell.titleLabel.textColor = UIColor.black
       if let aTitle = item.name {
         cell.titleLabel.text = aTitle
       }
@@ -110,22 +110,22 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
       return cell
     }
     else {
-      let relatedCell = collectionView.dequeueReusableCellWithReuseIdentifier("listCell", forIndexPath: indexPath) as! ListCollectionViewCell
+      let relatedCell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! ListCollectionViewCell
       let item = artifactItems[indexPath.row]
     
       let collectionViewWidth = self.collectionView.bounds.size.width
       relatedCell.frame.size.width = collectionViewWidth
       
       if let thumbnailURL = item.pictureURLwithWidth(320, height: 180) {
-        relatedCell.imageView.setImageWithURL(thumbnailURL, placeholderImage: placeholderImage)
+        relatedCell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
       } else {
         relatedCell.imageView.image = placeholderImage
       }
 
-      relatedCell.artifactNameLabel.text = item.name.uppercaseString
+      relatedCell.artifactNameLabel.text = item.name.uppercased()
       relatedCell.artifactNameLabel.numberOfLines = 2
-      relatedCell.artifactNameLabel.backgroundColor = UIColor.whiteColor()
-      relatedCell.backgroundColor = UIColor.whiteColor()
+      relatedCell.artifactNameLabel.backgroundColor = UIColor.white
+      relatedCell.backgroundColor = UIColor.white
       
       if let aAuthor = item.author() {
         relatedCell.authorLabel.text = aAuthor.name
@@ -143,32 +143,32 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
   }
   // MARK: UICollectionViewFlowLayoutDelegate
   
-  func collectionView(collectionView: UICollectionView,
+  func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
-                             sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+                             sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
     // TODO: move into class or use size classes when more time
     enum UIUserInterfaceIdiom : Int
     {
-      case Unspecified
-      case Phone
-      case Pad
+      case unspecified
+      case phone
+      case pad
     }
     
     struct ScreenSize
     {
-      static let SCREEN_WIDTH         = UIScreen.mainScreen().bounds.size.width
-      static let SCREEN_HEIGHT        = UIScreen.mainScreen().bounds.size.height
+      static let SCREEN_WIDTH         = UIScreen.main.bounds.size.width
+      static let SCREEN_HEIGHT        = UIScreen.main.bounds.size.height
       static let SCREEN_MAX_LENGTH    = max(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
       static let SCREEN_MIN_LENGTH    = min(ScreenSize.SCREEN_WIDTH, ScreenSize.SCREEN_HEIGHT)
     }
     
     struct DeviceType
     {
-      static let IS_IPHONE_4_OR_LESS  = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH < 568.0
-      static let IS_IPHONE_5          = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
-      static let IS_IPHONE_6          = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
-      static let IS_IPHONE_6P         = UIDevice.currentDevice().userInterfaceIdiom == .Phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
-      static let IS_IPAD              = UIDevice.currentDevice().userInterfaceIdiom == .Pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
+      static let IS_IPHONE_4_OR_LESS  = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH < 568.0
+      static let IS_IPHONE_5          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 568.0
+      static let IS_IPHONE_6          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
+      static let IS_IPHONE_6P         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
+      static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
     }
     
     if indexPath.row == 0 || indexPath.row == 1 {

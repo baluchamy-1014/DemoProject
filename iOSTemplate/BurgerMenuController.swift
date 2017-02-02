@@ -13,13 +13,13 @@ class BurgerMenuController: UITableViewController {
     self.title = "Menu"
   }
 
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return 4
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-    let cell = UITableViewCell(style: .Default, reuseIdentifier: "burgerMenuCell")
+    let cell = UITableViewCell(style: .default, reuseIdentifier: "burgerMenuCell")
     var text = ""
     
     switch indexPath.row {
