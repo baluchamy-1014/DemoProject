@@ -16,6 +16,7 @@ class BurgerMenuController: UITableViewController {
     super.viewDidLoad()
     self.title = "Menu"
     self.tableView.separatorStyle = .none
+    self.tableView.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
     
     Session.shared().getProperty { (aProperty, error) in
       if (error == nil) {
