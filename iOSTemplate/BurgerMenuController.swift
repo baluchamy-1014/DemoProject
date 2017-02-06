@@ -5,6 +5,7 @@
 
 import Foundation
 import UIKit
+import MessageUI
 
 class BurgerMenuController: UITableViewController {
   var moreItems: [AnyObject] = Array()
@@ -32,7 +33,7 @@ class BurgerMenuController: UITableViewController {
                   self.otherItems.append(item)
                 }
               }
-              self.artifactItems.insert("Buy Content" as AnyObject, at: 0)
+//              self.artifactItems.insert("Buy Content" as AnyObject, at: 0)
               self.artifactItems.append("Feedback" as AnyObject)
               self.tableView.reloadData()
             })
@@ -92,6 +93,74 @@ class BurgerMenuController: UITableViewController {
       break
     }
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    switch indexPath.section {
+    case 0:
+      let item = otherItems[indexPath.row]
+      if item.name == "Home" { // will home actually need to be hardcoded?
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
+
+        let navigationController = UINavigationController(rootViewController: frontVC )
+        self.revealViewController().pushFrontViewController(navigationController, animated: true)
+        
+        let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+        frontVC.navigationItem.leftBarButtonItem = revealButtomItem
+      }
+      else if item.typeName == "playlist_artifact" || item.typeName == "tag_artifact" || item.typeName == "group_artifact" {
+        let item = moreItems[indexPath.row]
+        let viewController = LatestViewController(artifactID: Int(item.id))
+        
+        let navigationController = UINavigationController(rootViewController: viewController )
+        self.revealViewController().pushFrontViewController(navigationController, animated: true)
+        // TODO: move out button for reuse
+        let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+        viewController.navigationItem.leftBarButtonItem = revealButtomItem
+        viewController.title = item.name
+      }
+      else if item.typeName == "link_artifact" {
+        if var urlString = item.providerURL {
+          if !urlString.hasPrefix("http") {
+            urlString = "http://\(urlString)"
+          }
+          // TODO: setup for link_artifact
+          //        UIApplication.shared.openURL(URL(string: urlString)!)
+        }
+      }
+    case 1:
+      let item = artifactItems[indexPath.row]
+      if let stringValue = item as? String {
+        if (stringValue == "Feedback") {
+          if (MFMailComposeViewController.canSendMail()) {
+            let feedbackController = FeedbackViewController()
+            feedbackController.createMailPopup()
+            self.navigationController?.present(feedbackController, animated: true, completion: nil)
+          }
+          else {
+            let alertViewController = UIAlertController.init(title: "Email Address Not Set Up", message: "Your Email Address is not set up yet, please add one in Settings", preferredStyle: UIAlertControllerStyle.alert)
+            let alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+              alertViewController.dismiss(animated: true, completion: nil)
+            })
+            alertViewController.addAction(alertAction)
+            self.present(alertViewController, animated: true, completion: nil)
+          }
+        }
+      }
+      else {
+        if item.typeName == "article_artifact" {
+          let viewController = ArticleArtifactViewController(artifact: item as! Artifact)
+          let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+          viewController.navigationItem.leftBarButtonItem = revealButtomItem
+          let navigationController = UINavigationController(rootViewController: viewController )
+          self.revealViewController().pushFrontViewController(navigationController, animated: true)
+          viewController.title = item.name
+        }
+      }
+    default:
+      break
+    }
   }
   
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
