@@ -44,6 +44,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
     activityIndicator.startAnimating()
     
+    loadData()
     // NOTE: removed load data method from here because there was a race condition between viewDidLoad and manual trigger of
     // load method. Better way to handle this is to add a flag to prevent a new call being made
   }
@@ -52,7 +53,6 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     super.init(nibName:nil, bundle:nil)
     
     artifactID = anArtifactID
-    filterTeams(artifactID!)
 
     Session.shared().getProperty { property, error in
       if (error == nil) {
