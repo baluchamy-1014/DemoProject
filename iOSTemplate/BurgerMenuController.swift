@@ -30,7 +30,7 @@ class BurgerMenuController: UITableViewController {
       if (error == nil) {
         Group.getGroup("/navigation", forProperty: Int32(Int((aProperty?.id)!)), onCompletion: { (group, error) in
           if (error == nil) && (group != nil) {
-            Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: [:], onCompletion: { (tags, error) in
+            Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: ["count":"20"], onCompletion: { (tags, error) in
               self.moreItems = tags as! [AnyObject]
               for item in self.moreItems {
                 if item.typeName == "article_artifact" {
