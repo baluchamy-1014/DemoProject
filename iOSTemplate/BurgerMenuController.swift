@@ -25,6 +25,9 @@ class BurgerMenuController: UITableViewController {
     }
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    clearSelectedTableViewCellOnLeave()
+  }
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -236,6 +239,12 @@ class BurgerMenuController: UITableViewController {
       }
     default:
       break
+    }
+  }
+  
+  func clearSelectedTableViewCellOnLeave() {
+    if (tableView.indexPathForSelectedRow != nil) {
+      tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: false)
     }
   }
   
