@@ -114,7 +114,7 @@ class BurgerMenuController: UITableViewController {
     let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
     frontVC.navigationItem.leftBarButtonItem = revealButtomItem
 
-    signButton.title = "Sign In"
+    signButton.title = "Sign In/Sign Up"
   }
   
   override func numberOfSections(in tableView: UITableView) -> Int {
