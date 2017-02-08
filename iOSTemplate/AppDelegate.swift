@@ -52,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon.png"), style: UIBarButtonItemStyle.plain, target: revealVC, action: #selector(revealVC?.revealToggle(_:)))
     frontVC.navigationItem.leftBarButtonItem = revealButtomItem
     frontVC.navigationItem.title = "All Teams"
+    rearNC.navigationBar.isTranslucent = false
 
     self.viewController = revealVC
     

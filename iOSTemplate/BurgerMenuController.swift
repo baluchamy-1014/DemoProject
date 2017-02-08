@@ -15,9 +15,10 @@ class BurgerMenuController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.title = "Menu"
-    self.tableView.separatorStyle = .none
+    self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+    self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     self.tableView.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+    self.tableView.separatorStyle = .none
     
     Session.shared().getProperty { (aProperty, error) in
       if (error == nil) {
@@ -111,13 +112,16 @@ class BurgerMenuController: UITableViewController {
       }
       else if item.typeName == "playlist_artifact" || item.typeName == "tag_artifact" || item.typeName == "group_artifact" {
         let item = moreItems[indexPath.row]
+    
         let viewController = LatestViewController(artifactID: Int(item.id))
-        
         let navigationController = UINavigationController(rootViewController: viewController )
         self.revealViewController().pushFrontViewController(navigationController, animated: true)
+        
         // TODO: move out button for reuse
         let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
         viewController.navigationItem.leftBarButtonItem = revealButtomItem
+        viewController.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+        viewController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         viewController.title = item.name
       }
       else if item.typeName == "link_artifact" {
@@ -151,10 +155,14 @@ class BurgerMenuController: UITableViewController {
       else {
         if item.typeName == "article_artifact" {
           let viewController = ArticleArtifactViewController(artifact: item as! Artifact)
-          let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
-          viewController.navigationItem.leftBarButtonItem = revealButtomItem
+
           let navigationController = UINavigationController(rootViewController: viewController )
           self.revealViewController().pushFrontViewController(navigationController, animated: true)
+          let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+          viewController.navigationItem.leftBarButtonItem = revealButtomItem
+          viewController.navigationController?.navigationBar.isTranslucent = false
+          viewController.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+          viewController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
           viewController.title = item.name
         }
       }

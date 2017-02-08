@@ -33,6 +33,7 @@ class UserController: UIViewController {
   override func viewDidLoad() {
     self.formView.addSubview(signInController.view)
     self.title = "Welcome To NLL TV!"
+    self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     self.signInButton.isSelected = true
     
     // hides line under navigation bar
