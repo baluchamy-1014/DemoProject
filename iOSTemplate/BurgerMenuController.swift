@@ -100,16 +100,7 @@ class BurgerMenuController: UITableViewController {
     Session.shared().resetSession();
     self.appDelegate.keymakerOrganizer.clearKeymakerToken()
     
-    // TODO: create return to home screen method
-    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-    let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
-    
-    let navigationController = UINavigationController(rootViewController: frontVC )
-    self.revealViewController().pushFrontViewController(navigationController, animated: true)
-    
-    let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
-    frontVC.navigationItem.leftBarButtonItem = revealButtomItem
-
+    self.appDelegate.sendUserToHomeScreen()
     signButton.title = "Sign In/Sign Up"
   }
   
@@ -168,14 +159,7 @@ class BurgerMenuController: UITableViewController {
     case 0:
       let item = otherItems[indexPath.row]
       if item.name == "Home" { // will home actually need to be hardcoded?
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
-
-        let navigationController = UINavigationController(rootViewController: frontVC )
-        self.revealViewController().pushFrontViewController(navigationController, animated: true)
-        
-        let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
-        frontVC.navigationItem.leftBarButtonItem = revealButtomItem
+        self.appDelegate.sendUserToHomeScreen()
       }
       else if item.typeName == "playlist_artifact" || item.typeName == "tag_artifact" || item.typeName == "group_artifact" {
         let item = moreItems[indexPath.row]

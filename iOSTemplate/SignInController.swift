@@ -89,14 +89,7 @@ class SignInController: UIViewController {
         if ((session as? Session)?.isValid())! {
           self.appDelegate.keymakerOrganizer.saveKeymakerToken(Session.shared().accessToken)
           self.containerController!.present(self.alertViewController!, animated: true, completion: nil)
-
-          let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-          let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
-          
-          let navigationController = UINavigationController(rootViewController: frontVC )
-          self.appDelegate.viewController?.pushFrontViewController(navigationController, animated: true)
-          let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: self.revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
-          frontVC.navigationItem.leftBarButtonItem = revealButtomItem
+          self.appDelegate.sendUserToHomeScreen()
         } else {
           self.invalidLabel.text = "The username or password is incorrect."
         }

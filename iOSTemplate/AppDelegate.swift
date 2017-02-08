@@ -64,6 +64,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     return true
   
   }
+  
+  func sendUserToHomeScreen() {
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
+    
+    let navigationController = UINavigationController(rootViewController: frontVC )
+    self.viewController?.pushFrontViewController(navigationController, animated: true)
+    let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: self.viewController, action: #selector(self.viewController?.revealToggle(_:)))
+    frontVC.navigationItem.leftBarButtonItem = revealButtomItem
+  }
 
   func applicationWillResignActive(_ application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

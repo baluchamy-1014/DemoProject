@@ -187,7 +187,8 @@ class SignUpSuccessViewController: UIViewController {
   }
   
   @IBAction func letsGoTapped(_ sender: AnyObject) {
-//    self.appDelegate.viewController!.selectedIndex = 0
+    appDelegate.sendUserToHomeScreen()
+
     self.dismiss(animated: false) {
     }
   }
