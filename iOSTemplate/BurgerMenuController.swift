@@ -15,6 +15,16 @@ class BurgerMenuController: UITableViewController {
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
   var signButton = UIBarButtonItem()
   var signButtonTitle = String()
+  
+  override func viewWillAppear(_ animated: Bool) {
+    if Session.shared().isValid() {
+      signButton.title = "Sign Out"
+    }
+    else {
+      signButton.title = "Sign In/Sign Up"
+    }
+  }
+  
 
   override func viewDidLoad() {
     super.viewDidLoad()
