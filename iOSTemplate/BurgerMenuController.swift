@@ -12,6 +12,9 @@ class BurgerMenuController: UITableViewController {
   // TODO: use mutidimensional array for sections data
   var artifactItems: [AnyObject] = Array()
   var otherItems: [AnyObject] = Array()
+  let appDelegate = UIApplication.shared.delegate as! AppDelegate
+  var signButton = UIBarButtonItem()
+  var signButtonTitle = String()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,6 +23,9 @@ class BurgerMenuController: UITableViewController {
     self.tableView.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
     self.tableView.separatorStyle = .none
     
+    setupSignInUpOutButton()
+    
+    // TODO: grab from api prior to first load of burger menu
     Session.shared().getProperty { (aProperty, error) in
       if (error == nil) {
         Group.getGroup("/navigation", forProperty: Int32(Int((aProperty?.id)!)), onCompletion: { (group, error) in
@@ -34,6 +40,7 @@ class BurgerMenuController: UITableViewController {
                   self.otherItems.append(item)
                 }
               }
+              // TODO: hide until Apple Pay setup
 //              self.artifactItems.insert("Buy Content" as AnyObject, at: 0)
               self.artifactItems.append("Feedback" as AnyObject)
               self.tableView.reloadData()
@@ -44,6 +51,57 @@ class BurgerMenuController: UITableViewController {
     }
     tableView.reloadData()
     super.viewDidLoad()
+  }
+  
+  func setupSignInUpOutButton() {
+    let fixedItem = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+    fixedItem.width = 16.0
+    let signInUpButtomItem = UIBarButtonItem(image: UIImage(named: "user_inactive"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(BurgerMenuController.userDidTapSignInOutButton))
+    if Session.shared().isValid() {
+      signButtonTitle = "Sign Out"
+    }
+     else {
+      signButtonTitle = "Sign In/Sign Up"
+    }
+    signButton = UIBarButtonItem(title: signButtonTitle, style: .plain, target: self, action: #selector(BurgerMenuController.userDidTapSignInOutButton))
+    self.navigationItem.setLeftBarButtonItems([fixedItem, signInUpButtomItem, signButton], animated: false)
+  }
+  
+  func userDidTapSignInOutButton() {
+    if Session.shared().isValid() {
+      let alertController = UIAlertController(title: "Are You Sure You Want To Sign Out?", message: nil, preferredStyle: .alert)
+      let noAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+      alertController.addAction(noAction)
+      let yesAction = UIAlertAction(title: "Yes", style: .default) { action in
+        self.signOut()
+      }
+      alertController.addAction(yesAction)
+      self.present(alertController, animated: true, completion: nil)
+    } else {
+      let userController = UserController(nibName: "UserAccount", bundle: nil)
+      let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+      userController.navigationItem.leftBarButtonItem = revealButtomItem
+      let navigationController = UINavigationController(rootViewController: userController )
+      navigationController.navigationBar.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0) // this
+      self.revealViewController().pushFrontViewController(navigationController, animated: true)
+    }
+  }
+  
+  fileprivate func signOut() {
+    Session.shared().resetSession();
+    self.appDelegate.keymakerOrganizer.clearKeymakerToken()
+    
+    // TODO: create return to home screen method
+    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
+    
+    let navigationController = UINavigationController(rootViewController: frontVC )
+    self.revealViewController().pushFrontViewController(navigationController, animated: true)
+    
+    let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+    frontVC.navigationItem.leftBarButtonItem = revealButtomItem
+
+    signButton.title = "Sign In"
   }
   
   override func numberOfSections(in tableView: UITableView) -> Int {
