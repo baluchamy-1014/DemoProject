@@ -222,6 +222,10 @@ class BurgerMenuController: UITableViewController {
     }
   }
   
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 48.0
+  }
+  
   override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let view = UIView(frame: CGRect(x:0, y:0, width:tableView.frame.size.width, height:8))
     view.backgroundColor = UIColor.gray // TODO: set color in specs
