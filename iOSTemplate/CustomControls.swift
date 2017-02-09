@@ -191,6 +191,19 @@ class SelectedCellBackgroundColorView: UIView {
 
 }
 
+class SelectedCellBurgerMenuBackgroundColorView: UIView {
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    
+    self.backgroundColor = UIColor(red: 60/255, green: 75/255, blue: 87/255, alpha: 1.0)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+}
+
 class UserScreenButton: UIButton {
   required override init(frame: CGRect) {
     super.init(frame: frame)

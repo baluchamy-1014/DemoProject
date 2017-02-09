@@ -19,15 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds3-7J-1ke">
-                        <rect key="frame" x="77" y="12" width="235" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="44" id="K79-pg-DVP"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFO-65-WTj">
                         <rect key="frame" x="8" y="10" width="24" height="24"/>
                         <constraints>
@@ -35,6 +26,15 @@
                             <constraint firstAttribute="height" constant="24" id="hFy-Zv-Lbx"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ds3-7J-1ke">
+                        <rect key="frame" x="77" y="1" width="235" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="K79-pg-DVP"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Ds3-7J-1ke" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8Kq-Fc-0gp"/>

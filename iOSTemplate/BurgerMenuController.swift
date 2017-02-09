@@ -129,9 +129,11 @@ class BurgerMenuController: UITableViewController {
       cell.burgerCellLabel.text = item.name
       if item.typeName == "playlist_artifact" || item.typeName == "tag_artifact" || item.typeName == "group_artifact" {
         cell.burgerMenuImageView.image = UIImage(named: "play_button_inactive")
+        cell.burgerMenuImageView.highlightedImage = UIImage(named: "play_button_active")
       }
       if item.name == "Home" {
         cell.burgerMenuImageView.image = UIImage(named: "home_icon_inactive")
+        cell.burgerMenuImageView.highlightedImage = UIImage(named: "home_icon_active")
       }
     case 1:
       let item = self.artifactItems[indexPath.row]
@@ -139,18 +141,28 @@ class BurgerMenuController: UITableViewController {
         cell.burgerCellLabel!.text = text
         if text == "Buy Content" {
           cell.burgerMenuImageView.image = UIImage(named: "cart_inactive")
+          cell.burgerMenuImageView.highlightedImage = UIImage(named: "cart_active")
         }
         else if text == "Feedback" {
           cell.burgerMenuImageView.image = UIImage(named: "contact_inactive")
+          cell.burgerMenuImageView.highlightedImage = UIImage(named: "contact_active")
         }
       }
       else {
         cell.burgerCellLabel?.text = item.name
         cell.burgerMenuImageView.image = UIImage(named: "info_inactive")
+        cell.burgerMenuImageView.highlightedImage = UIImage(named: "info_active")
       }
     default:
       break
     }
+    
+    let backgroundColorView = SelectedCellBurgerMenuBackgroundColorView(frame: cell.frame)
+    cell.selectedBackgroundView = backgroundColorView
+    
+    cell.burgerCellLabel.highlightedTextColor = UIColor.white
+    cell.burgerCellLabel.textColor = UIColor(red: 135/255, green: 139/255, blue: 143/255, alpha: 1.0)
+
     return cell
   }
   
@@ -158,7 +170,7 @@ class BurgerMenuController: UITableViewController {
     switch indexPath.section {
     case 0:
       let item = otherItems[indexPath.row]
-      if item.name == "Home" { // will home actually need to be hardcoded?
+      if item.name == "Home" {
         self.appDelegate.sendUserToHomeScreen()
       }
       else if item.typeName == "playlist_artifact" || item.typeName == "tag_artifact" || item.typeName == "group_artifact" {
