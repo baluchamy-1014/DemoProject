@@ -47,7 +47,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     
     revealVC?.panGestureRecognizer()
     revealVC?.tapGestureRecognizer()
-    revealVC?.rearViewRevealWidth = 260
+    
+    if DeviceChecker.DeviceType.IS_IPHONE_5 {
+       revealVC?.rearViewRevealWidth = 260
+    }
+    else {
+       revealVC?.rearViewRevealWidth = 320
+    }
 
     let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon.png"), style: UIBarButtonItemStyle.plain, target: revealVC, action: #selector(revealVC?.revealToggle(_:)))
     frontVC.navigationItem.leftBarButtonItem = revealButtomItem

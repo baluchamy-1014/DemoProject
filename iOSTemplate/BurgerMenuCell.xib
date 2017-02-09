@@ -45,6 +45,9 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ds3-7J-1ke" firstAttribute="width" secondItem="KGk-i7-Jjw" secondAttribute="width" multiplier="0.6" id="AxE-Rg-fPG"/>
+            </constraints>
             <connections>
                 <outlet property="burgerCellLabel" destination="Ds3-7J-1ke" id="MUU-RA-bk1"/>
                 <outlet property="burgerMenuImageView" destination="KFO-65-WTj" id="Qhe-tM-5iR"/>
