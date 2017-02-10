@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
   var window: UIWindow?
   var viewController: SWRevealViewController?
   let keymakerOrganizer = KeymakerOrganizer()
+  var burgerMenuItems: [AnyObject] = Array()
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
@@ -67,8 +68,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     self.window!.rootViewController = self.viewController
     self.window!.makeKeyAndVisible()
     
+    self.getBurgerMenuData()
+    
     return true
+  }
   
+  func getBurgerMenuData() {
+    Session.shared().getProperty { (aProperty, error) in
+      if (error == nil) {
+        Group.getGroup("/navigation", forProperty: Int32(Int((aProperty?.id)!)), onCompletion: { (group, error) in
+          if (error == nil) && (group != nil) {
+            Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: ["count":"20"], onCompletion: { (tags, error) in
+              self.burgerMenuItems = tags as! [AnyObject]
+            })
+          }
+        })
+      }
+    }
   }
   
   func sendUserToHomeScreen() {
