@@ -18,7 +18,6 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.navigationController?.navigationBar.backItem?.title = ""
     
     collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: CustomCollectionViewFlowLayout())
     self.view.addSubview(collectionView)
@@ -154,7 +153,6 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     let point: CGPoint = recognizer.location(in: recognizer.view)
     if let indexPath: IndexPath = collectionView.indexPathForItem(at: point) {
       let artifact = self.items[indexPath.row]
-      self.navigationController?.navigationBar.topItem?.title = ""
       let detailController = ArtifactDetailViewController(artifact: artifact) as UIViewController
       self.navigationController?.pushViewController(detailController, animated: true)
       detailController.title = artifact.name
