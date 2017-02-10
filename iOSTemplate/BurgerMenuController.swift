@@ -120,6 +120,10 @@ class BurgerMenuController: UITableViewController {
         cell.burgerMenuImageView.image = UIImage(named: "play_button_inactive")
         cell.burgerMenuImageView.highlightedImage = UIImage(named: "play_button_active")
       }
+      else if item.typeName == "link_artifact" {
+        cell.burgerMenuImageView.image = UIImage(named: "link_artifact_inactive")
+        cell.burgerMenuImageView.highlightedImage = UIImage(named: "link_artifact_active")
+      }
       if item.name == "Home" {
         cell.burgerMenuImageView.image = UIImage(named: "home_icon_inactive")
         cell.burgerMenuImageView.highlightedImage = UIImage(named: "home_icon_active")
@@ -179,8 +183,7 @@ class BurgerMenuController: UITableViewController {
           if !urlString.hasPrefix("http") {
             urlString = "http://\(urlString)"
           }
-          // TODO: setup for link_artifact
-          //        UIApplication.shared.openURL(URL(string: urlString)!)
+          UIApplication.shared.openURL(URL(string: urlString)!)
         }
       }
     case 1:
