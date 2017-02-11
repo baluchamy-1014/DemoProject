@@ -148,10 +148,10 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-      let artifact = self.items[indexPath.row]
-      let detailController = ArtifactDetailViewController(artifact: artifact) as UIViewController
-      self.navigationController?.pushViewController(detailController, animated: true)
-      detailController.title = artifact.name
+    let artifact = self.items[indexPath.row]
+    let detailController = ArtifactDetailViewController(artifact: artifact) as UIViewController
+    self.navigationController?.pushViewController(detailController, animated: true)
+    detailController.title = artifact.name
   }
   
   override func didReceiveMemoryWarning() {

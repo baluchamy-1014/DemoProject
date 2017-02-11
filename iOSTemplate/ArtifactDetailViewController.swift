@@ -42,10 +42,6 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
     // TODO: theme
     artifactDetailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     self.view.addSubview(artifactDetailCollectionView)
-    
-    let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(ArtifactDetailViewController.articleTapped(_:)))
-    tapRecognizer.delegate = self
-    artifactDetailCollectionView.addGestureRecognizer(tapRecognizer)
   }
   
   func loadRelatedContent() {
@@ -84,8 +80,6 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
         }
       }
     }
-
-
   }
 
   override func didReceiveMemoryWarning() {
@@ -135,7 +129,6 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   }
   
   func openVideoPlayer(_ sender: UIButton) {
-//    appDelegate.viewController?.tabBar.hidden = true
     self.navigationController?.setNavigationBarHidden(true, animated: false)
     
     let videoPlayerController = VideoPlayerController()
@@ -265,6 +258,13 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
 
     return CGSize(width: collectionView.bounds.size.width, height: CGFloat(120))
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let artifact = self.items[indexPath.row]
+    let detailController = ArtifactDetailViewController(artifact: artifact) as UIViewController
+    self.navigationController?.pushViewController(detailController, animated: true)
+    detailController.title = artifact.name
   }
   
   func articleTapped(_ recognizer: UITapGestureRecognizer) {
