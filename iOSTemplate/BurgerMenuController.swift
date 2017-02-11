@@ -181,7 +181,7 @@ class BurgerMenuController: UITableViewController {
       else if item.typeName == "link_artifact" {
         if var urlString = item.providerURL {
           if !urlString.hasPrefix("http") {
-            urlString = "http://\(urlString)"
+            urlString = "http://\(urlString!)"
           }
           UIApplication.shared.openURL(URL(string: urlString)!)
         }
