@@ -14,28 +14,28 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
   var collectionView: UICollectionView!
   let placeholderImage = UIImage(named: "Placeholder_nll_logo")
 
-    override func viewDidLoad() {
-      // TODO: move out in CollectionView setup
-      collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-95), collectionViewLayout: CustomCollectionViewFlowLayout())
-      self.view.addSubview(collectionView)
-      collectionView.allowsSelection = true
-      collectionView.delegate = self
-      collectionView.dataSource = self
-      collectionView.canCancelContentTouches = false
-      collectionView.isUserInteractionEnabled = true
-      collectionView.register(UINib(nibName: "LargeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "largeCell")
-      collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
-      // TODO: Theme
-      collectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
-      collectionView!.alwaysBounceVertical = true
-      
-      self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-      
-      setup()
-      loadFeatured()
-      
-      super.viewDidLoad()
-    }
+  override func viewDidLoad() {
+    // TODO: move out in CollectionView setup
+    collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-95), collectionViewLayout: CustomCollectionViewFlowLayout())
+    self.view.addSubview(collectionView)
+    collectionView.allowsSelection = true
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    collectionView.canCancelContentTouches = false
+    collectionView.isUserInteractionEnabled = true
+    collectionView.register(UINib(nibName: "LargeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "largeCell")
+    collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
+    // TODO: Theme
+    collectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
+    collectionView!.alwaysBounceVertical = true
+    
+    self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    
+    setup()
+    loadFeatured()
+    
+    super.viewDidLoad()
+  }
   
   override func viewWillAppear(_ animated: Bool) {
     if (self.revealViewController() != nil) {
