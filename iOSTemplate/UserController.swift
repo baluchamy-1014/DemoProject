@@ -39,6 +39,9 @@ class UserController: UIViewController {
     // hides line under navigation bar
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
+    
+    self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    
     super.viewDidLoad()
   }
   

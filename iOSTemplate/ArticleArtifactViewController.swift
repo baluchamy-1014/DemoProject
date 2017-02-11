@@ -29,6 +29,8 @@ class ArticleArtifactViewController: UIViewController {
     self.createTitleLabel()
     self.createTextView()
     self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: 188 + self.articleTextView.frame.size.height)
+    
+    self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
   }
   
   func setupScrollView() {

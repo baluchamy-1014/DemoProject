@@ -29,9 +29,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     collectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
     
-    let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(LatestViewController.articleTapped(_:)))
-    tapRecognizer.delegate = self
-    collectionView.addGestureRecognizer(tapRecognizer)
+    self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
 
     refreshControl = CustomRefreshControl()
     refreshControl.addTarget(self, action: #selector(LatestViewController.loadAllTeams), for: .valueChanged)
@@ -148,15 +146,12 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
       }
     }
   }
-  
-  func articleTapped(_ recognizer: UITapGestureRecognizer) {
-    let point: CGPoint = recognizer.location(in: recognizer.view)
-    if let indexPath: IndexPath = collectionView.indexPathForItem(at: point) {
+
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
       let artifact = self.items[indexPath.row]
       let detailController = ArtifactDetailViewController(artifact: artifact) as UIViewController
       self.navigationController?.pushViewController(detailController, animated: true)
       detailController.title = artifact.name
-    }
   }
   
   override func didReceiveMemoryWarning() {
