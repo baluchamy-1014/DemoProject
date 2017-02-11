@@ -37,6 +37,12 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
       super.viewDidLoad()
     }
   
+  override func viewWillAppear(_ animated: Bool) {
+    if (self.revealViewController() != nil) {
+      self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    }
+  }
+  
   func loadFeatured() {
     Session.shared().getProperty { (aProperty, error) in
       if (error == nil) {
@@ -56,25 +62,18 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
   }
   
   func setup() {
-    let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(ArticleViewController.articleTapped(_:)))
-    tapRecognizer.delegate = self
-    collectionView.addGestureRecognizer(tapRecognizer)
-    
     refreshControl = CustomRefreshControl()
     refreshControl.addTarget(self, action: #selector(ArticleViewController.loadFeatured), for: .valueChanged)
     collectionView!.addSubview(refreshControl)
   }
   
-  func articleTapped(_ recognizer: UITapGestureRecognizer) {
-    let point: CGPoint = recognizer.location(in: recognizer.view)
-    if let indexPath: IndexPath = collectionView.indexPathForItem(at: point) {
-      let item = self.artifactItems[indexPath.row]
-      self.navigationController?.navigationBar.topItem?.title = ""
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let item = self.artifactItems[indexPath.row]
+    self.navigationController?.navigationBar.topItem?.title = ""
 
-      let detailController = ArtifactDetailViewController(artifact: item) as UIViewController
-      self.navigationController?.pushViewController(detailController, animated: true)
-      detailController.title = item.name
-    }
+    let detailController = ArtifactDetailViewController(artifact: item) as UIViewController
+    self.navigationController?.pushViewController(detailController, animated: true)
+    detailController.title = item.name
   }
 
   override func didReceiveMemoryWarning() {

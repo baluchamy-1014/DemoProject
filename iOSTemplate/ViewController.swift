@@ -48,6 +48,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
 
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
     self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    
+    self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
   }
   
   override func viewWillAppear(_ animated: Bool) {
