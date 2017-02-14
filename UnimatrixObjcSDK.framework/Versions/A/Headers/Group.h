@@ -8,6 +8,8 @@
 
 @interface Group : Resource
 
+typedef void (^APIQueryCompletionGroupBlock) (Group *group, NSError *error);
+
 @property (nonatomic, retain) NSString     *name;
 @property (nonatomic, retain) NSString     *typeName;
 @property (nonatomic, retain) NSString     *longDescription;
@@ -25,6 +27,6 @@
 @property int propertyID;
 
 + (Attributes *)attributes;
-+ (void)getGroup:(NSString *)groupName forProperty:(int)propertyID onCompletion:(APIQueryCompletionBlock)callback;
++ (void)getGroup:(NSString *)groupName forProperty:(int)propertyID onCompletion:(APIQueryCompletionGroupBlock)callback;
 
 @end

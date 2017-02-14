@@ -16,6 +16,7 @@
 @interface Session : NSObject
 
 typedef void (^APIQueryCompletionBlock) (id response, NSError *error);
+typedef void (^APIQueryCompletionPropertyBlock) (Property *property, NSError *error);
 
 @property (nonatomic, retain) NSString *accessToken;
 @property (nonatomic, retain) NSDictionary *tokenDictionary;
@@ -32,7 +33,7 @@ typedef void (^APIQueryCompletionBlock) (id response, NSError *error);
             password:(NSString *)password
         onCompletion:(APIQueryCompletionBlock)callback;
 - (BOOL)isValid;
-- (void)getProperty:(APIQueryCompletionBlock)callback;
+- (void)getProperty:(APIQueryCompletionPropertyBlock)callback;
 - (void)resetSession;
 
 @end

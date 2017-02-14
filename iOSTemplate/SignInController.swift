@@ -7,10 +7,34 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l >= r
+  default:
+    return !(lhs < rhs)
+  }
+}
+
 
 class SignInController: UIViewController {
 
-  let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+  let appDelegate = UIApplication.shared.delegate as! AppDelegate
   var alertViewController: UIAlertController?
   var alertAction: UIAlertAction?
   var containerController: UIViewController?
@@ -23,20 +47,19 @@ class SignInController: UIViewController {
   
   
   override func viewDidLoad() {
-    self.alertViewController = UIAlertController.init(title: "Login Successful!", message: "You will now be redirected to home screen", preferredStyle: UIAlertControllerStyle.Alert)
+    self.alertViewController = UIAlertController.init(title: "Login Successful!", message: "You will now be redirected to home screen", preferredStyle: UIAlertControllerStyle.alert)
     
-    self.alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) in
-      self.alertViewController?.dismissViewControllerAnimated(true, completion: nil)
-      self.appDelegate.viewController!.selectedIndex = 0
+    self.alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+      self.alertViewController?.dismiss(animated: true, completion: nil)
     })
     self.alertViewController!.addAction(self.alertAction!)
-    self.activityIndicator.hidden = true
+    self.activityIndicator.isHidden = true
     
-    self.signInButton.enabled = false
+    self.signInButton.isEnabled = false
   
-    NSNotificationCenter.defaultCenter().addObserver(self,
+    NotificationCenter.default.addObserver(self,
                                                      selector: #selector(SignInController.textFieldDidChange(_:)),
-                                                     name: UITextFieldTextDidChangeNotification,
+                                                     name: NSNotification.Name.UITextFieldTextDidChange,
                                                      object: nil)
 
     super.viewDidLoad()
@@ -47,24 +70,25 @@ class SignInController: UIViewController {
     passwordField.createBottomBorder()
   }
   
-  func textFieldDidChange(sender: AnyObject){
+  func textFieldDidChange(_ sender: AnyObject){
     if EmailValidator().isValidEmail(self.usernameField.text!) && passwordLengthMet() {
-      self.signInButton.enabled = true
+      self.signInButton.isEnabled = true
     }
     else {
-      self.signInButton.enabled = false
+      self.signInButton.isEnabled = false
     }
   }
   
-  @IBAction func signInTapped(sender: AnyObject) {
-    self.activityIndicator.hidden = false
+  @IBAction func signInTapped(_ sender: AnyObject) {
+    self.activityIndicator.isHidden = false
     self.activityIndicator.startAnimating()
-    Session.sharedSession().authenticate(self.usernameField.text!, password: self.passwordField.text!) { (session, error) in
+    Session.shared().authenticate(self.usernameField.text!, password: self.passwordField.text!) { (session, error) in
       if ((session) != nil) {
         self.invalidLabel.text = ""
-        if (session.isValid()) {
-          self.appDelegate.keymakerOrganizer.saveKeymakerToken(Session.sharedSession().accessToken)
-          self.containerController!.presentViewController(self.alertViewController!, animated: true, completion: nil)
+        if ((session as? Session)?.isValid())! {
+          self.appDelegate.keymakerOrganizer.saveKeymakerToken(Session.shared().accessToken)
+          self.containerController!.present(self.alertViewController!, animated: true, completion: nil)
+          self.appDelegate.sendUserToHomeScreen()
         } else {
           self.invalidLabel.text = "The username or password is incorrect."
         }
@@ -72,11 +96,11 @@ class SignInController: UIViewController {
         self.invalidLabel.text = "An error occurred."
       }
       self.activityIndicator.stopAnimating()
-      self.activityIndicator.hidden = true
+      self.activityIndicator.isHidden = true
     }
   }
   
-  private func passwordLengthMet() -> Bool {
+  fileprivate func passwordLengthMet() -> Bool {
     return (self.passwordField.text?.characters.count >= 8)
   }
 
