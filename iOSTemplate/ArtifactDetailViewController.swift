@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
+class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
   
   var artifactDetailCollectionView: UICollectionView!
   var tagSection: TagSection!

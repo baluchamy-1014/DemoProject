@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate {
+class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
   var collectionView: UICollectionView!
   var items = [Artifact]()
   var artifactID: Int?

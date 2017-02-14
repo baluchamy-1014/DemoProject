@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate {
+class ArticleViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
   var artifactItems: [Artifact] = Array()
   var refreshControl: CustomRefreshControl!
   var collectionView: UICollectionView!
