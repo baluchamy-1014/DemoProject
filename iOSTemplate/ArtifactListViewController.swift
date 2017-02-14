@@ -28,8 +28,6 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     // TODO: Theme
     collectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
-    
-    self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
 
     refreshControl = CustomRefreshControl()
     refreshControl.addTarget(self, action: #selector(LatestViewController.loadAllTeams), for: .valueChanged)
@@ -62,6 +60,15 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
       }
     }
  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    super.viewWillAppear(animated)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+  }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
