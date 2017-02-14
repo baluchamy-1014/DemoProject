@@ -32,7 +32,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     self.pageController.view.frame = CGRect(x: 0, y: 100, width: self.view.frame.size.width, height: self.view.frame.size.height)
     self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
-    if self.pageController.viewControllers![0].isKind(of: ArticleViewController.self) {
+    if self.pageController.viewControllers![0].isKind(of: FeaturedViewController.self) {
        teamFilterButton.setTitle("NLL TV", for: UIControlState())
        teamFilterButton.setImage(nil, for: UIControlState())
     }
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   }
 
   @IBAction func userDidTapTeamFilterButton(_ sender: UIButton) {
-    if self.pageController.viewControllers![0].isKind(of: ArticleViewController.self) {
+    if self.pageController.viewControllers![0].isKind(of: FeaturedViewController.self) {
       // do nothing
     }
     else {

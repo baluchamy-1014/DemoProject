@@ -1,5 +1,5 @@
 //
-//  ArticleViewController.swift
+//  FeaturedViewController.swift
 //  iOSTemplate
 //
 //  Created by Nichole Radman on 9/27/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class FeaturedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
   var artifactItems: [Artifact] = Array()
   var refreshControl: CustomRefreshControl!
   var collectionView: UICollectionView!
@@ -63,7 +63,7 @@ class ArticleViewController: UIViewController, UICollectionViewDelegate, UIColle
   
   func setup() {
     refreshControl = CustomRefreshControl()
-    refreshControl.addTarget(self, action: #selector(ArticleViewController.loadFeatured), for: .valueChanged)
+    refreshControl.addTarget(self, action: #selector(FeaturedViewController.loadFeatured), for: .valueChanged)
     collectionView!.addSubview(refreshControl)
   }
   
