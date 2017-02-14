@@ -149,7 +149,7 @@
 		78E31EA91D9B443A00CB59D3 /* NewsIconActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E31EA41D9B443A00CB59D3 /* NewsIconActive@2x.png */; };
 		78E31EAA1D9B443A00CB59D3 /* NewsIconInactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E31EA51D9B443A00CB59D3 /* NewsIconInactive.png */; };
 		78E31EAB1D9B443A00CB59D3 /* NewsIconInactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E31EA61D9B443A00CB59D3 /* NewsIconInactive@2x.png */; };
-		78E31EDE1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E31EDD1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift */; };
+		78E31EDE1D9DB87B00CB59D3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E31EDD1D9DB87B00CB59D3 /* DetailViewController.swift */; };
 		CA47329CD3426049E916B50D /* reveal-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA4737ED53F39E19B1E2506B /* reveal-icon.png */; };
 		CA4739D1B419C9A665CA934A /* reveal-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CA473BE3662F550EF175913B /* reveal-icon@2x.png */; };
 		CA473A34D224D5536EEC11F7 /* KeymakerOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */; };
@@ -303,7 +303,7 @@
 		78E31EA51D9B443A00CB59D3 /* NewsIconInactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NewsIconInactive.png; path = iOSTemplate/Assets.xcassets/NewsIconInactive.png; sourceTree = "<group>"; };
 		78E31EA61D9B443A00CB59D3 /* NewsIconInactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewsIconInactive@2x.png"; path = "iOSTemplate/Assets.xcassets/NewsIconInactive@2x.png"; sourceTree = "<group>"; };
 		78E31EB11D9C7BA100CB59D3 /* bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = bridge.h; path = iOSTemplate/bridge.h; sourceTree = "<group>"; };
-		78E31EDD1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtifactDetailViewController.swift; sourceTree = "<group>"; };
+		78E31EDD1D9DB87B00CB59D3 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CA4737ED53F39E19B1E2506B /* reveal-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "reveal-icon.png"; path = "iOSTemplate/Assets.xcassets/reveal-icon.png"; sourceTree = "<group>"; };
 		CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeymakerOrganizer.swift; sourceTree = "<group>"; };
 		CA473B36478C1AADAD8D51A6 /* BurgerMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BurgerMenuController.swift; sourceTree = "<group>"; };
@@ -350,7 +350,7 @@
 				6209A2E11DC398CD00B278B9 /* VideoPlayerController.swift */,
 				784AFE051DADC18800FA157B /* ArtifactListViewController.swift */,
 				78E31E921D9AEC2600CB59D3 /* FeaturedViewController.swift */,
-				78E31EDD1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift */,
+				78E31EDD1D9DB87B00CB59D3 /* DetailViewController.swift */,
 				78E31E8A1D9A0ABA00CB59D3 /* PageViewController.swift */,
 				78E31E861D99FC6600CB59D3 /* TeamsFilterListViewController.swift */,
 				78E31E761D99F3F400CB59D3 /* ViewController.swift */,
@@ -751,7 +751,7 @@
 				784C3FEA1DB72CFE001AECD3 /* ListCollectionViewCell.swift in Sources */,
 				620C89F21DF726B400DAC962 /* StreamListViewController.swift in Sources */,
 				78E31E771D99F3F400CB59D3 /* ViewController.swift in Sources */,
-				78E31EDE1D9DB87B00CB59D3 /* ArtifactDetailViewController.swift in Sources */,
+				78E31EDE1D9DB87B00CB59D3 /* DetailViewController.swift in Sources */,
 				620C89F01DF7242100DAC962 /* LatestViewController.swift in Sources */,
 				62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */,
 				784B76DD1DFB42CE00076E8D /* FeedbackViewController.swift in Sources */,

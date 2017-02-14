@@ -266,10 +266,10 @@
             </objects>
             <point key="canvasLocation" x="2073" y="1119"/>
         </scene>
-        <!--Artifact Detail View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="9vn-5w-1db">
             <objects>
-                <viewController storyboardIdentifier="ArtifactDetailPageController" hidesBottomBarWhenPushed="YES" id="6qk-vC-Hxg" customClass="ArtifactDetailViewController" customModule="NLL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" hidesBottomBarWhenPushed="YES" id="6qk-vC-Hxg" customClass="DetailViewController" customModule="NLL" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AcZ-Cy-vOS"/>
                         <viewControllerLayoutGuide type="bottom" id="aqi-Lq-Erq"/>

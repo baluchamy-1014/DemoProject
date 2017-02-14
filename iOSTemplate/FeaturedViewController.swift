@@ -71,7 +71,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     let item = self.artifactItems[indexPath.row]
     self.navigationController?.navigationBar.topItem?.title = ""
 
-    let detailController = ArtifactDetailViewController(artifact: item) as UIViewController
+    let detailController = DetailViewController(artifact: item) as UIViewController
     self.navigationController?.pushViewController(detailController, animated: true)
     detailController.title = item.name
   }

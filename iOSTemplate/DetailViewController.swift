@@ -1,5 +1,5 @@
 //
-//  ArtifactDetailViewController.swift
+//  DetailViewController.swift
 //  iOSTemplate
 //
 //  Created by Nichole Radman on 9/29/16.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
   
-  var artifactDetailCollectionView: UICollectionView!
+  var detailCollectionView: UICollectionView!
   var tagSection: TagSection!
   var artifact: Artifact!
   var items: [Artifact] = Array()
@@ -32,16 +32,16 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    artifactDetailCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: CustomCollectionViewFlowLayout())
-    artifactDetailCollectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
-    artifactDetailCollectionView.delegate = self
-    artifactDetailCollectionView.dataSource = self
-    artifactDetailCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
+    detailCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: CustomCollectionViewFlowLayout())
+    detailCollectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
+    detailCollectionView.delegate = self
+    detailCollectionView.dataSource = self
+    detailCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
     loadRelatedContent()
     
     // TODO: theme
-    artifactDetailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
-    self.view.addSubview(artifactDetailCollectionView)
+    detailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
+    self.view.addSubview(detailCollectionView)
   }
   
   func loadRelatedContent() {
@@ -72,7 +72,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
               if (tag as? Artifact) != nil {
                 Artifact.getRelatedArtifacts(Int32(Int((tag as AnyObject).id)), forProperty: Int32(Int((property?.id)!)), filter: params as [AnyHashable: Any], onCompletion: { (relatedVideos, error) in
                   self.items = relatedVideos as! Array
-                  self.artifactDetailCollectionView.reloadData()
+                  self.detailCollectionView.reloadData()
                 })
               }
             }
@@ -92,7 +92,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
     let item = items[indexPath.row]
     cell.backgroundColor = UIColor.white
     
-    let collectionViewWidth = artifactDetailCollectionView.bounds.size.width
+    let collectionViewWidth = detailCollectionView.bounds.size.width
     cell.frame.size.width = collectionViewWidth
     
     if let imageURL = item.pictureURLwithWidth(320, height: 180) {
@@ -143,7 +143,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   {
     var reusableHeaderView: UICollectionReusableView! = nil
     if (kind == UICollectionElementKindSectionHeader) {
-      reusableHeaderView = artifactDetailCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as UICollectionReusableView
+      reusableHeaderView = detailCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as UICollectionReusableView
       reusableHeaderView.backgroundColor = UIColor.white
       
       let headerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: reusableHeaderView.frame.size.width, height: 200))
@@ -158,7 +158,7 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
         
       if artifact.typeName == "video_artifact" || artifact.typeName == "stream_artifact" {
         let button = PlayButton(frame: CGRect(x: (headerImageView.frame.size.width/2) - 30, y: (headerImageView.frame.size.height/2) - 30, width: 60, height: 60))
-        button.addTarget(self, action: #selector(ArtifactDetailViewController.openVideoPlayer(_:)), for: UIControlEvents.touchUpInside)
+        button.addTarget(self, action: #selector(DetailViewController.openVideoPlayer(_:)), for: UIControlEvents.touchUpInside)
         headerImageView.addSubview(button)
       }
       
@@ -262,17 +262,17 @@ class ArtifactDetailViewController: UIViewController, UICollectionViewDelegate, 
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let artifact = self.items[indexPath.row]
-    let detailController = ArtifactDetailViewController(artifact: artifact) as UIViewController
+    let detailController = DetailViewController(artifact: artifact) as UIViewController
     self.navigationController?.pushViewController(detailController, animated: true)
     detailController.title = artifact.name
   }
   
   func articleTapped(_ recognizer: UITapGestureRecognizer) {
     let point: CGPoint = recognizer.location(in: recognizer.view)
-    if let indexPath: IndexPath = artifactDetailCollectionView.indexPathForItem(at: point) {
+    if let indexPath: IndexPath = detailCollectionView.indexPathForItem(at: point) {
       let artifact = self.items[indexPath.row]
 //      self.navigationController?.navigationBar.topItem?.title = ""
-      let detailController = ArtifactDetailViewController(artifact: artifact) as UIViewController
+      let detailController = DetailViewController(artifact: artifact) as UIViewController
       self.navigationController?.pushViewController(detailController, animated: true)
       detailController.title = artifact.name
     }

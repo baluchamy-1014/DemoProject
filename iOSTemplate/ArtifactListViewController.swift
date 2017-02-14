@@ -156,7 +156,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let artifact = self.items[indexPath.row]
-    let detailController = ArtifactDetailViewController(artifact: artifact) as UIViewController
+    let detailController = DetailViewController(artifact: artifact) as UIViewController
     self.navigationController?.pushViewController(detailController, animated: true)
     detailController.title = artifact.name
   }
