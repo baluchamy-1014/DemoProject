@@ -112,7 +112,7 @@ class AddedAtLabel: UILabel {
     
     let currentTimestamp = Date()
     if gmtPubAtDate != nil {
-      self.text = dateComponentsFormatter.string(from: gmtPubAtDate!, to: currentTimestamp)
+      self.text = dateComponentsFormatter.string(from: gmtPubAtDate!, to: currentTimestamp)! + " ago"
     }
   }
 }
