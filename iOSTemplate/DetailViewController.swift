@@ -22,7 +22,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     super.init(nibName:nil, bundle:nil)
     
     artifact = anArtifact
-//    print(artifact.name)
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -271,7 +270,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     let point: CGPoint = recognizer.location(in: recognizer.view)
     if let indexPath: IndexPath = detailCollectionView.indexPathForItem(at: point) {
       let artifact = self.items[indexPath.row]
-//      self.navigationController?.navigationBar.topItem?.title = ""
       let detailController = DetailViewController(artifact: artifact) as UIViewController
       self.navigationController?.pushViewController(detailController, animated: true)
       detailController.title = artifact.name

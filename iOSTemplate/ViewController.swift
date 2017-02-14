@@ -80,16 +80,13 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   @IBAction func segmentChanged(_ sender: AnyObject) {
     switch sender.selectedSegmentIndex {
     case 0:
-//      print("page 0")
       resetTeamFilterButtonAllTeams()
       self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     case 1:
-//      print("page 1")
       teamFilterButtonRestoreTeamName()
       loadDataForCurrentPageIndex(sender.selectedSegmentIndex)
       self.pageController.setViewControllers([page2], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     case 2:
-//      print("page 2")
       teamFilterButtonRestoreTeamName()
       loadDataForCurrentPageIndex(sender.selectedSegmentIndex)
       self.pageController.setViewControllers([page3], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
@@ -109,7 +106,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
  
     }
     customSegmentedControl.selectedSegmentIndex = currentIndex
-//    print(currentIndex)
     if currentIndex == 0 {
       resetTeamFilterButtonAllTeams()
     }
@@ -124,7 +120,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     let currentIndex = pages.index(of: viewController)!
     let nextIndex = abs((currentIndex + 1) % pages.count)
     customSegmentedControl.selectedSegmentIndex = currentIndex
-//    print(currentIndex)
     if currentIndex == 0 {
       resetTeamFilterButtonAllTeams()
     }
@@ -172,8 +167,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   }
 
   @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
-//    print(segue.identifier)
-    // TODO: add LIVE functionality
     self.navigationController?.navigationBar.topItem?.title = ""
     DispatchQueue.main.async(execute: {
       if segue.identifier == "selectTeamSegue" {

@@ -128,7 +128,6 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
       
       if let aAuthor = item.author() {
         relatedCell.authorLabel.text = aAuthor.name
-//        print("Author\(aAuthor.name)")
       }
       else {
         relatedCell.authorLabel.text = ""

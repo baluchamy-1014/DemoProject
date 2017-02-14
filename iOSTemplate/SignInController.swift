@@ -51,7 +51,6 @@ class SignInController: UIViewController {
     
     self.alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
       self.alertViewController?.dismiss(animated: true, completion: nil)
-//      self.appDelegate.viewController!.selectedIndex = 0
     })
     self.alertViewController!.addAction(self.alertAction!)
     self.activityIndicator.isHidden = true

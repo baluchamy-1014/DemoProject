@@ -43,7 +43,6 @@ class AuthorLabel: UILabel {
     
     self.font = UIFont.systemFont(ofSize: 11)
     self.textColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1.0)
-//    self.numberOfLines = 0
     self.backgroundColor = UIColor.white
     self.textAlignment = .left
   }
