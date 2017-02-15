@@ -50,6 +50,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     
     self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    
+    teamFilterButtonRestoreTeamName()
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -68,19 +70,15 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   }
 
   @IBAction func userDidTapTeamFilterButton(_ sender: UIButton) {
-    if self.pageController.viewControllers![0].isKind(of: FeaturedViewController.self) {
-      // do nothing
-    }
-    else {
-      let teamVC = storyboard!.instantiateViewController(withIdentifier: "teamviewcontroller")
-      present(teamVC, animated: true, completion: nil)
-    }
-  }
+    let teamVC = storyboard!.instantiateViewController(withIdentifier: "teamviewcontroller")
+    present(teamVC, animated: true, completion: nil)
+ }
   
   @IBAction func segmentChanged(_ sender: AnyObject) {
     switch sender.selectedSegmentIndex {
     case 0:
-      resetTeamFilterButtonAllTeams()
+      teamFilterButtonRestoreTeamName()
+      loadDataForCurrentPageIndex(sender.selectedSegmentIndex)
       self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     case 1:
       teamFilterButtonRestoreTeamName()
@@ -103,16 +101,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
     else {
       previousIndex = abs((currentIndex - 1) % pages.count)
- 
     }
     customSegmentedControl.selectedSegmentIndex = currentIndex
-    if currentIndex == 0 {
-      resetTeamFilterButtonAllTeams()
-    }
-    else {
-      teamFilterButtonRestoreTeamName()
-      loadDataForCurrentPageIndex(currentIndex)
-    }
+    teamFilterButtonRestoreTeamName()
+    loadDataForCurrentPageIndex(currentIndex)
+    
     return pages[previousIndex]
   }
   
@@ -120,13 +113,9 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     let currentIndex = pages.index(of: viewController)!
     let nextIndex = abs((currentIndex + 1) % pages.count)
     customSegmentedControl.selectedSegmentIndex = currentIndex
-    if currentIndex == 0 {
-      resetTeamFilterButtonAllTeams()
-    }
-    else {
-      teamFilterButtonRestoreTeamName()
-      loadDataForCurrentPageIndex(currentIndex)
-    }
+    teamFilterButtonRestoreTeamName()
+    loadDataForCurrentPageIndex(currentIndex)
+    
     return pages[nextIndex]
   }
   
@@ -152,17 +141,24 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   }
   
   func loadDataForCurrentPageIndex(_ currentPageIndex: Int) {
-    if currentPageIndex == 1 {
+    switch currentPageIndex {
+    case 0:
+      if let _ = self.teamID {
+        (page1 as! FeaturedViewController).artifactID = self.teamID!
+      }
+      (page1 as! FeaturedViewController).loadData()
+    case 1:
       if let _ = self.teamID {
         (page2 as! LatestViewController).artifactID = self.teamID!
       }
       (page2 as! LatestViewController).loadData()
-    }
-    else {
+    case 2:
       if let _ = self.teamID {
         (page3 as! StreamListViewController).artifactID = self.teamID!
       }
       (page3 as! StreamListViewController).loadData()
+    default:
+      break
     }
   }
 
@@ -182,6 +178,14 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
           self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, for: UIControlState())
         } else if currentController.isKind(of: StreamListViewController.self) {
           self.teamID != nil ? (currentController as! StreamListViewController).filterTeams(teamsFilterListViewController.teamID) : (currentController as! StreamListViewController).loadAllTeams()
+          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, for: UIControlState())
+        }
+        else if currentController.isKind(of: FeaturedViewController.self) {
+          print("Featured")
+          let featuredVC = self.pageController.viewControllers![0] as! FeaturedViewController
+          self.teamID != nil ? featuredVC.filterTeams(teamsFilterListViewController.teamID) : featuredVC.loadFeatured()
+          featuredVC.collectionView.reloadData()
+          featuredVC.collectionView.setContentOffset(CGPoint.zero, animated: false)
           self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, for: UIControlState())
         }
         else {
