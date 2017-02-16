@@ -62,6 +62,11 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
               self.artifactItems = tags as! [Artifact]
 //              print("stories count \(self.artifactItems.count)")
               self.collectionView.reloadData()
+              if self.artifactItems.isEmpty {
+                self.displayPlaceholderMessage()
+              } else {
+                self.collectionView.isHidden = false
+              }
               self.refreshControl.endRefreshing()
             })
           }
@@ -84,6 +89,11 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
                 if (error == nil) {
                   self.artifactItems = artifacts as! [Artifact]
                   self.collectionView.reloadData()
+                  if self.artifactItems.isEmpty {
+                    self.displayPlaceholderMessage()
+                  } else {
+                    self.collectionView.isHidden = false
+                  }
                 }
                 self.refreshControl.endRefreshing()
               })
@@ -188,6 +198,10 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     } else {
       return CGSize(width: self.view.frame.width, height: 120)
     }
+  }
+  
+  func displayPlaceholderMessage() {
+    self.collectionView.isHidden = true
   }
   
 }
