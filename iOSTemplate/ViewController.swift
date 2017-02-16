@@ -133,13 +133,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 10)
   }
   
-  func resetTeamFilterButtonAllTeams() {
-    teamFilterButton.setImage(nil, for: UIControlState())
-    teamFilterButton.setTitle("NLL TV", for: UIControlState())
-    teamFilterButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0)
-    teamFilterButton.sizeToFit()
-  }
-  
   func loadDataForCurrentPageIndex(_ currentPageIndex: Int) {
     switch currentPageIndex {
     case 0:
@@ -181,7 +174,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
           self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, for: UIControlState())
         }
         else if currentController.isKind(of: FeaturedViewController.self) {
-          print("Featured")
           let featuredVC = self.pageController.viewControllers![0] as! FeaturedViewController
           self.teamID != nil ? featuredVC.filterTeams(teamsFilterListViewController.teamID) : featuredVC.loadFeatured()
           featuredVC.collectionView.reloadData()
