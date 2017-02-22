@@ -13,6 +13,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
   var refreshControl: CustomRefreshControl!
   var collectionView: UICollectionView!
   let placeholderImage = UIImage(named: "Placeholder_nll_logo")
+  var artifactID: Int?
 
   override func viewDidLoad() {
     // TODO: move out in CollectionView setup
@@ -32,7 +33,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     
     setup()
-    loadFeatured()
+    loadData()
     
     super.viewDidLoad()
   }
@@ -40,6 +41,15 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
   override func viewWillAppear(_ animated: Bool) {
     if (self.revealViewController() != nil) {
       self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    }
+  }
+  
+  func loadData() {
+    if (artifactID != nil) {
+      filterTeams(artifactID!)
+    }
+    else {
+      loadFeatured()
     }
   }
   
@@ -52,6 +62,11 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
               self.artifactItems = tags as! [Artifact]
 //              print("stories count \(self.artifactItems.count)")
               self.collectionView.reloadData()
+              if self.artifactItems.isEmpty {
+                self.displayPlaceholderMessage()
+              } else {
+                self.collectionView.isHidden = false
+              }
               self.refreshControl.endRefreshing()
             })
           }
@@ -59,6 +74,30 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
       }
     }
     collectionView.reloadData()
+  }
+  
+  func filterTeams(_ atagID:Int) {
+    Session.shared().getProperty { (aProperty, error) in
+      if (error == nil) {
+        Group.getGroup("/featured", forProperty: Int32(Int((aProperty?.id)!)), onCompletion: { (group, error) in
+          if (error == nil) && (group != nil) {
+            let featuredTeamDict = ["artifact_id": [Int32(Int((group?.id)!)), atagID]]
+            Artifact.query(featuredTeamDict as [AnyHashable : Any], propertyID: Int32(Int((aProperty?.id)!)), count: 20, offset: 0, onCompletion: { (artifacts, error) in
+              if (error == nil) {
+                self.artifactItems = artifacts as! [Artifact]
+                self.collectionView.reloadData()
+                if self.artifactItems.isEmpty {
+                  self.displayPlaceholderMessage()
+                } else {
+                  self.collectionView.isHidden = false
+                }
+              }
+              self.refreshControl.endRefreshing()
+            })
+          }
+        })
+      }
+    }
   }
   
   func setup() {
@@ -155,6 +194,10 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     } else {
       return CGSize(width: self.view.frame.width, height: 120)
     }
+  }
+  
+  func displayPlaceholderMessage() {
+    self.collectionView.isHidden = true
   }
   
 }
