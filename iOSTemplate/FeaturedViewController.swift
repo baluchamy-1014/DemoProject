@@ -81,22 +81,18 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
       if (error == nil) {
         Group.getGroup("/featured", forProperty: Int32(Int((aProperty?.id)!)), onCompletion: { (group, error) in
           if (error == nil) && (group != nil) {
-            Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: [:], onCompletion: { (tags, error) in
-              let featuredTeamDict = ["artifact_id": [Int32(Int((group?.id)!)), atagID]]
-              Artifact.query(featuredTeamDict as [AnyHashable : Any], propertyID: Int32(Int((aProperty?.id)!)), count: 20, offset: 0, onCompletion: { (artifacts, error) in
-                // TODO: how many? count parameter?
-                print(artifacts!)
-                if (error == nil) {
-                  self.artifactItems = artifacts as! [Artifact]
-                  self.collectionView.reloadData()
-                  if self.artifactItems.isEmpty {
-                    self.displayPlaceholderMessage()
-                  } else {
-                    self.collectionView.isHidden = false
-                  }
+            let featuredTeamDict = ["artifact_id": [Int32(Int((group?.id)!)), atagID]]
+            Artifact.query(featuredTeamDict as [AnyHashable : Any], propertyID: Int32(Int((aProperty?.id)!)), count: 20, offset: 0, onCompletion: { (artifacts, error) in
+              if (error == nil) {
+                self.artifactItems = artifacts as! [Artifact]
+                self.collectionView.reloadData()
+                if self.artifactItems.isEmpty {
+                  self.displayPlaceholderMessage()
+                } else {
+                  self.collectionView.isHidden = false
                 }
-                self.refreshControl.endRefreshing()
-              })
+              }
+              self.refreshControl.endRefreshing()
             })
           }
         })
