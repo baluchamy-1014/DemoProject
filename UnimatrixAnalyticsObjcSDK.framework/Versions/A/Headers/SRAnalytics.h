@@ -9,8 +9,6 @@
 #ifndef SRAnalytics_h
 #define SRAnalytics_h
 
-#import <UnimatrixObjcSDK/SREnvConfig.h>
-
 @interface SRAnalytics : NSObject
 
 @property (nonatomic, retain) NSString *sessionUUID;
