@@ -17,13 +17,14 @@
 		623733D41E5F917A00358FD3 /* BoxxspringVideoPlayerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 623733D01E5F917A00358FD3 /* BoxxspringVideoPlayerSDK.bundle */; };
 		623733D51E5F917A00358FD3 /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623733D11E5F917A00358FD3 /* BoxxspringVideoPlayerSDK.framework */; };
 		623733D61E5F917A00358FD3 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 623733D21E5F917A00358FD3 /* UnimatrixAnalyticsObjcSDK.framework */; };
-		623733D91E5F920100358FD3 /* UnimatrixConfig.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 623733D81E5F920100358FD3 /* UnimatrixConfig.xcconfig */; };
-		623733DE1E5F923400358FD3 /* UnimatrixConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 623733DD1E5F923400358FD3 /* UnimatrixConfig.plist */; };
 		6253BDCD1DE34F58001CE859 /* SignUpSuccess.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */; };
 		6296FA5C1DD4E7170096B04D /* SignIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5B1DD4E7170096B04D /* SignIn.xib */; };
 		6296FA601DD50EFB0096B04D /* SignUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5F1DD50EFB0096B04D /* SignUp.xib */; };
 		6296FA641DD533510096B04D /* UserAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA631DD533510096B04D /* UserAccount.xib */; };
 		62A8F2761E60B1B800361495 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A8F2751E60B1B800361495 /* UnimatrixObjcSDK.framework */; };
+		62A8F2871E60C5A600361495 /* UnimatrixConfigStaging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */; };
+		62A8F28A1E60C5B000361495 /* UnimatrixConfigProduction.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */; };
+		62A8F28B1E60C5B000361495 /* UnimatrixConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2891E60C5B000361495 /* UnimatrixConfig.plist */; };
 		62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B233831E368B2D00A7643F /* SWRevealViewController.m */; };
 		780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780578551DC2AA1F0011BBE8 /* TagSection.swift */; };
 		78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A931DC951BE00FAB2B8 /* Cancel_icon.png */; };
@@ -169,13 +170,14 @@
 		623733D01E5F917A00358FD3 /* BoxxspringVideoPlayerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BoxxspringVideoPlayerSDK.bundle; sourceTree = "<group>"; };
 		623733D11E5F917A00358FD3 /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
 		623733D21E5F917A00358FD3 /* UnimatrixAnalyticsObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixAnalyticsObjcSDK.framework; sourceTree = "<group>"; };
-		623733D81E5F920100358FD3 /* UnimatrixConfig.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UnimatrixConfig.xcconfig; sourceTree = "<group>"; };
-		623733DD1E5F923400358FD3 /* UnimatrixConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UnimatrixConfig.plist; sourceTree = "<group>"; };
 		6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpSuccess.xib; sourceTree = "<group>"; };
 		6296FA5B1DD4E7170096B04D /* SignIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignIn.xib; sourceTree = "<group>"; };
 		6296FA5F1DD50EFB0096B04D /* SignUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUp.xib; sourceTree = "<group>"; };
 		6296FA631DD533510096B04D /* UserAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAccount.xib; sourceTree = "<group>"; };
 		62A8F2751E60B1B800361495 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
+		62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UnimatrixConfigStaging.xcconfig; sourceTree = "<group>"; };
+		62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UnimatrixConfigProduction.xcconfig; sourceTree = "<group>"; };
+		62A8F2891E60C5B000361495 /* UnimatrixConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UnimatrixConfig.plist; sourceTree = "<group>"; };
 		62B233821E368B2D00A7643F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		62B233831E368B2D00A7643F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		780578551DC2AA1F0011BBE8 /* TagSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSection.swift; sourceTree = "<group>"; };
@@ -337,6 +339,16 @@
 				6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */,
 			);
 			name = User;
+			sourceTree = "<group>";
+		};
+		62A8F28C1E60C5B400361495 /* UnimatrixConfig */ = {
+			isa = PBXGroup;
+			children = (
+				62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */,
+				62A8F2891E60C5B000361495 /* UnimatrixConfig.plist */,
+				62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */,
+			);
+			name = UnimatrixConfig;
 			sourceTree = "<group>";
 		};
 		62B233811E368B2D00A7643F /* SWRevealViewController */ = {
@@ -543,6 +555,7 @@
 		78E31E731D99F3F400CB59D3 /* iOSTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				62A8F28C1E60C5B400361495 /* UnimatrixConfig */,
 				62B233811E368B2D00A7643F /* SWRevealViewController */,
 				78E31E741D99F3F400CB59D3 /* AppDelegate.swift */,
 				784AFDFD1DAD57F600FA157B /* Controllers */,
@@ -553,8 +566,6 @@
 				78E31E801D99F3F400CB59D3 /* Info.plist */,
 				6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */,
 				CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */,
-				623733D81E5F920100358FD3 /* UnimatrixConfig.xcconfig */,
-				623733DD1E5F923400358FD3 /* UnimatrixConfig.plist */,
 			);
 			path = iOSTemplate;
 			sourceTree = "<group>";
@@ -627,6 +638,7 @@
 				78503A041E4D80B0005F81EC /* link_artifact_active.png in Resources */,
 				78A29F291DB5425300782620 /* VideosIconActive@3x.png in Resources */,
 				78E31E7C1D99F3F400CB59D3 /* Assets.xcassets in Resources */,
+				62A8F28B1E60C5B000361495 /* UnimatrixConfig.plist in Resources */,
 				78B3120A1DBE80C60064EE88 /* slider_bar.png in Resources */,
 				782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */,
 				784C3FF71DB9955C001AECD3 /* VideosIconActive@2x.png in Resources */,
@@ -657,11 +669,11 @@
 				78A29F281DB5425300782620 /* TeamIconInactive@3x.png in Resources */,
 				784C18971E454372008E8EED /* BurgerMenuCell.xib in Resources */,
 				78E31EA81D9B443A00CB59D3 /* NewsIconActive.png in Resources */,
-				623733D91E5F920100358FD3 /* UnimatrixConfig.xcconfig in Resources */,
 				780B686F1DC7CC62007F206F /* expand_indicator@2x.png in Resources */,
 				784C18E31E455EF2008E8EED /* cart_active@3x.png in Resources */,
 				784C18C21E4553D4008E8EED /* contact_inactive@2x.png in Resources */,
 				78095A981DC951BE00FAB2B8 /* Cancel_icon@3x.png in Resources */,
+				62A8F2871E60C5A600361495 /* UnimatrixConfigStaging.xcconfig in Resources */,
 				787867CF1DB99DB900958C1B /* NewsIcon@2x.png in Resources */,
 				782D4DBD1E0A08520078FEC1 /* Placeholder_nll_logo.png in Resources */,
 				78B3120B1DBE80C60064EE88 /* slider_bar@2x.png in Resources */,
@@ -673,6 +685,7 @@
 				787867D01DB99DB900958C1B /* NewsIcon@3x.png in Resources */,
 				782E3A8C1DF7928800FCF5CC /* TabSlider.png in Resources */,
 				782D4DC71E0B54F70078FEC1 /* MoreIconInactive@2x.png in Resources */,
+				62A8F28A1E60C5B000361495 /* UnimatrixConfigProduction.xcconfig in Resources */,
 				787867CA1DB99CC700958C1B /* TVIcon@3x.png in Resources */,
 				788C439C1DA45F9D00F342B9 /* NewsIconActive@3x.png in Resources */,
 				787867C91DB99CC700958C1B /* TVIcon@2x.png in Resources */,
@@ -689,7 +702,6 @@
 				78A29F1E1DB5425300782620 /* controlBottomBorder.png in Resources */,
 				78A29F251DB5425300782620 /* tab_bar@3x.png in Resources */,
 				78503A051E4D80B0005F81EC /* link_artifact_active@2x.png in Resources */,
-				623733DE1E5F923400358FD3 /* UnimatrixConfig.plist in Resources */,
 				78A29F261DB5425300782620 /* NewsIconInactive@3x.png in Resources */,
 				780B68701DC7CC62007F206F /* expand_indicator@3x.png in Resources */,
 				78A29F271DB5425300782620 /* TeamIconActive@3x.png in Resources */,
@@ -802,7 +814,6 @@
 /* Begin XCBuildConfiguration section */
 		78E31E811D99F3F400CB59D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 623733D81E5F920100358FD3 /* UnimatrixConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -850,7 +861,6 @@
 		};
 		78E31E821D99F3F400CB59D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 623733D81E5F920100358FD3 /* UnimatrixConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -892,7 +902,7 @@
 		};
 		78E31E841D99F3F400CB59D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 623733D81E5F920100358FD3 /* UnimatrixConfig.xcconfig */;
+			baseConfigurationReference = 62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -916,7 +926,6 @@
 		};
 		78E31E851D99F3F400CB59D3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 623733D81E5F920100358FD3 /* UnimatrixConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
