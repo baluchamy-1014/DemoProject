@@ -49,6 +49,7 @@ class ArticleArtifactViewController: UIViewController {
     titleLabel.translatesAutoresizingMaskIntoConstraints = false
     view.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: scrollView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
     view.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: scrollView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 30))
+    view.addConstraint(NSLayoutConstraint(item: titleLabel, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.lessThanOrEqual, toItem: scrollView, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 0))
   }
   
   func createTextView() {
