@@ -13,8 +13,7 @@ class KeymakerOrganizer {
   var environment: String!
 
   init() {
-    let appConfiguration = Bundle.main.infoDictionary! as NSDictionary
-    environment    = appConfiguration["AppEnvironment"] as! String
+    environment        = UnimatrixConfiguration.sharedConfig().appEnvironment
     let paths: NSArray = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true) as NSArray
     documentsDirectory = paths.object(at: 0) as! NSString
     path = documentsDirectory.appendingPathComponent(environment + "_keymaker.plist")

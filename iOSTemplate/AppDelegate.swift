@@ -25,12 +25,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     UINavigationBar.appearance().tintColor = UIColor.white
     
     let appConfiguration = Bundle.main.infoDictionary! as NSDictionary
-    let environment    = appConfiguration["AppEnvironment"] as! NSString
-    let configurations = appConfiguration["Configurations"] as! NSDictionary
-    let configValues   = configurations[environment]! as! NSDictionary
 
-    Session.shared().clientID = configValues["clientID"] as! String
-    Session.shared().clientSecret = configValues["clientSecret"] as! String
+    if let unimatrixConfigValues = UnimatrixConfiguration.sharedConfig().configValues() as? [String:String] {
+      Session.shared().clientID = unimatrixConfigValues["CLIENT_ID"]!
+      Session.shared().clientSecret = unimatrixConfigValues["CLIENT_SECRET"]!
+    }
+    
     Session.shared().propertyCode = appConfiguration["propertyCode"] as! String
 
     if let value: String = keymakerOrganizer.fileContents()?.object(forKey: "token") as? String {

@@ -2,8 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AppEnvironment</key>
-	<string>Production</string>
+	<key>UnimatrixConfigValues</key>
+	<dict>
+		<key>APP_ENVIRONMENT</key>
+		<string>${APP_ENVIRONMENT}</string>
+		<key>CLIENT_ID</key>
+		<string>${CLIENT_ID}</string>
+		<key>CLIENT_SECRET</key>
+		<string>${CLIENT_SECRET}</string>
+	</dict>
+	<key>propertyCode</key>
+	<string>nll</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -21,31 +30,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>50</string>
-	<key>Configurations</key>
-	<dict>
-		<key>Acceptance</key>
-		<dict>
-			<key>clientID</key>
-			<string></string>
-			<key>clientSecret</key>
-			<string></string>
-		</dict>
-		<key>Production</key>
-		<dict>
-			<key>clientID</key>
-			<string></string>
-			<key>clientSecret</key>
-			<string></string>
-		</dict>
-		<key>Staging</key>
-		<dict>
-			<key>clientID</key>
-			<string></string>
-			<key>clientSecret</key>
-			<string></string>
-		</dict>
-	</dict>
+	<string>62</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -69,7 +54,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>propertyCode</key>
-	<string>nll</string>
 </dict>
 </plist>
