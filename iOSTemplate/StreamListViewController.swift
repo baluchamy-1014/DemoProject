@@ -17,7 +17,7 @@ class StreamListViewController: ArtifactListViewController {
   }
 
   override func displayPlaceholderMessage() {
-    self.collectionView.hidden = true
+    self.collectionView.isHidden = true
   }
   
 }

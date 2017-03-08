@@ -14,5 +14,7 @@
 #import <BoxxspringVideoPlayerSDK/BoxxspringVideoPlayer.h>
 #import <UnimatrixObjcSDK/SRUser.h>
 #import <UnimatrixObjcSDK/Session.h>
+#import <UnimatrixObjcSDK/UnimatrixConfiguration.h>
+#import "SWRevealViewController.h"
 
 #endif /* bridge_h */

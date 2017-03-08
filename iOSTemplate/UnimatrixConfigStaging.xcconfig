@@ -1,0 +1,10 @@
+//
+//  UnimatrixConfig.xcconfig
+//  iOSTemplate
+//
+//  Created by Shovan Joshi on 2/23/17.
+//  Copyright © 2017 Sportsrocket. All rights reserved.
+//
+
+#include "StagingKeys.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) CLIENT_ID=@\"$(CLIENT_ID)\" CLIENT_SECRET=@\"$(CLIENT_SECRET)\" APP_ENVIRONMENT=@\"$(APP_ENVIRONMENT)\"

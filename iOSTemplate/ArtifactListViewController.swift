@@ -8,19 +8,18 @@
 
 import UIKit
 
-class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate, UIScrollViewDelegate {
+class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate {
   var collectionView: UICollectionView!
   var items = [Artifact]()
   var artifactID: Int?
   let placeholderImage = UIImage(named: "Placeholder_nll_logo")
   var refreshControl: CustomRefreshControl!
-  var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+  var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.navigationController?.navigationBar.backItem?.title = ""
     
-    collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-110), collectionViewLayout: CustomCollectionViewFlowLayout())
+    collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: CustomCollectionViewFlowLayout())
     self.view.addSubview(collectionView)
     
     collectionView.alwaysBounceVertical = true
@@ -28,22 +27,19 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     collectionView.dataSource = self
     // TODO: Theme
     collectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
-    collectionView.registerNib(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
-    
-    let tapRecognizer = UITapGestureRecognizer(target: self, action:#selector(LatestViewController.articleTapped(_:)))
-    tapRecognizer.delegate = self
-    collectionView.addGestureRecognizer(tapRecognizer)
+    collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
 
     refreshControl = CustomRefreshControl()
-    refreshControl.addTarget(self, action: #selector(LatestViewController.loadAllTeams), forControlEvents: .ValueChanged)
+    refreshControl.addTarget(self, action: #selector(LatestViewController.loadAllTeams), for: .valueChanged)
     collectionView!.addSubview(refreshControl)
 
     collectionView?.addSubview(activityIndicator)
     activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterX, multiplier: 1, constant: 0))
-    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: view, attribute: NSLayoutAttribute.CenterY, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
     activityIndicator.startAnimating()
     
+    loadData()
     // NOTE: removed load data method from here because there was a race condition between viewDidLoad and manual trigger of
     // load method. Better way to handle this is to add a flag to prevent a new call being made
   }
@@ -52,17 +48,27 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     super.init(nibName:nil, bundle:nil)
     
     artifactID = anArtifactID
-    filterTeams(artifactID!)
 
-    Session.sharedSession().getProperty { property, error in
+    Session.shared().getProperty { property, error in
       if (error == nil) {
-        Artifact.getArtifact(Int32(self.artifactID!), forProperty: Int32(Int(property.id))) { (response, error) in
-          let theTitle = response.name as String
-          self.title = theTitle
+        Artifact.getArtifact(Int32(self.artifactID!), forProperty: Int32(Int((property?.id)!))) { (response, error) in
+          if let response = response as? Artifact {
+            let theTitle = response.name as String
+            self.title = theTitle
+          }
         }
       }
     }
  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    super.viewWillAppear(animated)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+  }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
@@ -81,7 +87,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     }
   }
   
-  func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     var params = NSDictionary()
     if (artifactID != nil) {
       params = ["type_name.in": self.artifactTypes(), "parent_id": artifactID!, "provider": "Boxxspring"]
@@ -90,11 +96,11 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
       params = ["type_name.in": self.artifactTypes(), "provider": "Boxxspring"]
     }
     
-    let actualPosition = scrollView.panGestureRecognizer.translationInView(scrollView.superview)
+    let actualPosition = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
     if (actualPosition.y < 0){
       let artifact = items[items.count-1]
-      Session.sharedSession().getProperty { (aProperty, error) in
-        Artifact.queryPrevious(params as [NSObject : AnyObject], count: 20, offset: 0, reference: artifact, onCompletion: { (artifactObjects, error) in
+      Session.shared().getProperty { (aProperty, error) in
+        Artifact.queryPrevious(params as! [AnyHashable: Any], count: 20, offset: 0, reference: artifact, onCompletion: { (artifactObjects, error) in
           if error == nil {
             let newStories: [Artifact] = (artifactObjects as! Array)
             self.items = self.items + newStories
@@ -106,17 +112,17 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   }
 
   func loadAllTeams() {
-    let params = ["type_name.in": artifactTypes(), "provider": "Boxxspring"]
-    Session.sharedSession().getProperty { (aProperty, error) in
+    let params = ["type_name.in": artifactTypes(), "provider": "Boxxspring"] as [String : Any]
+    Session.shared().getProperty { (aProperty, error) in
       if (error == nil) {
-        Artifact.query(params as [NSObject : AnyObject], propertyID: Int32(Int(aProperty.id)), count: 20, offset: 0, onCompletion: { (artifacts, error) in
+        Artifact.query(params as [AnyHashable: Any], propertyID: Int32(Int((aProperty?.id)!)), count: 20, offset: 0, onCompletion: { (artifacts, error) in
           if (error == nil) {
             self.items = artifacts as! [Artifact]
             self.collectionView.reloadData()
             if self.items.isEmpty {
               self.displayPlaceholderMessage()
             } else {
-              self.collectionView.hidden = false
+              self.collectionView.isHidden = false
             }
           }
           self.refreshControl.endRefreshing()
@@ -125,21 +131,21 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     }
   }
   
-  func filterTeams(atagID:Int) {
+  func filterTeams(_ atagID:Int) {
     artifactID = atagID
-    let params = ["type_name.in": self.artifactTypes(), "parent_id": atagID, "provider": "Boxxspring"]
+    let params = ["type_name.in": self.artifactTypes(), "parent_id": atagID, "provider": "Boxxspring"] as [String : Any]
     // latest w/ both video and article
 
-    Session.sharedSession().getProperty { (aProperty, error) in
+    Session.shared().getProperty { (aProperty, error) in
       if (error == nil) {
-        Artifact.query(params as [NSObject : AnyObject], propertyID: Int32(Int(aProperty.id)), count: 20, offset: 0, onCompletion: { (artifacts, error) in
+        Artifact.query(params as [AnyHashable: Any], propertyID: Int32(Int((aProperty?.id)!)), count: 20, offset: 0, onCompletion: { (artifacts, error) in
           if (error == nil) {
             self.items = artifacts as! [Artifact]
             self.collectionView.reloadData()
             if self.items.isEmpty {
               self.displayPlaceholderMessage()
             } else {
-              self.collectionView.hidden = false
+              self.collectionView.isHidden = false
             }
           }
           self.refreshControl.endRefreshing()
@@ -147,16 +153,12 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
       }
     }
   }
-  
-  func articleTapped(recognizer: UITapGestureRecognizer) {
-    let point: CGPoint = recognizer.locationInView(recognizer.view)
-    if let indexPath: NSIndexPath = collectionView.indexPathForItemAtPoint(point) {
-      let artifact = self.items[indexPath.row]
-      self.navigationController?.navigationBar.topItem?.title = ""
-      let detailController = ArtifactDetailViewController(artifact: artifact) as UIViewController
-      self.navigationController?.pushViewController(detailController, animated: true)
-      detailController.title = artifact.name
-    }
+
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    let artifact = self.items[indexPath.row]
+    let detailController = DetailViewController(artifact: artifact) as UIViewController
+    self.navigationController?.pushViewController(detailController, animated: true)
+    detailController.title = artifact.name
   }
   
   override func didReceiveMemoryWarning() {
@@ -164,34 +166,34 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     // Dispose of any resources that can be recreated.
   }
   
-  func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return items.count
   }
   
-  func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("listCell", forIndexPath: indexPath) as! ListCollectionViewCell
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! ListCollectionViewCell
     let item = self.items[indexPath.row]
-    cell.backgroundColor = UIColor.whiteColor()
+    cell.backgroundColor = UIColor.white
     
     let collectionViewWidth = self.collectionView.bounds.size.width
     cell.frame.size.width = collectionViewWidth
     
     if let imageURL = item.pictureURLwithWidth(320, height: 180) {
-      cell.imageView.setImageWithURL(imageURL, placeholderImage: placeholderImage)
+      cell.imageView.setImageWith(imageURL, placeholderImage: placeholderImage)
     }
     else {
       cell.imageView.image = placeholderImage
     }
     
     if let artifactNameString = item.name {
-      cell.artifactNameLabel.text = artifactNameString.uppercaseString
+      cell.artifactNameLabel.text = artifactNameString.uppercased()
     }
     else {
       cell.artifactNameLabel.text = ""
     }
     
-    cell.authorLabel.font = UIFont.systemFontOfSize(11)
-    cell.authorLabel.backgroundColor = UIColor.whiteColor()
+    cell.authorLabel.font = UIFont.systemFont(ofSize: 11)
+    cell.authorLabel.backgroundColor = UIColor.white
     if let aAuthor = item.author() {
       cell.authorLabel.text = aAuthor.name
     }
@@ -206,13 +208,13 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     return cell
   }
   
-  func collectionView(collectionView: UICollectionView,
+  func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
-                             sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-    return CGSizeMake(collectionView.bounds.size.width, CGFloat(120))
+                             sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+    return CGSize(width: collectionView.bounds.size.width, height: CGFloat(120))
   }
   
-  func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
     return 1
   }
 

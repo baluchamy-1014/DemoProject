@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Acceptance</key>
+	<dict>
+		<key>ARCHIVIST_API_URL</key>
+		<string>http://api.acceptance.boxxspring.com</string>
+   		<key>KEYMAKER_API_URL</key>
+		<string>http://keymaker.acceptance.boxxspring.com</string>
+		<key>DEALER_API_URL</key>
+		<string>https://dealer.acceptance.boxxspring.com</string>
+		<key>GATEKEEPER_API_URL</key>
+		<string>http://gatekeeper.acceptance.boxxspring.com</string>
+		<key>ANALYTICS_API_URL</key>
+		<string>http://in.analytics.acceptance.boxxspring.com</string>
+		<key>MEDIA_HOST_URL</key>
+		<string>http://videos.acceptance.boxxspring.com</string>
+		<key>PICTURE_HOST_URL</key>
+		<string>http://pictures.acceptance.boxxspring.com</string>
+	</dict>
+	<key>Staging</key>
+	<dict>
+		<key>ARCHIVIST_API_URL</key>
+		<string>http://api.staging.boxxspring.com</string>
+		<key>KEYMAKER_API_URL</key>
+		<string>http://keymaker.staging.boxxspring.com</string>
+		<key>DEALER_API_URL</key>
+		<string>https://dealer.staging.boxxspring.com</string>
+		<key>GATEKEEPER_API_URL</key>
+		<string>http://gatekeeper.staging.boxxspring.com</string>
+		<key>ANALYTICS_API_URL</key>
+		<string>http://in.analytics.staging.boxxspring.com</string>
+		<key>MEDIA_HOST_URL</key>
+		<string>http://videos.staging.boxxspring.com</string>
+		<key>PICTURE_HOST_URL</key>
+		<string>http://pictures.staging.boxxspring.com</string>
+	</dict>
+	<key>Production</key>
+	<dict>
+		<key>ARCHIVIST_API_URL</key>
+		<string>https://api.boxxspring.com</string>
+		<key>KEYMAKER_API_URL</key>
+		<string>https://keymaker.boxxspring.com</string>
+		<key>DEALER_API_URL</key>
+		<string>https://dealer.boxxspring.com</string>
+		<key>GATEKEEPER_API_URL</key>
+		<string>https://gatekeeper.boxxspring.com</string>
+		<key>ANALYTICS_API_URL</key>
+		<string>https://in.analytics.boxxspring.com</string>
+		<key>MEDIA_HOST_URL</key>
+		<string>http://default.media.boxxspring.net</string>
+		<key>PICTURE_HOST_URL</key>
+		<string>https://pictures.boxxspring.net</string>
+	</dict>
+</dict>
+</plist>

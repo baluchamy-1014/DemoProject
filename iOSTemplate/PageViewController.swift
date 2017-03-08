@@ -17,11 +17,11 @@ class PageViewController: UIPageViewController, UIPageViewControllerDelegate {
     self.delegate = self
   }
   
-  func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+  func presentationCountForPageViewController(_ pageViewController: UIPageViewController) -> Int {
     return pages.count
   }
   
-  func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+  func presentationIndexForPageViewController(_ pageViewController: UIPageViewController) -> Int {
     return 0
   }
 

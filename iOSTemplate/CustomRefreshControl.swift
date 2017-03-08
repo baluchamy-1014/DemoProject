@@ -9,8 +9,8 @@
 import UIKit
 
 class CustomRefreshControl: UIRefreshControl {  
-  override func drawRect(rect: CGRect) {
-    self.tintColor = UIColor.whiteColor()
+  override func draw(_ rect: CGRect) {
+    self.tintColor = UIColor.white
   }
 
 }
