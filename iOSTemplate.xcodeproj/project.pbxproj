@@ -38,6 +38,24 @@
 		780B686E1DC7CC62007F206F /* expand_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686B1DC7CC62007F206F /* expand_indicator.png */; };
 		780B686F1DC7CC62007F206F /* expand_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686C1DC7CC62007F206F /* expand_indicator@2x.png */; };
 		780B68701DC7CC62007F206F /* expand_indicator@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686D1DC7CC62007F206F /* expand_indicator@3x.png */; };
+		7810028D1E6E1F3300EF3C8A /* seasonButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810027F1E6E1F3300EF3C8A /* seasonButton.png */; };
+		7810028E1E6E1F3300EF3C8A /* seasonButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002801E6E1F3300EF3C8A /* seasonButton@2x.png */; };
+		7810028F1E6E1F3300EF3C8A /* seasonButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002811E6E1F3300EF3C8A /* seasonButton@3x.png */; };
+		781002901E6E1F3300EF3C8A /* singleButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002821E6E1F3300EF3C8A /* singleButton.png */; };
+		781002911E6E1F3300EF3C8A /* singleButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002831E6E1F3300EF3C8A /* singleButton@2x.png */; };
+		781002921E6E1F3300EF3C8A /* singleButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002841E6E1F3300EF3C8A /* singleButton@3x.png */; };
+		781002931E6E1F3300EF3C8A /* teamButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002851E6E1F3300EF3C8A /* teamButton.png */; };
+		781002941E6E1F3300EF3C8A /* teamButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002861E6E1F3300EF3C8A /* teamButton@2x.png */; };
+		781002951E6E1F3300EF3C8A /* teamButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002871E6E1F3300EF3C8A /* teamButton@3x.png */; };
+		781002961E6E1F3300EF3C8A /* ticketTailSeason.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002881E6E1F3300EF3C8A /* ticketTailSeason.png */; };
+		781002971E6E1F3300EF3C8A /* ticketTailSeason@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002891E6E1F3300EF3C8A /* ticketTailSeason@2x.png */; };
+		781002981E6E1F3300EF3C8A /* ticketTailSeason@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810028A1E6E1F3300EF3C8A /* ticketTailSeason@3x.png */; };
+		781002991E6E1F3300EF3C8A /* ticketTailSingle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810028B1E6E1F3300EF3C8A /* ticketTailSingle.png */; };
+		7810029A1E6E1F3300EF3C8A /* ticketTailSingle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810028C1E6E1F3300EF3C8A /* ticketTailSingle@2x.png */; };
+		781002A51E6F552E00EF3C8A /* ticketTailSingle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A11E6F552E00EF3C8A /* ticketTailSingle@3x.png */; };
+		781002A61E6F552E00EF3C8A /* ticketTailTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A21E6F552E00EF3C8A /* ticketTailTeam.png */; };
+		781002A71E6F552E00EF3C8A /* ticketTailTeam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A31E6F552E00EF3C8A /* ticketTailTeam@2x.png */; };
+		781002A81E6F552E00EF3C8A /* ticketTailTeam@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A41E6F552E00EF3C8A /* ticketTailTeam@3x.png */; };
 		7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */; };
 		782D4DBD1E0A08520078FEC1 /* Placeholder_nll_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */; };
 		782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */; };
@@ -196,6 +214,24 @@
 		780B686B1DC7CC62007F206F /* expand_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expand_indicator.png; path = iOSTemplate/Assets.xcassets/expand_indicator.png; sourceTree = "<group>"; };
 		780B686C1DC7CC62007F206F /* expand_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expand_indicator@2x.png"; path = "iOSTemplate/Assets.xcassets/expand_indicator@2x.png"; sourceTree = "<group>"; };
 		780B686D1DC7CC62007F206F /* expand_indicator@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expand_indicator@3x.png"; path = "iOSTemplate/Assets.xcassets/expand_indicator@3x.png"; sourceTree = "<group>"; };
+		7810027F1E6E1F3300EF3C8A /* seasonButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = seasonButton.png; path = iOSTemplate/Assets.xcassets/seasonButton.png; sourceTree = "<group>"; };
+		781002801E6E1F3300EF3C8A /* seasonButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "seasonButton@2x.png"; path = "iOSTemplate/Assets.xcassets/seasonButton@2x.png"; sourceTree = "<group>"; };
+		781002811E6E1F3300EF3C8A /* seasonButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "seasonButton@3x.png"; path = "iOSTemplate/Assets.xcassets/seasonButton@3x.png"; sourceTree = "<group>"; };
+		781002821E6E1F3300EF3C8A /* singleButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = singleButton.png; path = iOSTemplate/Assets.xcassets/singleButton.png; sourceTree = "<group>"; };
+		781002831E6E1F3300EF3C8A /* singleButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "singleButton@2x.png"; path = "iOSTemplate/Assets.xcassets/singleButton@2x.png"; sourceTree = "<group>"; };
+		781002841E6E1F3300EF3C8A /* singleButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "singleButton@3x.png"; path = "iOSTemplate/Assets.xcassets/singleButton@3x.png"; sourceTree = "<group>"; };
+		781002851E6E1F3300EF3C8A /* teamButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = teamButton.png; path = iOSTemplate/Assets.xcassets/teamButton.png; sourceTree = "<group>"; };
+		781002861E6E1F3300EF3C8A /* teamButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "teamButton@2x.png"; path = "iOSTemplate/Assets.xcassets/teamButton@2x.png"; sourceTree = "<group>"; };
+		781002871E6E1F3300EF3C8A /* teamButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "teamButton@3x.png"; path = "iOSTemplate/Assets.xcassets/teamButton@3x.png"; sourceTree = "<group>"; };
+		781002881E6E1F3300EF3C8A /* ticketTailSeason.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ticketTailSeason.png; path = iOSTemplate/Assets.xcassets/ticketTailSeason.png; sourceTree = "<group>"; };
+		781002891E6E1F3300EF3C8A /* ticketTailSeason@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailSeason@2x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailSeason@2x.png"; sourceTree = "<group>"; };
+		7810028A1E6E1F3300EF3C8A /* ticketTailSeason@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailSeason@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailSeason@3x.png"; sourceTree = "<group>"; };
+		7810028B1E6E1F3300EF3C8A /* ticketTailSingle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ticketTailSingle.png; path = iOSTemplate/Assets.xcassets/ticketTailSingle.png; sourceTree = "<group>"; };
+		7810028C1E6E1F3300EF3C8A /* ticketTailSingle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailSingle@2x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailSingle@2x.png"; sourceTree = "<group>"; };
+		781002A11E6F552E00EF3C8A /* ticketTailSingle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailSingle@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailSingle@3x.png"; sourceTree = "<group>"; };
+		781002A21E6F552E00EF3C8A /* ticketTailTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ticketTailTeam.png; path = iOSTemplate/Assets.xcassets/ticketTailTeam.png; sourceTree = "<group>"; };
+		781002A31E6F552E00EF3C8A /* ticketTailTeam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailTeam@2x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailTeam@2x.png"; sourceTree = "<group>"; };
+		781002A41E6F552E00EF3C8A /* ticketTailTeam@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailTeam@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailTeam@3x.png"; sourceTree = "<group>"; };
 		7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SignInSignUpBGImage.png; path = iOSTemplate/Assets.xcassets/SignInSignUpBGImage.png; sourceTree = "<group>"; };
 		782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder_nll_logo.png; path = iOSTemplate/Assets.xcassets/Placeholder_nll_logo.png; sourceTree = "<group>"; };
 		782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder_nll_logo@2x.png"; path = "iOSTemplate/Assets.xcassets/Placeholder_nll_logo@2x.png"; sourceTree = "<group>"; };
@@ -378,6 +414,31 @@
 			path = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		7810027E1E6E1E3400EF3C8A /* Apple Pay */ = {
+			isa = PBXGroup;
+			children = (
+				7810027F1E6E1F3300EF3C8A /* seasonButton.png */,
+				781002801E6E1F3300EF3C8A /* seasonButton@2x.png */,
+				781002811E6E1F3300EF3C8A /* seasonButton@3x.png */,
+				781002821E6E1F3300EF3C8A /* singleButton.png */,
+				781002831E6E1F3300EF3C8A /* singleButton@2x.png */,
+				781002841E6E1F3300EF3C8A /* singleButton@3x.png */,
+				781002851E6E1F3300EF3C8A /* teamButton.png */,
+				781002861E6E1F3300EF3C8A /* teamButton@2x.png */,
+				781002871E6E1F3300EF3C8A /* teamButton@3x.png */,
+				781002881E6E1F3300EF3C8A /* ticketTailSeason.png */,
+				781002891E6E1F3300EF3C8A /* ticketTailSeason@2x.png */,
+				7810028A1E6E1F3300EF3C8A /* ticketTailSeason@3x.png */,
+				781002A21E6F552E00EF3C8A /* ticketTailTeam.png */,
+				781002A31E6F552E00EF3C8A /* ticketTailTeam@2x.png */,
+				781002A41E6F552E00EF3C8A /* ticketTailTeam@3x.png */,
+				7810028B1E6E1F3300EF3C8A /* ticketTailSingle.png */,
+				7810028C1E6E1F3300EF3C8A /* ticketTailSingle@2x.png */,
+				781002A11E6F552E00EF3C8A /* ticketTailSingle@3x.png */,
+			);
+			name = "Apple Pay";
+			sourceTree = "<group>";
+		};
 		784AFDFD1DAD57F600FA157B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -479,6 +540,7 @@
 		788C43A21DA46D1000F342B9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				7810027E1E6E1E3400EF3C8A /* Apple Pay */,
 				784C18B21E4552B6008E8EED /* Burger Menu */,
 				7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */,
 				782D4DC81E0C97040078FEC1 /* PlayButton.png */,
@@ -653,11 +715,14 @@
 				787867C81DB99CC700958C1B /* TVIcon.png in Resources */,
 				78E31EAA1D9B443A00CB59D3 /* NewsIconInactive.png in Resources */,
 				6296FA601DD50EFB0096B04D /* SignUp.xib in Resources */,
+				781002A71E6F552E00EF3C8A /* ticketTailTeam@2x.png in Resources */,
 				78E31EA91D9B443A00CB59D3 /* NewsIconActive@2x.png in Resources */,
 				78E31E7F1D99F3F400CB59D3 /* LaunchScreen.storyboard in Resources */,
 				78503A041E4D80B0005F81EC /* link_artifact_active.png in Resources */,
 				78A29F291DB5425300782620 /* VideosIconActive@3x.png in Resources */,
 				78E31E7C1D99F3F400CB59D3 /* Assets.xcassets in Resources */,
+				7810029A1E6E1F3300EF3C8A /* ticketTailSingle@2x.png in Resources */,
+				62A8F28B1E60C5B000361495 /* UnimatrixConfig.plist in Resources */,
 				78B3120A1DBE80C60064EE88 /* slider_bar.png in Resources */,
 				782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */,
 				784C3FF71DB9955C001AECD3 /* VideosIconActive@2x.png in Resources */,
@@ -665,8 +730,11 @@
 				7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */,
 				784C18A41E454E7A008E8EED /* contact_active.png in Resources */,
 				784C18D31E455CF3008E8EED /* info_active.png in Resources */,
+				781002921E6E1F3300EF3C8A /* singleButton@3x.png in Resources */,
 				784C18E41E455EF2008E8EED /* cart_inactive@3x.png in Resources */,
+				781002951E6E1F3300EF3C8A /* teamButton@3x.png in Resources */,
 				784C18C01E4553D4008E8EED /* cart_inactive@2x.png in Resources */,
+				781002971E6E1F3300EF3C8A /* ticketTailSeason@2x.png in Resources */,
 				784C3FEF1DB8348D001AECD3 /* LargeCollectionViewCell.xib in Resources */,
 				622901391E5CC31A00E021EE /* Subscriptions.xib in Resources */,
 				784C18C41E4553D4008E8EED /* home_icon_inactive@2x.png in Resources */,
@@ -674,6 +742,7 @@
 				784C18A61E454E7A008E8EED /* home_icon_active@2x.png in Resources */,
 				784C18D41E455CF3008E8EED /* info_inactive.png in Resources */,
 				782E3AA51DF9250A00FCF5CC /* slider_trans@2x.png in Resources */,
+				781002961E6E1F3300EF3C8A /* ticketTailSeason.png in Resources */,
 				784C18E51E455EF2008E8EED /* contact_active@3x.png in Resources */,
 				627484BB1E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle in Resources */,
 				6209A2E41DC398EC00B278B9 /* VideoPlayerController.xib in Resources */,
@@ -689,9 +758,16 @@
 				784C3FF61DB9955C001AECD3 /* VideosIconActive.png in Resources */,
 				78A29F281DB5425300782620 /* TeamIconInactive@3x.png in Resources */,
 				784C18971E454372008E8EED /* BurgerMenuCell.xib in Resources */,
+				781002901E6E1F3300EF3C8A /* singleButton.png in Resources */,
+				781002941E6E1F3300EF3C8A /* teamButton@2x.png in Resources */,
+				7810028E1E6E1F3300EF3C8A /* seasonButton@2x.png in Resources */,
+				781002A61E6F552E00EF3C8A /* ticketTailTeam.png in Resources */,
 				78E31EA81D9B443A00CB59D3 /* NewsIconActive.png in Resources */,
+				781002981E6E1F3300EF3C8A /* ticketTailSeason@3x.png in Resources */,
 				780B686F1DC7CC62007F206F /* expand_indicator@2x.png in Resources */,
 				784C18E31E455EF2008E8EED /* cart_active@3x.png in Resources */,
+				781002931E6E1F3300EF3C8A /* teamButton.png in Resources */,
+				781002A81E6F552E00EF3C8A /* ticketTailTeam@3x.png in Resources */,
 				784C18C21E4553D4008E8EED /* contact_inactive@2x.png in Resources */,
 				78095A981DC951BE00FAB2B8 /* Cancel_icon@3x.png in Resources */,
 				62A8F2871E60C5A600361495 /* UnimatrixConfigStaging.xcconfig in Resources */,
@@ -733,16 +809,20 @@
 				782E3A8E1DF7928800FCF5CC /* TabSlider@3x.png in Resources */,
 				784C18C71E4553D4008E8EED /* play_button_active@2x.png in Resources */,
 				788C43991DA45F9D00F342B9 /* ExpandIndicator@2x.png in Resources */,
+				7810028F1E6E1F3300EF3C8A /* seasonButton@3x.png in Resources */,
 				78A29F1F1DB5425300782620 /* demoImage.png in Resources */,
 				78503A061E4D80B0005F81EC /* link_artifact_active@3x.png in Resources */,
+				781002911E6E1F3300EF3C8A /* singleButton@2x.png in Resources */,
 				788C439B1DA45F9D00F342B9 /* MoreIconInactive@3x.png in Resources */,
 				782D4DC51E0B54F70078FEC1 /* MoreIconActive@2x.png in Resources */,
 				784C18ED1E455EF2008E8EED /* user_inactive@3x.png in Resources */,
 				784C18D01E455CF3008E8EED /* user_active.png in Resources */,
+				781002991E6E1F3300EF3C8A /* ticketTailSingle.png in Resources */,
 				784C18E61E455EF2008E8EED /* contact_inactive@3x.png in Resources */,
 				782D4DC61E0B54F70078FEC1 /* MoreIconInactive.png in Resources */,
 				78B3120C1DBE80C60064EE88 /* slider_bar@3x.png in Resources */,
 				78A29F2A1DB5425300782620 /* VideosIconInactive@3x.png in Resources */,
+				781002A51E6F552E00EF3C8A /* ticketTailSingle@3x.png in Resources */,
 				6296FA5C1DD4E7170096B04D /* SignIn.xib in Resources */,
 				78A29F201DB5425300782620 /* no_live_feed@1x.png in Resources */,
 				784C3FEC1DB73141001AECD3 /* ListCollectionViewCell.xib in Resources */,
@@ -768,6 +848,7 @@
 				CA47329CD3426049E916B50D /* reveal-icon.png in Resources */,
 				78503A071E4D80B0005F81EC /* link_artifact_inactive.png in Resources */,
 				784C18B01E45513D008E8EED /* home_icon_inactive.png in Resources */,
+				7810028D1E6E1F3300EF3C8A /* seasonButton.png in Resources */,
 				78503A091E4D80B0005F81EC /* link_artifact_inactive@3x.png in Resources */,
 				784C18C61E4553D4008E8EED /* info_inactive@2x.png in Resources */,
 				784C18EC1E455EF2008E8EED /* play_button_inactive@3x.png in Resources */,
