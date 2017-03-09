@@ -52,6 +52,9 @@
 		781002981E6E1F3300EF3C8A /* ticketTailSeason@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810028A1E6E1F3300EF3C8A /* ticketTailSeason@3x.png */; };
 		781002991E6E1F3300EF3C8A /* ticketTailSingle.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810028B1E6E1F3300EF3C8A /* ticketTailSingle.png */; };
 		7810029A1E6E1F3300EF3C8A /* ticketTailSingle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7810028C1E6E1F3300EF3C8A /* ticketTailSingle@2x.png */; };
+		7810029D1E6E1F9800EF3C8A /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810029B1E6E1F9800EF3C8A /* TicketTableViewCell.swift */; };
+		7810029E1E6E1F9800EF3C8A /* TicketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7810029C1E6E1F9800EF3C8A /* TicketTableViewCell.xib */; };
+		781002A01E6E296200EF3C8A /* PassTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7810029F1E6E296200EF3C8A /* PassTypeViewController.swift */; };
 		781002A51E6F552E00EF3C8A /* ticketTailSingle@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A11E6F552E00EF3C8A /* ticketTailSingle@3x.png */; };
 		781002A61E6F552E00EF3C8A /* ticketTailTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A21E6F552E00EF3C8A /* ticketTailTeam.png */; };
 		781002A71E6F552E00EF3C8A /* ticketTailTeam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A31E6F552E00EF3C8A /* ticketTailTeam@2x.png */; };
@@ -228,6 +231,9 @@
 		7810028A1E6E1F3300EF3C8A /* ticketTailSeason@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailSeason@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailSeason@3x.png"; sourceTree = "<group>"; };
 		7810028B1E6E1F3300EF3C8A /* ticketTailSingle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ticketTailSingle.png; path = iOSTemplate/Assets.xcassets/ticketTailSingle.png; sourceTree = "<group>"; };
 		7810028C1E6E1F3300EF3C8A /* ticketTailSingle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailSingle@2x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailSingle@2x.png"; sourceTree = "<group>"; };
+		7810029B1E6E1F9800EF3C8A /* TicketTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
+		7810029C1E6E1F9800EF3C8A /* TicketTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicketTableViewCell.xib; sourceTree = "<group>"; };
+		7810029F1E6E296200EF3C8A /* PassTypeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassTypeViewController.swift; sourceTree = "<group>"; };
 		781002A11E6F552E00EF3C8A /* ticketTailSingle@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailSingle@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailSingle@3x.png"; sourceTree = "<group>"; };
 		781002A21E6F552E00EF3C8A /* ticketTailTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ticketTailTeam.png; path = iOSTemplate/Assets.xcassets/ticketTailTeam.png; sourceTree = "<group>"; };
 		781002A31E6F552E00EF3C8A /* ticketTailTeam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailTeam@2x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailTeam@2x.png"; sourceTree = "<group>"; };
@@ -457,6 +463,7 @@
 				784B76DC1DFB42CE00076E8D /* FeedbackViewController.swift */,
 				7834C4B91DFBA8DB00E285B3 /* ArticleArtifactViewController.swift */,
 				CA473B36478C1AADAD8D51A6 /* BurgerMenuController.swift */,
+				7810029F1E6E296200EF3C8A /* PassTypeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -533,6 +540,8 @@
 				784C3FEB1DB73141001AECD3 /* ListCollectionViewCell.xib */,
 				784C18941E454372008E8EED /* BurgerMenuCell.swift */,
 				784C18951E454372008E8EED /* BurgerMenuCell.xib */,
+				7810029B1E6E1F9800EF3C8A /* TicketTableViewCell.swift */,
+				7810029C1E6E1F9800EF3C8A /* TicketTableViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -830,6 +839,7 @@
 				784C18EE1E455EF2008E8EED /* user_active@3x.png in Resources */,
 				782E3AA61DF9250A00FCF5CC /* slider_trans@3x.png in Resources */,
 				784C18A51E454E7A008E8EED /* contact_inactive.png in Resources */,
+				7810029E1E6E1F9800EF3C8A /* TicketTableViewCell.xib in Resources */,
 				6296FA641DD533510096B04D /* UserAccount.xib in Resources */,
 				782E3AA81DF928F800FCF5CC /* placeholder_nll_shield.jpg in Resources */,
 				627484B41E71BC8700621D7B /* UnimatrixConfig.plist in Resources */,
@@ -865,6 +875,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7810029D1E6E1F9800EF3C8A /* TicketTableViewCell.swift in Sources */,
 				621DD2611DD62CD200D87855 /* SignUpController.swift in Sources */,
 				621DD25D1DD61A9600D87855 /* UserController.swift in Sources */,
 				780B68681DC52F0F007F206F /* CustomRefreshControl.swift in Sources */,
@@ -874,6 +885,7 @@
 				784C3FEA1DB72CFE001AECD3 /* ListCollectionViewCell.swift in Sources */,
 				620C89F21DF726B400DAC962 /* StreamListViewController.swift in Sources */,
 				78E31E771D99F3F400CB59D3 /* ViewController.swift in Sources */,
+				781002A01E6E296200EF3C8A /* PassTypeViewController.swift in Sources */,
 				78E31EDE1D9DB87B00CB59D3 /* DetailViewController.swift in Sources */,
 				620C89F01DF7242100DAC962 /* LatestViewController.swift in Sources */,
 				6229013B1E5CC3FB00E021EE /* SubscriptionsViewController.swift in Sources */,

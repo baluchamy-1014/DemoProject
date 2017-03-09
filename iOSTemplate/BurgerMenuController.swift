@@ -60,8 +60,7 @@ class BurgerMenuController: UITableViewController {
         self.menuItems.append(item)
       }
     }
-    // TODO: hide until Apple Pay setup
-    //      self.artifactItems.insert("Buy Content" as AnyObject, at: 0)
+    self.articleItems.insert("Buy Content" as AnyObject, at: 0)
     self.articleItems.append("Feedback" as AnyObject)
   }
   
@@ -203,6 +202,18 @@ class BurgerMenuController: UITableViewController {
             alertViewController.addAction(alertAction)
             self.present(alertViewController, animated: true, completion: nil)
           }
+        }
+        else if stringValue == "Buy Content" {
+          let passController = PassTypeViewController()
+          let navigationController = UINavigationController(rootViewController: passController)
+          self.revealViewController().pushFrontViewController(navigationController, animated: true)
+          
+          let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+          passController.navigationItem.leftBarButtonItem = revealButtomItem
+          passController.navigationController?.navigationBar.isTranslucent = false
+          passController.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+          passController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+          passController.title = "Purchase Options" 
         }
       }
       else {
