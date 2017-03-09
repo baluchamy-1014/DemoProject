@@ -59,6 +59,7 @@
 		781002A61E6F552E00EF3C8A /* ticketTailTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A21E6F552E00EF3C8A /* ticketTailTeam.png */; };
 		781002A71E6F552E00EF3C8A /* ticketTailTeam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A31E6F552E00EF3C8A /* ticketTailTeam@2x.png */; };
 		781002A81E6F552E00EF3C8A /* ticketTailTeam@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A41E6F552E00EF3C8A /* ticketTailTeam@3x.png */; };
+		781002AA1E6F7BDF00EF3C8A /* SingleGamePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */; };
 		7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */; };
 		782D4DBD1E0A08520078FEC1 /* Placeholder_nll_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */; };
 		782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */; };
@@ -238,6 +239,7 @@
 		781002A21E6F552E00EF3C8A /* ticketTailTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ticketTailTeam.png; path = iOSTemplate/Assets.xcassets/ticketTailTeam.png; sourceTree = "<group>"; };
 		781002A31E6F552E00EF3C8A /* ticketTailTeam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailTeam@2x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailTeam@2x.png"; sourceTree = "<group>"; };
 		781002A41E6F552E00EF3C8A /* ticketTailTeam@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailTeam@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailTeam@3x.png"; sourceTree = "<group>"; };
+		781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGamePassViewController.swift; sourceTree = "<group>"; };
 		7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SignInSignUpBGImage.png; path = iOSTemplate/Assets.xcassets/SignInSignUpBGImage.png; sourceTree = "<group>"; };
 		782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder_nll_logo.png; path = iOSTemplate/Assets.xcassets/Placeholder_nll_logo.png; sourceTree = "<group>"; };
 		782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder_nll_logo@2x.png"; path = "iOSTemplate/Assets.xcassets/Placeholder_nll_logo@2x.png"; sourceTree = "<group>"; };
@@ -463,6 +465,7 @@
 				784B76DC1DFB42CE00076E8D /* FeedbackViewController.swift */,
 				7834C4B91DFBA8DB00E285B3 /* ArticleArtifactViewController.swift */,
 				CA473B36478C1AADAD8D51A6 /* BurgerMenuController.swift */,
+				781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */,
 				7810029F1E6E296200EF3C8A /* PassTypeViewController.swift */,
 			);
 			name = Controllers;
@@ -875,6 +878,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781002AA1E6F7BDF00EF3C8A /* SingleGamePassViewController.swift in Sources */,
 				7810029D1E6E1F9800EF3C8A /* TicketTableViewCell.swift in Sources */,
 				621DD2611DD62CD200D87855 /* SignUpController.swift in Sources */,
 				621DD25D1DD61A9600D87855 /* UserController.swift in Sources */,
