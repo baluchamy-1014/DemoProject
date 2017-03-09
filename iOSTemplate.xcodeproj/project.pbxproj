@@ -60,6 +60,8 @@
 		781002A71E6F552E00EF3C8A /* ticketTailTeam@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A31E6F552E00EF3C8A /* ticketTailTeam@2x.png */; };
 		781002A81E6F552E00EF3C8A /* ticketTailTeam@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 781002A41E6F552E00EF3C8A /* ticketTailTeam@3x.png */; };
 		781002AA1E6F7BDF00EF3C8A /* SingleGamePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */; };
+		781002B71E70C23E00EF3C8A /* PurchaseConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781002B51E70C23E00EF3C8A /* PurchaseConfirmViewController.swift */; };
+		781002B81E70C23E00EF3C8A /* PurchaseConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */; };
 		7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */; };
 		782D4DBD1E0A08520078FEC1 /* Placeholder_nll_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */; };
 		782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */; };
@@ -240,6 +242,8 @@
 		781002A31E6F552E00EF3C8A /* ticketTailTeam@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailTeam@2x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailTeam@2x.png"; sourceTree = "<group>"; };
 		781002A41E6F552E00EF3C8A /* ticketTailTeam@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketTailTeam@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketTailTeam@3x.png"; sourceTree = "<group>"; };
 		781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGamePassViewController.swift; sourceTree = "<group>"; };
+		781002B51E70C23E00EF3C8A /* PurchaseConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseConfirmViewController.swift; sourceTree = "<group>"; };
+		781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseConfirmViewController.xib; sourceTree = "<group>"; };
 		7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SignInSignUpBGImage.png; path = iOSTemplate/Assets.xcassets/SignInSignUpBGImage.png; sourceTree = "<group>"; };
 		782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder_nll_logo.png; path = iOSTemplate/Assets.xcassets/Placeholder_nll_logo.png; sourceTree = "<group>"; };
 		782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder_nll_logo@2x.png"; path = "iOSTemplate/Assets.xcassets/Placeholder_nll_logo@2x.png"; sourceTree = "<group>"; };
@@ -450,6 +454,7 @@
 		784AFDFD1DAD57F600FA157B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				781002B51E70C23E00EF3C8A /* PurchaseConfirmViewController.swift */,
 				6209A2E11DC398CD00B278B9 /* VideoPlayerController.swift */,
 				784AFE051DADC18800FA157B /* ArtifactListViewController.swift */,
 				78E31E921D9AEC2600CB59D3 /* FeaturedViewController.swift */,
@@ -545,6 +550,7 @@
 				784C18951E454372008E8EED /* BurgerMenuCell.xib */,
 				7810029B1E6E1F9800EF3C8A /* TicketTableViewCell.swift */,
 				7810029C1E6E1F9800EF3C8A /* TicketTableViewCell.xib */,
+				781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -749,6 +755,7 @@
 				781002971E6E1F3300EF3C8A /* ticketTailSeason@2x.png in Resources */,
 				784C3FEF1DB8348D001AECD3 /* LargeCollectionViewCell.xib in Resources */,
 				622901391E5CC31A00E021EE /* Subscriptions.xib in Resources */,
+				781002B81E70C23E00EF3C8A /* PurchaseConfirmViewController.xib in Resources */,
 				784C18C41E4553D4008E8EED /* home_icon_inactive@2x.png in Resources */,
 				784C18E71E455EF2008E8EED /* home_icon_active@3x.png in Resources */,
 				784C18A61E454E7A008E8EED /* home_icon_active@2x.png in Resources */,
@@ -905,6 +912,7 @@
 				78E31E891D9A01DE00CB59D3 /* CustomControls.swift in Sources */,
 				784AFE061DADC18800FA157B /* ArtifactListViewController.swift in Sources */,
 				CA473A34D224D5536EEC11F7 /* KeymakerOrganizer.swift in Sources */,
+				781002B71E70C23E00EF3C8A /* PurchaseConfirmViewController.swift in Sources */,
 				CA473D5F0D27A77DE7F9C674 /* BurgerMenuController.swift in Sources */,
 				784C18961E454372008E8EED /* BurgerMenuCell.swift in Sources */,
 			);

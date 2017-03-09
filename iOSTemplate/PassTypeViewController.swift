@@ -85,6 +85,15 @@ class PassTypeViewController: UITableViewController {
     case 0:
       let viewController = SingleGamePassViewController()
       self.navigationController?.pushViewController(viewController, animated: true)
+    case 1:
+      // TODO: check if logged in
+      let viewController = PurchaseConfirmViewController()
+      self.navigationController?.pushViewController(viewController, animated: true)
+      
+      viewController.view.backgroundColor = UIColor(red: 92/255, green: 20/255, blue: 20/255, alpha: 1.0)
+      viewController.title = "Purchase Confirmation"
+      viewController.passTitle.text = "NLL TV Season Pass".uppercased()
+      viewController.passSubtitle.text = "2016 League Season Pass"
     default:
       break
     }
