@@ -11,8 +11,8 @@ import UIKit
 class SingleGamePassViewController: UITableViewController {
 
   override func viewDidLoad() {
+    tableView.backgroundColor = UIColor.black
     tableView.separatorColor = UIColor.black
-
     super.viewDidLoad()
 
       // Uncomment the following line to preserve selection between presentations
@@ -41,7 +41,7 @@ class SingleGamePassViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 128.0
+    return 138.0
   }
 
 

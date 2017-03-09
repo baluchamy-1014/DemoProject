@@ -11,8 +11,8 @@ import UIKit
 class PassTypeViewController: UITableViewController {
 
   override func viewDidLoad() {
-    tableView.separatorColor = UIColor.clear
     tableView.backgroundColor = UIColor.black
+    tableView.separatorColor = UIColor.black
     super.viewDidLoad()
 
     // Uncomment the following line to preserve selection between presentations
@@ -41,7 +41,6 @@ class PassTypeViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     tableView.register(UINib(nibName: "TicketTableViewCell", bundle: nil), forCellReuseIdentifier: "ticketCell")
     let cell = tableView.dequeueReusableCell(withIdentifier: "ticketCell", for: indexPath) as! TicketTableViewCell
-    cell.backgroundColor = .black
     // TODO: remove hardcoded and add from SDK
     switch indexPath.row {
     case 0:
@@ -69,7 +68,7 @@ class PassTypeViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 128.0
+    return 138.0
   }
   
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
