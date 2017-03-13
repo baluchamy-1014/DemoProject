@@ -43,8 +43,14 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         let signInButton = UIButton(type: .roundedRect)
         signInButton.setTitle("SignIn", for: .normal)
-        signInButton.frame = CGRect(x: 20, y: 60, width: 100, height: 20)
+        signInButton.frame = CGRect(x: 20, y: 160, width: 100, height: 20)
         headerImageView.addSubview(signInButton)
+        
+        let buyNowButton = UIButton(type: .roundedRect)
+        buyNowButton.setTitle("Buy Now", for: .normal)
+        buyNowButton.frame = CGRect(x: 300, y: 160, width: 100, height: 20)
+        buyNowButton.addTarget(self, action: #selector(DetailViewController.displaySubscriptionOptions(_:)), for: UIControlEvents.touchUpInside)
+        headerImageView.addSubview(buyNowButton)
       default:
         print("Nothing to be done.")
       }
@@ -56,17 +62,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     artifact = anArtifact
     videoPlayerController.delegateController = self
 
-    Property .getProperty("nll_vod") { (property, error) in
-      if ((property) != nil) {
-        Product.query(property?.realmUUID, categories: [], match: self.artifact.id.stringValue, onCompletion: { (products, error) in
-          if let p = products {
-            for product in (p as? [Product])! {
-              print("Product name is: \(product.name)")
-            }
-          }
-        })
-      }
-    }
+
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -88,6 +84,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     // TODO: theme
     detailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     self.view.addSubview(detailCollectionView)
+
+
+
   }
   
   func loadRelatedContent() {
@@ -126,6 +125,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
       }
     }
+
   }
 
   override func didReceiveMemoryWarning() {
@@ -383,5 +383,18 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     videoPlayerController.modalTransitionStyle = .crossDissolve
     present(videoPlayerController, animated: true, completion: nil)
     videoPlayerController.playVideo()
+  }
+
+
+  func displaySubscriptionOptions(_ sender: UIButton) {
+    Session.shared().getProperty({ (property, error) in
+        if (error == nil) {
+          Product.query("0230e183df7c7a2f392285b8b6c19b2a", categories: [], match: self.artifact.id.stringValue, onCompletion: { (products, error) in
+            let subscriptionsVC = SubscriptionsViewController(nibName: "Subscriptions", bundle: nil)
+            subscriptionsVC.subscriptionItems = products as! [Product]
+            self.navigationController?.pushViewController(subscriptionsVC, animated: true)
+          })
+        }
+      })
   }
 }

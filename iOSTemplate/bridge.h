@@ -17,4 +17,6 @@
 #import <UnimatrixObjcSDK/UnimatrixConfiguration.h>
 #import "SWRevealViewController.h"
 
+#import <UnimatrixDealerSDK/UnimatrixDealerSDK.h>
+
 #endif /* bridge_h */
