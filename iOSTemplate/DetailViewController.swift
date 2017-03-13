@@ -8,7 +8,16 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+enum VideoPlayerState {
+  case NotReady
+  case Initialized
+  case ReadyForDisplay
+  case Failed
+  case RestrictedAuthentication
+  case RestrictedPaygate
+}
+
+class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BoxxspringVideoPlayerDelegate {
   
   var detailCollectionView: UICollectionView!
   var tagSection: TagSection!
@@ -17,11 +26,43 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
   var counter: Int = 0
   let placeholderImage = UIImage(named: "Placeholder_nll_logo")
-  
+  let videoPlayerController = VideoPlayerController()
+  var videoReadyForPlayback = false
+  var headerImageView: UIImageView!
+  let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
+  var button: PlayButton!
+
+  var videoPlayerState: VideoPlayerState = .NotReady {
+    didSet {
+      switch videoPlayerState {
+      case .ReadyForDisplay:
+        presentVideoPlayerController()
+      case .RestrictedAuthentication, .RestrictedPaygate:
+        for view in headerImageView.subviews {
+          view.removeFromSuperview()
+        }
+        let signInButton = UIButton(type: .roundedRect)
+        signInButton.setTitle("SignIn", for: .normal)
+        signInButton.frame = CGRect(x: 20, y: 160, width: 100, height: 20)
+        headerImageView.addSubview(signInButton)
+        
+        let buyNowButton = UIButton(type: .roundedRect)
+        buyNowButton.setTitle("Buy Now", for: .normal)
+        buyNowButton.frame = CGRect(x: 300, y: 160, width: 100, height: 20)
+        buyNowButton.addTarget(self, action: #selector(DetailViewController.displaySubscriptionOptions(_:)), for: UIControlEvents.touchUpInside)
+        headerImageView.addSubview(buyNowButton)
+      default:
+        print("Nothing to be done.")
+      }
+    }
+  }
+
   init(artifact anArtifact: Artifact) {
     super.init(nibName:nil, bundle:nil)
-    
     artifact = anArtifact
+    videoPlayerController.delegateController = self
+
+
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -37,10 +78,15 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     detailCollectionView.dataSource = self
     detailCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
     loadRelatedContent()
-    
+
+    videoPlayerController.navController = self.navigationController
+
     // TODO: theme
     detailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     self.view.addSubview(detailCollectionView)
+
+
+
   }
   
   func loadRelatedContent() {
@@ -79,6 +125,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
       }
     }
+
   }
 
   override func didReceiveMemoryWarning() {
@@ -127,15 +174,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     return items.count
   }
   
-  func openVideoPlayer(_ sender: UIButton) {
-    self.navigationController?.setNavigationBarHidden(true, animated: false)
-    
-    let videoPlayerController = VideoPlayerController()
-    videoPlayerController.passString(artifact.uid)
-    videoPlayerController.modalTransitionStyle = .crossDissolve
-    videoPlayerController.delegateController = self.navigationController
-    present(videoPlayerController, animated: true, completion: nil)
-  }
+
 
   
   func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
@@ -145,9 +184,24 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       reusableHeaderView = detailCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as UICollectionReusableView
       reusableHeaderView.backgroundColor = UIColor.white
       
-      let headerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: reusableHeaderView.frame.size.width, height: 200))
+      headerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: reusableHeaderView.frame.size.width, height: 200))
       headerImageView.isUserInteractionEnabled = true
       reusableHeaderView.addSubview(headerImageView)
+
+      if artifact.typeName == "video_artifact" || artifact.typeName == "stream_artifact" {
+        button = PlayButton(frame: CGRect(x: (headerImageView.frame.size.width/2) - 30, y: (headerImageView.frame.size.height/2) - 30, width: 60, height: 60))
+        button.addTarget(self, action: #selector(DetailViewController.openVideoPlayer(_:)), for: UIControlEvents.touchUpInside)
+        headerImageView.addSubview(button)
+      }
+
+      activityIndicator.frame = CGRect(x: 0, y: 0, width: 64, height: 64)
+      activityIndicator.backgroundColor = UIColor.black
+      activityIndicator.layer.cornerRadius = 32.0
+      activityIndicator.layer.opacity = 0.55
+      activityIndicator.center = headerImageView.center
+      headerImageView.addSubview(activityIndicator)
+
+//      displayPlaybackButton()
       
       if let thumbnailImageURL = artifact.pictureURLwithWidth(Int32(headerImageView.frame.width), height: Int32(headerImageView.frame.height)) {
         headerImageView.setImageWith(thumbnailImageURL, placeholderImage: placeholderImage)
@@ -155,11 +209,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         headerImageView.image = placeholderImage
       }
         
-      if artifact.typeName == "video_artifact" || artifact.typeName == "stream_artifact" {
-        let button = PlayButton(frame: CGRect(x: (headerImageView.frame.size.width/2) - 30, y: (headerImageView.frame.size.height/2) - 30, width: 60, height: 60))
-        button.addTarget(self, action: #selector(DetailViewController.openVideoPlayer(_:)), for: UIControlEvents.touchUpInside)
-        headerImageView.addSubview(button)
-      }
+
       
       // Todo: Create custom labels
       let articleLabel = UILabel(frame: CGRect(x: 20, y: 220, width: reusableHeaderView.frame.size.width-40, height: 45))
@@ -280,5 +330,71 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     let detailController = LatestViewController(artifactID: sender.tag)
     self.navigationController?.pushViewController(detailController, animated: true)
   }
+  
+  func didPlay() {
+    print("Resource didPlay")
+  }
+  
+  func didPause() {
+    //
+    activityIndicator.stopAnimating()
+    button.isHidden = false
+  }
+  
+  func didFailToLoad() {
+    print("Resource failed to load!")
+  }
+  
+  func didGetRestricted(_ restriction: Restriction!) {
+    switch restriction.typeName {
+      case "payment_restriction":
+        videoPlayerState = .RestrictedPaygate
+      case "authentcation_restriction":
+        videoPlayerState = .RestrictedAuthentication
+      default:
+        print("Do nothing")
+    }
+  }
+  
+  func isReady() {
+    videoPlayerState = .ReadyForDisplay
+  }
 
+  func openVideoPlayer(_ sender: UIButton) {
+    activityIndicator.startAnimating()
+
+    switch videoPlayerState {
+    case .NotReady:
+      videoPlayerController.setupPlayer(videoUID: artifact.uid)
+      activityIndicator.startAnimating()
+    case .ReadyForDisplay:
+      presentVideoPlayerController()
+    default:
+      print("Nothing to be done.")
+    }
+  }
+
+  func displayPlaybackButton() {
+    activityIndicator.stopAnimating()
+  }
+
+  func presentVideoPlayerController() {
+    self.navigationController?.setNavigationBarHidden(true, animated: false)
+    videoPlayerController.modalTransitionStyle = .crossDissolve
+    present(videoPlayerController, animated: true, completion: nil)
+    videoPlayerController.playVideo()
+  }
+
+
+  func displaySubscriptionOptions(_ sender: UIButton) {
+    Session.shared().getProperty({ (property, error) in
+        if (error == nil) {
+          Product.query("0230e183df7c7a2f392285b8b6c19b2a", categories: [], match: self.artifact.id.stringValue, onCompletion: { (products, error) in
+            let subscriptionsVC = SubscriptionsViewController(nibName: "Subscriptions", bundle: nil)
+            subscriptionsVC.subscriptionItems = products as! [Product]
+            self.navigationController?.pushViewController(subscriptionsVC, animated: true)
+          })
+        }
+      })
+  }
 }

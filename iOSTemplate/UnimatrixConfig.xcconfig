@@ -1,0 +1,10 @@
+//
+//  ProductionConfig.xcconfig
+//  UnimatrixExampleApp
+//
+//  Created by Shovan Joshi on 2/8/17.
+//  Copyright © 2017 Sportsrocket Inc. All rights reserved.
+//
+
+#include "Keys.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) CLIENT_ID=@\"$(CLIENT_ID)\" CLIENT_SECRET=@\"$(CLIENT_SECRET)\" APP_ENVIRONMENT=@\"$(APP_ENVIRONMENT)\"

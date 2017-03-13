@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
     UINavigationBar.appearance().tintColor = UIColor.white
     
+    print(UnimatrixConfiguration.sharedConfig().configValues())
+    
     let appConfiguration = Bundle.main.infoDictionary! as NSDictionary
 
     if let unimatrixConfigValues = UnimatrixConfiguration.sharedConfig().configValues() as? [String:String] {
@@ -33,9 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     
     Session.shared().propertyCode = appConfiguration["propertyCode"] as! String
 
-    if let value: String = keymakerOrganizer.fileContents()?.object(forKey: "token") as? String {
-      Session.shared().accessToken = value;
-    }
+//    if let value: String = keymakerOrganizer.fileContents()?.object(forKey: "token") as? String {
+//      Session.shared().accessToken = value;
+//    }
 
     let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
     let rearVC = BurgerMenuController()

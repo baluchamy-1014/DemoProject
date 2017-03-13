@@ -14,30 +14,19 @@ class VideoPlayerController: UIViewController {
   var isPresented = true
   
   @IBOutlet weak var videoContainerView: UIView!
-  var videoUID = String()
-  fileprivate var player: BoxxspringVideoPlayer?
-  var delegateController: UINavigationController?
-  
-  func passString(_ videoUID: String) {
-    self.videoUID = videoUID
-  }
-  
+//  var videoUID = String()
+  fileprivate var player: BoxxspringVideoPlayer!
+  var delegateController: DetailViewController?
+  var navController: UINavigationController?
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    if let containerView = videoContainerView {
-      let player = BoxxspringVideoPlayer(videoUID, withFrame: containerView.bounds)
-      containerView.backgroundColor = UIColor.black
-      containerView.addSubview((player?.view())!)
-      self.player = player
-    }
-    
   }
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    player?.fullScreen = true
-    player?.fullScreenControls = .limited
+
+    self.videoContainerView.addSubview(self.player.view())
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -51,15 +40,29 @@ class VideoPlayerController: UIViewController {
     } else {
       UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
     }
-    player?.play()
     UIDevice.current.setValue(orientation, forKey: "orientation")
     super.viewDidAppear(animated)
   }
   
+  func setupPlayer(videoUID: String) {
+//    self.videoUID = videoUID
+    self.player = BoxxspringVideoPlayer(videoUID, withFrame: CGRect.zero)
+    self.player.delegate = self.delegateController as? BoxxspringVideoPlayerDelegate!
+    player.fullScreen = true
+    player.fullScreenControls = .limited
+  }
+
+  func playVideo() {
+    self.player.play()
+  }
+
   @IBAction func donePressed(_ sender: AnyObject) {
-    player?.pause()
+    player.pause()
     isPresented = false
     dismiss(animated: true, completion: nil)
-    self.delegateController?.setNavigationBarHidden(false, animated: false)
+    for view in self.videoContainerView.subviews {
+      print(view)
+    }
+    self.navController?.setNavigationBarHidden(false, animated: false)
   }
 }
