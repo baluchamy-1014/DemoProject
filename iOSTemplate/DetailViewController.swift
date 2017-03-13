@@ -42,13 +42,17 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
           view.removeFromSuperview()
         }
         let signInButton = UIButton(type: .roundedRect)
-        signInButton.setTitle("SignIn", for: .normal)
-        signInButton.frame = CGRect(x: 20, y: 160, width: 100, height: 20)
+        signInButton.setTitle("SIGN IN", for: .normal)
+        signInButton.setTitleColor(UIColor.white, for: .normal)
+        signInButton.frame = CGRect(x: 0, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
+        signInButton.backgroundColor = UIColor(red: 37/255, green: 38/255, blue: 39/255, alpha: 1.0)
         headerImageView.addSubview(signInButton)
         
         let buyNowButton = UIButton(type: .roundedRect)
-        buyNowButton.setTitle("Buy Now", for: .normal)
-        buyNowButton.frame = CGRect(x: 300, y: 160, width: 100, height: 20)
+        buyNowButton.setTitle("BUY NOW", for: .normal)
+        buyNowButton.setTitleColor(UIColor.white, for: .normal)
+        buyNowButton.frame = CGRect(x: 188, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
+        buyNowButton.backgroundColor = UIColor(red: 136/255, green: 136/255, blue: 136/255, alpha: 1.0)
         buyNowButton.addTarget(self, action: #selector(DetailViewController.displaySubscriptionOptions(_:)), for: UIControlEvents.touchUpInside)
         headerImageView.addSubview(buyNowButton)
       default:
