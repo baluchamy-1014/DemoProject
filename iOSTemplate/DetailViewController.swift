@@ -40,17 +40,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       case .RestrictedAuthentication, .RestrictedPaygate:
         for view in headerImageView.subviews {
           view.removeFromSuperview()
-        }
-        let signInButton = UIButton(type: .roundedRect)
-        signInButton.setTitle("SignIn", for: .normal)
-        signInButton.frame = CGRect(x: 20, y: 160, width: 100, height: 20)
-        headerImageView.addSubview(signInButton)
-        
-        let buyNowButton = UIButton(type: .roundedRect)
-        buyNowButton.setTitle("Buy Now", for: .normal)
-        buyNowButton.frame = CGRect(x: 300, y: 160, width: 100, height: 20)
-        buyNowButton.addTarget(self, action: #selector(DetailViewController.displaySubscriptionOptions(_:)), for: UIControlEvents.touchUpInside)
-        headerImageView.addSubview(buyNowButton)
+        }        
+        setupRestrictionOverlay()
       default:
         print("Nothing to be done.")
       }
@@ -84,9 +75,40 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     // TODO: theme
     detailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     self.view.addSubview(detailCollectionView)
-
-
-
+  }
+  
+  func setupRestrictionOverlay() {
+    let overlayView = UIView(frame: CGRect(x: 0, y: 0, width: headerImageView.frame.width, height: headerImageView.frame.height - 60))
+    overlayView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.8)
+    let overlayLabel = UILabel(frame: CGRect(x: 0, y: 0, width: headerImageView.frame.width-100, height: 180))
+    
+    overlayLabel.numberOfLines = 3
+    overlayLabel.text = "This Premium Content Requires a Season or Single Game Purchase."
+    overlayLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightSemibold)
+    overlayLabel.textColor = UIColor.white
+    overlayView.addSubview(overlayLabel)
+    headerImageView.addSubview(overlayView)
+    
+    overlayLabel.translatesAutoresizingMaskIntoConstraints = false
+    view.addConstraint(NSLayoutConstraint(item: overlayLabel, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: overlayView, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: overlayLabel, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: overlayView, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: overlayLabel, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.lessThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 180))
+    view.addConstraint(NSLayoutConstraint(item: overlayLabel, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.lessThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 250))
+    
+    let signInButton = UIButton(type: .roundedRect)
+    signInButton.setTitle("SIGN IN", for: .normal)
+    signInButton.setTitleColor(UIColor.white, for: .normal)
+    signInButton.frame = CGRect(x: 0, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
+    signInButton.backgroundColor = UIColor(red: 37/255, green: 38/255, blue: 39/255, alpha: 1.0)
+    headerImageView.addSubview(signInButton)
+    
+    let buyNowButton = UIButton(type: .roundedRect)
+    buyNowButton.setTitle("BUY NOW", for: .normal)
+    buyNowButton.setTitleColor(UIColor.white, for: .normal)
+    buyNowButton.frame = CGRect(x: 188, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
+    buyNowButton.backgroundColor = UIColor(red: 136/255, green: 136/255, blue: 136/255, alpha: 1.0)
+    buyNowButton.addTarget(self, action: #selector(DetailViewController.displaySubscriptionOptions(_:)), for: UIControlEvents.touchUpInside)
+    headerImageView.addSubview(buyNowButton)
   }
   
   func loadRelatedContent() {
