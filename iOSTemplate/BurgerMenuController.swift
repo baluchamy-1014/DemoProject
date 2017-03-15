@@ -44,7 +44,7 @@ class BurgerMenuController: UITableViewController {
     if Session.shared().isValid() {
       signButtonTitle = "Sign Out"
     }
-     else {
+    else {
       signButtonTitle = "Sign In/Sign Up"
     }
     signButton = UIBarButtonItem(title: signButtonTitle, style: .plain, target: self, action: #selector(BurgerMenuController.userDidTapSignInOutButton))
@@ -53,14 +53,13 @@ class BurgerMenuController: UITableViewController {
   
   func setupBurgerMenuItems() {
     for item in appDelegate.burgerMenuItems {
-      if item.typeName == "article_artifact" {
+      if item.typeName == "article_artifact" || item.slug == "/buy"{
         self.articleItems.append(item)
       }
       else {
         self.menuItems.append(item)
       }
     }
-    self.articleItems.insert("Buy Content" as AnyObject, at: 0)
     self.articleItems.append("Feedback" as AnyObject)
   }
   
@@ -74,7 +73,8 @@ class BurgerMenuController: UITableViewController {
       }
       alertController.addAction(yesAction)
       self.present(alertController, animated: true, completion: nil)
-    } else {
+    }
+    else {
       let userController = UserController(nibName: "UserAccount", bundle: nil)
       let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
       userController.navigationItem.leftBarButtonItem = revealButtomItem
@@ -130,12 +130,8 @@ class BurgerMenuController: UITableViewController {
     case 1:
       let item = articleItems[indexPath.row]
       if let text = item as? String {
-        cell.burgerCellLabel!.text = text
-        if text == "Buy Content" {
-          cell.burgerMenuImageView.image = UIImage(named: "cart_inactive")
-          cell.burgerMenuImageView.highlightedImage = UIImage(named: "cart_active")
-        }
-        else if text == "Feedback" {
+        if text == "Feedback" {
+          cell.burgerCellLabel!.text = text
           cell.burgerMenuImageView.image = UIImage(named: "contact_inactive")
           cell.burgerMenuImageView.highlightedImage = UIImage(named: "contact_active")
         }
@@ -144,6 +140,12 @@ class BurgerMenuController: UITableViewController {
         cell.burgerCellLabel?.text = item.name
         cell.burgerMenuImageView.image = UIImage(named: "info_inactive")
         cell.burgerMenuImageView.highlightedImage = UIImage(named: "info_active")
+        if let slugString = item.slug {
+          if slugString == "/buy" {
+            cell.burgerMenuImageView.image = UIImage(named: "cart_inactive")
+            cell.burgerMenuImageView.highlightedImage = UIImage(named: "cart_active")
+          }
+        }
       }
     default:
       break
@@ -203,18 +205,18 @@ class BurgerMenuController: UITableViewController {
             self.present(alertViewController, animated: true, completion: nil)
           }
         }
-        else if stringValue == "Buy Content" {
-          let passController = PassTypeViewController()
-          let navigationController = UINavigationController(rootViewController: passController)
-          self.revealViewController().pushFrontViewController(navigationController, animated: true)
-          
-          let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
-          passController.navigationItem.leftBarButtonItem = revealButtomItem
-          passController.navigationController?.navigationBar.isTranslucent = false
-          passController.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
-          passController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-          passController.title = "Purchase Options" 
-        }
+      }
+      else if item.slug == "/buy" {
+        let passController = PassTypeViewController()
+        let navigationController = UINavigationController(rootViewController: passController)
+        self.revealViewController().pushFrontViewController(navigationController, animated: true)
+        
+        let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+        passController.navigationItem.leftBarButtonItem = revealButtomItem
+        passController.navigationController?.navigationBar.isTranslucent = false
+        passController.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+        passController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        passController.title = "Purchase Options"
       }
       else {
         if item.typeName == "article_artifact" {
