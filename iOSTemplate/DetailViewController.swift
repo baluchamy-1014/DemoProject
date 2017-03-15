@@ -414,7 +414,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
           Product.query("0230e183df7c7a2f392285b8b6c19b2a", categories: [], match: self.artifact.id.stringValue, onCompletion: { (products, error) in
             let subscriptionsVC = SubscriptionsViewController(nibName: "Subscriptions", bundle: nil)
             subscriptionsVC.subscriptionItems = products as! [Product]
-            print(products as! [Product])
             self.navigationController?.pushViewController(subscriptionsVC, animated: true)
           })
         }
