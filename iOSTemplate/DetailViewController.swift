@@ -105,7 +105,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     let buyNowButton = UIButton(type: .roundedRect)
     buyNowButton.setTitle("BUY NOW", for: .normal)
     buyNowButton.setTitleColor(UIColor.white, for: .normal)
-    buyNowButton.frame = CGRect(x: 188, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
+    buyNowButton.frame = CGRect(x: headerImageView.frame.width/2, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
     buyNowButton.backgroundColor = UIColor(red: 136/255, green: 136/255, blue: 136/255, alpha: 1.0)
     buyNowButton.addTarget(self, action: #selector(DetailViewController.displaySubscriptionOptions(_:)), for: UIControlEvents.touchUpInside)
     headerImageView.addSubview(buyNowButton)
