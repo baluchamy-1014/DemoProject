@@ -65,7 +65,7 @@ class PassTypeViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Is there a header or not here?"
+    return "Find Your Perfect Pass"
   }
   
   override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
