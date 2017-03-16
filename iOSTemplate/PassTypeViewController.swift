@@ -61,6 +61,12 @@ class PassTypeViewController: UITableViewController {
       break
     }
     cell.passTitle?.text = item.name
+    
+    cell.bounds = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 200)
+    cell.contentView.bounds = cell.bounds
+    cell.layoutIfNeeded()
+    cell.passTitle.sizeToFit()
+
     return cell
   }
   
