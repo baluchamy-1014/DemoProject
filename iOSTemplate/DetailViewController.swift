@@ -412,7 +412,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     Session.shared().getProperty({ (property, error) in
         if (error == nil) {
           Product.query("0230e183df7c7a2f392285b8b6c19b2a", categories: [], match: self.artifact.id.stringValue, onCompletion: { (products, error) in
-            let subscriptionsVC = SubscriptionsViewController(nibName: "Subscriptions", bundle: nil)
+            let subscriptionsVC = PassTypeViewController()
             subscriptionsVC.subscriptionItems = products as! [Product]
             self.navigationController?.pushViewController(subscriptionsVC, animated: true)
           })

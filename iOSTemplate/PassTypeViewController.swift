@@ -9,10 +9,12 @@
 import UIKit
 
 class PassTypeViewController: UITableViewController {
-
+  var subscriptionItems: [AnyObject] = Array()
+  
   override func viewDidLoad() {
     tableView.backgroundColor = UIColor.black
     tableView.separatorColor = UIColor.black
+    self.title = "Purchase Options"
     super.viewDidLoad()
   }
 
@@ -26,36 +28,37 @@ class PassTypeViewController: UITableViewController {
   }
 
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    // TODO: 3 through burger menu, 4 through playback
-    return 3
+    return subscriptionItems.count
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     tableView.register(UINib(nibName: "TicketTableViewCell", bundle: nil), forCellReuseIdentifier: "ticketCell")
     let cell = tableView.dequeueReusableCell(withIdentifier: "ticketCell", for: indexPath) as! TicketTableViewCell
     // TODO: remove hardcoded and add from SDK
-    switch indexPath.row {
-    case 0:
+    let item = subscriptionItems[indexPath.row] as! Product
+
+    switch item.category {
+    case "single-game":
       cell.passLeadingImage.image = UIImage(named: "ticketTailSingle")
       cell.passTrailingImage.image = UIImage(named: "singleButton")
-    case 1:
+   //   cell.passSubtitle.text = "Replace With Date from API"
+    case "season":
       cell.passLeadingImage.image = UIImage(named: "ticketTailSeason")
       cell.passTrailingImage.image = UIImage(named: "seasonButton")
       cell.passTopBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
       cell.passBottomBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
-      cell.passTitle.text = "NLL TV Season Pass"
-      cell.passSubtitle.text = "2017 League Season Pass"
-    case 2:
+      cell.passSubtitle.text = "2016 League Season Pass"
+    case "team":
       cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")
       cell.passTrailingImage.image = UIImage(named: "teamButton")
       cell.passTopBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
       cell.passBottomBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
-      cell.passTitle.text = "Team Season Pass"
       cell.passSubtitle.text = "Team Season Pass"
       cell.passPrice.text = "$29.99"
     default:
       break
     }
+    cell.passTitle?.text = item.name
     return cell
   }
   
