@@ -75,11 +75,12 @@ class PassTypeViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    switch indexPath.row {
-    case 0:
+    let item = subscriptionItems[indexPath.row] as! Product
+    switch item.category {
+    case "single-game":
       let viewController = SingleGamePassViewController()
       self.navigationController?.pushViewController(viewController, animated: true)
-    case 1:
+    case "season":
       // TODO: check if logged in
       let viewController = PurchaseConfirmViewController()
       self.navigationController?.pushViewController(viewController, animated: true)
@@ -88,6 +89,9 @@ class PassTypeViewController: UITableViewController {
       viewController.title = "Purchase Confirmation"
       viewController.passTitle.text = "NLL TV Season Pass".uppercased()
       viewController.passSubtitle.text = "2016 League Season Pass"
+    case "team":
+      // TODO: team filter
+      break
     default:
       break
     }
