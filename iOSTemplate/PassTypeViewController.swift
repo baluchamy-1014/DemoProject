@@ -14,6 +14,8 @@ class PassTypeViewController: UITableViewController {
   override func viewDidLoad() {
     tableView.backgroundColor = UIColor.black
     tableView.separatorColor = UIColor.black
+    tableView.rowHeight = UITableViewAutomaticDimension
+    tableView.estimatedRowHeight = 138
     self.title = "Purchase Options"
     super.viewDidLoad()
   }
@@ -60,10 +62,6 @@ class PassTypeViewController: UITableViewController {
     }
     cell.passTitle?.text = item.name
     return cell
-  }
-  
-  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 138.0
   }
   
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
