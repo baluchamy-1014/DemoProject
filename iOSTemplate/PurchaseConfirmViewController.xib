@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -101,6 +101,11 @@
                             </subviews>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <button opaque="NO" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-Bc-z8l" userLabel="Apple Pay Button">
+                            <rect key="frame" x="97" y="373" width="180" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" image="ApplePayButton.png"/>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -130,13 +135,13 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qur-Bd-fzV">
-                    <rect key="frame" x="26" y="31" width="323" height="21"/>
+                    <rect key="frame" x="26" y="91" width="323" height="21"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mih-F4-bFS">
-                    <rect key="frame" x="26" y="60" width="323" height="21"/>
+                    <rect key="frame" x="26" y="120" width="323" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -145,7 +150,7 @@
             <constraints>
                 <constraint firstItem="qur-Bd-fzV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5ar-4t-Gop"/>
                 <constraint firstItem="mih-F4-bFS" firstAttribute="leading" secondItem="qur-Bd-fzV" secondAttribute="leading" id="LDl-ec-csr"/>
-                <constraint firstItem="mih-F4-bFS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="V1j-ps-sax"/>
+                <constraint firstItem="mih-F4-bFS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="120" id="V1j-ps-sax"/>
                 <constraint firstItem="Lsk-rt-PWL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hLn-fV-f0d"/>
                 <constraint firstAttribute="trailing" secondItem="Lsk-rt-PWL" secondAttribute="trailing" id="hRL-tP-2rF"/>
                 <constraint firstItem="mih-F4-bFS" firstAttribute="top" secondItem="qur-Bd-fzV" secondAttribute="bottom" constant="8" symbolic="YES" id="hbM-O4-C6u"/>
@@ -157,4 +162,7 @@
             <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="ApplePayButton.png" width="180" height="40"/>
+    </resources>
 </document>
