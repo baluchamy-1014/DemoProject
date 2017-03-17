@@ -12,11 +12,16 @@ class PassTypeViewController: UITableViewController {
   var subscriptionItems: [AnyObject] = Array()
   
   override func viewDidLoad() {
+    self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
     tableView.backgroundColor = UIColor.black
     tableView.separatorColor = UIColor.black
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 138
     self.title = "Purchase Options"
+    
+    setupHeaderView()
+    setupFooterView()
+
     super.viewDidLoad()
   }
 
@@ -70,12 +75,30 @@ class PassTypeViewController: UITableViewController {
     return cell
   }
   
-  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    return "Find Your Perfect Pass"
+  func setupHeaderView() {
+    let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 65))
+    let label = UILabel(frame: CGRect(x: 0, y: 20, width: view.frame.size.width, height: 24))
+    label.textAlignment = .center
+    label.font = UIFont.systemFont(ofSize: 22.0)
+    label.text = "Find Your Perfect Pass"
+    label.textColor = UIColor.white
+    view.backgroundColor = UIColor.black
+    view.addSubview(label)
+    
+    tableView.tableHeaderView = view
   }
   
-  override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-    return "Legal stuff, blackout info, etc."
+  func setupFooterView() {
+    let view = UIView(frame: CGRect(x: 0, y: tableView.frame.size.height - 20, width: tableView.frame.size.width, height: 65))
+    let label = UILabel(frame: CGRect(x: 0, y: 20, width: view.frame.size.width, height: 24))
+    label.textAlignment = .center
+    label.font = UIFont.systemFont(ofSize: 12.0)
+    label.text = "Legal stuff, blackout info, etc."
+    label.textColor = UIColor.white
+    view.backgroundColor = UIColor.black
+    view.addSubview(label)
+    
+    tableView.tableFooterView = view
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
