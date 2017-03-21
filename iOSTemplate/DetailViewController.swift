@@ -116,7 +116,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       signInButton.setTitleColor(UIColor.white, for: .normal)
       signInButton.frame = CGRect(x: 0, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
       signInButton.backgroundColor = UIColor(red: 37/255, green: 38/255, blue: 39/255, alpha: 1.0)
-      signInButton.addTarget(appDelegate, action: #selector(appDelegate.sendUserToSignInUpScreen), for: UIControlEvents.touchUpInside)
+      signInButton.addTarget(self, action: #selector(DetailViewController.userTappedSignInButton), for: UIControlEvents.touchUpInside)
       headerImageView.addSubview(signInButton)
     }
     buyNowButton.frame = CGRect(x: buyNowXOrigin, y: headerImageView.frame.height - 60, width: buyNowButtonWidth, height: 60)
@@ -417,7 +417,11 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     present(videoPlayerController, animated: true, completion: nil)
     videoPlayerController.playVideo()
   }
-
+  
+  func userTappedSignInButton() {
+    let userController = UserController(nibName: "UserAccount", bundle: nil)
+    self.navigationController?.pushViewController(userController, animated: true)
+  }
 
   func displaySubscriptionOptions(_ sender: UIButton) {
     Session.shared().getProperty({ (property, error) in
