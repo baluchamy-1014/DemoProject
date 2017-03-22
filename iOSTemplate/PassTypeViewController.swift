@@ -41,36 +41,48 @@ class PassTypeViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     tableView.register(UINib(nibName: "TicketTableViewCell", bundle: nil), forCellReuseIdentifier: "ticketCell")
     let cell = tableView.dequeueReusableCell(withIdentifier: "ticketCell", for: indexPath) as! TicketTableViewCell
-    // TODO: remove hardcoded and add from SDK
+
     let item = subscriptionItems[indexPath.row] as! Product
 
-    switch item.category {
-    case "single-game":
-      cell.passLeadingImage.image = UIImage(named: "ticketTailSingle")
-      cell.passTrailingImage.image = UIImage(named: "singleButton")
-   //   cell.passSubtitle.text = "Replace With Date from API"
-    case "season":
-      cell.passLeadingImage.image = UIImage(named: "ticketTailSeason")
-      cell.passTrailingImage.image = UIImage(named: "seasonButton")
-      cell.passTopBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
-      cell.passBottomBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
-      cell.passSubtitle.text = "2016 League Season Pass"
-    case "team":
-      cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")
-      cell.passTrailingImage.image = UIImage(named: "teamButton")
-      cell.passTopBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
-      cell.passBottomBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
-      cell.passSubtitle.text = "Team Season Pass"
-      cell.passPrice.text = "$29.99"
-    default:
-      break
+    if let offer = item.offers[0] as? Offer {
+      switch item.category {
+      case "single-game":
+        cell.passLeadingImage.image = UIImage(named: "ticketTailSingle")
+        cell.passTrailingImage.image = UIImage(named: "singleButton")
+      //   cell.passSubtitle.text = "Replace With Date from API"
+      case "season":
+        cell.passLeadingImage.image = UIImage(named: "ticketTailSeason")
+        cell.passTrailingImage.image = UIImage(named: "seasonButton")
+        cell.passTopBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
+        cell.passBottomBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
+        cell.passSubtitle.text = "2016 League Season Pass"
+      case "team":
+        cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")
+        cell.passTrailingImage.image = UIImage(named: "teamButton")
+        cell.passTopBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
+        cell.passBottomBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
+        cell.passSubtitle.text = "Team Season Pass"
+        cell.passPrice.text = "$29.99"
+      default:
+        break
+      }
+
+
+      cell.passTitle?.text = item.name
+      
+      cell.bounds = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 200)
+      cell.contentView.bounds = cell.bounds
+      cell.layoutIfNeeded()
+      cell.passTitle.sizeToFit()
+      
+      if let price = offer.price {
+        let locale = NSLocale(localeIdentifier: offer.currency)
+        let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
+        cell.passPrice.text = "\(currencySymbol!) \(price)"
+      }
+
+
     }
-    cell.passTitle?.text = item.name
-    
-    cell.bounds = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 200)
-    cell.contentView.bounds = cell.bounds
-    cell.layoutIfNeeded()
-    cell.passTitle.sizeToFit()
 
     return cell
   }

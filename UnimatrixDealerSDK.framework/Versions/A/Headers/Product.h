@@ -29,6 +29,7 @@ typedef void (^DealerProductQueryCompletionBlock) (NSArray *products, NSError *e
 @property (nonatomic, strong) NSString *publishedAt;
 @property (nonatomic, strong) NSString *state;
 @property (nonatomic, strong) NSString *longDescription;
+@property (nonatomic, strong) NSArray  *offers;
 
 + (Attributes *)attributes;
 
