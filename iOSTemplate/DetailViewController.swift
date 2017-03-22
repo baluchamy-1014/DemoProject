@@ -83,7 +83,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     let overlayLabel = UILabel(frame: CGRect(x: 0, y: 0, width: headerImageView.frame.width-100, height: 180))
     
     overlayLabel.numberOfLines = 3
-    overlayLabel.text = "This Premium Content Requires a Season or Single Game Purchase."
+    overlayLabel.text = "This content requires you to be signed in and have an NLL Pass."
+    overlayLabel.textAlignment = .center
     overlayLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightSemibold)
     overlayLabel.textColor = UIColor.white
     overlayView.addSubview(overlayLabel)
