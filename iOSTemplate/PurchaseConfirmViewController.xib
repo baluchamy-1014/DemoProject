@@ -12,10 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PurchaseConfirmViewController" customModule="NLL" customModuleProvider="target">
             <connections>
                 <outlet property="bodyView" destination="Lsk-rt-PWL" id="DDY-T5-TlU"/>
+                <outlet property="codeValueLabel" destination="ZpZ-OT-eia" id="Wk0-Ze-DRT"/>
+                <outlet property="passPriceLabel" destination="T1U-fx-pQ6" id="Bti-y7-iMw"/>
                 <outlet property="passSubtitle" destination="mih-F4-bFS" id="2uO-0q-9iA"/>
                 <outlet property="passTitle" destination="qur-Bd-fzV" id="91n-OV-ohp"/>
                 <outlet property="promoApplyButton" destination="GUE-ht-Msv" id="Smq-lG-qXA"/>
                 <outlet property="promoTextField" destination="w6C-VQ-4vS" id="mZA-4g-eRy"/>
+                <outlet property="taxPriceLabel" destination="PcA-Lv-UfN" id="YbJ-O2-QXF"/>
+                <outlet property="totalPriceLabel" destination="nro-Vs-PKY" id="dX6-Kq-xn2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -14,7 +14,11 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var passSubtitle: UILabel!
   @IBOutlet var promoApplyButton: UIButton!
   @IBOutlet var promoTextField: UITextField!
-  
+  @IBOutlet var passPriceLabel: UILabel!
+  @IBOutlet var codeValueLabel: UILabel!
+  @IBOutlet var taxPriceLabel: UILabel!
+  @IBOutlet var totalPriceLabel: UILabel!
+
   override func viewDidLoad() {
     promoApplyButton.layer.borderColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0).cgColor
     promoApplyButton.layer.borderWidth = 1.0
