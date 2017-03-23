@@ -13,6 +13,8 @@
 
 @interface Attributes : NSObject
 
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
 -(id)initWithReflections:(NSArray *)reflectionArray;
 
 -(void)setResourceProperties:(Resource*)resource

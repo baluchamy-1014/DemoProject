@@ -49,7 +49,10 @@ class PassTypeViewController: UITableViewController {
       case "single-game":
         cell.passLeadingImage.image = UIImage(named: "ticketTailSingle")
         cell.passTrailingImage.image = UIImage(named: "singleButton")
-      //   cell.passSubtitle.text = "Replace With Date from API"
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d, yyyy"
+        cell.passSubtitle.text = dateFormatter.string(from: item.startsAt)
       case "season":
         cell.passLeadingImage.image = UIImage(named: "ticketTailSeason")
         cell.passTrailingImage.image = UIImage(named: "seasonButton")
