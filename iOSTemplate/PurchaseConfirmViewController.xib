@@ -17,6 +17,7 @@
                 <outlet property="passSubtitle" destination="mih-F4-bFS" id="2uO-0q-9iA"/>
                 <outlet property="passTitle" destination="qur-Bd-fzV" id="91n-OV-ohp"/>
                 <outlet property="promoApplyButton" destination="GUE-ht-Msv" id="Smq-lG-qXA"/>
+                <outlet property="promoCodeErrorLabel" destination="te8-Vf-SG7" id="KkK-QJ-Pep"/>
                 <outlet property="promoTextField" destination="w6C-VQ-4vS" id="mZA-4g-eRy"/>
                 <outlet property="taxPriceLabel" destination="PcA-Lv-UfN" id="YbJ-O2-QXF"/>
                 <outlet property="totalPriceLabel" destination="nro-Vs-PKY" id="dX6-Kq-xn2"/>
@@ -131,6 +132,12 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This code is invalid. Please try again." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="te8-Vf-SG7" userLabel="Promo Code Error Label">
+                            <rect key="frame" x="33" y="100" width="210" height="15"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" red="0.79607843137254897" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -148,6 +155,7 @@
                         <constraint firstAttribute="bottom" secondItem="tU7-kk-t26" secondAttribute="bottom" constant="245" placeholder="YES" id="QB6-T5-7hA"/>
                         <constraint firstItem="HCH-YI-f8N" firstAttribute="top" secondItem="tU7-kk-t26" secondAttribute="bottom" constant="15" id="Qxf-yr-9SF"/>
                         <constraint firstItem="a9V-Bc-z8l" firstAttribute="top" secondItem="HCH-YI-f8N" secondAttribute="bottom" constant="30" id="SI1-vR-twy"/>
+                        <constraint firstItem="te8-Vf-SG7" firstAttribute="top" secondItem="w6C-VQ-4vS" secondAttribute="bottom" constant="4" id="TPO-oN-UTg"/>
                         <constraint firstItem="Lgm-Hq-Zps" firstAttribute="top" secondItem="dEc-8L-CTe" secondAttribute="bottom" constant="15" id="aOO-vV-oyx"/>
                         <constraint firstItem="PcA-Lv-UfN" firstAttribute="trailing" secondItem="nro-Vs-PKY" secondAttribute="trailing" id="eu3-fa-g7f"/>
                         <constraint firstItem="T1U-fx-pQ6" firstAttribute="leading" relation="lessThanOrEqual" secondItem="dEc-8L-CTe" secondAttribute="trailing" constant="88" id="gfY-Qt-ofC"/>
@@ -156,6 +164,7 @@
                         <constraint firstItem="Lgm-Hq-Zps" firstAttribute="leading" secondItem="e99-wC-fX2" secondAttribute="leading" id="mNM-wX-tGo"/>
                         <constraint firstItem="w6C-VQ-4vS" firstAttribute="top" secondItem="Lsk-rt-PWL" secondAttribute="top" constant="24" id="mUB-1Y-j5g"/>
                         <constraint firstItem="PcA-Lv-UfN" firstAttribute="leading" secondItem="T1U-fx-pQ6" secondAttribute="leading" id="mko-9L-73N"/>
+                        <constraint firstItem="te8-Vf-SG7" firstAttribute="leading" secondItem="Lsk-rt-PWL" secondAttribute="leading" constant="24" id="oyt-Gj-anm"/>
                         <constraint firstItem="HCH-YI-f8N" firstAttribute="leading" secondItem="Lsk-rt-PWL" secondAttribute="leading" constant="13" id="sHv-rL-aDu"/>
                         <constraint firstItem="tU7-kk-t26" firstAttribute="top" secondItem="Lgm-Hq-Zps" secondAttribute="bottom" constant="15" id="uqy-aZ-l2q"/>
                         <constraint firstItem="tU7-kk-t26" firstAttribute="baseline" secondItem="PcA-Lv-UfN" secondAttribute="baseline" placeholder="YES" id="vLo-z0-SdN"/>

@@ -18,7 +18,8 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var codeValueLabel: UILabel!
   @IBOutlet var taxPriceLabel: UILabel!
   @IBOutlet var totalPriceLabel: UILabel!
-
+  @IBOutlet var promoCodeErrorLabel: UILabel!
+  
   override func viewDidLoad() {
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(PurchaseConfirmViewController.cancelPurchase))
     setupApplyButton()
@@ -51,6 +52,8 @@ class PurchaseConfirmViewController: UIViewController {
   }
 
   @IBAction func useDidTapApplyButton(_ sender: Any) {
+    // TODO: add check to see if promo code is valid
+    promoCodeErrorLabel.isHidden = false
     
   }
 
