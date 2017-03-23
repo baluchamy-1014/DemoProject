@@ -41,14 +41,20 @@
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                         </textField>
-                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUE-ht-Msv">
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUE-ht-Msv">
                             <rect key="frame" x="255" y="69" width="100" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="100" id="vN8-sx-HJG"/>
                             </constraints>
                             <state key="normal" title="Apply">
-                                <color key="titleColor" red="0.59215686274509804" green="0.59215686274509804" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <state key="disabled" title="Apply">
+                                <color key="titleColor" red="0.52156862745098043" green="0.52156862745098043" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="useDidTapApplyButton:" destination="-1" eventType="touchUpInside" id="tP0-qk-8HF"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Single Game Pass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEc-8L-CTe" userLabel="PassTypeLabel">
                             <rect key="frame" x="33" y="120" width="237" height="20"/>
