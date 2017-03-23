@@ -17,8 +17,9 @@
 		622901391E5CC31A00E021EE /* Subscriptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 622901381E5CC31A00E021EE /* Subscriptions.xib */; };
 		6229013B1E5CC3FB00E021EE /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6229013A1E5CC3FB00E021EE /* SubscriptionsViewController.swift */; };
 		62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */; };
-		62458FC21E56227200069642 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62458FBE1E56227200069642 /* UnimatrixObjcSDK.framework */; };
 		6253BDCD1DE34F58001CE859 /* SignUpSuccess.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */; };
+		626DBE221E842C9800FCDE16 /* UnimatrixDealerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626DBE211E842C9800FCDE16 /* UnimatrixDealerSDK.framework */; };
+		626DBE241E8431BA00FCDE16 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626DBE231E8431BA00FCDE16 /* UnimatrixObjcSDK.framework */; };
 		627484B41E71BC8700621D7B /* UnimatrixConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 627484B31E71BC8700621D7B /* UnimatrixConfig.plist */; };
 		627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */; };
 		627484BB1E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */; };
@@ -29,7 +30,6 @@
 		62A8F2871E60C5A600361495 /* UnimatrixConfigStaging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */; };
 		62A8F28A1E60C5B000361495 /* UnimatrixConfigProduction.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */; };
 		62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B233831E368B2D00A7643F /* SWRevealViewController.m */; };
-		62E527E31E57677D00F0B5E6 /* UnimatrixDealerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E527E21E57677D00F0B5E6 /* UnimatrixDealerSDK.framework */; };
 		780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780578551DC2AA1F0011BBE8 /* TagSection.swift */; };
 		78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A931DC951BE00FAB2B8 /* Cancel_icon.png */; };
 		78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */; };
@@ -198,8 +198,9 @@
 		622901381E5CC31A00E021EE /* Subscriptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Subscriptions.xib; sourceTree = "<group>"; };
 		6229013A1E5CC3FB00E021EE /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixAnalyticsObjcSDK.framework; sourceTree = "<group>"; };
-		62458FBE1E56227200069642 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpSuccess.xib; sourceTree = "<group>"; };
+		626DBE211E842C9800FCDE16 /* UnimatrixDealerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixDealerSDK.framework; sourceTree = "<group>"; };
+		626DBE231E8431BA00FCDE16 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		627484B31E71BC8700621D7B /* UnimatrixConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UnimatrixConfig.plist; sourceTree = "<group>"; };
 		627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
 		627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BoxxspringVideoPlayerSDK.bundle; sourceTree = "<group>"; };
@@ -211,7 +212,6 @@
 		62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UnimatrixConfigProduction.xcconfig; sourceTree = "<group>"; };
 		62B233821E368B2D00A7643F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		62B233831E368B2D00A7643F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		62E527E21E57677D00F0B5E6 /* UnimatrixDealerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixDealerSDK.framework; sourceTree = "<group>"; };
 		780578551DC2AA1F0011BBE8 /* TagSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSection.swift; sourceTree = "<group>"; };
 		78095A931DC951BE00FAB2B8 /* Cancel_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel_icon.png; path = iOSTemplate/Assets.xcassets/Cancel_icon.png; sourceTree = "<group>"; };
 		78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Cancel_icon@2x.png"; sourceTree = "<group>"; };
@@ -377,10 +377,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				626DBE221E842C9800FCDE16 /* UnimatrixDealerSDK.framework in Frameworks */,
 				627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
-				62E527E31E57677D00F0B5E6 /* UnimatrixDealerSDK.framework in Frameworks */,
 				62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
-				62458FC21E56227200069642 /* UnimatrixObjcSDK.framework in Frameworks */,
+				626DBE241E8431BA00FCDE16 /* UnimatrixObjcSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,11 +632,11 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
+				626DBE231E8431BA00FCDE16 /* UnimatrixObjcSDK.framework */,
+				626DBE211E842C9800FCDE16 /* UnimatrixDealerSDK.framework */,
 				627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */,
 				627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */,
-				62E527E21E57677D00F0B5E6 /* UnimatrixDealerSDK.framework */,
 				62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */,
-				62458FBE1E56227200069642 /* UnimatrixObjcSDK.framework */,
 				788C43A21DA46D1000F342B9 /* Assets */,
 				78E31EB11D9C7BA100CB59D3 /* bridge.h */,
 				78E31E731D99F3F400CB59D3 /* iOSTemplate */,
@@ -740,7 +740,6 @@
 				78A29F291DB5425300782620 /* VideosIconActive@3x.png in Resources */,
 				78E31E7C1D99F3F400CB59D3 /* Assets.xcassets in Resources */,
 				7810029A1E6E1F3300EF3C8A /* ticketTailSingle@2x.png in Resources */,
-				62A8F28B1E60C5B000361495 /* UnimatrixConfig.plist in Resources */,
 				78B3120A1DBE80C60064EE88 /* slider_bar.png in Resources */,
 				782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */,
 				784C3FF71DB9955C001AECD3 /* VideosIconActive@2x.png in Resources */,

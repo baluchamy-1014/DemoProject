@@ -83,7 +83,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     let overlayLabel = UILabel(frame: CGRect(x: 0, y: 0, width: headerImageView.frame.width-100, height: 180))
     
     overlayLabel.numberOfLines = 3
-    overlayLabel.text = "This Premium Content Requires a Season or Single Game Purchase."
+    overlayLabel.text = "This content requires you to be signed in and have an NLL Pass."
+    overlayLabel.textAlignment = .center
     overlayLabel.font = UIFont.systemFont(ofSize: 20, weight: UIFontWeightSemibold)
     overlayLabel.textColor = UIColor.white
     overlayView.addSubview(overlayLabel)
@@ -105,7 +106,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     let buyNowButton = UIButton(type: .roundedRect)
     buyNowButton.setTitle("BUY NOW", for: .normal)
     buyNowButton.setTitleColor(UIColor.white, for: .normal)
-    buyNowButton.frame = CGRect(x: 188, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
+    buyNowButton.frame = CGRect(x: headerImageView.frame.width/2, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
     buyNowButton.backgroundColor = UIColor(red: 136/255, green: 136/255, blue: 136/255, alpha: 1.0)
     buyNowButton.addTarget(self, action: #selector(DetailViewController.displaySubscriptionOptions(_:)), for: UIControlEvents.touchUpInside)
     headerImageView.addSubview(buyNowButton)
@@ -412,7 +413,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     Session.shared().getProperty({ (property, error) in
         if (error == nil) {
           Product.query("0230e183df7c7a2f392285b8b6c19b2a", categories: [], match: self.artifact.id.stringValue, onCompletion: { (products, error) in
-            let subscriptionsVC = SubscriptionsViewController(nibName: "Subscriptions", bundle: nil)
+            let subscriptionsVC = PassTypeViewController()
             subscriptionsVC.subscriptionItems = products as! [Product]
             self.navigationController?.pushViewController(subscriptionsVC, animated: true)
           })
