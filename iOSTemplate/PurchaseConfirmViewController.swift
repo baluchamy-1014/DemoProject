@@ -47,8 +47,9 @@ class PurchaseConfirmViewController: UIViewController {
     let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
     passTitle.text = product.name
     passTypeLabel.text = product.category
-    print(offer.price)
     passPriceLabel.text = "\(currencySymbol!) \(offer.price!)"
+    // TODO: replace with calculated value from dealer
+    taxPriceLabel.text = "$  3.32"
     // TODO: replace promoValue with one from dealer
     totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: numberFormatter.number(from: offer.price) as! CGFloat, promoValue: 0))"
   }
@@ -66,8 +67,12 @@ class PurchaseConfirmViewController: UIViewController {
   }
   
   func calculateSum(orginalPrice: CGFloat, promoValue: CGFloat) -> String {
+    // TODO: centralize local/currency
+    let locale = NSLocale(localeIdentifier: offer.currency)
+    let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
     let taxNum = (orginalPrice - promoValue) * CGFloat(0.095)
   // TODO: find out where tax comes from and replace
+    taxPriceLabel.text = "\(currencySymbol!) \(String(format: "%.2f", taxNum))"
     return String(format: "%.2f", ((orginalPrice - promoValue) + taxNum))
   }
   
@@ -84,9 +89,22 @@ class PurchaseConfirmViewController: UIViewController {
   }
 
   @IBAction func useDidTapApplyButton(_ sender: Any) {
-    // TODO: add check to see if promo code is valid
+    let numberFormatter = NumberFormatter()
+    let locale = NSLocale(localeIdentifier: offer.currency)
+    let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
+    // TODO: replace with dealer data
+    let isCodeValid = true
+    let codeValue = 10.00
+    if isCodeValid == true {
+      totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: numberFormatter.number(from: offer.price) as! CGFloat, promoValue: CGFloat(codeValue)))"
+      // TODO: update labels here or in calculate method?
+      codeValueLabel.text = "\(currencySymbol!) \(String(format: "%.2f", codeValue))"
+    }
+    else {
+      
+    }
+    // TODO: after success
     promoCodeErrorLabel.isHidden = false
-    
   }
 
 }
