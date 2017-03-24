@@ -105,6 +105,18 @@ class PurchaseConfirmViewController: UIViewController {
     }
     // TODO: after success
     promoCodeErrorLabel.isHidden = false
+    promoCodeSuccess(success: isCodeValid)
+  }
+  
+  func promoCodeSuccess(success: Bool) {
+    if success == true {
+      promoCodeErrorLabel.text = "Success! Your code has been applied."
+      promoCodeErrorLabel.textColor = UIColor(red: 103/255, green: 177/255, blue: 22/255, alpha: 1.0)
+    }
+    else {
+      promoCodeErrorLabel.textColor = UIColor(red: 203/255, green: 100/255, blue: 100/255, alpha: 1.0)
+      promoCodeErrorLabel.text = "This code is invalid. Please try again."
+    }
   }
 
 }
