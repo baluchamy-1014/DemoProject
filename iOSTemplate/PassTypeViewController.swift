@@ -118,18 +118,19 @@ class PassTypeViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let item = subscriptionItems[indexPath.row] as! Product
+    if let offer = item.offers[0] as? Offer {
     switch item.category {
     case "single-game":
       let viewController = SingleGamePassViewController()
       self.navigationController?.pushViewController(viewController, animated: true)
     case "season":
       // TODO: check if logged in
-      let viewController = PurchaseConfirmViewController()
+      let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
       self.navigationController?.pushViewController(viewController, animated: true)
       
       viewController.view.backgroundColor = UIColor(red: 92/255, green: 20/255, blue: 20/255, alpha: 1.0)
       viewController.title = "Purchase Confirmation"
-      viewController.passTitle.text = "NLL TV Season Pass".uppercased()
+      viewController.passTitle.text = item.name.uppercased()
       viewController.passSubtitle.text = "2016 League Season Pass"
     case "team":
       // TODO: team filter
@@ -138,5 +139,5 @@ class PassTypeViewController: UITableViewController {
       break
     }
   }
-  
+  }
 }

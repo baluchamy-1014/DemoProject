@@ -16,6 +16,7 @@
                 <outlet property="passPriceLabel" destination="T1U-fx-pQ6" id="Bti-y7-iMw"/>
                 <outlet property="passSubtitle" destination="mih-F4-bFS" id="2uO-0q-9iA"/>
                 <outlet property="passTitle" destination="qur-Bd-fzV" id="91n-OV-ohp"/>
+                <outlet property="passTypeLabel" destination="dEc-8L-CTe" id="OrS-cR-alB"/>
                 <outlet property="promoApplyButton" destination="GUE-ht-Msv" id="Smq-lG-qXA"/>
                 <outlet property="promoCodeErrorLabel" destination="te8-Vf-SG7" id="KkK-QJ-Pep"/>
                 <outlet property="promoTextField" destination="w6C-VQ-4vS" id="mZA-4g-eRy"/>
@@ -78,8 +79,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpZ-OT-eia" userLabel="Code Value">
-                            <rect key="frame" x="292" y="170" width="48" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$  0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpZ-OT-eia" userLabel="Code Value">
+                            <rect key="frame" x="292" y="170" width="67" height="20"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -154,6 +155,7 @@
                         <constraint firstItem="w6C-VQ-4vS" firstAttribute="leading" secondItem="Lsk-rt-PWL" secondAttribute="leading" constant="16" id="Phe-nk-6j4"/>
                         <constraint firstAttribute="bottom" secondItem="tU7-kk-t26" secondAttribute="bottom" constant="245" placeholder="YES" id="QB6-T5-7hA"/>
                         <constraint firstItem="HCH-YI-f8N" firstAttribute="top" secondItem="tU7-kk-t26" secondAttribute="bottom" constant="15" id="Qxf-yr-9SF"/>
+                        <constraint firstItem="ZpZ-OT-eia" firstAttribute="trailing" secondItem="PcA-Lv-UfN" secondAttribute="trailing" id="RFO-ac-GJl"/>
                         <constraint firstItem="a9V-Bc-z8l" firstAttribute="top" secondItem="HCH-YI-f8N" secondAttribute="bottom" constant="30" id="SI1-vR-twy"/>
                         <constraint firstItem="te8-Vf-SG7" firstAttribute="top" secondItem="w6C-VQ-4vS" secondAttribute="bottom" constant="4" id="TPO-oN-UTg"/>
                         <constraint firstItem="Lgm-Hq-Zps" firstAttribute="top" secondItem="dEc-8L-CTe" secondAttribute="bottom" constant="15" id="aOO-vV-oyx"/>

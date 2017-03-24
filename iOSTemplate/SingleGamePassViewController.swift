@@ -44,13 +44,13 @@ class SingleGamePassViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     // TODO: check if logged in
-    let viewController = PurchaseConfirmViewController()
-    self.navigationController?.pushViewController(viewController, animated: true)
-    // TODO: remove hardcoded
-    viewController.view.backgroundColor = UIColor(red: 167/255, green: 147/255, blue: 25/255, alpha: 1.0)
-    viewController.title = "Purchase Confirmation"
-    viewController.passTitle.text = "Toronto vs Vancouver".uppercased()
-    viewController.passSubtitle.text = "Jan 5th, 2017 @ 5:00 PM"
+//    let viewController = PurchaseConfirmViewController(offerName: "OfferName")
+//    self.navigationController?.pushViewController(viewController, animated: true)
+//    // TODO: remove hardcoded
+//    viewController.view.backgroundColor = UIColor(red: 167/255, green: 147/255, blue: 25/255, alpha: 1.0)
+//    viewController.title = "Purchase Confirmation"
+//    viewController.passTitle.text = "Toronto vs Vancouver".uppercased()
+//    viewController.passSubtitle.text = "Jan 5th, 2017 @ 5:00 PM"
   }
   
   override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
