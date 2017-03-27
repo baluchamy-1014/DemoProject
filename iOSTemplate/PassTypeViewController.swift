@@ -70,7 +70,6 @@ class PassTypeViewController: UITableViewController {
         break
       }
 
-
       cell.passTitle?.text = item.name
       
       cell.bounds = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 200)
@@ -83,7 +82,6 @@ class PassTypeViewController: UITableViewController {
         let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
         cell.passPrice.text = "\(currencySymbol!) \(price)"
       }
-
 
     }
 
@@ -119,25 +117,35 @@ class PassTypeViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let item = subscriptionItems[indexPath.row] as! Product
     if let offer = item.offers[0] as? Offer {
-    switch item.category {
-    case "single-game":
-      let viewController = SingleGamePassViewController()
-      self.navigationController?.pushViewController(viewController, animated: true)
-    case "season":
       // TODO: check if logged in
       let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
       self.navigationController?.pushViewController(viewController, animated: true)
-      
-      viewController.view.backgroundColor = UIColor(red: 92/255, green: 20/255, blue: 20/255, alpha: 1.0)
       viewController.title = "Purchase Confirmation"
-      viewController.passTitle.text = item.name.uppercased()
-      viewController.passSubtitle.text = "2016 League Season Pass"
-    case "team":
-      // TODO: team filter
-      break
-    default:
-      break
+      
+      switch item.category {
+      case "single-game":
+        viewController.view.backgroundColor = UIColor(red: 167/255, green: 147/255, blue: 25/255, alpha: 1.0)
+        // TODO: create central date formatter class
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM d, yyyy"
+        viewController.passSubtitle.text = dateFormatter.string(from: item.startsAt)
+
+        // only if through burger menu
+  //      let viewController = SingleGamePassViewController(product: item, anOffer: offer)
+  //      self.navigationController?.pushViewController(viewController, animated: true)
+      case "season":
+        viewController.view.backgroundColor = UIColor(red: 92/255, green: 20/255, blue: 20/255, alpha: 1.0)
+        viewController.passTitle.text = item.name.uppercased()
+        viewController.passSubtitle.text = "2016 League Season Pass"
+      case "team":
+        viewController.view.backgroundColor = UIColor(red: 84/255, green: 112/255, blue: 135/255, alpha: 1.0)
+        // TODO: find out where subtitle comes from
+        viewController.passSubtitle.text = item.category
+        // TODO: team filter when from burger menu
+        break
+      default:
+        break
+      }
     }
-  }
   }
 }
