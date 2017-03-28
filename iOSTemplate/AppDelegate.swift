@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
   var viewController: SWRevealViewController?
   let keymakerOrganizer = KeymakerOrganizer()
   var burgerMenuItems: [AnyObject] = Array()
+  let appConfiguration = Bundle.main.infoDictionary! as NSDictionary
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
@@ -26,8 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     
     print(UnimatrixConfiguration.sharedConfig().configValues())
     
-    let appConfiguration = Bundle.main.infoDictionary! as NSDictionary
-
     if let unimatrixConfigValues = UnimatrixConfiguration.sharedConfig().configValues() as? [String:String] {
       Session.shared().clientID = unimatrixConfigValues["CLIENT_ID"]!
       Session.shared().clientSecret = unimatrixConfigValues["CLIENT_SECRET"]!
