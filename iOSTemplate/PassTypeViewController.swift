@@ -45,29 +45,31 @@ class PassTypeViewController: UITableViewController {
     let item = subscriptionItems[indexPath.row] as! Product
 
     if let offer = item.offers[0] as? Offer {
-      switch item.category {
-      case "single-game":
-        cell.passLeadingImage.image = UIImage(named: "ticketTailSingle")
-        cell.passTrailingImage.image = UIImage(named: "singleButton")
+      if let category = item.category {
+        switch category {
+        case "single-game":
+          cell.passLeadingImage.image = UIImage(named: "ticketTailSingle")
+          cell.passTrailingImage.image = UIImage(named: "singleButton")
 
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d, yyyy"
-        cell.passSubtitle.text = dateFormatter.string(from: item.startsAt)
-      case "season":
-        cell.passLeadingImage.image = UIImage(named: "ticketTailSeason")
-        cell.passTrailingImage.image = UIImage(named: "seasonButton")
-        cell.passTopBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
-        cell.passBottomBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
-        cell.passSubtitle.text = "2016 League Season Pass"
-      case "team":
-        cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")
-        cell.passTrailingImage.image = UIImage(named: "teamButton")
-        cell.passTopBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
-        cell.passBottomBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
-        cell.passSubtitle.text = "Team Season Pass"
-        cell.passPrice.text = "$29.99"
-      default:
-        break
+          let dateFormatter = DateFormatter()
+          dateFormatter.dateFormat = "MMMM d, yyyy"
+          cell.passSubtitle.text = dateFormatter.string(from: item.startsAt)
+        case "season":
+          cell.passLeadingImage.image = UIImage(named: "ticketTailSeason")
+          cell.passTrailingImage.image = UIImage(named: "seasonButton")
+          cell.passTopBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
+          cell.passBottomBorderView.backgroundColor = UIColor(red: 92/255, green: 19/255, blue: 20/255, alpha: 1.0)
+          cell.passSubtitle.text = "2016 League Season Pass"
+        case "team":
+          cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")
+          cell.passTrailingImage.image = UIImage(named: "teamButton")
+          cell.passTopBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
+          cell.passBottomBorderView.backgroundColor = UIColor(red: 69/255, green: 93/255, blue: 113/255, alpha: 1.0)
+          cell.passSubtitle.text = "Team Season Pass"
+          cell.passPrice.text = "$29.99"
+        default:
+          break
+        }
       }
 
       cell.passTitle?.text = item.name
