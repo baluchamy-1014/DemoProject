@@ -103,6 +103,7 @@ class PurchaseConfirmViewController: UIViewController {
     else {
       
     }
+    promoTextField.resignFirstResponder()
     // TODO: after success
     promoCodeErrorLabel.isHidden = false
     promoCodeSuccess(success: isCodeValid)
