@@ -93,16 +93,18 @@ class PurchaseConfirmViewController: UIViewController {
     let locale = NSLocale(localeIdentifier: offer.currency)
     let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
     // TODO: replace with dealer data
-    let isCodeValid = true
-    let codeValue = 10.00
-    if isCodeValid == true {
-      totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: numberFormatter.number(from: offer.price) as! CGFloat, promoValue: CGFloat(codeValue)))"
-      // TODO: update labels here or in calculate method?
-      codeValueLabel.text = "\(currencySymbol!) \(String(format: "%.2f", codeValue))"
+    var isCodeValid = true
+    var codeValue = 10.00
+    
+    // TODO: remove invalid promo when we have real data
+    if promoTextField.text == "" {
+      isCodeValid = false
+      codeValue = 0.00
     }
-    else {
-      
-    }
+
+    totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: numberFormatter.number(from: offer.price) as! CGFloat, promoValue: CGFloat(codeValue)))"
+    // TODO: update labels here or in calculate method?
+    codeValueLabel.text = "\(currencySymbol!) \(String(format: "%.2f", codeValue))"
     promoTextField.resignFirstResponder()
     // TODO: after success
     promoCodeErrorLabel.isHidden = false
