@@ -11,6 +11,8 @@
 		7132AEAF1E8E3E120058225E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7132AEAE1E8E3E120058225E /* ViewController.swift */; };
 		7132AEB11E8E3E120058225E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEB01E8E3E120058225E /* Assets.xcassets */; };
 		7132AEB41E8E3E120058225E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEB21E8E3E120058225E /* Main.storyboard */; };
+		7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */; };
+		7132AEBE1E8E3F8C0058225E /* SampleAdded.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		7132AEB01E8E3E120058225E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7132AEB31E8E3E120058225E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7132AEB51E8E3E120058225E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleAdded.swift; sourceTree = "<group>"; };
+		7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleAdded.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				7132AEB01E8E3E120058225E /* Assets.xcassets */,
 				7132AEB21E8E3E120058225E /* Main.storyboard */,
 				7132AEB51E8E3E120058225E /* Info.plist */,
+				7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */,
+				7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */,
 			);
 			path = DemoProject;
 			sourceTree = "<group>";
@@ -120,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7132AEBE1E8E3F8C0058225E /* SampleAdded.xib in Resources */,
 				7132AEB11E8E3E120058225E /* Assets.xcassets in Resources */,
 				7132AEB41E8E3E120058225E /* Main.storyboard in Resources */,
 			);
@@ -133,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7132AEAF1E8E3E120058225E /* ViewController.swift in Sources */,
+				7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */,
 				7132AEAD1E8E3E120058225E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
