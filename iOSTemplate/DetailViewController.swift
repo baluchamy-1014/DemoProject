@@ -78,6 +78,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   }
   
   func setupRestrictionOverlay() {
+    var buyNowButtonWidth: CGFloat = headerImageView.frame.width/2
+    var buyNowXOrigin: CGFloat = headerImageView.frame.width/2
     let overlayView = UIView(frame: CGRect(x: 0, y: 0, width: headerImageView.frame.width, height: headerImageView.frame.height - 60))
     overlayView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.8)
     let overlayLabel = UILabel(frame: CGRect(x: 0, y: 0, width: headerImageView.frame.width-100, height: 180))
@@ -96,20 +98,28 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     view.addConstraint(NSLayoutConstraint(item: overlayLabel, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.lessThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 180))
     view.addConstraint(NSLayoutConstraint(item: overlayLabel, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.lessThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 250))
     
-    let signInButton = UIButton(type: .roundedRect)
-    signInButton.setTitle("SIGN IN", for: .normal)
-    signInButton.setTitleColor(UIColor.white, for: .normal)
-    signInButton.frame = CGRect(x: 0, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
-    signInButton.backgroundColor = UIColor(red: 37/255, green: 38/255, blue: 39/255, alpha: 1.0)
-    headerImageView.addSubview(signInButton)
-    
     let buyNowButton = UIButton(type: .roundedRect)
     buyNowButton.setTitle("BUY NOW", for: .normal)
     buyNowButton.setTitleColor(UIColor.white, for: .normal)
-    buyNowButton.frame = CGRect(x: headerImageView.frame.width/2, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
+    buyNowButton.frame = CGRect(x: buyNowXOrigin, y: headerImageView.frame.height - 60, width: buyNowButtonWidth, height: 60)
     buyNowButton.backgroundColor = UIColor(red: 136/255, green: 136/255, blue: 136/255, alpha: 1.0)
     buyNowButton.addTarget(self, action: #selector(DetailViewController.displaySubscriptionOptions(_:)), for: UIControlEvents.touchUpInside)
     headerImageView.addSubview(buyNowButton)
+    
+    if Session.shared().isValid() {
+      buyNowButtonWidth = headerImageView.frame.width
+      buyNowXOrigin = 0
+    }
+    else {
+      let signInButton = UIButton(type: .roundedRect)
+      signInButton.setTitle("SIGN IN", for: .normal)
+      signInButton.setTitleColor(UIColor.white, for: .normal)
+      signInButton.frame = CGRect(x: 0, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
+      signInButton.backgroundColor = UIColor(red: 37/255, green: 38/255, blue: 39/255, alpha: 1.0)
+      signInButton.addTarget(self, action: #selector(DetailViewController.userTappedSignInButton), for: UIControlEvents.touchUpInside)
+      headerImageView.addSubview(signInButton)
+    }
+    buyNowButton.frame = CGRect(x: buyNowXOrigin, y: headerImageView.frame.height - 60, width: buyNowButtonWidth, height: 60)
   }
   
   func loadRelatedContent() {
@@ -407,12 +417,16 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     present(videoPlayerController, animated: true, completion: nil)
     videoPlayerController.playVideo()
   }
-
+  
+  func userTappedSignInButton() {
+    let userController = UserController(nibName: "UserAccount", bundle: nil)
+    self.navigationController?.pushViewController(userController, animated: true)
+  }
 
   func displaySubscriptionOptions(_ sender: UIButton) {
     Session.shared().getProperty({ (property, error) in
         if (error == nil) {
-          Product.query("0230e183df7c7a2f392285b8b6c19b2a", categories: [], match: self.artifact.id.stringValue, onCompletion: { (products, error) in
+          Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, categories: ["team", "season", "single-game"], match: self.artifact.id.stringValue, onCompletion: { (products, error) in
             let subscriptionsVC = PassTypeViewController()
             subscriptionsVC.subscriptionItems = products as! [Product]
             self.navigationController?.pushViewController(subscriptionsVC, animated: true)

@@ -166,6 +166,9 @@
 		78B3120A1DBE80C60064EE88 /* slider_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312071DBE80C60064EE88 /* slider_bar.png */; };
 		78B3120B1DBE80C60064EE88 /* slider_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312081DBE80C60064EE88 /* slider_bar@2x.png */; };
 		78B3120C1DBE80C60064EE88 /* slider_bar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312091DBE80C60064EE88 /* slider_bar@3x.png */; };
+		78D9FC771E7C7FDA00413F5D /* ApplePayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9FC741E7C7FDA00413F5D /* ApplePayButton.png */; };
+		78D9FC781E7C7FDA00413F5D /* ApplePayButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9FC751E7C7FDA00413F5D /* ApplePayButton@2x.png */; };
+		78D9FC791E7C7FDA00413F5D /* ApplePayButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9FC761E7C7FDA00413F5D /* ApplePayButton@3x.png */; };
 		78E31E751D99F3F400CB59D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E31E741D99F3F400CB59D3 /* AppDelegate.swift */; };
 		78E31E771D99F3F400CB59D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E31E761D99F3F400CB59D3 /* ViewController.swift */; };
 		78E31E7A1D99F3F400CB59D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E31E781D99F3F400CB59D3 /* Main.storyboard */; };
@@ -348,6 +351,9 @@
 		78B312071DBE80C60064EE88 /* slider_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_bar.png; path = iOSTemplate/Assets.xcassets/slider_bar.png; sourceTree = "<group>"; };
 		78B312081DBE80C60064EE88 /* slider_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider_bar@2x.png"; path = "iOSTemplate/Assets.xcassets/slider_bar@2x.png"; sourceTree = "<group>"; };
 		78B312091DBE80C60064EE88 /* slider_bar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider_bar@3x.png"; path = "iOSTemplate/Assets.xcassets/slider_bar@3x.png"; sourceTree = "<group>"; };
+		78D9FC741E7C7FDA00413F5D /* ApplePayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ApplePayButton.png; path = iOSTemplate/Assets.xcassets/ApplePayButton.png; sourceTree = "<group>"; };
+		78D9FC751E7C7FDA00413F5D /* ApplePayButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ApplePayButton@2x.png"; path = "iOSTemplate/Assets.xcassets/ApplePayButton@2x.png"; sourceTree = "<group>"; };
+		78D9FC761E7C7FDA00413F5D /* ApplePayButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ApplePayButton@3x.png"; path = "iOSTemplate/Assets.xcassets/ApplePayButton@3x.png"; sourceTree = "<group>"; };
 		78E31E711D99F3F400CB59D3 /* NLL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NLL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E31E741D99F3F400CB59D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78E31E761D99F3F400CB59D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -429,6 +435,9 @@
 		7810027E1E6E1E3400EF3C8A /* Apple Pay */ = {
 			isa = PBXGroup;
 			children = (
+				78D9FC741E7C7FDA00413F5D /* ApplePayButton.png */,
+				78D9FC751E7C7FDA00413F5D /* ApplePayButton@2x.png */,
+				78D9FC761E7C7FDA00413F5D /* ApplePayButton@3x.png */,
 				7810027F1E6E1F3300EF3C8A /* seasonButton.png */,
 				781002801E6E1F3300EF3C8A /* seasonButton@2x.png */,
 				781002811E6E1F3300EF3C8A /* seasonButton@3x.png */,
@@ -775,6 +784,7 @@
 				6253BDCD1DE34F58001CE859 /* SignUpSuccess.xib in Resources */,
 				784C3FF61DB9955C001AECD3 /* VideosIconActive.png in Resources */,
 				78A29F281DB5425300782620 /* TeamIconInactive@3x.png in Resources */,
+				78D9FC771E7C7FDA00413F5D /* ApplePayButton.png in Resources */,
 				784C18971E454372008E8EED /* BurgerMenuCell.xib in Resources */,
 				781002901E6E1F3300EF3C8A /* singleButton.png in Resources */,
 				781002941E6E1F3300EF3C8A /* teamButton@2x.png in Resources */,
@@ -809,6 +819,7 @@
 				784C18D21E455CF3008E8EED /* play_button_active.png in Resources */,
 				784C18C91E4553D4008E8EED /* user_active@2x.png in Resources */,
 				784C18D11E455CF3008E8EED /* user_inactive.png in Resources */,
+				78D9FC791E7C7FDA00413F5D /* ApplePayButton@3x.png in Resources */,
 				78A29F221DB5425300782620 /* no_live_feed@3x.png in Resources */,
 				782D4DCD1E0C97040078FEC1 /* PlayButton@3x.png in Resources */,
 				78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */,
@@ -863,6 +874,7 @@
 				782D4DBF1E0A08520078FEC1 /* Placeholder_nll_logo@3x.png in Resources */,
 				784C18B11E45513D008E8EED /* play_button_inactive.png in Resources */,
 				782E3AAE1DF9307700FCF5CC /* NLL_Loading_Animation.gif in Resources */,
+				78D9FC781E7C7FDA00413F5D /* ApplePayButton@2x.png in Resources */,
 				784C18E81E455EF2008E8EED /* home_inactive@3x.png in Resources */,
 				CA47329CD3426049E916B50D /* reveal-icon.png in Resources */,
 				78503A071E4D80B0005F81EC /* link_artifact_inactive.png in Resources */,

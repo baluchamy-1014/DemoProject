@@ -44,10 +44,6 @@ class UserController: UIViewController {
     
     super.viewDidLoad()
   }
-  
-  override func viewWillDisappear(_ animated: Bool) {
-    self.navigationController?.popViewController(animated: true)
-  }
 
   @IBAction func switchToSignUpView(_ sender: AnyObject) {
     self.removeSubviews()
