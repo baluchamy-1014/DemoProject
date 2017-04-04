@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorViewController" customModule="NLL" customModuleProvider="target">
             <connections>
+                <outlet property="errorOKButton" destination="ZVf-Kl-eFg" id="3IG-J1-vKc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -53,6 +54,9 @@
                         <constraint firstAttribute="height" constant="60" id="jmr-Te-ddK"/>
                     </constraints>
                     <state key="normal" title="OK"/>
+                    <connections>
+                        <action selector="userDidTapOKButton:" destination="-1" eventType="touchUpInside" id="ZnM-EB-uHI"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Error_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="HzJ-ao-VoE">
                     <rect key="frame" x="157" y="59" width="60" height="60"/>
