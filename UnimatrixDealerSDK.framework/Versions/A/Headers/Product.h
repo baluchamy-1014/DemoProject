@@ -15,6 +15,7 @@
 @interface Product : Resource
 
 typedef void (^DealerProductQueryCompletionBlock) (NSArray *products, NSError *error);
+typedef void (^DealerProductCategoryQueryCompletionBlock) (NSDictionary *productsByUids, NSError *error);
 
 
 @property (nonatomic, strong) NSString *name;
@@ -30,6 +31,7 @@ typedef void (^DealerProductQueryCompletionBlock) (NSArray *products, NSError *e
 @property (nonatomic, strong) NSString *state;
 @property (nonatomic, strong) NSString *longDescription;
 @property (nonatomic, strong) NSArray  *offers;
+@property (nonatomic, strong) NSArray  *productCategorizations;
 
 + (Attributes *)attributes;
 
@@ -41,11 +43,18 @@ typedef void (^DealerProductQueryCompletionBlock) (NSArray *products, NSError *e
  *
  */
 + (void)query:(NSString *)realm
+       params:(NSDictionary *)params
         state:(NSString *)state
         count:(int)count
    categories:(NSArray *)productCategories
         match:(NSString *)resourceID
  onCompletion:(DealerProductQueryCompletionBlock)callback;
+
++ (void)        query:(NSString *)realm
+                count:(int)count
+archivistCategoryUids:(NSArray *)uids
+         onCompletion:(DealerProductCategoryQueryCompletionBlock)callback;
+
 
 + (void)query:(NSString *)realm
    categories:(NSArray *)categories
