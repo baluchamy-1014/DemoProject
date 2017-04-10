@@ -29,8 +29,8 @@
 		62A8F2871E60C5A600361495 /* UnimatrixConfigStaging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */; };
 		62A8F28A1E60C5B000361495 /* UnimatrixConfigProduction.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */; };
 		62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B233831E368B2D00A7643F /* SWRevealViewController.m */; };
-		62D7B0D11E96A1C80030C3C8 /* UnimatrixDealerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D7B0D01E96A1C80030C3C8 /* UnimatrixDealerSDK.framework */; };
 		62D7B0D31E96A32B0030C3C8 /* ProductGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */; };
+		62F417B11E9BF91400BE1300 /* UnimatrixDealerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F417B01E9BF91400BE1300 /* UnimatrixDealerSDK.framework */; };
 		780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780578551DC2AA1F0011BBE8 /* TagSection.swift */; };
 		78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A931DC951BE00FAB2B8 /* Cancel_icon.png */; };
 		78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */; };
@@ -215,8 +215,8 @@
 		62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UnimatrixConfigProduction.xcconfig; sourceTree = "<group>"; };
 		62B233821E368B2D00A7643F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		62B233831E368B2D00A7643F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
-		62D7B0D01E96A1C80030C3C8 /* UnimatrixDealerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixDealerSDK.framework; sourceTree = "<group>"; };
 		62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGroup.swift; sourceTree = "<group>"; };
+		62F417B01E9BF91400BE1300 /* UnimatrixDealerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixDealerSDK.framework; sourceTree = "<group>"; };
 		780578551DC2AA1F0011BBE8 /* TagSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSection.swift; sourceTree = "<group>"; };
 		78095A931DC951BE00FAB2B8 /* Cancel_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel_icon.png; path = iOSTemplate/Assets.xcassets/Cancel_icon.png; sourceTree = "<group>"; };
 		78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Cancel_icon@2x.png"; sourceTree = "<group>"; };
@@ -385,7 +385,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62D7B0D11E96A1C80030C3C8 /* UnimatrixDealerSDK.framework in Frameworks */,
+				62F417B11E9BF91400BE1300 /* UnimatrixDealerSDK.framework in Frameworks */,
 				627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
 				62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
 				626DBE241E8431BA00FCDE16 /* UnimatrixObjcSDK.framework in Frameworks */,
@@ -643,7 +643,7 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
-				62D7B0D01E96A1C80030C3C8 /* UnimatrixDealerSDK.framework */,
+				62F417B01E9BF91400BE1300 /* UnimatrixDealerSDK.framework */,
 				626DBE231E8431BA00FCDE16 /* UnimatrixObjcSDK.framework */,
 				627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */,
 				627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */,

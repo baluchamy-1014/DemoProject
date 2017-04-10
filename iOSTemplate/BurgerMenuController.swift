@@ -226,7 +226,7 @@ class BurgerMenuController: UITableViewController {
                     for seasonGroup in groups as! [Group] {
                       if seasonGroup.name == "2016-2017" {
                         print("season uid is \(seasonGroup.uid)")
-                        Product.query("0230e183df7c7a2f392285b8b6c19b2a", count: 100, archivistCategoryUids: [seasonGroup.uid]) { productsByUids, error in
+                        Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, archivistCategoryUids: [seasonGroup.uid]) { productsByUids, error in
                           var values: [ProductGroup] = []
                           Artifact.getRelatedArtifacts(Int32(Int((seasonGroup.id)!)), forProperty: seasonGroup.propertyID, filter: ["count": "20"]) { items, error in
                             for item in (items! as! [Artifact]) {
