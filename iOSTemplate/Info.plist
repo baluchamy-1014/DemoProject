@@ -2,19 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UnimatrixConfigValues</key>
-	<dict>
-		<key>APP_ENVIRONMENT</key>
-		<string>${APP_ENVIRONMENT}</string>
-		<key>CLIENT_ID</key>
-		<string>${CLIENT_ID}</string>
-		<key>CLIENT_SECRET</key>
-		<string>${CLIENT_SECRET}</string>
-	</dict>
-	<key>propertyCode</key>
-	<string>nll</string>
-	<key>DEALER_REALM_UUID</key>
-	<string>${DEALER_REALM_UUID}</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -32,7 +19,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>4</string>
+	<key>DEALER_REALM_UUID</key>
+	<string>${DEALER_REALM_UUID}</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -56,5 +45,16 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UnimatrixConfigValues</key>
+	<dict>
+		<key>APP_ENVIRONMENT</key>
+		<string>${APP_ENVIRONMENT}</string>
+		<key>CLIENT_ID</key>
+		<string>${CLIENT_ID}</string>
+		<key>CLIENT_SECRET</key>
+		<string>${CLIENT_SECRET}</string>
+	</dict>
+	<key>propertyCode</key>
+	<string>nll</string>
 </dict>
 </plist>
