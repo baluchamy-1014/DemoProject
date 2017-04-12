@@ -231,9 +231,10 @@ class BurgerMenuController: UITableViewController {
                           Artifact.getRelatedArtifacts(Int32(Int((seasonGroup.id)!)), forProperty: seasonGroup.propertyID, filter: ["count": "20"]) { items, error in
                             for item in (items! as! [Artifact]) {
                               print("item name is \(item.name) uid is : \(item.uid)")
-                              let products = (productsByUids as! [String:AnyObject])[item.uid]
-                              let productGroup = ProductGroup(artifact: item, products: products as! [Product])
-                              values.append(productGroup)
+                              if let products = (productsByUids as! [String:AnyObject])[item.uid] {
+                                let productGroup = ProductGroup(artifact: item, products: products as! [Product])
+                                values.append(productGroup)
+                              }
                             }
                             passController.subscriptionItems = values
                             passController.tableView.reloadData()
