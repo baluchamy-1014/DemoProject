@@ -156,6 +156,12 @@ class PassTypeViewController: UITableViewController {
           break
         }
       }
+    } else if let productGroup = subscriptionItems[indexPath.row] as? ProductGroup {
+      let passController = PassTypeViewController()
+      self.navigationController?.pushViewController(passController, animated: true)
+      self.title = ""
+      passController.subscriptionItems = productGroup.products
+      passController.tableView.reloadData()
     }
   }
 }
