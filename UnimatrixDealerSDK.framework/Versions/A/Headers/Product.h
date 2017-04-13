@@ -59,9 +59,16 @@ typedef void (^DealerProductCategoryQueryCompletionBlock) (NSDictionary *product
 archivistCategoryUids:(NSArray *)uids
          onCompletion:(DealerProductCategoryQueryCompletionBlock)callback;
 
-
+/**
+ * Makes a request to the Dealer API to get products that match the given params
+ * @param realm represents the property realm
+ * @param categories string value representing product gategory. eg: 'team', 'single-game', 'season'
+ * @param options is optional dict to override default values in the query
+ * @param callback that returns products or error depending upon the params
+ */
 + (void)query:(NSString *)realm
    categories:(NSArray *)categories
+      options:(NSDictionary *)options
  onCompletion:(DealerProductQueryCompletionBlock)callback;
 
 @end
