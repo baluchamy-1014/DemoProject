@@ -426,7 +426,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   func displaySubscriptionOptions(_ sender: UIButton) {
     Session.shared().getProperty({ (property, error) in
         if (error == nil) {
-          Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, categories: ["team", "season", "single-game"], match: self.artifact.id.stringValue, onCompletion: { (products, error) in
+          Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, categories: ["team", "season", "single-game"], match: self.artifact.id.stringValue, options: [:], onCompletion: { (products, error) in
             let subscriptionsVC = PassTypeViewController()
             subscriptionsVC.subscriptionItems = products as! [Product]
             self.navigationController?.pushViewController(subscriptionsVC, animated: true)

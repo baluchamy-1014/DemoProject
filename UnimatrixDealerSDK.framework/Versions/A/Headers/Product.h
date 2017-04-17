@@ -15,6 +15,7 @@
 @interface Product : Resource
 
 typedef void (^DealerProductQueryCompletionBlock) (NSArray *products, NSError *error);
+typedef void (^DealerProductCategoryQueryCompletionBlock) (NSDictionary *productsByUids, NSError *error);
 
 
 @property (nonatomic, strong) NSString *name;
@@ -30,30 +31,44 @@ typedef void (^DealerProductQueryCompletionBlock) (NSArray *products, NSError *e
 @property (nonatomic, strong) NSString *state;
 @property (nonatomic, strong) NSString *longDescription;
 @property (nonatomic, strong) NSArray  *offers;
+@property (nonatomic, strong) NSArray  *productCategorizations;
 
 + (Attributes *)attributes;
 
-/**
- * Makes a request to API using given artifact id and property id
- * @param artifactID The id for the artifact
- * @param propertyID Property to which the artifact belongs to
- * @param callback is the completion block which returns the artifact object if found and error message if needed
- *
- */
+ /**
+  * Makes a request to the Dealer API to get products that match the given params
+  * @param realm represents the property realm
+  * @param productCategories string value representing product gategory. eg: 'team', 'single-game', 'season'
+  * @param resourceID reprsents the artifact UID for which the products are being requested for. Can be nil
+  * @param params optional dict to override default values in the query
+  * @param callback that returns products or error depending upon the params
+  */
 + (void)query:(NSString *)realm
-        state:(NSString *)state
-        count:(int)count
    categories:(NSArray *)productCategories
         match:(NSString *)resourceID
+      options:(NSDictionary *)params
  onCompletion:(DealerProductQueryCompletionBlock)callback;
 
-+ (void)query:(NSString *)realm
-   categories:(NSArray *)categories
- onCompletion:(DealerProductQueryCompletionBlock)callback;
+/**
+ * Makes a request to the Dealer API to get product categorization
+ * @param realm represents the property realmn
+ * @param uids is an array of uids values from Archivist. eg: uid value for "2016 Season" tag in Archivist
+ * @param callback that returns a dictionary of uid key and products as values
+ */
++ (void)        query:(NSString *)realm
+archivistCategoryUids:(NSArray *)uids
+         onCompletion:(DealerProductCategoryQueryCompletionBlock)callback;
 
+/**
+ * Makes a request to the Dealer API to get products that match the given params
+ * @param realm represents the property realm
+ * @param categories string value representing product gategory. eg: 'team', 'single-game', 'season'
+ * @param options is optional dict to override default values in the query
+ * @param callback that returns products or error depending upon the params
+ */
 + (void)query:(NSString *)realm
    categories:(NSArray *)categories
-        match:(NSString *)resourceID
+      options:(NSDictionary *)options
  onCompletion:(DealerProductQueryCompletionBlock)callback;
 
 @end

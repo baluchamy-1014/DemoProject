@@ -14,11 +14,11 @@
 		621DD25D1DD61A9600D87855 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25C1DD61A9600D87855 /* UserController.swift */; };
 		621DD25F1DD62CBF00D87855 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25E1DD62CBF00D87855 /* SignInController.swift */; };
 		621DD2611DD62CD200D87855 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD2601DD62CD200D87855 /* SignUpController.swift */; };
+		621F07901EA028E5001C06D6 /* UnimatrixDealerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621F078F1EA028E5001C06D6 /* UnimatrixDealerSDK.framework */; };
 		622901391E5CC31A00E021EE /* Subscriptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 622901381E5CC31A00E021EE /* Subscriptions.xib */; };
 		6229013B1E5CC3FB00E021EE /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6229013A1E5CC3FB00E021EE /* SubscriptionsViewController.swift */; };
 		62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */; };
 		6253BDCD1DE34F58001CE859 /* SignUpSuccess.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */; };
-		626DBE221E842C9800FCDE16 /* UnimatrixDealerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626DBE211E842C9800FCDE16 /* UnimatrixDealerSDK.framework */; };
 		626DBE241E8431BA00FCDE16 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626DBE231E8431BA00FCDE16 /* UnimatrixObjcSDK.framework */; };
 		627484B41E71BC8700621D7B /* UnimatrixConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 627484B31E71BC8700621D7B /* UnimatrixConfig.plist */; };
 		627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */; };
@@ -30,6 +30,7 @@
 		62A8F2871E60C5A600361495 /* UnimatrixConfigStaging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */; };
 		62A8F28A1E60C5B000361495 /* UnimatrixConfigProduction.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */; };
 		62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B233831E368B2D00A7643F /* SWRevealViewController.m */; };
+		62D7B0D31E96A32B0030C3C8 /* ProductGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */; };
 		780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780578551DC2AA1F0011BBE8 /* TagSection.swift */; };
 		78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A931DC951BE00FAB2B8 /* Cancel_icon.png */; };
 		78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */; };
@@ -198,11 +199,11 @@
 		621DD25C1DD61A9600D87855 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		621DD25E1DD62CBF00D87855 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		621DD2601DD62CD200D87855 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		621F078F1EA028E5001C06D6 /* UnimatrixDealerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixDealerSDK.framework; sourceTree = "<group>"; };
 		622901381E5CC31A00E021EE /* Subscriptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Subscriptions.xib; sourceTree = "<group>"; };
 		6229013A1E5CC3FB00E021EE /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixAnalyticsObjcSDK.framework; sourceTree = "<group>"; };
 		6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpSuccess.xib; sourceTree = "<group>"; };
-		626DBE211E842C9800FCDE16 /* UnimatrixDealerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixDealerSDK.framework; sourceTree = "<group>"; };
 		626DBE231E8431BA00FCDE16 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		627484B31E71BC8700621D7B /* UnimatrixConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UnimatrixConfig.plist; sourceTree = "<group>"; };
 		627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
@@ -215,6 +216,7 @@
 		62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UnimatrixConfigProduction.xcconfig; sourceTree = "<group>"; };
 		62B233821E368B2D00A7643F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		62B233831E368B2D00A7643F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGroup.swift; sourceTree = "<group>"; };
 		780578551DC2AA1F0011BBE8 /* TagSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSection.swift; sourceTree = "<group>"; };
 		78095A931DC951BE00FAB2B8 /* Cancel_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel_icon.png; path = iOSTemplate/Assets.xcassets/Cancel_icon.png; sourceTree = "<group>"; };
 		78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Cancel_icon@2x.png"; sourceTree = "<group>"; };
@@ -383,7 +385,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				626DBE221E842C9800FCDE16 /* UnimatrixDealerSDK.framework in Frameworks */,
+				621F07901EA028E5001C06D6 /* UnimatrixDealerSDK.framework in Frameworks */,
 				627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
 				62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
 				626DBE241E8431BA00FCDE16 /* UnimatrixObjcSDK.framework in Frameworks */,
@@ -641,8 +643,8 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
+				621F078F1EA028E5001C06D6 /* UnimatrixDealerSDK.framework */,
 				626DBE231E8431BA00FCDE16 /* UnimatrixObjcSDK.framework */,
-				626DBE211E842C9800FCDE16 /* UnimatrixDealerSDK.framework */,
 				627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */,
 				627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */,
 				62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */,
@@ -675,6 +677,7 @@
 				78E31E801D99F3F400CB59D3 /* Info.plist */,
 				6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */,
 				CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */,
+				62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */,
 			);
 			path = iOSTemplate;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 				78E31EDE1D9DB87B00CB59D3 /* DetailViewController.swift in Sources */,
 				620C89F01DF7242100DAC962 /* LatestViewController.swift in Sources */,
 				6229013B1E5CC3FB00E021EE /* SubscriptionsViewController.swift in Sources */,
+				62D7B0D31E96A32B0030C3C8 /* ProductGroup.swift in Sources */,
 				62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */,
 				784B76DD1DFB42CE00076E8D /* FeedbackViewController.swift in Sources */,
 				78E31E8B1D9A0ABA00CB59D3 /* PageViewController.swift in Sources */,

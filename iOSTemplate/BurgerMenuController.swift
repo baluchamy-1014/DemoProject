@@ -210,13 +210,45 @@ class BurgerMenuController: UITableViewController {
         let passController = PassTypeViewController()
         let navigationController = UINavigationController(rootViewController: passController)
         self.revealViewController().pushFrontViewController(navigationController, animated: true)
-        
+
         let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
         passController.navigationItem.leftBarButtonItem = revealButtomItem
         passController.navigationController?.navigationBar.isTranslucent = false
-        passController.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+        passController.navigationController?.navigationBar.barTintColor = UIColor(red: 16 / 255, green: 24 / 255, blue: 31 / 255, alpha: 1.0)
         passController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         passController.title = "Purchase Options"
+        Property.getProperty("nll_purchasing") { property, error in
+          if (error == nil) {
+            Group.getGroup("/home", forProperty: Int32(Int((property?.id)!)), onCompletion: { (group, error) in
+              if (error == nil) && (group != nil) {
+                Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: ["count": "20"], onCompletion: { (groups, error) in
+                  if (error == nil) {
+                    for seasonGroup in groups as! [Group] {
+                      if seasonGroup.name == "2016-2017" {
+                        print("season uid is \(seasonGroup.uid)")
+                        Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, archivistCategoryUids: [seasonGroup.uid]) { productsByUids, error in
+                          var values: [ProductGroup] = []
+                          Artifact.getRelatedArtifacts(Int32(Int((seasonGroup.id)!)), forProperty: seasonGroup.propertyID, filter: ["count": "20"]) { items, error in
+                            for item in (items! as! [Artifact]) {
+                              print("item name is \(item.name) uid is : \(item.uid)")
+                              if let products = (productsByUids as! [String:AnyObject])[item.uid] {
+                                let productGroup = ProductGroup(artifact: item, products: products as! [Product])
+                                values.append(productGroup)
+                              }
+                            }
+                            passController.subscriptionItems = values
+                            passController.tableView.reloadData()
+                          }
+                        }
+                      }
+                    }
+                  }
+                  
+                })
+              }
+            })
+          }
+        }
       }
       else {
         if item.typeName == "article_artifact" {
