@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PurchaseConfirmViewController" customModule="NLL" customModuleProvider="target">
             <connections>
+                <outlet property="applePayButton" destination="a9V-Bc-z8l" id="Pdl-zj-fgs"/>
                 <outlet property="bodyView" destination="Lsk-rt-PWL" id="DDY-T5-TlU"/>
                 <outlet property="codeValueLabel" destination="ZpZ-OT-eia" id="Wk0-Ze-DRT"/>
                 <outlet property="passPriceLabel" destination="T1U-fx-pQ6" id="Bti-y7-iMw"/>
@@ -129,6 +130,9 @@
                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-Bc-z8l" userLabel="Apple Pay Button">
                             <rect key="frame" x="97" y="358" width="180" height="40"/>
                             <state key="normal" image="ApplePayButton.png"/>
+                            <connections>
+                                <action selector="userTappedApplePayButton:" destination="-1" eventType="touchUpInside" id="HAb-MG-nrp"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1U-fx-pQ6" userLabel="Pass Price">
                             <rect key="frame" x="290" y="119" width="50" height="20"/>

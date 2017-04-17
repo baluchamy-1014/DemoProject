@@ -20,6 +20,8 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var taxPriceLabel: UILabel!
   @IBOutlet var totalPriceLabel: UILabel!
   @IBOutlet var promoCodeErrorLabel: UILabel!
+  @IBOutlet var applePayButton: UIButton!
+  
   var product: Product!
   var offer: Offer!
   
@@ -122,4 +124,9 @@ class PurchaseConfirmViewController: UIViewController {
     }
   }
 
+  @IBAction func userTappedApplePayButton(_ sender: Any) {
+    // TODO: Apple Pay functionality
+    let errorViewController = ErrorViewController(nibName: "ErrorViewController", bundle: nil)
+    self.navigationController?.present(errorViewController, animated: true, completion: nil)
+  }
 }
