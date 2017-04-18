@@ -40,6 +40,8 @@ class PurchaseConfirmViewController: UIViewController {
     setupApplyButton()
     setupPromoTextField()
     setLabelValues()
+    
+    self.edgesForExtendedLayout = []
     super.viewDidLoad()
   }
   
