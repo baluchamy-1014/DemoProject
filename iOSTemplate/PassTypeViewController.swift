@@ -163,5 +163,9 @@ class PassTypeViewController: UITableViewController {
       passController.subscriptionItems = productGroup.products
       passController.tableView.reloadData()
     }
+    
+    // TODO: open error modal          
+    //let errorViewController = ErrorViewController(nibName: "ErrorViewController", bundle: nil)
+   // self.navigationController?.present(errorViewController, animated: true, completion: nil)
   }
 }

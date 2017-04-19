@@ -139,6 +139,11 @@
 		78503A071E4D80B0005F81EC /* link_artifact_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 78503A011E4D80B0005F81EC /* link_artifact_inactive.png */; };
 		78503A081E4D80B0005F81EC /* link_artifact_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78503A021E4D80B0005F81EC /* link_artifact_inactive@2x.png */; };
 		78503A091E4D80B0005F81EC /* link_artifact_inactive@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78503A031E4D80B0005F81EC /* link_artifact_inactive@3x.png */; };
+		7863652A1E92FB79008DF719 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786365281E92FB79008DF719 /* ErrorViewController.swift */; };
+		7863652B1E92FB79008DF719 /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786365291E92FB79008DF719 /* ErrorViewController.xib */; };
+		7863652F1E93047E008DF719 /* Error_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7863652C1E93047E008DF719 /* Error_icon.png */; };
+		786365301E93047E008DF719 /* Error_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7863652D1E93047E008DF719 /* Error_icon@2x.png */; };
+		786365311E93047E008DF719 /* Error_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7863652E1E93047E008DF719 /* Error_icon@3x.png */; };
 		787867C81DB99CC700958C1B /* TVIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 787867C51DB99CC700958C1B /* TVIcon.png */; };
 		787867C91DB99CC700958C1B /* TVIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 787867C61DB99CC700958C1B /* TVIcon@2x.png */; };
 		787867CA1DB99CC700958C1B /* TVIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 787867C71DB99CC700958C1B /* TVIcon@3x.png */; };
@@ -325,6 +330,11 @@
 		78503A011E4D80B0005F81EC /* link_artifact_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = link_artifact_inactive.png; path = iOSTemplate/Assets.xcassets/link_artifact_inactive.png; sourceTree = "<group>"; };
 		78503A021E4D80B0005F81EC /* link_artifact_inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "link_artifact_inactive@2x.png"; path = "iOSTemplate/Assets.xcassets/link_artifact_inactive@2x.png"; sourceTree = "<group>"; };
 		78503A031E4D80B0005F81EC /* link_artifact_inactive@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "link_artifact_inactive@3x.png"; path = "iOSTemplate/Assets.xcassets/link_artifact_inactive@3x.png"; sourceTree = "<group>"; };
+		786365281E92FB79008DF719 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		786365291E92FB79008DF719 /* ErrorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
+		7863652C1E93047E008DF719 /* Error_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Error_icon.png; path = iOSTemplate/Assets.xcassets/Error_icon.png; sourceTree = "<group>"; };
+		7863652D1E93047E008DF719 /* Error_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Error_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Error_icon@2x.png"; sourceTree = "<group>"; };
+		7863652E1E93047E008DF719 /* Error_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Error_icon@3x.png"; path = "iOSTemplate/Assets.xcassets/Error_icon@3x.png"; sourceTree = "<group>"; };
 		787867C51DB99CC700958C1B /* TVIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TVIcon.png; path = iOSTemplate/Assets.xcassets/TVIcon.png; sourceTree = "<group>"; };
 		787867C61DB99CC700958C1B /* TVIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TVIcon@2x.png"; path = "iOSTemplate/Assets.xcassets/TVIcon@2x.png"; sourceTree = "<group>"; };
 		787867C71DB99CC700958C1B /* TVIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TVIcon@3x.png"; path = "iOSTemplate/Assets.xcassets/TVIcon@3x.png"; sourceTree = "<group>"; };
@@ -551,6 +561,8 @@
 		784C3FED1DB73F78001AECD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				786365281E92FB79008DF719 /* ErrorViewController.swift */,
+				786365291E92FB79008DF719 /* ErrorViewController.xib */,
 				622901371E5CC2DF00E021EE /* Subcriptions */,
 				6253BDCB1DE34F12001CE859 /* User */,
 				780578551DC2AA1F0011BBE8 /* TagSection.swift */,
@@ -569,6 +581,9 @@
 		788C43A21DA46D1000F342B9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				7863652C1E93047E008DF719 /* Error_icon.png */,
+				7863652D1E93047E008DF719 /* Error_icon@2x.png */,
+				7863652E1E93047E008DF719 /* Error_icon@3x.png */,
 				7810027E1E6E1E3400EF3C8A /* Apple Pay */,
 				784C18B21E4552B6008E8EED /* Burger Menu */,
 				7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */,
@@ -807,9 +822,12 @@
 				78B3120B1DBE80C60064EE88 /* slider_bar@2x.png in Resources */,
 				782D4DC41E0B54F70078FEC1 /* MoreIconActive.png in Resources */,
 				784C18C11E4553D4008E8EED /* contact_active@2x.png in Resources */,
+				7863652B1E92FB79008DF719 /* ErrorViewController.xib in Resources */,
 				782E3AB01DF9307700FCF5CC /* NLL_Loading_Animation@3x.gif in Resources */,
+				7863652F1E93047E008DF719 /* Error_icon.png in Resources */,
 				78503A081E4D80B0005F81EC /* link_artifact_inactive@2x.png in Resources */,
 				788C43981DA45F9D00F342B9 /* ExpandIndicator.png in Resources */,
+				786365301E93047E008DF719 /* Error_icon@2x.png in Resources */,
 				787867D01DB99DB900958C1B /* NewsIcon@3x.png in Resources */,
 				782E3A8C1DF7928800FCF5CC /* TabSlider.png in Resources */,
 				782D4DC71E0B54F70078FEC1 /* MoreIconInactive@2x.png in Resources */,
@@ -855,6 +873,7 @@
 				78B3120C1DBE80C60064EE88 /* slider_bar@3x.png in Resources */,
 				78A29F2A1DB5425300782620 /* VideosIconInactive@3x.png in Resources */,
 				781002A51E6F552E00EF3C8A /* ticketTailSingle@3x.png in Resources */,
+				786365311E93047E008DF719 /* Error_icon@3x.png in Resources */,
 				6296FA5C1DD4E7170096B04D /* SignIn.xib in Resources */,
 				78A29F201DB5425300782620 /* no_live_feed@1x.png in Resources */,
 				784C3FEC1DB73141001AECD3 /* ListCollectionViewCell.xib in Resources */,
@@ -909,6 +928,7 @@
 				621DD25F1DD62CBF00D87855 /* SignInController.swift in Sources */,
 				784C3FEA1DB72CFE001AECD3 /* ListCollectionViewCell.swift in Sources */,
 				620C89F21DF726B400DAC962 /* StreamListViewController.swift in Sources */,
+				7863652A1E92FB79008DF719 /* ErrorViewController.swift in Sources */,
 				78E31E771D99F3F400CB59D3 /* ViewController.swift in Sources */,
 				781002A01E6E296200EF3C8A /* PassTypeViewController.swift in Sources */,
 				78E31EDE1D9DB87B00CB59D3 /* DetailViewController.swift in Sources */,
