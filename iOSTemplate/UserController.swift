@@ -8,6 +8,11 @@
 
 import UIKit
 
+@objc protocol UserSessionDelegate {
+  func userDidSignIn()
+  @objc optional func userDidSignOut()
+}
+
 class UserController: UIViewController {
   
   @IBOutlet weak var selectionView: UIView!
@@ -18,6 +23,7 @@ class UserController: UIViewController {
   
   let signInController: SignInController
   let signUpController: SignUpController
+  var sessionDelegate: UserSessionDelegate?
 
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     self.signInController = SignInController(nibName: "SignIn", bundle: nil)
@@ -72,7 +78,12 @@ class UserController: UIViewController {
     view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: formView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0))
     view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: selectionView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0))
   }
-  
+
+  func popSelfFromNavigationController() {
+    self.navigationController?.popViewController(animated: true)
+    self.sessionDelegate?.userDidSignIn()
+  }
+
   fileprivate func removeSubviews() {
     for view in self.formView.subviews {
       view.removeFromSuperview()

@@ -17,7 +17,7 @@ enum VideoPlayerState {
   case RestrictedPaygate
 }
 
-class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BoxxspringVideoPlayerDelegate {
+class DetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, BoxxspringVideoPlayerDelegate, UserSessionDelegate {
   
   var detailCollectionView: UICollectionView!
   var tagSection: TagSection!
@@ -38,10 +38,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       case .ReadyForDisplay:
         presentVideoPlayerController()
       case .RestrictedAuthentication, .RestrictedPaygate:
-        for view in headerImageView.subviews {
-          view.removeFromSuperview()
-        }        
-        setupRestrictionOverlay()
+        resetRestrictionView()
       default:
         print("Nothing to be done.")
       }
@@ -420,6 +417,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   
   func userTappedSignInButton() {
     let userController = UserController(nibName: "UserAccount", bundle: nil)
+    userController.sessionDelegate = self
     self.navigationController?.pushViewController(userController, animated: true)
   }
 
@@ -433,5 +431,16 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
           })
         }
       })
+  }
+
+  func userDidSignIn() {
+    resetRestrictionView()
+  }
+
+  private func resetRestrictionView() {
+        for view in headerImageView.subviews {
+      view.removeFromSuperview()
+    }
+    setupRestrictionOverlay()
   }
 }
