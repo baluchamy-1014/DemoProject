@@ -71,7 +71,6 @@ class PassTypeViewController: UITableViewController {
       cell.bounds = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 200)
       cell.contentView.bounds = cell.bounds
       cell.layoutIfNeeded()
-      cell.passTitle.sizeToFit()
 
       if let price = offer.price {
         let locale = NSLocale(localeIdentifier: offer.currency)
