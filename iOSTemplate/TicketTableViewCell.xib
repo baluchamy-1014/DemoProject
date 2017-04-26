@@ -84,6 +84,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRo-84-lhb" userLabel="bottom border view">
                         <rect key="frame" x="24" y="125" width="426" height="2"/>
                         <color key="backgroundColor" red="0.65490196079999996" green="0.56862745100000001" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="2" id="HCw-pH-b9s"/>
+                        </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="singleButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tfb-qJ-4WI">
                         <rect key="frame" x="449" y="1" width="40" height="128"/>
