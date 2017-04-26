@@ -51,6 +51,7 @@ class SignUpController: UIViewController {
   
   var successView: UIView?
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
+  var containerController: UserController?
 
   override func viewDidLoad() {
     self.activityIndicator.isHidden = true
@@ -126,6 +127,7 @@ class SignUpController: UIViewController {
                   self.appDelegate.keymakerOrganizer.saveKeymakerToken(Session.shared().accessToken)
                   self.clearTextFields()
                   self.successViewController = SignUpSuccessViewController(nibName: "SignUpSuccess", bundle: nil)
+                  self.successViewController?.containerController = self.containerController
                   self.present(self.successViewController!, animated: true, completion: nil)
                 }
               }
@@ -181,13 +183,18 @@ class SignUpController: UIViewController {
 class SignUpSuccessViewController: UIViewController {
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
   @IBOutlet weak var letsGoButton: UIButton!
-  
+  var containerController: UserController?
+
   override func viewDidLoad() {
     self.letsGoButton.layer.cornerRadius = 5.0
   }
   
   @IBAction func letsGoTapped(_ sender: AnyObject) {
-    appDelegate.sendUserToHomeScreen()
+    if ((self.containerController?.sessionDelegate) != nil) {
+      self.containerController?.popSelfFromNavigationController()
+    } else {
+      appDelegate.sendUserToHomeScreen()
+    }
 
     self.dismiss(animated: false) {
     }

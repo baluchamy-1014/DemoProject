@@ -32,13 +32,14 @@ fileprivate func >= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
+
 class SignInController: UIViewController {
 
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
   var alertViewController: UIAlertController?
   var alertAction: UIAlertAction?
-  var containerController: UIViewController?
-  
+  var containerController: UserController?
+
   @IBOutlet weak var usernameField: SignInUpTextField!
   @IBOutlet weak var passwordField: SignInUpTextField!
   @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -86,9 +87,13 @@ class SignInController: UIViewController {
       if ((session) != nil) {
         self.invalidLabel.text = ""
         if ((session as? Session)?.isValid())! {
+          if let _ = self.containerController?.sessionDelegate {
+            self.containerController?.popSelfFromNavigationController()
+          } else {
+            self.containerController!.present(self.alertViewController!, animated: true, completion: nil)
+            self.appDelegate.sendUserToHomeScreen()
+          }
           self.appDelegate.keymakerOrganizer.saveKeymakerToken(Session.shared().accessToken)
-          self.containerController!.present(self.alertViewController!, animated: true, completion: nil)
-          self.appDelegate.sendUserToHomeScreen()
         } else {
           self.invalidLabel.text = "The username or password is incorrect."
         }
