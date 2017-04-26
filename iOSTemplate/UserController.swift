@@ -30,6 +30,7 @@ class UserController: UIViewController {
     self.signUpController = SignUpController(nibName: "SignUp", bundle: nil)
     super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     self.signInController.containerController = self
+    self.signUpController.containerController = self
   }
   
   required init?(coder aDecoder: NSCoder) {
