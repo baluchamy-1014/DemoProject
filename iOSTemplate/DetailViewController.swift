@@ -31,6 +31,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   var headerImageView: UIImageView!
   let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
   var button: PlayButton!
+  let signInButton = UIButton(type: .roundedRect)
+  let buyNowButton = UIButton(type: .roundedRect)
 
   var videoPlayerState: VideoPlayerState = .NotReady {
     didSet {
@@ -74,6 +76,11 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     self.view.addSubview(detailCollectionView)
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    signInButton.isEnabled = true
+    buyNowButton.isEnabled = true
+  }
+  
   func setupRestrictionOverlay() {
     var buyNowButtonWidth: CGFloat = headerImageView.frame.width/2
     var buyNowXOrigin: CGFloat = headerImageView.frame.width/2
@@ -95,7 +102,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     view.addConstraint(NSLayoutConstraint(item: overlayLabel, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.lessThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.height, multiplier: 1, constant: 180))
     view.addConstraint(NSLayoutConstraint(item: overlayLabel, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.lessThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.width, multiplier: 1, constant: 250))
     
-    let buyNowButton = UIButton(type: .roundedRect)
     buyNowButton.setTitle("BUY NOW", for: .normal)
     buyNowButton.setTitleColor(UIColor.white, for: .normal)
     buyNowButton.frame = CGRect(x: buyNowXOrigin, y: headerImageView.frame.height - 60, width: buyNowButtonWidth, height: 60)
@@ -108,7 +114,6 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       buyNowXOrigin = 0
     }
     else {
-      let signInButton = UIButton(type: .roundedRect)
       signInButton.setTitle("SIGN IN", for: .normal)
       signInButton.setTitleColor(UIColor.white, for: .normal)
       signInButton.frame = CGRect(x: 0, y: headerImageView.frame.height - 60, width: headerImageView.frame.width/2, height: 60)
@@ -422,6 +427,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   }
 
   func displaySubscriptionOptions(_ sender: UIButton) {
+    self.signInButton.isEnabled = false
+    self.buyNowButton.isEnabled = false
+    
     Session.shared().getProperty({ (property, error) in
         if (error == nil) {
           Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, categories: ["team", "season", "single-game"], match: self.artifact.id.stringValue, options: [:], onCompletion: { (products, error) in
