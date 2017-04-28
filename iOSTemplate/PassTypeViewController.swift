@@ -96,6 +96,7 @@ class PassTypeViewController: UITableViewController {
     }
 
     activityIndicator.stopAnimating()
+    tableView.tableFooterView?.isHidden = false
     return cell
   }
   
@@ -113,16 +114,30 @@ class PassTypeViewController: UITableViewController {
   }
   
   func setupFooterView() {
-    let view = UIView(frame: CGRect(x: 0, y: tableView.frame.size.height - 20, width: tableView.frame.size.width, height: 65))
-    let label = UILabel(frame: CGRect(x: 0, y: 20, width: view.frame.size.width, height: 24))
-    label.textAlignment = .center
-    label.font = UIFont.systemFont(ofSize: 12.0)
-    label.text = "Legal stuff, blackout info, etc."
-    label.textColor = UIColor.white
-    view.backgroundColor = UIColor.black
-    view.addSubview(label)
+    let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 165))
+    footerView.backgroundColor = UIColor.black
     
-    tableView.tableFooterView = view
+    let footerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 24))
+    footerLabel.text = "*BLACKOUT POLICIES MAY APPLY"
+    footerLabel.textColor = .white
+    footerLabel.font = UIFont.systemFont(ofSize: 12.0)
+    footerLabel.textAlignment = .center
+    footerView.addSubview(footerLabel)
+
+    let footerTextView = UITextView(frame: CGRect(x: 10, y: 24, width: view.frame.size.width - 20, height: 124))
+    footerTextView.textAlignment = .center
+    footerTextView.font = UIFont.systemFont(ofSize: 12.0)
+    
+    footerTextView.text = "Legal stuff, blackout info, etc."
+    footerTextView.textColor = UIColor.white
+    footerTextView.backgroundColor = .clear
+    footerTextView.isEditable = false
+
+    footerView.addSubview(footerTextView)
+    
+    tableView.tableFooterView = footerView
+    tableView.tableFooterView?.isHidden = true
+  }
   
   func setupActivitySpinner() {
     tableView?.addSubview(activityIndicator)
