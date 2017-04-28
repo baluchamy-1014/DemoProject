@@ -10,6 +10,7 @@ import UIKit
 
 class PassTypeViewController: UITableViewController {
   var subscriptionItems: [AnyObject] = Array()
+  var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
   
   override func viewDidLoad() {
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
@@ -21,7 +22,8 @@ class PassTypeViewController: UITableViewController {
     
     setupHeaderView()
     setupFooterView()
-
+    setupActivitySpinner()
+    
     super.viewDidLoad()
   }
 
@@ -93,6 +95,7 @@ class PassTypeViewController: UITableViewController {
       applyCellSettings(cell: cell, product: product, passTitle: product.name)
     }
 
+    activityIndicator.stopAnimating()
     return cell
   }
   
@@ -120,6 +123,13 @@ class PassTypeViewController: UITableViewController {
     view.addSubview(label)
     
     tableView.tableFooterView = view
+  
+  func setupActivitySpinner() {
+    tableView?.addSubview(activityIndicator)
+    activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: -20))
+    activityIndicator.startAnimating()
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
