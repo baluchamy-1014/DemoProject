@@ -94,7 +94,6 @@ class PassTypeViewController: UITableViewController {
     } else if let product = subscriptionItems[indexPath.row] as? Product {
       applyCellSettings(cell: cell, product: product, passTitle: product.name)
     }
-
     activityIndicator.stopAnimating()
     tableView.tableFooterView?.isHidden = false
     return cell
@@ -127,8 +126,7 @@ class PassTypeViewController: UITableViewController {
     let footerTextView = UITextView(frame: CGRect(x: 10, y: 24, width: view.frame.size.width - 20, height: 124))
     footerTextView.textAlignment = .center
     footerTextView.font = UIFont.systemFont(ofSize: 12.0)
-    
-    footerTextView.text = "Legal stuff, blackout info, etc."
+    footerTextView.text = DataFromTextFile().readDataFromFile(file: "PassFooter")
     footerTextView.textColor = UIColor.white
     footerTextView.backgroundColor = .clear
     footerTextView.isEditable = false
