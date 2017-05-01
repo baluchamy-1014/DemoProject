@@ -31,6 +31,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
 
     refreshControl = UIRefreshControl()
     refreshControl.tintColor = .white
+    refreshControl.layer.zPosition = -1
     refreshControl.addTarget(self, action: #selector(LatestViewController.loadAllTeams), for: .valueChanged)
     collectionView!.addSubview(refreshControl)
 
