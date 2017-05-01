@@ -144,6 +144,7 @@
 		7863652F1E93047E008DF719 /* Error_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7863652C1E93047E008DF719 /* Error_icon.png */; };
 		786365301E93047E008DF719 /* Error_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7863652D1E93047E008DF719 /* Error_icon@2x.png */; };
 		786365311E93047E008DF719 /* Error_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7863652E1E93047E008DF719 /* Error_icon@3x.png */; };
+		78657B771EB2BA620012AC7F /* PassFooter.txt in Resources */ = {isa = PBXBuildFile; fileRef = 78657B751EB2BA620012AC7F /* PassFooter.txt */; };
 		787867C81DB99CC700958C1B /* TVIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 787867C51DB99CC700958C1B /* TVIcon.png */; };
 		787867C91DB99CC700958C1B /* TVIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 787867C61DB99CC700958C1B /* TVIcon@2x.png */; };
 		787867CA1DB99CC700958C1B /* TVIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 787867C71DB99CC700958C1B /* TVIcon@3x.png */; };
@@ -335,6 +336,7 @@
 		7863652C1E93047E008DF719 /* Error_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Error_icon.png; path = iOSTemplate/Assets.xcassets/Error_icon.png; sourceTree = "<group>"; };
 		7863652D1E93047E008DF719 /* Error_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Error_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Error_icon@2x.png"; sourceTree = "<group>"; };
 		7863652E1E93047E008DF719 /* Error_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Error_icon@3x.png"; path = "iOSTemplate/Assets.xcassets/Error_icon@3x.png"; sourceTree = "<group>"; };
+		78657B751EB2BA620012AC7F /* PassFooter.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = PassFooter.txt; path = ../PassFooter.txt; sourceTree = "<group>"; };
 		787867C51DB99CC700958C1B /* TVIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TVIcon.png; path = iOSTemplate/Assets.xcassets/TVIcon.png; sourceTree = "<group>"; };
 		787867C61DB99CC700958C1B /* TVIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TVIcon@2x.png"; path = "iOSTemplate/Assets.xcassets/TVIcon@2x.png"; sourceTree = "<group>"; };
 		787867C71DB99CC700958C1B /* TVIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "TVIcon@3x.png"; path = "iOSTemplate/Assets.xcassets/TVIcon@3x.png"; sourceTree = "<group>"; };
@@ -693,6 +695,7 @@
 				6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */,
 				CA473983C91DCC40B0D9CA7F /* KeymakerOrganizer.swift */,
 				62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */,
+				78657B751EB2BA620012AC7F /* PassFooter.txt */,
 			);
 			path = iOSTemplate;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				782D4DCD1E0C97040078FEC1 /* PlayButton@3x.png in Resources */,
 				78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */,
 				784C18AF1E45513D008E8EED /* home_icon_active.png in Resources */,
+				78657B771EB2BA620012AC7F /* PassFooter.txt in Resources */,
 				78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */,
 				78A29F1E1DB5425300782620 /* controlBottomBorder.png in Resources */,
 				78A29F251DB5425300782620 /* tab_bar@3x.png in Resources */,

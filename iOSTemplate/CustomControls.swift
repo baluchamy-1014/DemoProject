@@ -283,3 +283,11 @@ class DeviceChecker {
     static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
   }
 }
+
+class DataFromTextFile {
+  func readDataFromFile(file:String)-> String!{
+    let location = Bundle.main.path(forResource: file, ofType: "txt")
+    let fileContent = try? NSString(contentsOfFile: location!, encoding: String.Encoding.utf8.rawValue)
+    return fileContent as String!
+  }
+}

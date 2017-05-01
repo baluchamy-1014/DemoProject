@@ -10,6 +10,7 @@ import UIKit
 
 class PassTypeViewController: UITableViewController {
   var subscriptionItems: [AnyObject] = Array()
+  var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
   
   override func viewDidLoad() {
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
@@ -21,7 +22,8 @@ class PassTypeViewController: UITableViewController {
     
     setupHeaderView()
     setupFooterView()
-
+    setupActivitySpinner()
+    
     super.viewDidLoad()
   }
 
@@ -92,7 +94,8 @@ class PassTypeViewController: UITableViewController {
     } else if let product = subscriptionItems[indexPath.row] as? Product {
       applyCellSettings(cell: cell, product: product, passTitle: product.name)
     }
-
+    activityIndicator.stopAnimating()
+    tableView.tableFooterView?.isHidden = false
     return cell
   }
   
@@ -110,16 +113,36 @@ class PassTypeViewController: UITableViewController {
   }
   
   func setupFooterView() {
-    let view = UIView(frame: CGRect(x: 0, y: tableView.frame.size.height - 20, width: tableView.frame.size.width, height: 65))
-    let label = UILabel(frame: CGRect(x: 0, y: 20, width: view.frame.size.width, height: 24))
-    label.textAlignment = .center
-    label.font = UIFont.systemFont(ofSize: 12.0)
-    label.text = "Legal stuff, blackout info, etc."
-    label.textColor = UIColor.white
-    view.backgroundColor = UIColor.black
-    view.addSubview(label)
+    let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 165))
+    footerView.backgroundColor = UIColor.black
     
-    tableView.tableFooterView = view
+    let footerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 24))
+    footerLabel.text = "*BLACKOUT POLICIES MAY APPLY"
+    footerLabel.textColor = .white
+    footerLabel.font = UIFont.systemFont(ofSize: 12.0)
+    footerLabel.textAlignment = .center
+    footerView.addSubview(footerLabel)
+
+    let footerTextView = UITextView(frame: CGRect(x: 10, y: 24, width: view.frame.size.width - 20, height: 124))
+    footerTextView.textAlignment = .center
+    footerTextView.font = UIFont.systemFont(ofSize: 12.0)
+    footerTextView.text = DataFromTextFile().readDataFromFile(file: "PassFooter")
+    footerTextView.textColor = UIColor.white
+    footerTextView.backgroundColor = .clear
+    footerTextView.isEditable = false
+
+    footerView.addSubview(footerTextView)
+    
+    tableView.tableFooterView = footerView
+    tableView.tableFooterView?.isHidden = true
+  }
+  
+  func setupActivitySpinner() {
+    tableView?.addSubview(activityIndicator)
+    activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+    view.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: -20))
+    activityIndicator.startAnimating()
   }
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
