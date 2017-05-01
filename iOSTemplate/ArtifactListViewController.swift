@@ -28,12 +28,8 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     // TODO: Theme
     collectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
-
-    refreshControl = UIRefreshControl()
-    refreshControl.tintColor = .white
-    refreshControl.layer.zPosition = -1
-    refreshControl.addTarget(self, action: #selector(LatestViewController.loadAllTeams), for: .valueChanged)
-    collectionView!.addSubview(refreshControl)
+    
+    setupRefreshControl()
 
     collectionView?.addSubview(activityIndicator)
     activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -154,6 +150,14 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
         })
       }
     }
+  }
+  
+  func setupRefreshControl() {
+    refreshControl = UIRefreshControl()
+    refreshControl.tintColor = .white
+    refreshControl.layer.zPosition = -1
+    refreshControl.addTarget(self, action: #selector(LatestViewController.loadAllTeams), for: .valueChanged)
+    collectionView!.addSubview(refreshControl)
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
