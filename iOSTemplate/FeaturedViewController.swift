@@ -10,7 +10,7 @@ import UIKit
 
 class FeaturedViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
   var artifactItems: [Artifact] = Array()
-  var refreshControl: CustomRefreshControl!
+  var refreshControl: UIRefreshControl!
   var collectionView: UICollectionView!
   let placeholderImage = UIImage(named: "Placeholder_nll_logo")
   var artifactID: Int?
@@ -101,7 +101,9 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
   }
   
   func setup() {
-    refreshControl = CustomRefreshControl()
+    refreshControl = UIRefreshControl()
+    refreshControl.tintColor = .white
+    refreshControl.layer.zPosition = -1
     refreshControl.addTarget(self, action: #selector(FeaturedViewController.loadFeatured), for: .valueChanged)
     collectionView!.addSubview(refreshControl)
   }
