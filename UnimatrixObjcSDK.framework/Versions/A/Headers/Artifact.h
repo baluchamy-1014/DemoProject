@@ -81,6 +81,9 @@ typedef void (^APIQueryCompletionBlock) (id response, NSError *error);
 - (Campaign *)getVideoAdvertisementFromCampaigns:(NSArray *)campaigns;
 - (id)handleMissingAttributes:(NSString *)methodName;
 
++ (void)findBySlug:(NSString *)slugName
+       forProperty:(int)propertyID
+      onCompletion:(APIQueryCompletionBlock)callback;
 
 // Helper methods
 + (void)queryNext:(NSDictionary *)dict

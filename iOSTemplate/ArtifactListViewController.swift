@@ -227,4 +227,15 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   func displayPlaceholderMessage() {
 
   }
+  
+  func updateCollectionView(artifacts: [Artifact]) {
+    // TODO: #SJ use this for the main artifactlist controller as well during next update
+    self.items = artifacts 
+    self.collectionView.reloadData()
+    if self.items.isEmpty {
+      self.displayPlaceholderMessage()
+    } else {
+      self.collectionView.isHidden = false
+    }
+  }
 }
