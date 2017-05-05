@@ -15,6 +15,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   let placeholderImage = UIImage(named: "Placeholder_nll_logo")
   var refreshControl: UIRefreshControl!
   var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+  var translucentBool: Bool?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,7 +62,14 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   
   override func viewWillAppear(_ animated: Bool) {
     self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    if self.translucentBool != nil {
+      self.navigationController?.navigationBar.isTranslucent = self.translucentBool!
+    }
     super.viewWillAppear(animated)
+  }
+  
+  func shouldBeTranslucent(translucent: Bool) {
+    self.translucentBool = translucent
   }
   
   override func viewWillDisappear(_ animated: Bool) {

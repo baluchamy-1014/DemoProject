@@ -181,7 +181,7 @@ class BurgerMenuController: UITableViewController {
         let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
         viewController.navigationItem.leftBarButtonItem = revealButtomItem
         viewController.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
-        viewController.navigationController?.navigationBar.isTranslucent = false
+        viewController.shouldBeTranslucent(translucent: false)
         viewController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         viewController.title = item.name
       }

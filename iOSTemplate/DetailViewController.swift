@@ -370,6 +370,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   
   func openTag(_ sender:UIButton) {
     let detailController = LatestViewController(artifactID: sender.tag)
+    detailController.shouldBeTranslucent(translucent: false)
     self.navigationController?.pushViewController(detailController, animated: true)
   }
   
