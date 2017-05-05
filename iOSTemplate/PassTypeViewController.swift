@@ -28,6 +28,9 @@ class PassTypeViewController: UITableViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     self.title = "Purchase Options"
+    self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+    self.navigationController?.navigationBar.isTranslucent = false
+    super.viewWillAppear(true)
   }
 
   override func didReceiveMemoryWarning() {

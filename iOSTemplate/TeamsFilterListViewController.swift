@@ -22,8 +22,7 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
     setupActivitySpinner()
     
     // TODO: theme
-    self.view.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
-    
+    self.view.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
     teamsTableView.delegate = self
     teamsTableView.dataSource = self
     teamsTableView.allowsMultipleSelection = false
