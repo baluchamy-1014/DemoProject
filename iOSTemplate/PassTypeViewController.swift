@@ -18,13 +18,16 @@ class PassTypeViewController: UITableViewController {
     tableView.separatorColor = UIColor.black
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 138
-    self.title = "Purchase Options"
     
     setupHeaderView()
     setupFooterView()
     setupActivitySpinner()
     
     super.viewDidLoad()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    self.title = "Purchase Options"
   }
 
   override func didReceiveMemoryWarning() {
