@@ -33,11 +33,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     self.pageController.view.frame = CGRect(x: 0, y: 100, width: self.view.frame.size.width, height: self.view.frame.size.height)
     self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     if self.pageController.viewControllers![0].isKind(of: FeaturedViewController.self) {
-       teamFilterButton.setTitle("NLL TV", for: UIControlState())
+       teamFilterButton.setTitle("NLL TV ", for: UIControlState())
        teamFilterButton.setImage(nil, for: UIControlState())
     }
     else {
-      teamFilterButton.setTitle(selectedTeam, for: UIControlState())
+      teamFilterButton.setTitle(selectedTeam + " ", for: UIControlState())
     }
     self.addChildViewController(self.pageController)
     self.view.addSubview(self.pageController.view)
@@ -121,10 +121,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   
   func teamFilterButtonRestoreTeamName() {
     if (selectedTeam == nil) {
-      teamFilterButton.setTitle("All Teams", for: UIControlState())
+      teamFilterButton.setTitle("All Teams ", for: UIControlState())
     }
     else {
-      teamFilterButton.setTitle(selectedTeam, for: UIControlState())
+      teamFilterButton.setTitle(selectedTeam + " ", for: UIControlState())
     }
     teamFilterButton.setImage(UIImage(named: "expand_indicator"), for: UIControlState())
     
@@ -168,20 +168,20 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
           self.teamID != nil ? latestViewController.filterTeams(teamsFilterListViewController.teamID) : latestViewController.loadAllTeams()
           latestViewController.collectionView.reloadData()
           latestViewController.collectionView.setContentOffset(CGPoint.zero, animated: false)
-          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, for: UIControlState())
+          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName + " ", for: UIControlState())
         } else if currentController.isKind(of: StreamListViewController.self) {
           self.teamID != nil ? (currentController as! StreamListViewController).filterTeams(teamsFilterListViewController.teamID) : (currentController as! StreamListViewController).loadAllTeams()
-          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, for: UIControlState())
+          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName + " ", for: UIControlState())
         }
         else if currentController.isKind(of: FeaturedViewController.self) {
           let featuredVC = self.pageController.viewControllers![0] as! FeaturedViewController
           self.teamID != nil ? featuredVC.filterTeams(teamsFilterListViewController.teamID) : featuredVC.loadFeatured()
           featuredVC.collectionView.reloadData()
           featuredVC.collectionView.setContentOffset(CGPoint.zero, animated: false)
-          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName, for: UIControlState())
+          self.teamFilterButton.setTitle(teamsFilterListViewController.teamName + " ", for: UIControlState())
         }
         else {
-          self.teamFilterButton.setTitle("All Team", for: UIControlState())
+          self.teamFilterButton.setTitle("All Team ", for: UIControlState())
         }
         self.teamFilterButton.sizeToFit()
         self.teamFilterButton.imageEdgeInsets = UIEdgeInsetsMake(0, self.teamFilterButton.frame.size.width-10, 0, 0)
