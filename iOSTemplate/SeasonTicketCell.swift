@@ -9,6 +9,7 @@
 import UIKit
 
 class SeasonTicketCell: UITableViewCell {
+  @IBOutlet var seasonPassTitle: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

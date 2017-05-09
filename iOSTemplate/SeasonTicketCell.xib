@@ -83,6 +83,9 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="seasonPassTitle" destination="gHZ-5p-05X" id="X4l-Ns-wMF"/>
+            </connections>
         </tableViewCell>
     </objects>
     <resources>
