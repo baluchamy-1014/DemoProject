@@ -5,11 +5,13 @@
 
 #import <UnimatrixObjcSDK/Resource.h>
 #import <UnimatrixObjcSDK/Attributes.h>
+#import "Tax.h"
 
 
 @interface Offer : Resource
 
 typedef void (^DealerAPIOfferQueryCompletionBlock) (NSArray *products, NSError *error);
+typedef void (^DealerAPITaxQueryCompletionBlock) (Tax *tax, NSError *error);
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *typeName;
@@ -36,9 +38,10 @@ typedef void (^DealerAPIOfferQueryCompletionBlock) (NSArray *products, NSError *
 + (Attributes *)attributes;
 
 - (void)getTaxInfo:(NSDictionary *)customerInfo
+       billingInfo:(NSDictionary *)billingInfo
        accessToken:(NSString *)accessToken
              realm:(NSString *)realm
-      onCompletion:(APIQueryCompletionBlock)callback;
+      onCompletion:(DealerAPITaxQueryCompletionBlock)callback;
 
 /**
  * Makes a request to Dealer API

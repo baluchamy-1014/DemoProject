@@ -10,3 +10,4 @@
 
 #import <UnimatrixObjcSDK/Product.h>
 #import <UnimatrixObjcSDK/Offer.h>
+#import <UnimatrixObjcSDK/Tax.h>

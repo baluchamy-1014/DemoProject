@@ -34,7 +34,7 @@ typedef void (^APIQueryCompletionPropertyBlock) (Property *property, NSError *er
 - (BOOL)isValid;
 - (void)getProperty:(APIQueryCompletionPropertyBlock)callback;
 - (void)resetSession;
-
+- (void)getResourceOwnerInfo:(APIQueryCompletionBlock)callback;
 @end
 
 
