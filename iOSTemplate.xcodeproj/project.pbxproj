@@ -216,6 +216,7 @@
 		6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPlayerController.xib; sourceTree = "<group>"; };
 		620C89EF1DF7242100DAC962 /* LatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestViewController.swift; sourceTree = "<group>"; };
 		620C89F11DF726B400DAC962 /* StreamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamListViewController.swift; sourceTree = "<group>"; };
+		620DA8241EB39EE300FF5CD1 /* NLL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NLL.entitlements; sourceTree = "<group>"; };
 		621DD25C1DD61A9600D87855 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		621DD25E1DD62CBF00D87855 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		621DD2601DD62CD200D87855 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -695,6 +696,7 @@
 		78E31E731D99F3F400CB59D3 /* iOSTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				620DA8241EB39EE300FF5CD1 /* NLL.entitlements */,
 				62A8F28C1E60C5B400361495 /* UnimatrixConfig */,
 				62B233811E368B2D00A7643F /* SWRevealViewController */,
 				78E31E741D99F3F400CB59D3 /* AppDelegate.swift */,
@@ -747,6 +749,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4DDS5PKU9U;
 						LastSwiftMigration = 0820;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1084,6 +1091,7 @@
 			baseConfigurationReference = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSTemplate/NLL.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1108,6 +1116,7 @@
 			baseConfigurationReference = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSTemplate/NLL.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
