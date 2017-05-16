@@ -1088,7 +1088,7 @@
 		};
 		78E31E841D99F3F400CB59D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */;
+			baseConfigurationReference = 62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOSTemplate/NLL.entitlements;
