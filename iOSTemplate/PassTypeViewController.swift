@@ -62,6 +62,7 @@ class PassTypeViewController: UITableViewController {
         cell.passTrailingImage.image = UIImage(named: "seasonButton")
         cell.passTopBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
         cell.passBottomBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
+        // TODO: remove hardcoding
         cell.passSubtitle.text = "2016 League Season Pass"
       case "team":
         cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")

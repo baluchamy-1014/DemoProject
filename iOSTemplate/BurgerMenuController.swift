@@ -213,26 +213,25 @@ class BurgerMenuController: UITableViewController {
         }
       }
       else if item.slug == "/buy" {
-        let passController = PassTypeViewController()
-        let navigationController = UINavigationController(rootViewController: passController)
+        let seasonController = SeasonsViewController()
+        let navigationController = UINavigationController(rootViewController: seasonController)
         self.revealViewController().pushFrontViewController(navigationController, animated: true)
-
-        let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
-        passController.navigationItem.leftBarButtonItem = revealButtomItem
-        passController.navigationController?.navigationBar.barTintColor = UIColor(red: 16 / 255, green: 24 / 255, blue: 31 / 255, alpha: 1.0)
-        passController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        passController.title = "Purchase Options"
+        let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: self.revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+        seasonController.navigationItem.leftBarButtonItem = revealButtomItem
+        seasonController.navigationController?.navigationBar.isTranslucent = false
+        seasonController.navigationController?.navigationBar.barTintColor = UIColor(red: 16 / 255, green: 24 / 255, blue: 31 / 255, alpha: 1.0)
+        seasonController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         Property.getProperty("nll_purchasing") { property, error in
           if (error == nil) {
             Group.getGroup("/home", forProperty: Int32(Int((property?.id)!)), onCompletion: { (group, error) in
               if (error == nil) && (group != nil) {
                 Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: ["count": "20"], onCompletion: { (groups, error) in
                   if (error == nil) {
+                    var seasonGroups: [Group] = []
                     for seasonGroup in groups as! [Group] {
-                      if seasonGroup.name == "2016-2017" {
                         print("season uid is \(seasonGroup.uid)")
                         Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, archivistCategoryUids: [seasonGroup.uid]) { productsByUids, error in
-                          var values: [ProductGroup] = []
+                        var values: [ProductGroup] = []
                           Artifact.getRelatedArtifacts(Int32(Int((seasonGroup.id)!)), forProperty: seasonGroup.propertyID, filter: ["count": "20"]) { items, error in
                             for item in (items! as! [Artifact]) {
                               print("item name is \(item.name) uid is : \(item.uid)")
@@ -241,6 +240,21 @@ class BurgerMenuController: UITableViewController {
                                 values.append(productGroup)
                               }
                             }
+                          if (groups as! [Group]).count > 1 {
+                            seasonGroups.append(seasonGroup)
+                            seasonController.seasonItems = seasonGroups
+                            seasonController.tableView.reloadData()
+                          }
+                          else {
+                            let passController = PassTypeViewController()
+                            let navigationController = UINavigationController(rootViewController: passController)
+                            self.revealViewController().pushFrontViewController(navigationController, animated: true)
+        
+                            let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: self.revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+                            passController.navigationItem.leftBarButtonItem = revealButtomItem
+                            passController.navigationController?.navigationBar.isTranslucent = false
+                            passController.navigationController?.navigationBar.barTintColor = UIColor(red: 16 / 255, green: 24 / 255, blue: 31 / 255, alpha: 1.0)
+                            passController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
                             passController.subscriptionItems = values
                             passController.tableView.reloadData()
                           }
@@ -248,7 +262,6 @@ class BurgerMenuController: UITableViewController {
                       }
                     }
                   }
-                  
                 })
               }
             })

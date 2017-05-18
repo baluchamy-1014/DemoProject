@@ -71,6 +71,7 @@
 		781002AA1E6F7BDF00EF3C8A /* SingleGamePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */; };
 		781002B71E70C23E00EF3C8A /* PurchaseConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781002B51E70C23E00EF3C8A /* PurchaseConfirmViewController.swift */; };
 		781002B81E70C23E00EF3C8A /* PurchaseConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */; };
+		781347921EC4E5D4006152D9 /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781347911EC4E5D4006152D9 /* SeasonsViewController.swift */; };
 		7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */; };
 		782D4DBD1E0A08520078FEC1 /* Placeholder_nll_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */; };
 		782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */; };
@@ -288,6 +289,7 @@
 		781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGamePassViewController.swift; sourceTree = "<group>"; };
 		781002B51E70C23E00EF3C8A /* PurchaseConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseConfirmViewController.swift; sourceTree = "<group>"; };
 		781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseConfirmViewController.xib; sourceTree = "<group>"; };
+		781347911EC4E5D4006152D9 /* SeasonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
 		7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SignInSignUpBGImage.png; path = iOSTemplate/Assets.xcassets/SignInSignUpBGImage.png; sourceTree = "<group>"; };
 		782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder_nll_logo.png; path = iOSTemplate/Assets.xcassets/Placeholder_nll_logo.png; sourceTree = "<group>"; };
 		782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder_nll_logo@2x.png"; path = "iOSTemplate/Assets.xcassets/Placeholder_nll_logo@2x.png"; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 		784AFDFD1DAD57F600FA157B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				781347911EC4E5D4006152D9 /* SeasonsViewController.swift */,
 				781002B51E70C23E00EF3C8A /* PurchaseConfirmViewController.swift */,
 				6209A2E11DC398CD00B278B9 /* VideoPlayerController.swift */,
 				784AFE051DADC18800FA157B /* ArtifactListViewController.swift */,
@@ -1008,6 +1011,7 @@
 				787867DA1DBD867B00958C1B /* CustomTabBar.swift in Sources */,
 				78E31E911D9AEA6800CB59D3 /* LargeCollectionViewCell.swift in Sources */,
 				78E31E751D99F3F400CB59D3 /* AppDelegate.swift in Sources */,
+				781347921EC4E5D4006152D9 /* SeasonsViewController.swift in Sources */,
 				78E31E871D99FC6600CB59D3 /* TeamsFilterListViewController.swift in Sources */,
 				780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */,
 				78E31E891D9A01DE00CB59D3 /* CustomControls.swift in Sources */,
