@@ -91,7 +91,7 @@ class SignInController: UIViewController {
             self.containerController?.popSelfFromNavigationController()
           } else {
             self.containerController!.present(self.alertViewController!, animated: true, completion: nil)
-            self.appDelegate.sendUserToHomeScreen()
+            self.containerController?.sessionDelegate?.userDidSignIn()
           }
           self.appDelegate.keymakerOrganizer.saveKeymakerToken(Session.shared().accessToken)
         } else {

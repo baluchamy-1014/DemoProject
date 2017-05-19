@@ -8,9 +8,10 @@
 
 import UIKit
 
-class PassTypeViewController: UITableViewController {
+class PassTypeViewController: UITableViewController, UserSessionDelegate {
   var subscriptionItems: [AnyObject] = Array()
   var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+  var selectedIndexPath = NSIndexPath()
   
   override func viewDidLoad() {
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
@@ -194,6 +195,19 @@ class PassTypeViewController: UITableViewController {
           default:
             break
           }
+          if Session.shared().isValid() {
+            self.navigationController?.pushViewController(viewController, animated: true)
+          }
+          else {
+            // TODO: add alert view to notify redirect to sign in
+            let userController = UserController(nibName: "UserAccount", bundle: nil)
+            userController.sessionDelegate = self
+            let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+            userController.navigationItem.leftBarButtonItem = revealButtomItem
+            self.navigationController?.navigationBar.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0) // this
+            self.navigationController?.pushViewController(userController, animated: true)
+            selectedIndexPath = indexPath as NSIndexPath
+          }
         }
       }
     } else if let productGroup = subscriptionItems[indexPath.row] as? ProductGroup {
@@ -207,5 +221,13 @@ class PassTypeViewController: UITableViewController {
     // TODO: open error modal          
     //let errorViewController = ErrorViewController(nibName: "ErrorViewController", bundle: nil)
    // self.navigationController?.present(errorViewController, animated: true, completion: nil)
+  }
+  
+  func userDidSignIn() {
+    goToConfirmScreen()
+  }
+  
+  private func goToConfirmScreen() {
+    tableView(tableView, didSelectRowAt: selectedIndexPath as IndexPath)
   }
 }

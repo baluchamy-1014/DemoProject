@@ -455,7 +455,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   }
 
   private func resetRestrictionView() {
-        for view in headerImageView.subviews {
+    for view in headerImageView.subviews {
       view.removeFromSuperview()
     }
     setupRestrictionOverlay()

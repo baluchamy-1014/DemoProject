@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 import MessageUI
 
-class BurgerMenuController: UITableViewController {
+class BurgerMenuController: UITableViewController, UserSessionDelegate {
 // TODO: use mutidimensional array for sections data?
   var articleItems: [AnyObject] = Array()
   var menuItems: [AnyObject] = Array()
@@ -81,6 +81,7 @@ class BurgerMenuController: UITableViewController {
     }
     else {
       let userController = UserController(nibName: "UserAccount", bundle: nil)
+      userController.sessionDelegate = self
       let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
       userController.navigationItem.leftBarButtonItem = revealButtomItem
       let navigationController = UINavigationController(rootViewController: userController )
@@ -303,6 +304,10 @@ class BurgerMenuController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 1
+  }
+  
+  func userDidSignIn() {
+    self.appDelegate.sendUserToHomeScreen()
   }
   
 }
