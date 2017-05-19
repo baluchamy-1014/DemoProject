@@ -24,6 +24,8 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var promoCodeErrorLabel: UILabel!
   @IBOutlet var applePayButton: UIButton!
   
+  var discountAmount = "0.0"
+  
   let SupportedPaymentNetworks: [PKPaymentNetwork] = [.visa, .masterCard, .amex]
   let ApplePaySwagMerchantID = "merchant.com.sportsrocket.nll.staging.iphone"
   
@@ -51,16 +53,13 @@ class PurchaseConfirmViewController: UIViewController {
   }
   
   func setLabelValues() {
-    let numberFormatter = NumberFormatter()
     let locale = NSLocale(localeIdentifier: offer.currency)
     let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
     passTitle.text = product.name
     passTypeLabel.text = product.category
     passPriceLabel.text = "\(currencySymbol!) \(offer.price!)"
-    // TODO: replace with calculated value from dealer
-    taxPriceLabel.text = "$  3.32"
-    // TODO: replace promoValue with one from dealer
-    totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: numberFormatter.number(from: offer.price) as! CGFloat, promoValue: 0))"
+    taxPriceLabel.text = "$ 0.00"
+    totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: CGFloat(offer.price.floatValue), promoValue: 0))"
   }
   
   func setupApplyButton() {
@@ -76,13 +75,8 @@ class PurchaseConfirmViewController: UIViewController {
   }
   
   func calculateSum(orginalPrice: CGFloat, promoValue: CGFloat) -> String {
-    // TODO: centralize local/currency
-    let locale = NSLocale(localeIdentifier: offer.currency)
-    let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
-    let taxNum = (orginalPrice - promoValue) * CGFloat(0.095)
-  // TODO: find out where tax comes from and replace
-    taxPriceLabel.text = "\(currencySymbol!) \(String(format: "%.2f", taxNum))"
-    return String(format: "%.2f", ((orginalPrice - promoValue) + taxNum))
+    let totalPrice = (promoValue > orginalPrice) ? 0.0 : (orginalPrice - promoValue)
+    return String(format: "%.2f", totalPrice)
   }
   
   override func didReceiveMemoryWarning() {
@@ -98,26 +92,33 @@ class PurchaseConfirmViewController: UIViewController {
   }
 
   @IBAction func useDidTapApplyButton(_ sender: Any) {
-    let numberFormatter = NumberFormatter()
     let locale = NSLocale(localeIdentifier: offer.currency)
     let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
-    // TODO: replace with dealer data
-    var isCodeValid = true
-    var codeValue = 10.00
+
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
     
-    // TODO: remove invalid promo when we have real data
-    if promoTextField.text == "" {
-      isCodeValid = false
-      codeValue = 0.00
+    if let code = promoTextField.text {
+      Coupon.query(realm, withCode: code, accessToken: Session.shared().accessToken, onCompletion: { (coupon, error) in
+        if error == nil  {
+          if let codeValue = coupon?.discountAmount(self.offer.price) {
+            self.discountAmount = "\(codeValue)"
+            self.totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: CGFloat(self.offer.price.floatValue), promoValue: CGFloat(codeValue)))"
+            self.codeValueLabel.text = "\(currencySymbol!) \(String(format: "%.2f", codeValue))"
+            self.promoTextField.resignFirstResponder()
+            self.promoCodeErrorLabel.isHidden = false
+            self.promoCodeSuccess(success: true)
+          }
+        } else {
+          self.discountAmount = "0.0"
+          self.codeValueLabel.text = "\(currencySymbol!) \(String(format: "%.2f", 0.0))"
+          self.totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: CGFloat(self.offer.price.floatValue), promoValue: CGFloat(0.0)))"
+          self.promoCodeErrorLabel.isHidden = false
+          self.promoCodeSuccess(success: false)
+        }
+      })
     }
 
-    totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: numberFormatter.number(from: offer.price) as! CGFloat, promoValue: CGFloat(codeValue)))"
-    // TODO: update labels here or in calculate method?
-    codeValueLabel.text = "\(currencySymbol!) \(String(format: "%.2f", codeValue))"
-    promoTextField.resignFirstResponder()
-    // TODO: after success
-    promoCodeErrorLabel.isHidden = false
-    promoCodeSuccess(success: isCodeValid)
   }
   
   func promoCodeSuccess(success: Bool) {
@@ -151,10 +152,10 @@ class PurchaseConfirmViewController: UIViewController {
   }
 
   func paymentSummaryItems(taxAmount tax: NSNumber?) -> ([PKPaymentSummaryItem]) {
-    let product = PKPaymentSummaryItem(label: self.product.name, amount: NSDecimalNumber(string: offer.price))
-    let discount = PKPaymentSummaryItem(label: "Discount", amount: NSDecimalNumber(string: "0.00"))
+    let product = PKPaymentSummaryItem(label: self.product.name, amount: NSDecimalNumber(string: "\(offer.price!)"))
+    let discount = PKPaymentSummaryItem(label: "Discount", amount: NSDecimalNumber(string: self.discountAmount))
     var taxItem: PKPaymentSummaryItem
-    var totalAmount = product.amount.adding(discount.amount)
+    var totalAmount = product.amount.subtracting(discount.amount)
 
     if tax != nil {
       taxItem = PKPaymentSummaryItem(label: "Tax", amount: NSDecimalNumber(string: tax?.stringValue))

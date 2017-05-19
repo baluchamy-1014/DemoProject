@@ -21,7 +21,7 @@ typedef void (^DealerAPITaxQueryCompletionBlock) (Tax *tax, NSError *error);
 @property (nonatomic, strong) NSString *publishedAt;
 @property (nonatomic, strong) NSString *state;
 @property (nonatomic, strong) NSString *longDescription;
-@property (nonatomic, strong) NSString *price;
+@property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) NSString *currency;
 @property (nonatomic, strong) NSString *regionUUID;
 @property (nonatomic, strong) NSString *regionInclusion;
