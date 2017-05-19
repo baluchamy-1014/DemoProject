@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     
     Session.shared().propertyCode = appConfiguration["propertyCode"] as! String
 
+    STPPaymentConfiguration.shared().publishableKey = appConfiguration["StripePublishableKey"] as! String
+    STPPaymentConfiguration.shared().appleMerchantIdentifier = appConfiguration["ApplePayMerchantID"] as! String
 
     if let value: String = keymakerOrganizer.fileContents()?.object(forKey: "token") as? String {
       Session.shared().accessToken = value;

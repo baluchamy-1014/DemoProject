@@ -27,7 +27,6 @@ class PurchaseConfirmViewController: UIViewController {
   var discountAmount = "0.0"
   
   let SupportedPaymentNetworks: [PKPaymentNetwork] = [.visa, .masterCard, .amex]
-  let ApplePaySwagMerchantID = "merchant.com.sportsrocket.nll.staging.iphone"
   
   var product: Product!
   var offer: Offer!
@@ -140,8 +139,9 @@ class PurchaseConfirmViewController: UIViewController {
   
   // MARK: - Apple Pay
   func paymentRequest() -> PKPaymentRequest {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let request = PKPaymentRequest()
-    request.merchantIdentifier   = ApplePaySwagMerchantID
+    request.merchantIdentifier   = appDelegate.appConfiguration["ApplePayMerchantID"] as! String
     request.supportedNetworks    = SupportedPaymentNetworks
     request.merchantCapabilities = PKMerchantCapability.capability3DS
     request.countryCode = "US"
