@@ -19,7 +19,6 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var passTypeLabel: UILabel!
   @IBOutlet var passPriceLabel: UILabel!
   @IBOutlet var codeValueLabel: UILabel!
-  @IBOutlet var taxPriceLabel: UILabel!
   @IBOutlet var totalPriceLabel: UILabel!
   @IBOutlet var promoCodeErrorLabel: UILabel!
   @IBOutlet var applePayButton: UIButton!
@@ -66,7 +65,6 @@ class PurchaseConfirmViewController: UIViewController {
     passTitle.text = product.name
     passTypeLabel.text = product.category
     passPriceLabel.text = "\(currencySymbol!) \(offer.price!)"
-    taxPriceLabel.text = "$ 0.00"
     totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: CGFloat(offer.price.floatValue), promoValue: 0))"
   }
   
