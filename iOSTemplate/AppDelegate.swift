@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDelegate {
@@ -34,9 +35,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     
     Session.shared().propertyCode = appConfiguration["propertyCode"] as! String
 
-//    if let value: String = keymakerOrganizer.fileContents()?.object(forKey: "token") as? String {
-//      Session.shared().accessToken = value;
-//    }
+    STPPaymentConfiguration.shared().publishableKey = appConfiguration["StripePublishableKey"] as! String
+    STPPaymentConfiguration.shared().appleMerchantIdentifier = appConfiguration["ApplePayMerchantID"] as! String
+
+    if let value: String = keymakerOrganizer.fileContents()?.object(forKey: "token") as? String {
+      Session.shared().accessToken = value;
+      Session.shared().getResourceOwnerInfo({ (owner, error) in
+        if ((error) != nil) {
+          print("Warning!! An error occurred. session#getResourceOwnerInfo")
+        }
+      })
+    }
 
     let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
     let rearVC = BurgerMenuController()

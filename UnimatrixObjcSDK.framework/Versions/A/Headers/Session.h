@@ -10,8 +10,7 @@
 #define Session_h
 
 #import "Property.h"
-
-@class SRUser;
+#import "SRUser.h"
 
 @interface Session : NSObject
 
@@ -35,7 +34,7 @@ typedef void (^APIQueryCompletionPropertyBlock) (Property *property, NSError *er
 - (BOOL)isValid;
 - (void)getProperty:(APIQueryCompletionPropertyBlock)callback;
 - (void)resetSession;
-
+- (void)getResourceOwnerInfo:(APIQueryCompletionBlock)callback;
 @end
 
 

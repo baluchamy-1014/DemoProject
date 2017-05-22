@@ -14,7 +14,6 @@
 		621DD25D1DD61A9600D87855 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25C1DD61A9600D87855 /* UserController.swift */; };
 		621DD25F1DD62CBF00D87855 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD25E1DD62CBF00D87855 /* SignInController.swift */; };
 		621DD2611DD62CD200D87855 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DD2601DD62CD200D87855 /* SignUpController.swift */; };
-		621F07901EA028E5001C06D6 /* UnimatrixDealerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 621F078F1EA028E5001C06D6 /* UnimatrixDealerSDK.framework */; };
 		622901391E5CC31A00E021EE /* Subscriptions.xib in Resources */ = {isa = PBXBuildFile; fileRef = 622901381E5CC31A00E021EE /* Subscriptions.xib */; };
 		6229013B1E5CC3FB00E021EE /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6229013A1E5CC3FB00E021EE /* SubscriptionsViewController.swift */; };
 		62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */; };
@@ -30,7 +29,9 @@
 		62A8F28A1E60C5B000361495 /* UnimatrixConfigProduction.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */; };
 		62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B233831E368B2D00A7643F /* SWRevealViewController.m */; };
 		62D7B0D31E96A32B0030C3C8 /* ProductGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */; };
-		62DC0E261EBA3DDF00847284 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DC0E251EBA3DDF00847284 /* UnimatrixObjcSDK.framework */; };
+		62D823301EC3CF8200786A19 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8232F1EC3CF8200786A19 /* Stripe.framework */; };
+		62D823311EC3CF8200786A19 /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8232F1EC3CF8200786A19 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		62D9EE4E1ECE786200F0DA11 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D9EE4D1ECE786200F0DA11 /* UnimatrixObjcSDK.framework */; };
 		780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780578551DC2AA1F0011BBE8 /* TagSection.swift */; };
 		78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A931DC951BE00FAB2B8 /* Cancel_icon.png */; };
 		78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */; };
@@ -196,15 +197,29 @@
 		CA473D5F0D27A77DE7F9C674 /* BurgerMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA473B36478C1AADAD8D51A6 /* BurgerMenuController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		62D823321EC3CF8200786A19 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				62D823311EC3CF8200786A19 /* Stripe.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6209A2E11DC398CD00B278B9 /* VideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
 		6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPlayerController.xib; sourceTree = "<group>"; };
 		620C89EF1DF7242100DAC962 /* LatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestViewController.swift; sourceTree = "<group>"; };
 		620C89F11DF726B400DAC962 /* StreamListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamListViewController.swift; sourceTree = "<group>"; };
+		620DA8241EB39EE300FF5CD1 /* NLL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NLL.entitlements; sourceTree = "<group>"; };
 		621DD25C1DD61A9600D87855 /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		621DD25E1DD62CBF00D87855 /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		621DD2601DD62CD200D87855 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
-		621F078F1EA028E5001C06D6 /* UnimatrixDealerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixDealerSDK.framework; sourceTree = "<group>"; };
 		622901381E5CC31A00E021EE /* Subscriptions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Subscriptions.xib; sourceTree = "<group>"; };
 		6229013A1E5CC3FB00E021EE /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixAnalyticsObjcSDK.framework; sourceTree = "<group>"; };
@@ -221,7 +236,8 @@
 		62B233821E368B2D00A7643F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		62B233831E368B2D00A7643F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGroup.swift; sourceTree = "<group>"; };
-		62DC0E251EBA3DDF00847284 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
+		62D8232F1EC3CF8200786A19 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
+		62D9EE4D1ECE786200F0DA11 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		780578551DC2AA1F0011BBE8 /* TagSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSection.swift; sourceTree = "<group>"; };
 		78095A931DC951BE00FAB2B8 /* Cancel_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel_icon.png; path = iOSTemplate/Assets.xcassets/Cancel_icon.png; sourceTree = "<group>"; };
 		78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Cancel_icon@2x.png"; sourceTree = "<group>"; };
@@ -395,10 +411,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				621F07901EA028E5001C06D6 /* UnimatrixDealerSDK.framework in Frameworks */,
 				627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
 				62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
-				62DC0E261EBA3DDF00847284 /* UnimatrixObjcSDK.framework in Frameworks */,
+				62D823301EC3CF8200786A19 /* Stripe.framework in Frameworks */,
+				62D9EE4E1ECE786200F0DA11 /* UnimatrixObjcSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,11 +673,11 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
-				621F078F1EA028E5001C06D6 /* UnimatrixDealerSDK.framework */,
+				62D9EE4D1ECE786200F0DA11 /* UnimatrixObjcSDK.framework */,
+				62D8232F1EC3CF8200786A19 /* Stripe.framework */,
 				627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */,
 				627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */,
 				62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */,
-				62DC0E251EBA3DDF00847284 /* UnimatrixObjcSDK.framework */,
 				788C43A21DA46D1000F342B9 /* Assets */,
 				78E31EB11D9C7BA100CB59D3 /* bridge.h */,
 				78E31E731D99F3F400CB59D3 /* iOSTemplate */,
@@ -680,6 +696,7 @@
 		78E31E731D99F3F400CB59D3 /* iOSTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				620DA8241EB39EE300FF5CD1 /* NLL.entitlements */,
 				62A8F28C1E60C5B400361495 /* UnimatrixConfig */,
 				62B233811E368B2D00A7643F /* SWRevealViewController */,
 				78E31E741D99F3F400CB59D3 /* AppDelegate.swift */,
@@ -707,6 +724,7 @@
 				78E31E6D1D99F3F400CB59D3 /* Sources */,
 				78E31E6E1D99F3F400CB59D3 /* Frameworks */,
 				78E31E6F1D99F3F400CB59D3 /* Resources */,
+				62D823321EC3CF8200786A19 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -731,6 +749,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4DDS5PKU9U;
 						LastSwiftMigration = 0820;
+						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1065,9 +1088,10 @@
 		};
 		78E31E841D99F3F400CB59D3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */;
+			baseConfigurationReference = 62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSTemplate/NLL.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1092,6 +1116,7 @@
 			baseConfigurationReference = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSTemplate/NLL.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
