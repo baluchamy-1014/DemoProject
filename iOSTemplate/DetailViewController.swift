@@ -440,8 +440,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     Session.shared().getProperty({ (property, error) in
         if (error == nil) {
-          Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, categories: ["team", "season", "single-game"], match: self.artifact.id.stringValue, options: [:], onCompletion: { (products, error) in
+          Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, match: self.artifact.id.stringValue, options: [:], onCompletion: { (products, error) in
             let subscriptionsVC = PassTypeViewController()
+            ProductGroup.applyCategoryToProducts(categoryProducts: self.appDelegate.archivistProductCategories, products: products as! [Product])
             subscriptionsVC.subscriptionItems = products as! [Product]
             self.navigationController?.pushViewController(subscriptionsVC, animated: true)
           })
