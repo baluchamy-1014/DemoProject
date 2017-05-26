@@ -33,7 +33,7 @@ class CustomSegmentedControl: UISegmentedControl {
     
     self.setBackgroundImage(self.imageWithColor(UIColor.clear), for:UIControlState(), barMetrics:UIBarMetrics.default)
     // TODO: theme
-    self.setBackgroundImage(UIImage(named: "TabSlider"), for:UIControlState.selected, barMetrics:UIBarMetrics.default);   
+    self.setBackgroundImage(UIImage(named: "Tabslider_03"), for:UIControlState.selected, barMetrics:UIBarMetrics.default);
   }
 }
 
@@ -211,7 +211,7 @@ class UserScreenButton: UIButton {
   required init(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)!
     
-    self.setBackgroundImage(UIImage(named: "TabSlider"), for: .selected)
+    self.setBackgroundImage(UIImage(named: "Tabslider_03"), for: .selected)
     self.setTitleColor(UIColor.white, for: .selected)
     
     self.setBackgroundImage(UIImage(named: ""), for: UIControlState())

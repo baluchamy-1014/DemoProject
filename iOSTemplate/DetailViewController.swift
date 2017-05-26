@@ -68,17 +68,24 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     detailCollectionView.dataSource = self
     detailCollectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
     loadRelatedContent()
-
+    detailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
+    self.navigationController?.navigationBar.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
     videoPlayerController.navController = self.navigationController
 
-    // TODO: theme
-    detailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     self.view.addSubview(detailCollectionView)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     signInButton.isEnabled = true
     buyNowButton.isEnabled = true
+
+    self.navigationController?.navigationBar.isTranslucent = false
+    self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+    videoPlayerController.navController = self.navigationController
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+     self.navigationController?.navigationBar.isTranslucent = true
   }
   
   func setupRestrictionOverlay() {
@@ -363,6 +370,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   
   func openTag(_ sender:UIButton) {
     let detailController = LatestViewController(artifactID: sender.tag)
+    detailController.shouldBeTranslucent(translucent: false)
     self.navigationController?.pushViewController(detailController, animated: true)
   }
   

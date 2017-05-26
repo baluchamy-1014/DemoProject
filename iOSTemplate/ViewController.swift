@@ -44,11 +44,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     self.pageController.dataSource = self
 
     // TODO: theme
-    self.view.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
 
-    self.navigationController?.navigationBar.barTintColor = UIColor(red: 50/255, green: 50/255, blue: 50/255, alpha: 1.0)
-    self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-    
     self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
     
     teamFilterButtonRestoreTeamName()
@@ -57,6 +53,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   override func viewWillAppear(_ animated: Bool) {
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
+    self.view.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+    self.navigationController?.navigationBar.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+    self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
+    self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
   }
   
   override func viewDidDisappear(_ animated: Bool) {

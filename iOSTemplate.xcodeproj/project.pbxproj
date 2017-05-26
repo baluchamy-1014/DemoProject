@@ -173,6 +173,9 @@
 		78B3120A1DBE80C60064EE88 /* slider_bar.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312071DBE80C60064EE88 /* slider_bar.png */; };
 		78B3120B1DBE80C60064EE88 /* slider_bar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312081DBE80C60064EE88 /* slider_bar@2x.png */; };
 		78B3120C1DBE80C60064EE88 /* slider_bar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78B312091DBE80C60064EE88 /* slider_bar@3x.png */; };
+		78CBBA4B1EB963FD0002244E /* Tabslider_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CBBA481EB963FD0002244E /* Tabslider_03.png */; };
+		78CBBA4C1EB963FD0002244E /* Tabslider_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CBBA491EB963FD0002244E /* Tabslider_03@2x.png */; };
+		78CBBA4D1EB963FD0002244E /* Tabslider_03@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CBBA4A1EB963FD0002244E /* Tabslider_03@3x.png */; };
 		78D9FC771E7C7FDA00413F5D /* ApplePayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9FC741E7C7FDA00413F5D /* ApplePayButton.png */; };
 		78D9FC781E7C7FDA00413F5D /* ApplePayButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9FC751E7C7FDA00413F5D /* ApplePayButton@2x.png */; };
 		78D9FC791E7C7FDA00413F5D /* ApplePayButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9FC761E7C7FDA00413F5D /* ApplePayButton@3x.png */; };
@@ -379,6 +382,9 @@
 		78B312071DBE80C60064EE88 /* slider_bar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = slider_bar.png; path = iOSTemplate/Assets.xcassets/slider_bar.png; sourceTree = "<group>"; };
 		78B312081DBE80C60064EE88 /* slider_bar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider_bar@2x.png"; path = "iOSTemplate/Assets.xcassets/slider_bar@2x.png"; sourceTree = "<group>"; };
 		78B312091DBE80C60064EE88 /* slider_bar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider_bar@3x.png"; path = "iOSTemplate/Assets.xcassets/slider_bar@3x.png"; sourceTree = "<group>"; };
+		78CBBA481EB963FD0002244E /* Tabslider_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tabslider_03.png; path = iOSTemplate/Assets.xcassets/Tabslider_03.png; sourceTree = "<group>"; };
+		78CBBA491EB963FD0002244E /* Tabslider_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tabslider_03@2x.png"; path = "iOSTemplate/Assets.xcassets/Tabslider_03@2x.png"; sourceTree = "<group>"; };
+		78CBBA4A1EB963FD0002244E /* Tabslider_03@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tabslider_03@3x.png"; path = "iOSTemplate/Assets.xcassets/Tabslider_03@3x.png"; sourceTree = "<group>"; };
 		78D9FC741E7C7FDA00413F5D /* ApplePayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ApplePayButton.png; path = iOSTemplate/Assets.xcassets/ApplePayButton.png; sourceTree = "<group>"; };
 		78D9FC751E7C7FDA00413F5D /* ApplePayButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ApplePayButton@2x.png"; path = "iOSTemplate/Assets.xcassets/ApplePayButton@2x.png"; sourceTree = "<group>"; };
 		78D9FC761E7C7FDA00413F5D /* ApplePayButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ApplePayButton@3x.png"; path = "iOSTemplate/Assets.xcassets/ApplePayButton@3x.png"; sourceTree = "<group>"; };
@@ -596,6 +602,9 @@
 		788C43A21DA46D1000F342B9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				78CBBA481EB963FD0002244E /* Tabslider_03.png */,
+				78CBBA491EB963FD0002244E /* Tabslider_03@2x.png */,
+				78CBBA4A1EB963FD0002244E /* Tabslider_03@3x.png */,
 				7863652C1E93047E008DF719 /* Error_icon.png */,
 				7863652D1E93047E008DF719 /* Error_icon@2x.png */,
 				7863652E1E93047E008DF719 /* Error_icon@3x.png */,
@@ -783,6 +792,7 @@
 				787867C81DB99CC700958C1B /* TVIcon.png in Resources */,
 				78E31EAA1D9B443A00CB59D3 /* NewsIconInactive.png in Resources */,
 				6296FA601DD50EFB0096B04D /* SignUp.xib in Resources */,
+				78CBBA4D1EB963FD0002244E /* Tabslider_03@3x.png in Resources */,
 				781002A71E6F552E00EF3C8A /* ticketTailTeam@2x.png in Resources */,
 				78E31EA91D9B443A00CB59D3 /* NewsIconActive@2x.png in Resources */,
 				78E31E7F1D99F3F400CB59D3 /* LaunchScreen.storyboard in Resources */,
@@ -868,6 +878,7 @@
 				782D4DCD1E0C97040078FEC1 /* PlayButton@3x.png in Resources */,
 				78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */,
 				784C18AF1E45513D008E8EED /* home_icon_active.png in Resources */,
+				78CBBA4B1EB963FD0002244E /* Tabslider_03.png in Resources */,
 				78657B771EB2BA620012AC7F /* PassFooter.txt in Resources */,
 				78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */,
 				78A29F1E1DB5425300782620 /* controlBottomBorder.png in Resources */,
@@ -883,6 +894,7 @@
 				782E3A8E1DF7928800FCF5CC /* TabSlider@3x.png in Resources */,
 				784C18C71E4553D4008E8EED /* play_button_active@2x.png in Resources */,
 				788C43991DA45F9D00F342B9 /* ExpandIndicator@2x.png in Resources */,
+				78CBBA4C1EB963FD0002244E /* Tabslider_03@2x.png in Resources */,
 				7810028F1E6E1F3300EF3C8A /* seasonButton@3x.png in Resources */,
 				78A29F1F1DB5425300782620 /* demoImage.png in Resources */,
 				78503A061E4D80B0005F81EC /* link_artifact_active@3x.png in Resources */,

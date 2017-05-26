@@ -43,13 +43,19 @@ class UserController: UIViewController {
     self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
     self.signInButton.isSelected = true
     
+    self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+    super.viewDidLoad()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
     // hides line under navigation bar
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
-    
-    self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-    
-    super.viewDidLoad()
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
+    self.navigationController?.navigationBar.shadowImage = nil
   }
 
   @IBAction func switchToSignUpView(_ sender: AnyObject) {
