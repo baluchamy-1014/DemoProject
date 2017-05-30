@@ -78,6 +78,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   override func viewWillAppear(_ animated: Bool) {
     signInButton.isEnabled = true
     buyNowButton.isEnabled = true
+  
+    if headerImageView != nil {
+      setupRestrictionOverlay()
+    }
 
     self.navigationController?.navigationBar.isTranslucent = false
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
