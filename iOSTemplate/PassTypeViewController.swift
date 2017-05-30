@@ -161,35 +161,38 @@ class PassTypeViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if let item = subscriptionItems[indexPath.row] as? Product {
-      if let offer = item.offers[0] as? Offer {
-        // TODO: check if logged in
-        let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
-        self.navigationController?.pushViewController(viewController, animated: true)
-        viewController.title = "Purchase Confirmation"
+      if let offers = item.offers as? [Offer] {
+        if offers.count > 0 {
+          let offer = offers[0]
+          // TODO: check if logged in
+          let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
+          self.navigationController?.pushViewController(viewController, animated: true)
+          viewController.title = "Purchase Confirmation"
 
-        switch item.category {
-        case "single-game":
-          viewController.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
-          // TODO: create central date formatter class
-          let dateFormatter = DateFormatter()
-          dateFormatter.dateFormat = "MMMM d, yyyy"
-          viewController.passSubtitle.text = dateFormatter.string(from: item.startsAt)
+          switch item.category {
+          case "single-game":
+            viewController.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
+            // TODO: create central date formatter class
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMMM d, yyyy"
+            viewController.passSubtitle.text = dateFormatter.string(from: item.startsAt)
 
-            // only if through burger menu
-            //      let viewController = SingleGamePassViewController(product: item, anOffer: offer)
-            //      self.navigationController?.pushViewController(viewController, animated: true)
-        case "season":
-          viewController.view.backgroundColor = UIColor(red: 92 / 255, green: 20 / 255, blue: 20 / 255, alpha: 1.0)
-          viewController.passTitle.text = item.name.uppercased()
-          viewController.passSubtitle.text = "2016 League Season Pass"
-        case "team":
-          viewController.view.backgroundColor = UIColor(red: 84 / 255, green: 112 / 255, blue: 135 / 255, alpha: 1.0)
-          // TODO: find out where subtitle comes from
-          viewController.passSubtitle.text = item.category
-          // TODO: team filter when from burger menu
-          break
-        default:
-          break
+              // only if through burger menu
+              //      let viewController = SingleGamePassViewController(product: item, anOffer: offer)
+              //      self.navigationController?.pushViewController(viewController, animated: true)
+          case "season":
+            viewController.view.backgroundColor = UIColor(red: 92 / 255, green: 20 / 255, blue: 20 / 255, alpha: 1.0)
+            viewController.passTitle.text = item.name.uppercased()
+            viewController.passSubtitle.text = "2016 League Season Pass"
+          case "team":
+            viewController.view.backgroundColor = UIColor(red: 84 / 255, green: 112 / 255, blue: 135 / 255, alpha: 1.0)
+            // TODO: find out where subtitle comes from
+            viewController.passSubtitle.text = item.category
+            // TODO: team filter when from burger menu
+            break
+          default:
+            break
+          }
         }
       }
     } else if let productGroup = subscriptionItems[indexPath.row] as? ProductGroup {
