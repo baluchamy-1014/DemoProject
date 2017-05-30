@@ -18,6 +18,7 @@
 		6229013B1E5CC3FB00E021EE /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6229013A1E5CC3FB00E021EE /* SubscriptionsViewController.swift */; };
 		62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */; };
 		6253BDCD1DE34F58001CE859 /* SignUpSuccess.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */; };
+		627003EE1ED8B06E00D349B1 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627003ED1ED8B06E00D349B1 /* UnimatrixObjcSDK.framework */; };
 		627484B41E71BC8700621D7B /* UnimatrixConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 627484B31E71BC8700621D7B /* UnimatrixConfig.plist */; };
 		627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */; };
 		627484BB1E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */; };
@@ -31,11 +32,18 @@
 		62D7B0D31E96A32B0030C3C8 /* ProductGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */; };
 		62D823301EC3CF8200786A19 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8232F1EC3CF8200786A19 /* Stripe.framework */; };
 		62D823311EC3CF8200786A19 /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8232F1EC3CF8200786A19 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		62D9EE4E1ECE786200F0DA11 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D9EE4D1ECE786200F0DA11 /* UnimatrixObjcSDK.framework */; };
 		780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780578551DC2AA1F0011BBE8 /* TagSection.swift */; };
 		78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A931DC951BE00FAB2B8 /* Cancel_icon.png */; };
 		78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */; };
 		78095A981DC951BE00FAB2B8 /* Cancel_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A951DC951BE00FAB2B8 /* Cancel_icon@3x.png */; };
+		780995AE1EC0EC38008F0B22 /* ticketSelectSeasonButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 780995A81EC0EC38008F0B22 /* ticketSelectSeasonButton.png */; };
+		780995AF1EC0EC38008F0B22 /* ticketSelectSeasonButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780995A91EC0EC38008F0B22 /* ticketSelectSeasonButton@2x.png */; };
+		780995B01EC0EC38008F0B22 /* ticketSelectSeasonButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780995AA1EC0EC38008F0B22 /* ticketSelectSeasonButton@3x.png */; };
+		780995B11EC0EC38008F0B22 /* ticketSelectSeasonTail.png in Resources */ = {isa = PBXBuildFile; fileRef = 780995AB1EC0EC38008F0B22 /* ticketSelectSeasonTail.png */; };
+		780995B21EC0EC38008F0B22 /* ticketSelectSeasonTail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780995AC1EC0EC38008F0B22 /* ticketSelectSeasonTail@2x.png */; };
+		780995B31EC0EC38008F0B22 /* ticketSelectSeasonTail@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780995AD1EC0EC38008F0B22 /* ticketSelectSeasonTail@3x.png */; };
+		780995B61EC0F0CE008F0B22 /* SeasonTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780995B41EC0F0CE008F0B22 /* SeasonTicketCell.swift */; };
+		780995B71EC0F0CE008F0B22 /* SeasonTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 780995B51EC0F0CE008F0B22 /* SeasonTicketCell.xib */; };
 		780B686E1DC7CC62007F206F /* expand_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686B1DC7CC62007F206F /* expand_indicator.png */; };
 		780B686F1DC7CC62007F206F /* expand_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686C1DC7CC62007F206F /* expand_indicator@2x.png */; };
 		780B68701DC7CC62007F206F /* expand_indicator@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686D1DC7CC62007F206F /* expand_indicator@3x.png */; };
@@ -63,6 +71,7 @@
 		781002AA1E6F7BDF00EF3C8A /* SingleGamePassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */; };
 		781002B71E70C23E00EF3C8A /* PurchaseConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781002B51E70C23E00EF3C8A /* PurchaseConfirmViewController.swift */; };
 		781002B81E70C23E00EF3C8A /* PurchaseConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */; };
+		781347921EC4E5D4006152D9 /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781347911EC4E5D4006152D9 /* SeasonsViewController.swift */; };
 		7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */; };
 		782D4DBD1E0A08520078FEC1 /* Placeholder_nll_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */; };
 		782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */; };
@@ -227,6 +236,7 @@
 		6229013A1E5CC3FB00E021EE /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
 		62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixAnalyticsObjcSDK.framework; sourceTree = "<group>"; };
 		6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpSuccess.xib; sourceTree = "<group>"; };
+		627003ED1ED8B06E00D349B1 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		627484B31E71BC8700621D7B /* UnimatrixConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UnimatrixConfig.plist; sourceTree = "<group>"; };
 		627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
 		627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BoxxspringVideoPlayerSDK.bundle; sourceTree = "<group>"; };
@@ -240,11 +250,18 @@
 		62B233831E368B2D00A7643F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGroup.swift; sourceTree = "<group>"; };
 		62D8232F1EC3CF8200786A19 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
-		62D9EE4D1ECE786200F0DA11 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		780578551DC2AA1F0011BBE8 /* TagSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSection.swift; sourceTree = "<group>"; };
 		78095A931DC951BE00FAB2B8 /* Cancel_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel_icon.png; path = iOSTemplate/Assets.xcassets/Cancel_icon.png; sourceTree = "<group>"; };
 		78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Cancel_icon@2x.png"; sourceTree = "<group>"; };
 		78095A951DC951BE00FAB2B8 /* Cancel_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel_icon@3x.png"; path = "iOSTemplate/Assets.xcassets/Cancel_icon@3x.png"; sourceTree = "<group>"; };
+		780995A81EC0EC38008F0B22 /* ticketSelectSeasonButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ticketSelectSeasonButton.png; path = iOSTemplate/Assets.xcassets/ticketSelectSeasonButton.png; sourceTree = "<group>"; };
+		780995A91EC0EC38008F0B22 /* ticketSelectSeasonButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketSelectSeasonButton@2x.png"; path = "iOSTemplate/Assets.xcassets/ticketSelectSeasonButton@2x.png"; sourceTree = "<group>"; };
+		780995AA1EC0EC38008F0B22 /* ticketSelectSeasonButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketSelectSeasonButton@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketSelectSeasonButton@3x.png"; sourceTree = "<group>"; };
+		780995AB1EC0EC38008F0B22 /* ticketSelectSeasonTail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ticketSelectSeasonTail.png; path = iOSTemplate/Assets.xcassets/ticketSelectSeasonTail.png; sourceTree = "<group>"; };
+		780995AC1EC0EC38008F0B22 /* ticketSelectSeasonTail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketSelectSeasonTail@2x.png"; path = "iOSTemplate/Assets.xcassets/ticketSelectSeasonTail@2x.png"; sourceTree = "<group>"; };
+		780995AD1EC0EC38008F0B22 /* ticketSelectSeasonTail@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketSelectSeasonTail@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketSelectSeasonTail@3x.png"; sourceTree = "<group>"; };
+		780995B41EC0F0CE008F0B22 /* SeasonTicketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonTicketCell.swift; sourceTree = "<group>"; };
+		780995B51EC0F0CE008F0B22 /* SeasonTicketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeasonTicketCell.xib; sourceTree = "<group>"; };
 		780B686B1DC7CC62007F206F /* expand_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expand_indicator.png; path = iOSTemplate/Assets.xcassets/expand_indicator.png; sourceTree = "<group>"; };
 		780B686C1DC7CC62007F206F /* expand_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expand_indicator@2x.png"; path = "iOSTemplate/Assets.xcassets/expand_indicator@2x.png"; sourceTree = "<group>"; };
 		780B686D1DC7CC62007F206F /* expand_indicator@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expand_indicator@3x.png"; path = "iOSTemplate/Assets.xcassets/expand_indicator@3x.png"; sourceTree = "<group>"; };
@@ -272,6 +289,7 @@
 		781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGamePassViewController.swift; sourceTree = "<group>"; };
 		781002B51E70C23E00EF3C8A /* PurchaseConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseConfirmViewController.swift; sourceTree = "<group>"; };
 		781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseConfirmViewController.xib; sourceTree = "<group>"; };
+		781347911EC4E5D4006152D9 /* SeasonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
 		7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SignInSignUpBGImage.png; path = iOSTemplate/Assets.xcassets/SignInSignUpBGImage.png; sourceTree = "<group>"; };
 		782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder_nll_logo.png; path = iOSTemplate/Assets.xcassets/Placeholder_nll_logo.png; sourceTree = "<group>"; };
 		782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder_nll_logo@2x.png"; path = "iOSTemplate/Assets.xcassets/Placeholder_nll_logo@2x.png"; sourceTree = "<group>"; };
@@ -420,7 +438,7 @@
 				627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
 				62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
 				62D823301EC3CF8200786A19 /* Stripe.framework in Frameworks */,
-				62D9EE4E1ECE786200F0DA11 /* UnimatrixObjcSDK.framework in Frameworks */,
+				627003EE1ED8B06E00D349B1 /* UnimatrixObjcSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +515,7 @@
 		784AFDFD1DAD57F600FA157B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				781347911EC4E5D4006152D9 /* SeasonsViewController.swift */,
 				781002B51E70C23E00EF3C8A /* PurchaseConfirmViewController.swift */,
 				6209A2E11DC398CD00B278B9 /* VideoPlayerController.swift */,
 				784AFE051DADC18800FA157B /* ArtifactListViewController.swift */,
@@ -595,6 +614,8 @@
 				7810029B1E6E1F9800EF3C8A /* TicketTableViewCell.swift */,
 				7810029C1E6E1F9800EF3C8A /* TicketTableViewCell.xib */,
 				781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */,
+				780995B41EC0F0CE008F0B22 /* SeasonTicketCell.swift */,
+				780995B51EC0F0CE008F0B22 /* SeasonTicketCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -605,6 +626,12 @@
 				78CBBA481EB963FD0002244E /* Tabslider_03.png */,
 				78CBBA491EB963FD0002244E /* Tabslider_03@2x.png */,
 				78CBBA4A1EB963FD0002244E /* Tabslider_03@3x.png */,
+				780995A81EC0EC38008F0B22 /* ticketSelectSeasonButton.png */,
+				780995A91EC0EC38008F0B22 /* ticketSelectSeasonButton@2x.png */,
+				780995AA1EC0EC38008F0B22 /* ticketSelectSeasonButton@3x.png */,
+				780995AB1EC0EC38008F0B22 /* ticketSelectSeasonTail.png */,
+				780995AC1EC0EC38008F0B22 /* ticketSelectSeasonTail@2x.png */,
+				780995AD1EC0EC38008F0B22 /* ticketSelectSeasonTail@3x.png */,
 				7863652C1E93047E008DF719 /* Error_icon.png */,
 				7863652D1E93047E008DF719 /* Error_icon@2x.png */,
 				7863652E1E93047E008DF719 /* Error_icon@3x.png */,
@@ -682,7 +709,7 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
-				62D9EE4D1ECE786200F0DA11 /* UnimatrixObjcSDK.framework */,
+				627003ED1ED8B06E00D349B1 /* UnimatrixObjcSDK.framework */,
 				62D8232F1EC3CF8200786A19 /* Stripe.framework */,
 				627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */,
 				627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */,
@@ -873,9 +900,12 @@
 				784C18D21E455CF3008E8EED /* play_button_active.png in Resources */,
 				784C18C91E4553D4008E8EED /* user_active@2x.png in Resources */,
 				784C18D11E455CF3008E8EED /* user_inactive.png in Resources */,
+				780995AE1EC0EC38008F0B22 /* ticketSelectSeasonButton.png in Resources */,
+				780995B31EC0EC38008F0B22 /* ticketSelectSeasonTail@3x.png in Resources */,
 				78D9FC791E7C7FDA00413F5D /* ApplePayButton@3x.png in Resources */,
 				78A29F221DB5425300782620 /* no_live_feed@3x.png in Resources */,
 				782D4DCD1E0C97040078FEC1 /* PlayButton@3x.png in Resources */,
+				780995B01EC0EC38008F0B22 /* ticketSelectSeasonButton@3x.png in Resources */,
 				78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */,
 				784C18AF1E45513D008E8EED /* home_icon_active.png in Resources */,
 				78CBBA4B1EB963FD0002244E /* Tabslider_03.png in Resources */,
@@ -885,6 +915,7 @@
 				78A29F251DB5425300782620 /* tab_bar@3x.png in Resources */,
 				78503A051E4D80B0005F81EC /* link_artifact_active@2x.png in Resources */,
 				78A29F261DB5425300782620 /* NewsIconInactive@3x.png in Resources */,
+				780995B71EC0F0CE008F0B22 /* SeasonTicketCell.xib in Resources */,
 				780B68701DC7CC62007F206F /* expand_indicator@3x.png in Resources */,
 				78A29F271DB5425300782620 /* TeamIconActive@3x.png in Resources */,
 				782D4DCC1E0C97040078FEC1 /* PlayButton@2x.png in Resources */,
@@ -909,6 +940,7 @@
 				78B3120C1DBE80C60064EE88 /* slider_bar@3x.png in Resources */,
 				78A29F2A1DB5425300782620 /* VideosIconInactive@3x.png in Resources */,
 				781002A51E6F552E00EF3C8A /* ticketTailSingle@3x.png in Resources */,
+				780995B11EC0EC38008F0B22 /* ticketSelectSeasonTail.png in Resources */,
 				786365311E93047E008DF719 /* Error_icon@3x.png in Resources */,
 				6296FA5C1DD4E7170096B04D /* SignIn.xib in Resources */,
 				78A29F201DB5425300782620 /* no_live_feed@1x.png in Resources */,
@@ -938,11 +970,13 @@
 				78503A071E4D80B0005F81EC /* link_artifact_inactive.png in Resources */,
 				784C18B01E45513D008E8EED /* home_icon_inactive.png in Resources */,
 				7810028D1E6E1F3300EF3C8A /* seasonButton.png in Resources */,
+				780995AF1EC0EC38008F0B22 /* ticketSelectSeasonButton@2x.png in Resources */,
 				78503A091E4D80B0005F81EC /* link_artifact_inactive@3x.png in Resources */,
 				784C18C61E4553D4008E8EED /* info_inactive@2x.png in Resources */,
 				784C18EC1E455EF2008E8EED /* play_button_inactive@3x.png in Resources */,
 				CA4739D1B419C9A665CA934A /* reveal-icon@2x.png in Resources */,
 				784C18A21E454E7A008E8EED /* cart_active.png in Resources */,
+				780995B21EC0EC38008F0B22 /* ticketSelectSeasonTail@2x.png in Resources */,
 				784C18BF1E4553D4008E8EED /* cart_active@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -977,6 +1011,7 @@
 				787867DA1DBD867B00958C1B /* CustomTabBar.swift in Sources */,
 				78E31E911D9AEA6800CB59D3 /* LargeCollectionViewCell.swift in Sources */,
 				78E31E751D99F3F400CB59D3 /* AppDelegate.swift in Sources */,
+				781347921EC4E5D4006152D9 /* SeasonsViewController.swift in Sources */,
 				78E31E871D99FC6600CB59D3 /* TeamsFilterListViewController.swift in Sources */,
 				780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */,
 				78E31E891D9A01DE00CB59D3 /* CustomControls.swift in Sources */,
@@ -984,6 +1019,7 @@
 				CA473A34D224D5536EEC11F7 /* KeymakerOrganizer.swift in Sources */,
 				781002B71E70C23E00EF3C8A /* PurchaseConfirmViewController.swift in Sources */,
 				CA473D5F0D27A77DE7F9C674 /* BurgerMenuController.swift in Sources */,
+				780995B61EC0F0CE008F0B22 /* SeasonTicketCell.swift in Sources */,
 				784C18961E454372008E8EED /* BurgerMenuCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

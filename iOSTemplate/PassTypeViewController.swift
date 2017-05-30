@@ -47,31 +47,35 @@ class PassTypeViewController: UITableViewController {
   }
 
   func applyCellSettings(cell: TicketTableViewCell, product: Product, passTitle: String) {
-    if let offer = product.offers[0] as? Offer {
-
-     switch product.category {
-      case "single-game":
-        cell.passLeadingImage.image = UIImage(named: "ticketTailSingle")
-        cell.passTrailingImage.image = UIImage(named: "singleButton")
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d, yyyy"
-        cell.passSubtitle.text = dateFormatter.string(from: product.startsAt)
-      case "season":
-        cell.passLeadingImage.image = UIImage(named: "ticketTailSeason")
-        cell.passTrailingImage.image = UIImage(named: "seasonButton")
-        cell.passTopBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
-        cell.passBottomBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
-        cell.passSubtitle.text = "2016 League Season Pass"
-      case "team":
-        cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")
-        cell.passTrailingImage.image = UIImage(named: "teamButton")
-        cell.passTopBorderView.backgroundColor = UIColor(red: 69 / 255, green: 93 / 255, blue: 113 / 255, alpha: 1.0)
-        cell.passBottomBorderView.backgroundColor = UIColor(red: 69 / 255, green: 93 / 255, blue: 113 / 255, alpha: 1.0)
-        cell.passSubtitle.text = "Team Season Pass"
-        cell.passPrice.text = "$29.99"
-      default:
-        break
+    
+      if let category = product.category {
+        switch category {
+        case "single":
+          cell.passLeadingImage.image = UIImage(named: "ticketTailSingle")
+          cell.passTrailingImage.image = UIImage(named: "singleButton")
+          
+          let dateFormatter = DateFormatter()
+          dateFormatter.dateFormat = "MMMM d, yyyy"
+          if product.startsAt != nil {
+            cell.passSubtitle.text = dateFormatter.string(from: product.startsAt)
+          }
+        case "season":
+          cell.passLeadingImage.image = UIImage(named: "ticketTailSeason")
+          cell.passTrailingImage.image = UIImage(named: "seasonButton")
+          cell.passTopBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
+          cell.passBottomBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
+          cell.passSubtitle.text = "2016 League Season Pass"
+        case "team":
+          cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")
+          cell.passTrailingImage.image = UIImage(named: "teamButton")
+          cell.passTopBorderView.backgroundColor = UIColor(red: 69 / 255, green: 93 / 255, blue: 113 / 255, alpha: 1.0)
+          cell.passBottomBorderView.backgroundColor = UIColor(red: 69 / 255, green: 93 / 255, blue: 113 / 255, alpha: 1.0)
+          cell.passSubtitle.text = "Team Season Pass"
+        default:
+          break
+        }
+      } else {
+        print("AAAAA \(product.name)")
       }
 
       cell.passTitle?.text = passTitle
@@ -80,13 +84,17 @@ class PassTypeViewController: UITableViewController {
       cell.contentView.bounds = cell.bounds
       cell.layoutIfNeeded()
 
-      if let price = offer.price {
-        let locale = NSLocale(localeIdentifier: offer.currency)
-        let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
-        cell.passPrice.text = "\(currencySymbol!) \(price)"
+      if let offers = product.offers as? [Offer] {
+        if offers.count > 0 {
+          let offer = offers[0]
+          if let price = offer.price {
+            let locale = NSLocale(localeIdentifier: offer.currency)
+            let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
+            cell.passPrice.text = "\(currencySymbol!) \(price)"
+          }
+        }
       }
-    }
-
+    
   }
 
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -153,35 +161,39 @@ class PassTypeViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if let item = subscriptionItems[indexPath.row] as? Product {
-      if let offer = item.offers[0] as? Offer {
-        // TODO: check if logged in
-        let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
-        self.navigationController?.pushViewController(viewController, animated: true)
-        viewController.title = "Purchase Confirmation"
+      let category = (item.category == nil) ? "" : item.category!
+      if let offers = item.offers as? [Offer] {
+        if offers.count > 0 {
+          let offer = offers[0]
+          // TODO: check if logged in
+          let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
+          self.navigationController?.pushViewController(viewController, animated: true)
+          viewController.title = "Purchase Confirmation"
 
-        switch item.category {
-        case "single-game":
-          viewController.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
-          // TODO: create central date formatter class
-          let dateFormatter = DateFormatter()
-          dateFormatter.dateFormat = "MMMM d, yyyy"
-          viewController.passSubtitle.text = dateFormatter.string(from: item.startsAt)
+          switch category {
+          case "single":
+            viewController.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
+            // TODO: create central date formatter class
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMMM d, yyyy"
+            viewController.passSubtitle.text = dateFormatter.string(from: item.startsAt)
 
-            // only if through burger menu
-            //      let viewController = SingleGamePassViewController(product: item, anOffer: offer)
-            //      self.navigationController?.pushViewController(viewController, animated: true)
-        case "season":
-          viewController.view.backgroundColor = UIColor(red: 92 / 255, green: 20 / 255, blue: 20 / 255, alpha: 1.0)
-          viewController.passTitle.text = item.name.uppercased()
-          viewController.passSubtitle.text = "2016 League Season Pass"
-        case "team":
-          viewController.view.backgroundColor = UIColor(red: 84 / 255, green: 112 / 255, blue: 135 / 255, alpha: 1.0)
-          // TODO: find out where subtitle comes from
-          viewController.passSubtitle.text = item.category
-          // TODO: team filter when from burger menu
-          break
-        default:
-          break
+              // only if through burger menu
+              //      let viewController = SingleGamePassViewController(product: item, anOffer: offer)
+              //      self.navigationController?.pushViewController(viewController, animated: true)
+          case "season":
+            viewController.view.backgroundColor = UIColor(red: 92 / 255, green: 20 / 255, blue: 20 / 255, alpha: 1.0)
+            viewController.passTitle.text = item.name.uppercased()
+            viewController.passSubtitle.text = "2016 League Season Pass"
+          case "team":
+            viewController.view.backgroundColor = UIColor(red: 84 / 255, green: 112 / 255, blue: 135 / 255, alpha: 1.0)
+            // TODO: find out where subtitle comes from
+            viewController.passSubtitle.text = item.category
+            // TODO: team filter when from burger menu
+            break
+          default:
+            break
+          }
         }
       }
     } else if let productGroup = subscriptionItems[indexPath.row] as? ProductGroup {

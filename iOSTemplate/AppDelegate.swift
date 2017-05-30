@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
   let keymakerOrganizer = KeymakerOrganizer()
   var burgerMenuItems: [AnyObject] = Array()
   let appConfiguration = Bundle.main.infoDictionary! as NSDictionary
+  var archivistProductCategories: [String:Artifact] = [:]
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
@@ -78,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
     self.window!.makeKeyAndVisible()
     
     self.getBurgerMenuData()
-    
+    self.getArchivistCategories()
     return true
   }
   
@@ -89,6 +90,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
           if (error == nil) && (group != nil) {
             Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: ["count":"20"], onCompletion: { (tags, error) in
               self.burgerMenuItems = tags as! [AnyObject]
+            })
+          }
+        })
+      }
+    }
+  }
+  
+  func getArchivistCategories() {
+    Property.getProperty("nll_purchasing") { property, error in
+      if (error == nil) {
+        Group.getGroup("/home", forProperty: Int32(Int((property?.id)!)), onCompletion: { (group, error) in
+          if (error == nil) && (group != nil) {
+            Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: ["count": "100"], onCompletion: { (groups, error) in
+              if (error == nil) {
+                for seasonGroup in groups as! [Group] {
+                  Artifact.getRelatedArtifacts(Int32(Int((seasonGroup.id)!)), forProperty: seasonGroup.propertyID, filter: ["count": "100"]) { items, error in
+                    for item in (items! as! [Artifact]) {
+                      self.archivistProductCategories[item.uid] = item
+                    }
+                  }
+                }
+              }
             })
           }
         })
