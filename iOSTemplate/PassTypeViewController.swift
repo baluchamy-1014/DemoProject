@@ -166,9 +166,7 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
       if let offers = item.offers as? [Offer] {
         if offers.count > 0 {
           let offer = offers[0]
-          // TODO: check if logged in
           let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
-          self.navigationController?.pushViewController(viewController, animated: true)
           viewController.title = "Purchase Confirmation"
 
           switch category {
@@ -190,7 +188,6 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
             viewController.view.backgroundColor = UIColor(red: 84 / 255, green: 112 / 255, blue: 135 / 255, alpha: 1.0)
             // TODO: find out where subtitle comes from
             viewController.passSubtitle.text = item.category
-            // TODO: team filter when from burger menu
             break
           default:
             break
