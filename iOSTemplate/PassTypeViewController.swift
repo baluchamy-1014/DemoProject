@@ -161,6 +161,7 @@ class PassTypeViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if let item = subscriptionItems[indexPath.row] as? Product {
+      let category = (item.category == nil) ? "" : item.category!
       if let offers = item.offers as? [Offer] {
         if offers.count > 0 {
           let offer = offers[0]
@@ -169,8 +170,8 @@ class PassTypeViewController: UITableViewController {
           self.navigationController?.pushViewController(viewController, animated: true)
           viewController.title = "Purchase Confirmation"
 
-          switch item.category {
-          case "single-game":
+          switch category {
+          case "single":
             viewController.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
             // TODO: create central date formatter class
             let dateFormatter = DateFormatter()
