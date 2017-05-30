@@ -51,11 +51,13 @@ class UserController: UIViewController {
     // hides line under navigation bar
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = UIImage()
+    self.navigationController?.navigationBar.isTranslucent = true
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     self.navigationController?.navigationBar.setBackgroundImage(nil, for: UIBarMetrics.default)
     self.navigationController?.navigationBar.shadowImage = nil
+    self.navigationController?.navigationBar.isTranslucent = false
   }
 
   @IBAction func switchToSignUpView(_ sender: AnyObject) {
