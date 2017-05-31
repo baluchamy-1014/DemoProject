@@ -11,7 +11,7 @@ import Foundation
 class ProductGroup {
   let artifact: Artifact
   let products: [Product]
-  var category = ""
+  var category : String?
   
   
   init(artifact: Artifact, products: [Product]) {

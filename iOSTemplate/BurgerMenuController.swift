@@ -256,7 +256,8 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
                             passController.navigationController?.navigationBar.isTranslucent = false
                             passController.navigationController?.navigationBar.barTintColor = UIColor(red: 16 / 255, green: 24 / 255, blue: 31 / 255, alpha: 1.0)
                             passController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-                            passController.subscriptionItems = values
+                            let validProductGroups = values.filter({ (productGroup) -> Bool in productGroup.category != nil })
+                            passController.subscriptionItems = validProductGroups
                             passController.tableView.reloadData()
                           }
                         }
