@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 import MessageUI
 
-class BurgerMenuController: UITableViewController {
+class BurgerMenuController: UITableViewController, UserSessionDelegate {
 // TODO: use mutidimensional array for sections data?
   var articleItems: [AnyObject] = Array()
   var menuItems: [AnyObject] = Array()
@@ -81,6 +81,7 @@ class BurgerMenuController: UITableViewController {
     }
     else {
       let userController = UserController(nibName: "UserAccount", bundle: nil)
+      userController.sessionDelegate = self
       let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
       userController.navigationItem.leftBarButtonItem = revealButtomItem
       let navigationController = UINavigationController(rootViewController: userController )
@@ -255,7 +256,8 @@ class BurgerMenuController: UITableViewController {
                             passController.navigationController?.navigationBar.isTranslucent = false
                             passController.navigationController?.navigationBar.barTintColor = UIColor(red: 16 / 255, green: 24 / 255, blue: 31 / 255, alpha: 1.0)
                             passController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-                            passController.subscriptionItems = values
+                            let validProductGroups = values.filter({ (productGroup) -> Bool in productGroup.category != nil })
+                            passController.subscriptionItems = validProductGroups
                             passController.tableView.reloadData()
                           }
                         }
@@ -303,6 +305,10 @@ class BurgerMenuController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 1
+  }
+  
+  func userDidSignIn() {
+    self.appDelegate.sendUserToHomeScreen()
   }
   
 }

@@ -8,9 +8,10 @@
 
 import UIKit
 
-class PassTypeViewController: UITableViewController {
+class PassTypeViewController: UITableViewController, UserSessionDelegate {
   var subscriptionItems: [AnyObject] = Array()
   var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+  var selectedIndexPath = NSIndexPath()
   
   override func viewDidLoad() {
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
@@ -161,16 +162,13 @@ class PassTypeViewController: UITableViewController {
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     if let item = subscriptionItems[indexPath.row] as? Product {
-      let category = (item.category == nil) ? "" : item.category!
       if let offers = item.offers as? [Offer] {
         if offers.count > 0 {
           let offer = offers[0]
-          // TODO: check if logged in
           let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
-          self.navigationController?.pushViewController(viewController, animated: true)
           viewController.title = "Purchase Confirmation"
 
-          switch category {
+          switch item.category {
           case "single":
             viewController.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
             // TODO: create central date formatter class
@@ -189,10 +187,26 @@ class PassTypeViewController: UITableViewController {
             viewController.view.backgroundColor = UIColor(red: 84 / 255, green: 112 / 255, blue: 135 / 255, alpha: 1.0)
             // TODO: find out where subtitle comes from
             viewController.passSubtitle.text = item.category
-            // TODO: team filter when from burger menu
             break
           default:
             break
+          }
+          if Session.shared().isValid() {
+            self.navigationController?.pushViewController(viewController, animated: true)
+          }
+          else {
+            let alertController = UIAlertController(title: "Sign In Required!", message: "We're rerouting you to the\nSign In/Sign Up page", preferredStyle: .alert)
+            let noAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(noAction)
+            let yesAction = UIAlertAction(title: "OK", style: .default) { action in
+            let userController = UserController(nibName: "UserAccount", bundle: nil)
+            userController.sessionDelegate = self
+            self.selectedIndexPath = indexPath as NSIndexPath
+            self.navigationController?.navigationBar.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0) // this
+            self.navigationController?.pushViewController(userController, animated: true)
+            }
+          alertController.addAction(yesAction)
+          self.present(alertController, animated: true, completion: nil)
           }
         }
       }
@@ -207,5 +221,13 @@ class PassTypeViewController: UITableViewController {
     // TODO: open error modal          
     //let errorViewController = ErrorViewController(nibName: "ErrorViewController", bundle: nil)
    // self.navigationController?.present(errorViewController, animated: true, completion: nil)
+  }
+  
+  func userDidSignIn() {
+    goToConfirmScreen()
+  }
+  
+  private func goToConfirmScreen() {
+    tableView(tableView, didSelectRowAt: selectedIndexPath as IndexPath)
   }
 }

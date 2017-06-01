@@ -78,6 +78,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   override func viewWillAppear(_ animated: Bool) {
     signInButton.isEnabled = true
     buyNowButton.isEnabled = true
+  
+    if headerImageView != nil {
+      setupRestrictionOverlay()
+    }
 
     self.navigationController?.navigationBar.isTranslucent = false
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
@@ -443,7 +447,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
           Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, match: self.artifact.id.stringValue, options: [:], onCompletion: { (products, error) in
             let subscriptionsVC = PassTypeViewController()
             ProductGroup.applyCategoryToProducts(categoryProducts: self.appDelegate.archivistProductCategories, products: products as! [Product])
-            subscriptionsVC.subscriptionItems = products as! [Product]
+            let validProducts = (products as! [Product]).filter({ (product) -> Bool in product.category != nil })
+            subscriptionsVC.subscriptionItems = validProducts
             self.navigationController?.pushViewController(subscriptionsVC, animated: true)
           })
         }
@@ -455,7 +460,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   }
 
   private func resetRestrictionView() {
-        for view in headerImageView.subviews {
+    for view in headerImageView.subviews {
       view.removeFromSuperview()
     }
     setupRestrictionOverlay()
