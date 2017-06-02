@@ -23,14 +23,20 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var totalPriceLabel: UILabel!
   @IBOutlet var promoCodeErrorLabel: UILabel!
   @IBOutlet var applePayButton: UIButton!
-  
+  var postalAddress: CNPostalAddress?
+
   var discountAmount = "0.0"
+  var subTotalAmount: NSDecimalNumber = 0.0
+  var totalAmount: NSDecimalNumber = 0.0
+  var taxAmount: NSDecimalNumber = 0.0
   
   let SupportedPaymentNetworks: [PKPaymentNetwork] = [.visa, .masterCard, .amex]
   
   var product: Product!
   var offer: Offer!
   
+  let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
   init(product aProduct: Product, anOffer: Offer) {
     super.init(nibName:nil, bundle:nil)
     product = aProduct
@@ -94,7 +100,6 @@ class PurchaseConfirmViewController: UIViewController {
     let locale = NSLocale(localeIdentifier: offer.currency)
     let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
 
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
     
     if let code = promoTextField.text {
@@ -139,7 +144,6 @@ class PurchaseConfirmViewController: UIViewController {
   
   // MARK: - Apple Pay
   func paymentRequest() -> PKPaymentRequest {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let request = PKPaymentRequest()
     request.merchantIdentifier   = appDelegate.appConfiguration["ApplePayMerchantID"] as! String
     request.supportedNetworks    = SupportedPaymentNetworks
@@ -155,14 +159,16 @@ class PurchaseConfirmViewController: UIViewController {
     let product = PKPaymentSummaryItem(label: self.product.name, amount: NSDecimalNumber(string: "\(offer.price!)"))
     let discount = PKPaymentSummaryItem(label: "Discount", amount: NSDecimalNumber(string: self.discountAmount))
     var taxItem: PKPaymentSummaryItem
-    var totalAmount = product.amount.subtracting(discount.amount)
+    subTotalAmount = product.amount.subtracting(discount.amount)
 
     if tax != nil {
-      taxItem = PKPaymentSummaryItem(label: "Tax", amount: NSDecimalNumber(string: tax?.stringValue))
-      totalAmount = totalAmount.adding(taxItem.amount)
+      taxAmount = NSDecimalNumber(string: tax?.stringValue)
+      taxItem = PKPaymentSummaryItem(label: "Tax", amount: taxAmount)
+      totalAmount = subTotalAmount.adding(taxItem.amount)
       let total = PKPaymentSummaryItem(label: "NLL", amount: totalAmount)
       return [product, discount, taxItem, total]
     } else {
+      totalAmount = subTotalAmount
       let total = PKPaymentSummaryItem(label: "NLL", amount: totalAmount)
       return [product, discount, total]
     }
@@ -175,7 +181,17 @@ class PurchaseConfirmViewController: UIViewController {
 extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDelegate {
   func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: @escaping (PKPaymentAuthorizationStatus) -> Void) {
     STPAPIClient.shared().createToken(with: payment) { (token, error) in
-      print(token ?? "no token")
+      if (token != nil) {
+        let realm = self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
+        self.offer.purchase(self.transactionInfo(token: token!), forRealm: realm, withAccessToken: Session.shared().accessToken, onCompletion:  { (transactions, error) in
+          if (error == nil) {
+            completion(.success)
+          } else {
+            completion(.failure)
+          }
+        })
+      }
+
     }
   }
 
@@ -184,10 +200,10 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
   }
 
   func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didSelectShippingContact contact: PKContact, completion: @escaping (PKPaymentAuthorizationStatus, [PKShippingMethod], [PKPaymentSummaryItem]) -> Void) {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
     if let _ = contact.postalAddress {
       if let user = Session.shared().user {
+        self.postalAddress = contact.postalAddress
         self.offer.getTaxInfo(["uuid": user.uuid, "email_address": user.email_address], billingInfo: contact.postalAddress?.billingInfo(), accessToken: Session.shared().accessToken, realm: realm) { (response, error) in
           if let tax = response {
             completion(.success, [], self.paymentSummaryItems(taxAmount: tax.taxTotal))
@@ -210,6 +226,44 @@ extension CNPostalAddress {
         "address_city": self.city,
         "address_line_1": self.street,
         "address_line_2": ""
+    ]
+  }
+}
+
+extension STPToken {
+  func transactionInfo() -> [String: String] {
+    let liveMode = (self.livemode == true) ? "true" : "false"
+    let createdAt = (self.created != nil) ? "\(self.created!.timeIntervalSince1970)" : ""
+    return [
+      "id": self.tokenId,
+      "object": "token",
+      "created": createdAt,
+      "livemode": liveMode,
+      "type": "card",
+    ]
+  }
+}
+
+extension PurchaseConfirmViewController {
+  func transactionInfo(token: STPToken) -> [String: Any] {
+    let subTotalAmountString: String = self.subTotalAmount.stringValue
+    let totalAmountString: String = self.totalAmount.stringValue
+    let taxAmountString: String = self.taxAmount.stringValue
+    let couponCode = (self.promoTextField.text != nil) ? self.promoTextField.text! : ""
+    return [
+        "provider": "Stripe",
+        "type_name": "purchase_transaction",
+        "subtotal": subTotalAmountString,
+        "subtotal_usd": subTotalAmountString,
+        "tax": taxAmountString,
+        "total": totalAmountString,
+        "currency": "USD",
+        "product_id": self.product.id.stringValue,
+        "offer_id": self.offer.id.stringValue,
+        "offer_uuid": self.offer.uuid,
+        "address": self.postalAddress!.billingInfo(),
+        "token": token.transactionInfo(),
+        "coupon_code": couponCode
     ]
   }
 }

@@ -12,6 +12,7 @@
 
 typedef void (^DealerAPIOfferQueryCompletionBlock) (NSArray *products, NSError *error);
 typedef void (^DealerAPITaxQueryCompletionBlock) (Tax *tax, NSError *error);
+typedef void (^DealerAPITransactionQueryCompletionBlock) (NSArray *transactions, NSError *error);
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *typeName;
@@ -59,6 +60,11 @@ typedef void (^DealerAPITaxQueryCompletionBlock) (Tax *tax, NSError *error);
   accessToken:(NSString *)accessToken
  onCompletion:(DealerAPIOfferQueryCompletionBlock)callback;
 
+
+- (void) purchase:(NSDictionary *)params
+         forRealm:(NSString *)realm
+  withAccessToken:(NSString *)accessToken
+     onCompletion:(DealerAPITransactionQueryCompletionBlock)callback;
 @end
 
 #
