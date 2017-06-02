@@ -30,6 +30,9 @@ class StreamListViewController: ArtifactListViewController {
               })
             }
           }
+          else {
+            self.displayPlaceholderMessage()
+          }
         }
       }
     }
@@ -50,6 +53,9 @@ class StreamListViewController: ArtifactListViewController {
               }
               self.refreshControl.endRefreshing()
             })
+          }
+          else {
+            self.displayPlaceholderMessage()
           }
         }
 
