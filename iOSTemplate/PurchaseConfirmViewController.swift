@@ -22,8 +22,9 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var totalPriceLabel: UILabel!
   @IBOutlet var promoCodeErrorLabel: UILabel!
   @IBOutlet var applePayButton: UIButton!
+  @IBOutlet var legalTextView: UITextView!
   var postalAddress: CNPostalAddress?
-
+  
   var discountAmount = "0.0"
   var subTotalAmount: NSDecimalNumber = 0.0
   var totalAmount: NSDecimalNumber = 0.0
@@ -66,6 +67,7 @@ class PurchaseConfirmViewController: UIViewController {
     passTypeLabel.text = product.category
     passPriceLabel.text = "\(currencySymbol!) \(offer.price!)"
     totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: CGFloat(offer.price.floatValue), promoValue: 0))"
+    legalTextView.text = DataFromTextFile().readDataFromFile(file: "PassFooter")
   }
   
   func setupApplyButton() {
