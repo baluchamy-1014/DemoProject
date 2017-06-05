@@ -161,6 +161,11 @@
 		787867CF1DB99DB900958C1B /* NewsIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 787867CC1DB99DB900958C1B /* NewsIcon@2x.png */; };
 		787867D01DB99DB900958C1B /* NewsIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 787867CD1DB99DB900958C1B /* NewsIcon@3x.png */; };
 		787867DA1DBD867B00958C1B /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787867D91DBD867B00958C1B /* CustomTabBar.swift */; };
+		788ABBFD1EE6066400DC66A8 /* confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = 788ABBFA1EE6066400DC66A8 /* confirm.png */; };
+		788ABBFE1EE6066400DC66A8 /* confirm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 788ABBFB1EE6066400DC66A8 /* confirm@2x.png */; };
+		788ABBFF1EE6066400DC66A8 /* confirm@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 788ABBFC1EE6066400DC66A8 /* confirm@3x.png */; };
+		788ABC021EE6068000DC66A8 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 788ABC001EE6068000DC66A8 /* SuccessViewController.xib */; };
+		788ABC031EE6068000DC66A8 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788ABC011EE6068000DC66A8 /* SuccessViewController.swift */; };
 		788C43981DA45F9D00F342B9 /* ExpandIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 788C438E1DA45F9D00F342B9 /* ExpandIndicator.png */; };
 		788C43991DA45F9D00F342B9 /* ExpandIndicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 788C438F1DA45F9D00F342B9 /* ExpandIndicator@2x.png */; };
 		788C439A1DA45F9D00F342B9 /* MoreIconActive@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 788C43901DA45F9D00F342B9 /* MoreIconActive@3x.png */; };
@@ -412,6 +417,11 @@
 		787867CC1DB99DB900958C1B /* NewsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewsIcon@2x.png"; path = "iOSTemplate/Assets.xcassets/NewsIcon@2x.png"; sourceTree = "<group>"; };
 		787867CD1DB99DB900958C1B /* NewsIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewsIcon@3x.png"; path = "iOSTemplate/Assets.xcassets/NewsIcon@3x.png"; sourceTree = "<group>"; };
 		787867D91DBD867B00958C1B /* CustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		788ABBFA1EE6066400DC66A8 /* confirm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = confirm.png; path = iOSTemplate/Assets.xcassets/confirm.png; sourceTree = "<group>"; };
+		788ABBFB1EE6066400DC66A8 /* confirm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "confirm@2x.png"; path = "iOSTemplate/Assets.xcassets/confirm@2x.png"; sourceTree = "<group>"; };
+		788ABBFC1EE6066400DC66A8 /* confirm@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "confirm@3x.png"; path = "iOSTemplate/Assets.xcassets/confirm@3x.png"; sourceTree = "<group>"; };
+		788ABC001EE6068000DC66A8 /* SuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessViewController.xib; sourceTree = "<group>"; };
+		788ABC011EE6068000DC66A8 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		788C438E1DA45F9D00F342B9 /* ExpandIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ExpandIndicator.png; path = iOSTemplate/Assets.xcassets/ExpandIndicator.png; sourceTree = "<group>"; };
 		788C438F1DA45F9D00F342B9 /* ExpandIndicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ExpandIndicator@2x.png"; path = "iOSTemplate/Assets.xcassets/ExpandIndicator@2x.png"; sourceTree = "<group>"; };
 		788C43901DA45F9D00F342B9 /* MoreIconActive@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MoreIconActive@3x.png"; path = "iOSTemplate/Assets.xcassets/MoreIconActive@3x.png"; sourceTree = "<group>"; };
@@ -600,6 +610,8 @@
 				CA473B36478C1AADAD8D51A6 /* BurgerMenuController.swift */,
 				781002A91E6F7BDF00EF3C8A /* SingleGamePassViewController.swift */,
 				7810029F1E6E296200EF3C8A /* PassTypeViewController.swift */,
+				786365281E92FB79008DF719 /* ErrorViewController.swift */,
+				788ABC011EE6068000DC66A8 /* SuccessViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -668,7 +680,7 @@
 		784C3FED1DB73F78001AECD3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				786365281E92FB79008DF719 /* ErrorViewController.swift */,
+				788ABC001EE6068000DC66A8 /* SuccessViewController.xib */,
 				786365291E92FB79008DF719 /* ErrorViewController.xib */,
 				622901371E5CC2DF00E021EE /* Subcriptions */,
 				6253BDCB1DE34F12001CE859 /* User */,
@@ -690,6 +702,9 @@
 		788C43A21DA46D1000F342B9 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				788ABBFA1EE6066400DC66A8 /* confirm.png */,
+				788ABBFB1EE6066400DC66A8 /* confirm@2x.png */,
+				788ABBFC1EE6066400DC66A8 /* confirm@3x.png */,
 				78CBBA481EB963FD0002244E /* Tabslider_03.png */,
 				78CE9C951EE9C00D000D5EB4 /* NLL Loading Animation */,
 				78CBBA491EB963FD0002244E /* Tabslider_03@2x.png */,
@@ -942,6 +957,7 @@
 				784C18E91E455EF2008E8EED /* info_active@3x.png in Resources */,
 				7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */,
 				784C18A41E454E7A008E8EED /* contact_active.png in Resources */,
+				788ABC021EE6068000DC66A8 /* SuccessViewController.xib in Resources */,
 				784C18D31E455CF3008E8EED /* info_active.png in Resources */,
 				781002921E6E1F3300EF3C8A /* singleButton@3x.png in Resources */,
 				784C18E41E455EF2008E8EED /* cart_inactive@3x.png in Resources */,
@@ -1020,7 +1036,9 @@
 				629991DC1E6DC42E0071A15E /* BoxxspringVideoPlayerSDK.bundle in Resources */,
 				78CE9C8A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_11.png in Resources */,
 				78CE9C781EE9BFFE000D5EB4 /* NLL_Loading_Animation_29.png in Resources */,
+				788ABBFE1EE6066400DC66A8 /* confirm@2x.png in Resources */,
 				782D4DCB1E0C97040078FEC1 /* PlayButton.png in Resources */,
+				788ABBFD1EE6066400DC66A8 /* confirm.png in Resources */,
 				784C18D21E455CF3008E8EED /* play_button_active.png in Resources */,
 				784C18C91E4553D4008E8EED /* user_active@2x.png in Resources */,
 				78CE9C811EE9BFFE000D5EB4 /* NLL_Loading_Animation_20.png in Resources */,
@@ -1071,6 +1089,7 @@
 				78A29F2A1DB5425300782620 /* VideosIconInactive@3x.png in Resources */,
 				781002A51E6F552E00EF3C8A /* ticketTailSingle@3x.png in Resources */,
 				780995B11EC0EC38008F0B22 /* ticketSelectSeasonTail.png in Resources */,
+				788ABBFF1EE6066400DC66A8 /* confirm@3x.png in Resources */,
 				786365311E93047E008DF719 /* Error_icon@3x.png in Resources */,
 				6296FA5C1DD4E7170096B04D /* SignIn.xib in Resources */,
 				78A29F201DB5425300782620 /* no_live_feed@1x.png in Resources */,
@@ -1154,6 +1173,7 @@
 				781347921EC4E5D4006152D9 /* SeasonsViewController.swift in Sources */,
 				78E31E871D99FC6600CB59D3 /* TeamsFilterListViewController.swift in Sources */,
 				780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */,
+				788ABC031EE6068000DC66A8 /* SuccessViewController.swift in Sources */,
 				78E31E891D9A01DE00CB59D3 /* CustomControls.swift in Sources */,
 				784AFE061DADC18800FA157B /* ArtifactListViewController.swift in Sources */,
 				CA473A34D224D5536EEC11F7 /* KeymakerOrganizer.swift in Sources */,
