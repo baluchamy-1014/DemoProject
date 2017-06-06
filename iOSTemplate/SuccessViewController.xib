@@ -20,14 +20,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="confirm.png" translatesAutoresizingMaskIntoConstraints="NO" id="RuR-z0-H9m">
-                    <rect key="frame" x="157" y="40" width="60" height="60"/>
+                    <rect key="frame" x="157" y="80" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="E96-Yb-Nfj"/>
                         <constraint firstAttribute="width" constant="60" id="aDd-6D-Jip"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taking you to the game now!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfR-Zw-Jrl">
-                    <rect key="frame" x="50" y="234.5" width="274.5" height="24"/>
+                    <rect key="frame" x="50" y="274.5" width="275" height="24"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -48,7 +48,7 @@
                 <constraint firstItem="RuR-z0-H9m" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9sf-aa-fJW"/>
                 <constraint firstItem="GfR-Zw-Jrl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Drr-Z5-93N"/>
                 <constraint firstItem="XIg-do-eO3" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YHz-DY-irZ"/>
-                <constraint firstItem="RuR-z0-H9m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="hu0-ec-dOM"/>
+                <constraint firstItem="RuR-z0-H9m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="hu0-ec-dOM"/>
                 <constraint firstItem="GfR-Zw-Jrl" firstAttribute="top" secondItem="XIg-do-eO3" secondAttribute="bottom" constant="10" id="zvc-9M-Euo"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
