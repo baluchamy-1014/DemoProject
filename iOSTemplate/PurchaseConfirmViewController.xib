@@ -12,8 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PurchaseConfirmViewController" customModule="NLL" customModuleProvider="target">
             <connections>
                 <outlet property="applePayButton" destination="a9V-Bc-z8l" id="Pdl-zj-fgs"/>
-                <outlet property="bodyView" destination="Lsk-rt-PWL" id="DDY-T5-TlU"/>
                 <outlet property="codeValueLabel" destination="ZpZ-OT-eia" id="Wk0-Ze-DRT"/>
+                <outlet property="contentView" destination="Lsk-rt-PWL" id="RB9-0p-NBs"/>
                 <outlet property="legalTextView" destination="PuZ-G8-zaa" id="phV-Oa-j7m"/>
                 <outlet property="passPriceLabel" destination="T1U-fx-pQ6" id="Bti-y7-iMw"/>
                 <outlet property="passSubtitle" destination="mih-F4-bFS" id="2uO-0q-9iA"/>
@@ -22,6 +22,7 @@
                 <outlet property="promoApplyButton" destination="GUE-ht-Msv" id="Smq-lG-qXA"/>
                 <outlet property="promoCodeErrorLabel" destination="te8-Vf-SG7" id="KkK-QJ-Pep"/>
                 <outlet property="promoTextField" destination="w6C-VQ-4vS" id="mZA-4g-eRy"/>
+                <outlet property="scrollview" destination="Z7x-KD-Dyf" id="J3R-Pw-mfK"/>
                 <outlet property="totalPriceLabel" destination="nro-Vs-PKY" id="dX6-Kq-xn2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,11 +32,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7x-KD-Dyf">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z7x-KD-Dyf" userLabel="ScrollView">
                     <rect key="frame" x="0.0" y="138" width="375" height="506"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lsk-rt-PWL" userLabel="Body View">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="506"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lsk-rt-PWL" userLabel="ContentView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="516"/>
                             <subviews>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Promotional Code?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w6C-VQ-4vS">
                                     <rect key="frame" x="33" y="69" width="215" height="30"/>
@@ -162,7 +163,8 @@
                                     <rect key="frame" x="67" y="399" width="240" height="200"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="174" id="qMX-Av-VY3"/>
+                                        <constraint firstAttribute="width" constant="240" id="hDD-43-yjL"/>
+                                        <constraint firstAttribute="height" constant="125" id="qMX-Av-VY3"/>
                                     </constraints>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.47421875000000002" colorSpace="calibratedRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -179,7 +181,6 @@
                                 <constraint firstItem="tU7-kk-t26" firstAttribute="top" secondItem="HCH-YI-f8N" secondAttribute="bottom" constant="10" id="A3V-nb-yWs"/>
                                 <constraint firstItem="PuZ-G8-zaa" firstAttribute="top" secondItem="PcM-8P-lC7" secondAttribute="bottom" id="B3p-JB-ZR3"/>
                                 <constraint firstItem="ZpZ-OT-eia" firstAttribute="trailing" secondItem="nro-Vs-PKY" secondAttribute="trailing" id="CP6-Ka-49u"/>
-                                <constraint firstItem="PuZ-G8-zaa" firstAttribute="leading" secondItem="Lsk-rt-PWL" secondAttribute="leading" constant="67" id="DHY-fB-rcK"/>
                                 <constraint firstItem="PcM-8P-lC7" firstAttribute="centerX" secondItem="Lsk-rt-PWL" secondAttribute="centerX" id="JTS-fw-jNX"/>
                                 <constraint firstItem="Lgm-Hq-Zps" firstAttribute="baseline" secondItem="ZpZ-OT-eia" secondAttribute="baseline" id="N1i-ot-eXS"/>
                                 <constraint firstItem="PcM-8P-lC7" firstAttribute="top" secondItem="a9V-Bc-z8l" secondAttribute="bottom" constant="35" id="Nvw-Ur-nVP"/>
@@ -206,9 +207,9 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Lsk-rt-PWL" firstAttribute="centerY" secondItem="Z7x-KD-Dyf" secondAttribute="centerY" id="3uF-Ja-glA"/>
-                        <constraint firstAttribute="bottom" secondItem="Lsk-rt-PWL" secondAttribute="bottom" constant="150" id="FLX-NC-e1L"/>
                         <constraint firstItem="Lsk-rt-PWL" firstAttribute="leading" secondItem="Z7x-KD-Dyf" secondAttribute="leading" id="bZj-ks-2F7"/>
                         <constraint firstItem="Lsk-rt-PWL" firstAttribute="width" secondItem="Z7x-KD-Dyf" secondAttribute="width" id="eGZ-8b-sX1"/>
+                        <constraint firstAttribute="bottom" secondItem="Lsk-rt-PWL" secondAttribute="bottom" constant="75" id="tJR-ez-fN0"/>
                         <constraint firstItem="Lsk-rt-PWL" firstAttribute="top" secondItem="Z7x-KD-Dyf" secondAttribute="top" id="uDU-ha-FXd"/>
                         <constraint firstAttribute="trailing" secondItem="Lsk-rt-PWL" secondAttribute="trailing" id="v9N-eH-POU"/>
                     </constraints>
@@ -230,7 +231,7 @@
                 </label>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Z7x-KD-Dyf" secondAttribute="bottom" constant="23" id="5EH-b5-8hh"/>
+                <constraint firstAttribute="bottom" secondItem="Z7x-KD-Dyf" secondAttribute="bottom" constant="13" id="5EH-b5-8hh"/>
                 <constraint firstItem="qur-Bd-fzV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5ar-4t-Gop"/>
                 <constraint firstItem="mih-F4-bFS" firstAttribute="top" secondItem="qur-Bd-fzV" secondAttribute="bottom" id="Iu7-ss-2Su"/>
                 <constraint firstItem="mih-F4-bFS" firstAttribute="leading" secondItem="qur-Bd-fzV" secondAttribute="leading" id="LDl-ec-csr"/>
