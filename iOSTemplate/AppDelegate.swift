@@ -17,12 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
   var burgerMenuItems: [AnyObject] = Array()
   let appConfiguration = Bundle.main.infoDictionary! as NSDictionary
   var archivistProductCategories: [String:Artifact] = [:]
+  var customSplashScreen: CustomSplashScreen!
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
     
     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     self.window = UIWindow(frame: UIScreen.main.bounds)
+    setupCustomSplashScreen()
 
     UIApplication.shared.statusBarStyle = UIStatusBarStyle.lightContent
     UINavigationBar.appearance().tintColor = UIColor.white
@@ -77,10 +79,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
 
     self.window!.rootViewController = self.viewController
     self.window!.makeKeyAndVisible()
-    
+    self.window!.bringSubview(toFront: window!.subviews[0])
+
     self.getBurgerMenuData()
     self.getArchivistCategories()
     return true
+  }
+  
+  func setupCustomSplashScreen() {
+    self.customSplashScreen = CustomSplashScreen(frame: CGRect(x: 0, y: 0, width: (window?.frame.width)!, height: (window?.frame.height)!))
+    self.window!.addSubview(self.customSplashScreen)
+    UIApplication.shared.isStatusBarHidden = true
+  }
+  
+  func removeSplashScreen() {
+    self.customSplashScreen.splashImageView.stopAnimating()
+    self.customSplashScreen.removeFromSuperview()
+    UIApplication.shared.isStatusBarHidden = false
   }
   
   func getBurgerMenuData() {
@@ -90,6 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
           if (error == nil) && (group != nil) {
             Artifact.getRelatedArtifacts(Int32(Int((group?.id)!)), forProperty: (group?.propertyID)!, filter: ["count":"20"], onCompletion: { (tags, error) in
               self.burgerMenuItems = tags as! [AnyObject]
+              self.removeSplashScreen()
             })
           }
         })
