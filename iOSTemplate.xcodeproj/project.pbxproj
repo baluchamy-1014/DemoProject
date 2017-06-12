@@ -185,6 +185,39 @@
 		78CBBA4B1EB963FD0002244E /* Tabslider_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CBBA481EB963FD0002244E /* Tabslider_03.png */; };
 		78CBBA4C1EB963FD0002244E /* Tabslider_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CBBA491EB963FD0002244E /* Tabslider_03@2x.png */; };
 		78CBBA4D1EB963FD0002244E /* Tabslider_03@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CBBA4A1EB963FD0002244E /* Tabslider_03@3x.png */; };
+		78CE9C561EE9BA51000D5EB4 /* NLL_Loading_Animation_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C551EE9BA51000D5EB4 /* NLL_Loading_Animation_splash.png */; };
+		78CE9C761EE9BFFE000D5EB4 /* NLL_Loading_Animation_31.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C571EE9BFFE000D5EB4 /* NLL_Loading_Animation_31.png */; };
+		78CE9C771EE9BFFE000D5EB4 /* NLL_Loading_Animation_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C581EE9BFFE000D5EB4 /* NLL_Loading_Animation_30.png */; };
+		78CE9C781EE9BFFE000D5EB4 /* NLL_Loading_Animation_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C591EE9BFFE000D5EB4 /* NLL_Loading_Animation_29.png */; };
+		78CE9C791EE9BFFE000D5EB4 /* NLL_Loading_Animation_28.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C5A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_28.png */; };
+		78CE9C7A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_27.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C5B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_27.png */; };
+		78CE9C7B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_26.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C5C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_26.png */; };
+		78CE9C7C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C5D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_25.png */; };
+		78CE9C7D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C5E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_24.png */; };
+		78CE9C7E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_23.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C5F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_23.png */; };
+		78CE9C7F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_22.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C601EE9BFFE000D5EB4 /* NLL_Loading_Animation_22.png */; };
+		78CE9C801EE9BFFE000D5EB4 /* NLL_Loading_Animation_21.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C611EE9BFFE000D5EB4 /* NLL_Loading_Animation_21.png */; };
+		78CE9C811EE9BFFE000D5EB4 /* NLL_Loading_Animation_20.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C621EE9BFFE000D5EB4 /* NLL_Loading_Animation_20.png */; };
+		78CE9C821EE9BFFE000D5EB4 /* NLL_Loading_Animation_19.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C631EE9BFFE000D5EB4 /* NLL_Loading_Animation_19.png */; };
+		78CE9C831EE9BFFE000D5EB4 /* NLL_Loading_Animation_18.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C641EE9BFFE000D5EB4 /* NLL_Loading_Animation_18.png */; };
+		78CE9C841EE9BFFE000D5EB4 /* NLL_Loading_Animation_17.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C651EE9BFFE000D5EB4 /* NLL_Loading_Animation_17.png */; };
+		78CE9C851EE9BFFE000D5EB4 /* NLL_Loading_Animation_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C661EE9BFFE000D5EB4 /* NLL_Loading_Animation_16.png */; };
+		78CE9C861EE9BFFE000D5EB4 /* NLL_Loading_Animation_15.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C671EE9BFFE000D5EB4 /* NLL_Loading_Animation_15.png */; };
+		78CE9C871EE9BFFE000D5EB4 /* NLL_Loading_Animation_14.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C681EE9BFFE000D5EB4 /* NLL_Loading_Animation_14.png */; };
+		78CE9C881EE9BFFE000D5EB4 /* NLL_Loading_Animation_13.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C691EE9BFFE000D5EB4 /* NLL_Loading_Animation_13.png */; };
+		78CE9C891EE9BFFE000D5EB4 /* NLL_Loading_Animation_12.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C6A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_12.png */; };
+		78CE9C8A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C6B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_11.png */; };
+		78CE9C8B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C6C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_10.png */; };
+		78CE9C8C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C6D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_9.png */; };
+		78CE9C8D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C6E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_8.png */; };
+		78CE9C8E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C6F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_7.png */; };
+		78CE9C8F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C701EE9BFFE000D5EB4 /* NLL_Loading_Animation_6.png */; };
+		78CE9C901EE9BFFE000D5EB4 /* NLL_Loading_Animation_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C711EE9BFFE000D5EB4 /* NLL_Loading_Animation_5.png */; };
+		78CE9C911EE9BFFE000D5EB4 /* NLL_Loading_Animation_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C721EE9BFFE000D5EB4 /* NLL_Loading_Animation_4.png */; };
+		78CE9C921EE9BFFE000D5EB4 /* NLL_Loading_Animation_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C731EE9BFFE000D5EB4 /* NLL_Loading_Animation_3.png */; };
+		78CE9C931EE9BFFE000D5EB4 /* NLL_Loading_Animation_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C741EE9BFFE000D5EB4 /* NLL_Loading_Animation_2.png */; };
+		78CE9C941EE9BFFE000D5EB4 /* NLL_Loading_Animation_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 78CE9C751EE9BFFE000D5EB4 /* NLL_Loading_Animation_1.png */; };
+		78CE9C971EE9DBFB000D5EB4 /* CustomSplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE9C961EE9DBFB000D5EB4 /* CustomSplashScreen.swift */; };
 		78D9FC771E7C7FDA00413F5D /* ApplePayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9FC741E7C7FDA00413F5D /* ApplePayButton.png */; };
 		78D9FC781E7C7FDA00413F5D /* ApplePayButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9FC751E7C7FDA00413F5D /* ApplePayButton@2x.png */; };
 		78D9FC791E7C7FDA00413F5D /* ApplePayButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D9FC761E7C7FDA00413F5D /* ApplePayButton@3x.png */; };
@@ -403,6 +436,39 @@
 		78CBBA481EB963FD0002244E /* Tabslider_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Tabslider_03.png; path = iOSTemplate/Assets.xcassets/Tabslider_03.png; sourceTree = "<group>"; };
 		78CBBA491EB963FD0002244E /* Tabslider_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tabslider_03@2x.png"; path = "iOSTemplate/Assets.xcassets/Tabslider_03@2x.png"; sourceTree = "<group>"; };
 		78CBBA4A1EB963FD0002244E /* Tabslider_03@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Tabslider_03@3x.png"; path = "iOSTemplate/Assets.xcassets/Tabslider_03@3x.png"; sourceTree = "<group>"; };
+		78CE9C551EE9BA51000D5EB4 /* NLL_Loading_Animation_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_splash.png; path = iOSTemplate/Assets.xcassets/NLL_Loading_Animation_splash.png; sourceTree = "<group>"; };
+		78CE9C571EE9BFFE000D5EB4 /* NLL_Loading_Animation_31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_31.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_31.png"; sourceTree = "<group>"; };
+		78CE9C581EE9BFFE000D5EB4 /* NLL_Loading_Animation_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_30.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_30.png"; sourceTree = "<group>"; };
+		78CE9C591EE9BFFE000D5EB4 /* NLL_Loading_Animation_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_29.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_29.png"; sourceTree = "<group>"; };
+		78CE9C5A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_28.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_28.png"; sourceTree = "<group>"; };
+		78CE9C5B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_27.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_27.png"; sourceTree = "<group>"; };
+		78CE9C5C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_26.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_26.png"; sourceTree = "<group>"; };
+		78CE9C5D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_25.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_25.png"; sourceTree = "<group>"; };
+		78CE9C5E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_24.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_24.png"; sourceTree = "<group>"; };
+		78CE9C5F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_23.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_23.png"; sourceTree = "<group>"; };
+		78CE9C601EE9BFFE000D5EB4 /* NLL_Loading_Animation_22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_22.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_22.png"; sourceTree = "<group>"; };
+		78CE9C611EE9BFFE000D5EB4 /* NLL_Loading_Animation_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_21.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_21.png"; sourceTree = "<group>"; };
+		78CE9C621EE9BFFE000D5EB4 /* NLL_Loading_Animation_20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_20.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_20.png"; sourceTree = "<group>"; };
+		78CE9C631EE9BFFE000D5EB4 /* NLL_Loading_Animation_19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_19.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_19.png"; sourceTree = "<group>"; };
+		78CE9C641EE9BFFE000D5EB4 /* NLL_Loading_Animation_18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_18.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_18.png"; sourceTree = "<group>"; };
+		78CE9C651EE9BFFE000D5EB4 /* NLL_Loading_Animation_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_17.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_17.png"; sourceTree = "<group>"; };
+		78CE9C661EE9BFFE000D5EB4 /* NLL_Loading_Animation_16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_16.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_16.png"; sourceTree = "<group>"; };
+		78CE9C671EE9BFFE000D5EB4 /* NLL_Loading_Animation_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_15.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_15.png"; sourceTree = "<group>"; };
+		78CE9C681EE9BFFE000D5EB4 /* NLL_Loading_Animation_14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_14.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_14.png"; sourceTree = "<group>"; };
+		78CE9C691EE9BFFE000D5EB4 /* NLL_Loading_Animation_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_13.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_13.png"; sourceTree = "<group>"; };
+		78CE9C6A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_12.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_12.png"; sourceTree = "<group>"; };
+		78CE9C6B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_11.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_11.png"; sourceTree = "<group>"; };
+		78CE9C6C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_10.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_10.png"; sourceTree = "<group>"; };
+		78CE9C6D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_9.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_9.png"; sourceTree = "<group>"; };
+		78CE9C6E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_8.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_8.png"; sourceTree = "<group>"; };
+		78CE9C6F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_7.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_7.png"; sourceTree = "<group>"; };
+		78CE9C701EE9BFFE000D5EB4 /* NLL_Loading_Animation_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_6.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_6.png"; sourceTree = "<group>"; };
+		78CE9C711EE9BFFE000D5EB4 /* NLL_Loading_Animation_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_5.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_5.png"; sourceTree = "<group>"; };
+		78CE9C721EE9BFFE000D5EB4 /* NLL_Loading_Animation_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_4.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_4.png"; sourceTree = "<group>"; };
+		78CE9C731EE9BFFE000D5EB4 /* NLL_Loading_Animation_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_3.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_3.png"; sourceTree = "<group>"; };
+		78CE9C741EE9BFFE000D5EB4 /* NLL_Loading_Animation_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_2.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_2.png"; sourceTree = "<group>"; };
+		78CE9C751EE9BFFE000D5EB4 /* NLL_Loading_Animation_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = NLL_Loading_Animation_1.png; path = "iOSTemplate/Assets.xcassets/NLL Loading animation/NLL_Loading_Animation_1.png"; sourceTree = "<group>"; };
+		78CE9C961EE9DBFB000D5EB4 /* CustomSplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSplashScreen.swift; sourceTree = "<group>"; };
 		78D9FC741E7C7FDA00413F5D /* ApplePayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ApplePayButton.png; path = iOSTemplate/Assets.xcassets/ApplePayButton.png; sourceTree = "<group>"; };
 		78D9FC751E7C7FDA00413F5D /* ApplePayButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ApplePayButton@2x.png"; path = "iOSTemplate/Assets.xcassets/ApplePayButton@2x.png"; sourceTree = "<group>"; };
 		78D9FC761E7C7FDA00413F5D /* ApplePayButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ApplePayButton@3x.png"; path = "iOSTemplate/Assets.xcassets/ApplePayButton@3x.png"; sourceTree = "<group>"; };
@@ -545,6 +611,7 @@
 				784C3FE91DB72CFE001AECD3 /* ListCollectionViewCell.swift */,
 				78E31E901D9AEA6800CB59D3 /* LargeCollectionViewCell.swift */,
 				78E31E881D9A01DE00CB59D3 /* CustomControls.swift */,
+				78CE9C961EE9DBFB000D5EB4 /* CustomSplashScreen.swift */,
 			);
 			name = "Custom Controls";
 			sourceTree = "<group>";
@@ -624,7 +691,9 @@
 			isa = PBXGroup;
 			children = (
 				78CBBA481EB963FD0002244E /* Tabslider_03.png */,
+				78CE9C951EE9C00D000D5EB4 /* NLL Loading Animation */,
 				78CBBA491EB963FD0002244E /* Tabslider_03@2x.png */,
+				78CE9C551EE9BA51000D5EB4 /* NLL_Loading_Animation_splash.png */,
 				78CBBA4A1EB963FD0002244E /* Tabslider_03@3x.png */,
 				780995A81EC0EC38008F0B22 /* ticketSelectSeasonButton.png */,
 				780995A91EC0EC38008F0B22 /* ticketSelectSeasonButton@2x.png */,
@@ -704,6 +773,44 @@
 				CA473BE3662F550EF175913B /* reveal-icon@2x.png */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		78CE9C951EE9C00D000D5EB4 /* NLL Loading Animation */ = {
+			isa = PBXGroup;
+			children = (
+				78CE9C571EE9BFFE000D5EB4 /* NLL_Loading_Animation_31.png */,
+				78CE9C581EE9BFFE000D5EB4 /* NLL_Loading_Animation_30.png */,
+				78CE9C591EE9BFFE000D5EB4 /* NLL_Loading_Animation_29.png */,
+				78CE9C5A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_28.png */,
+				78CE9C5B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_27.png */,
+				78CE9C5C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_26.png */,
+				78CE9C5D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_25.png */,
+				78CE9C5E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_24.png */,
+				78CE9C5F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_23.png */,
+				78CE9C601EE9BFFE000D5EB4 /* NLL_Loading_Animation_22.png */,
+				78CE9C611EE9BFFE000D5EB4 /* NLL_Loading_Animation_21.png */,
+				78CE9C621EE9BFFE000D5EB4 /* NLL_Loading_Animation_20.png */,
+				78CE9C631EE9BFFE000D5EB4 /* NLL_Loading_Animation_19.png */,
+				78CE9C641EE9BFFE000D5EB4 /* NLL_Loading_Animation_18.png */,
+				78CE9C651EE9BFFE000D5EB4 /* NLL_Loading_Animation_17.png */,
+				78CE9C661EE9BFFE000D5EB4 /* NLL_Loading_Animation_16.png */,
+				78CE9C671EE9BFFE000D5EB4 /* NLL_Loading_Animation_15.png */,
+				78CE9C681EE9BFFE000D5EB4 /* NLL_Loading_Animation_14.png */,
+				78CE9C691EE9BFFE000D5EB4 /* NLL_Loading_Animation_13.png */,
+				78CE9C6A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_12.png */,
+				78CE9C6B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_11.png */,
+				78CE9C6C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_10.png */,
+				78CE9C6D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_9.png */,
+				78CE9C6E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_8.png */,
+				78CE9C6F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_7.png */,
+				78CE9C701EE9BFFE000D5EB4 /* NLL_Loading_Animation_6.png */,
+				78CE9C711EE9BFFE000D5EB4 /* NLL_Loading_Animation_5.png */,
+				78CE9C721EE9BFFE000D5EB4 /* NLL_Loading_Animation_4.png */,
+				78CE9C731EE9BFFE000D5EB4 /* NLL_Loading_Animation_3.png */,
+				78CE9C741EE9BFFE000D5EB4 /* NLL_Loading_Animation_2.png */,
+				78CE9C751EE9BFFE000D5EB4 /* NLL_Loading_Animation_1.png */,
+			);
+			name = "NLL Loading Animation";
 			sourceTree = "<group>";
 		};
 		78E31E681D99F3F400CB59D3 = {
@@ -817,6 +924,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				787867C81DB99CC700958C1B /* TVIcon.png in Resources */,
+				78CE9C8D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_8.png in Resources */,
 				78E31EAA1D9B443A00CB59D3 /* NewsIconInactive.png in Resources */,
 				6296FA601DD50EFB0096B04D /* SignUp.xib in Resources */,
 				78CBBA4D1EB963FD0002244E /* Tabslider_03@3x.png in Resources */,
@@ -828,6 +936,7 @@
 				78E31E7C1D99F3F400CB59D3 /* Assets.xcassets in Resources */,
 				7810029A1E6E1F3300EF3C8A /* ticketTailSingle@2x.png in Resources */,
 				78B3120A1DBE80C60064EE88 /* slider_bar.png in Resources */,
+				78CE9C911EE9BFFE000D5EB4 /* NLL_Loading_Animation_4.png in Resources */,
 				782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */,
 				784C3FF71DB9955C001AECD3 /* VideosIconActive@2x.png in Resources */,
 				784C18E91E455EF2008E8EED /* info_active@3x.png in Resources */,
@@ -837,20 +946,25 @@
 				781002921E6E1F3300EF3C8A /* singleButton@3x.png in Resources */,
 				784C18E41E455EF2008E8EED /* cart_inactive@3x.png in Resources */,
 				781002951E6E1F3300EF3C8A /* teamButton@3x.png in Resources */,
+				78CE9C7C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_25.png in Resources */,
 				784C18C01E4553D4008E8EED /* cart_inactive@2x.png in Resources */,
 				781002971E6E1F3300EF3C8A /* ticketTailSeason@2x.png in Resources */,
+				78CE9C841EE9BFFE000D5EB4 /* NLL_Loading_Animation_17.png in Resources */,
+				78CE9C801EE9BFFE000D5EB4 /* NLL_Loading_Animation_21.png in Resources */,
 				784C3FEF1DB8348D001AECD3 /* LargeCollectionViewCell.xib in Resources */,
 				622901391E5CC31A00E021EE /* Subscriptions.xib in Resources */,
 				781002B81E70C23E00EF3C8A /* PurchaseConfirmViewController.xib in Resources */,
 				784C18C41E4553D4008E8EED /* home_icon_inactive@2x.png in Resources */,
 				784C18E71E455EF2008E8EED /* home_icon_active@3x.png in Resources */,
 				784C18A61E454E7A008E8EED /* home_icon_active@2x.png in Resources */,
+				78CE9C8E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_7.png in Resources */,
 				784C18D41E455CF3008E8EED /* info_inactive.png in Resources */,
 				782E3AA51DF9250A00FCF5CC /* slider_trans@2x.png in Resources */,
 				781002961E6E1F3300EF3C8A /* ticketTailSeason.png in Resources */,
 				784C18E51E455EF2008E8EED /* contact_active@3x.png in Resources */,
 				627484BB1E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle in Resources */,
 				6209A2E41DC398EC00B278B9 /* VideoPlayerController.xib in Resources */,
+				78CE9C871EE9BFFE000D5EB4 /* NLL_Loading_Animation_14.png in Resources */,
 				788C439A1DA45F9D00F342B9 /* MoreIconActive@3x.png in Resources */,
 				782E3A8D1DF7928800FCF5CC /* TabSlider@2x.png in Resources */,
 				780B686E1DC7CC62007F206F /* expand_indicator.png in Resources */,
@@ -863,19 +977,26 @@
 				784C3FF61DB9955C001AECD3 /* VideosIconActive.png in Resources */,
 				78A29F281DB5425300782620 /* TeamIconInactive@3x.png in Resources */,
 				78D9FC771E7C7FDA00413F5D /* ApplePayButton.png in Resources */,
+				78CE9C851EE9BFFE000D5EB4 /* NLL_Loading_Animation_16.png in Resources */,
 				784C18971E454372008E8EED /* BurgerMenuCell.xib in Resources */,
+				78CE9C7A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_27.png in Resources */,
+				78CE9C7B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_26.png in Resources */,
 				781002901E6E1F3300EF3C8A /* singleButton.png in Resources */,
 				781002941E6E1F3300EF3C8A /* teamButton@2x.png in Resources */,
 				7810028E1E6E1F3300EF3C8A /* seasonButton@2x.png in Resources */,
 				781002A61E6F552E00EF3C8A /* ticketTailTeam.png in Resources */,
 				78E31EA81D9B443A00CB59D3 /* NewsIconActive.png in Resources */,
 				781002981E6E1F3300EF3C8A /* ticketTailSeason@3x.png in Resources */,
+				78CE9C881EE9BFFE000D5EB4 /* NLL_Loading_Animation_13.png in Resources */,
+				78CE9C831EE9BFFE000D5EB4 /* NLL_Loading_Animation_18.png in Resources */,
 				780B686F1DC7CC62007F206F /* expand_indicator@2x.png in Resources */,
 				784C18E31E455EF2008E8EED /* cart_active@3x.png in Resources */,
 				781002931E6E1F3300EF3C8A /* teamButton.png in Resources */,
 				781002A81E6F552E00EF3C8A /* ticketTailTeam@3x.png in Resources */,
 				784C18C21E4553D4008E8EED /* contact_inactive@2x.png in Resources */,
 				78095A981DC951BE00FAB2B8 /* Cancel_icon@3x.png in Resources */,
+				78CE9C761EE9BFFE000D5EB4 /* NLL_Loading_Animation_31.png in Resources */,
+				78CE9C791EE9BFFE000D5EB4 /* NLL_Loading_Animation_28.png in Resources */,
 				62A8F2871E60C5A600361495 /* UnimatrixConfigStaging.xcconfig in Resources */,
 				787867CF1DB99DB900958C1B /* NewsIcon@2x.png in Resources */,
 				782D4DBD1E0A08520078FEC1 /* Placeholder_nll_logo.png in Resources */,
@@ -890,15 +1011,19 @@
 				786365301E93047E008DF719 /* Error_icon@2x.png in Resources */,
 				787867D01DB99DB900958C1B /* NewsIcon@3x.png in Resources */,
 				782E3A8C1DF7928800FCF5CC /* TabSlider.png in Resources */,
+				78CE9C561EE9BA51000D5EB4 /* NLL_Loading_Animation_splash.png in Resources */,
 				782D4DC71E0B54F70078FEC1 /* MoreIconInactive@2x.png in Resources */,
 				62A8F28A1E60C5B000361495 /* UnimatrixConfigProduction.xcconfig in Resources */,
 				787867CA1DB99CC700958C1B /* TVIcon@3x.png in Resources */,
 				788C439C1DA45F9D00F342B9 /* NewsIconActive@3x.png in Resources */,
 				787867C91DB99CC700958C1B /* TVIcon@2x.png in Resources */,
 				629991DC1E6DC42E0071A15E /* BoxxspringVideoPlayerSDK.bundle in Resources */,
+				78CE9C8A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_11.png in Resources */,
+				78CE9C781EE9BFFE000D5EB4 /* NLL_Loading_Animation_29.png in Resources */,
 				782D4DCB1E0C97040078FEC1 /* PlayButton.png in Resources */,
 				784C18D21E455CF3008E8EED /* play_button_active.png in Resources */,
 				784C18C91E4553D4008E8EED /* user_active@2x.png in Resources */,
+				78CE9C811EE9BFFE000D5EB4 /* NLL_Loading_Animation_20.png in Resources */,
 				784C18D11E455CF3008E8EED /* user_inactive.png in Resources */,
 				780995AE1EC0EC38008F0B22 /* ticketSelectSeasonButton.png in Resources */,
 				780995B31EC0EC38008F0B22 /* ticketSelectSeasonTail@3x.png in Resources */,
@@ -911,12 +1036,15 @@
 				78CBBA4B1EB963FD0002244E /* Tabslider_03.png in Resources */,
 				78657B771EB2BA620012AC7F /* PassFooter.txt in Resources */,
 				78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */,
+				78CE9C941EE9BFFE000D5EB4 /* NLL_Loading_Animation_1.png in Resources */,
 				78A29F1E1DB5425300782620 /* controlBottomBorder.png in Resources */,
 				78A29F251DB5425300782620 /* tab_bar@3x.png in Resources */,
 				78503A051E4D80B0005F81EC /* link_artifact_active@2x.png in Resources */,
 				78A29F261DB5425300782620 /* NewsIconInactive@3x.png in Resources */,
+				78CE9C8B1EE9BFFE000D5EB4 /* NLL_Loading_Animation_10.png in Resources */,
 				780995B71EC0F0CE008F0B22 /* SeasonTicketCell.xib in Resources */,
 				780B68701DC7CC62007F206F /* expand_indicator@3x.png in Resources */,
+				78CE9C861EE9BFFE000D5EB4 /* NLL_Loading_Animation_15.png in Resources */,
 				78A29F271DB5425300782620 /* TeamIconActive@3x.png in Resources */,
 				782D4DCC1E0C97040078FEC1 /* PlayButton@2x.png in Resources */,
 				784C18EB1E455EF2008E8EED /* play_button_active@3x.png in Resources */,
@@ -926,6 +1054,7 @@
 				784C18C71E4553D4008E8EED /* play_button_active@2x.png in Resources */,
 				788C43991DA45F9D00F342B9 /* ExpandIndicator@2x.png in Resources */,
 				78CBBA4C1EB963FD0002244E /* Tabslider_03@2x.png in Resources */,
+				78CE9C7D1EE9BFFE000D5EB4 /* NLL_Loading_Animation_24.png in Resources */,
 				7810028F1E6E1F3300EF3C8A /* seasonButton@3x.png in Resources */,
 				78A29F1F1DB5425300782620 /* demoImage.png in Resources */,
 				78503A061E4D80B0005F81EC /* link_artifact_active@3x.png in Resources */,
@@ -938,6 +1067,7 @@
 				784C18E61E455EF2008E8EED /* contact_inactive@3x.png in Resources */,
 				782D4DC61E0B54F70078FEC1 /* MoreIconInactive.png in Resources */,
 				78B3120C1DBE80C60064EE88 /* slider_bar@3x.png in Resources */,
+				78CE9C8F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_6.png in Resources */,
 				78A29F2A1DB5425300782620 /* VideosIconInactive@3x.png in Resources */,
 				781002A51E6F552E00EF3C8A /* ticketTailSingle@3x.png in Resources */,
 				780995B11EC0EC38008F0B22 /* ticketSelectSeasonTail.png in Resources */,
@@ -949,21 +1079,30 @@
 				784C18EE1E455EF2008E8EED /* user_active@3x.png in Resources */,
 				782E3AA61DF9250A00FCF5CC /* slider_trans@3x.png in Resources */,
 				784C18A51E454E7A008E8EED /* contact_inactive.png in Resources */,
+				78CE9C7F1EE9BFFE000D5EB4 /* NLL_Loading_Animation_22.png in Resources */,
 				7810029E1E6E1F9800EF3C8A /* TicketTableViewCell.xib in Resources */,
+				78CE9C8C1EE9BFFE000D5EB4 /* NLL_Loading_Animation_9.png in Resources */,
+				78CE9C771EE9BFFE000D5EB4 /* NLL_Loading_Animation_30.png in Resources */,
+				78CE9C921EE9BFFE000D5EB4 /* NLL_Loading_Animation_3.png in Resources */,
 				6296FA641DD533510096B04D /* UserAccount.xib in Resources */,
 				782E3AA81DF928F800FCF5CC /* placeholder_nll_shield.jpg in Resources */,
+				78CE9C931EE9BFFE000D5EB4 /* NLL_Loading_Animation_2.png in Resources */,
 				627484B41E71BC8700621D7B /* UnimatrixConfig.plist in Resources */,
 				78A29F231DB5425300782620 /* tab_bar.png in Resources */,
 				782E3AAF1DF9307700FCF5CC /* NLL_Loading_Animation@2x.gif in Resources */,
+				78CE9C7E1EE9BFFE000D5EB4 /* NLL_Loading_Animation_23.png in Resources */,
+				78CE9C821EE9BFFE000D5EB4 /* NLL_Loading_Animation_19.png in Resources */,
 				784C3FF91DB9955C001AECD3 /* VideosIconInactive@2x.png in Resources */,
 				787867CE1DB99DB900958C1B /* NewsIcon.png in Resources */,
 				78A29F211DB5425300782620 /* no_live_feed@2x.png in Resources */,
+				78CE9C901EE9BFFE000D5EB4 /* NLL_Loading_Animation_5.png in Resources */,
 				784C3FF81DB9955C001AECD3 /* VideosIconInactive.png in Resources */,
 				78E31EAB1D9B443A00CB59D3 /* NewsIconInactive@2x.png in Resources */,
 				784C18C81E4553D4008E8EED /* play_button_inactive@2x.png in Resources */,
 				782D4DBF1E0A08520078FEC1 /* Placeholder_nll_logo@3x.png in Resources */,
 				784C18B11E45513D008E8EED /* play_button_inactive.png in Resources */,
 				782E3AAE1DF9307700FCF5CC /* NLL_Loading_Animation.gif in Resources */,
+				78CE9C891EE9BFFE000D5EB4 /* NLL_Loading_Animation_12.png in Resources */,
 				78D9FC781E7C7FDA00413F5D /* ApplePayButton@2x.png in Resources */,
 				784C18E81E455EF2008E8EED /* home_inactive@3x.png in Resources */,
 				CA47329CD3426049E916B50D /* reveal-icon.png in Resources */,
@@ -1005,6 +1144,7 @@
 				6229013B1E5CC3FB00E021EE /* SubscriptionsViewController.swift in Sources */,
 				62D7B0D31E96A32B0030C3C8 /* ProductGroup.swift in Sources */,
 				62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */,
+				78CE9C971EE9DBFB000D5EB4 /* CustomSplashScreen.swift in Sources */,
 				784B76DD1DFB42CE00076E8D /* FeedbackViewController.swift in Sources */,
 				78E31E8B1D9A0ABA00CB59D3 /* PageViewController.swift in Sources */,
 				78E31E931D9AEC2600CB59D3 /* FeaturedViewController.swift in Sources */,
