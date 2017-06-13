@@ -30,12 +30,15 @@ class PurchaseConfirmViewController: UIViewController {
   var totalAmount: NSDecimalNumber = 0.0
   var taxAmount: NSDecimalNumber = 0.0
   
+  var freeTransaction = false
+  
   let SupportedPaymentNetworks: [PKPaymentNetwork] = [.visa, .masterCard, .amex]
   
   var product: Product!
   var offer: Offer!
   
   let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
 
   init(product aProduct: Product, anOffer: Offer) {
     super.init(nibName:nil, bundle:nil)
@@ -112,6 +115,9 @@ class PurchaseConfirmViewController: UIViewController {
             self.promoTextField.resignFirstResponder()
             self.promoCodeErrorLabel.isHidden = false
             self.promoCodeSuccess(success: true)
+            if self.totalAmount.decimalValue <= 0.0 {
+              self.applePayButton.setImage(UIImage(named: "transactionButton"), for: UIControlState())
+            }
           }
         } else {
           self.discountAmount = "0.0"
@@ -126,6 +132,7 @@ class PurchaseConfirmViewController: UIViewController {
   }
   
   func promoCodeSuccess(success: Bool) {
+    self.freeTransaction = success
     if success == true {
       promoCodeErrorLabel.text = "Success! Your code has been applied."
       promoCodeErrorLabel.textColor = UIColor(red: 103/255, green: 177/255, blue: 22/255, alpha: 1.0)
@@ -137,9 +144,23 @@ class PurchaseConfirmViewController: UIViewController {
   }
 
   @IBAction func userTappedApplePayButton(_ sender: Any) {
-    let viewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest())
-    viewController.delegate = self
-    present(viewController, animated: true)
+    if self.freeTransaction {
+      let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
+      self.offer.purchase(self.transactionInfo(token: nil), forRealm: realm, withAccessToken: Session.shared().accessToken, onCompletion: { (transactions, error) in
+        if (error == nil) {
+          // TODO: redirect to home or video screen
+          let successViewController = SuccessViewController(nibName: "SuccessViewController", bundle: nil)
+          self.navigationController?.present(successViewController, animated: true, completion: nil)
+        } else {
+          let errorViewController = ErrorViewController(nibName: "ErrorViewController", bundle: nil)
+          self.navigationController?.present(errorViewController, animated: true, completion: nil)
+        }
+      })
+    } else {
+      let viewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest())
+      viewController.delegate = self
+      present(viewController, animated: true)
+    }
   }
   
   // MARK: - Apple Pay
@@ -217,40 +238,14 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
   }
 }
 
-extension CNPostalAddress {
-  func billingInfo() -> [String: String] {
-    return [
-        "address_postal_code": self.postalCode,
-        "address_country": self.country,
-        "address_region": self.state,
-        "address_city": self.city,
-        "address_line_1": self.street,
-        "address_line_2": ""
-    ]
-  }
-}
-
-extension STPToken {
-  func transactionInfo() -> [String: String] {
-    let liveMode = (self.livemode == true) ? "true" : "false"
-    let createdAt = (self.created != nil) ? "\(self.created!.timeIntervalSince1970)" : ""
-    return [
-      "id": self.tokenId,
-      "object": "token",
-      "created": createdAt,
-      "livemode": liveMode,
-      "type": "card",
-    ]
-  }
-}
-
 extension PurchaseConfirmViewController {
-  func transactionInfo(token: STPToken) -> [String: Any] {
+  func transactionInfo(token: STPToken?) -> [String: Any] {
     let subTotalAmountString: String = self.subTotalAmount.stringValue
     let totalAmountString: String = self.totalAmount.stringValue
     let taxAmountString: String = self.taxAmount.stringValue
     let couponCode = (self.promoTextField.text != nil) ? self.promoTextField.text! : ""
-    return [
+    var transactionInfo: [String: Any] = [String:Any]()
+    transactionInfo = [
         "provider": "Stripe",
         "type_name": "purchase_transaction",
         "subtotal": subTotalAmountString,
@@ -261,9 +256,15 @@ extension PurchaseConfirmViewController {
         "product_id": self.product.id.stringValue,
         "offer_id": self.offer.id.stringValue,
         "offer_uuid": self.offer.uuid,
-        "address": self.postalAddress!.billingInfo(),
-        "token": token.transactionInfo(),
         "coupon_code": couponCode
     ]
+    if (token == nil) {
+      // do nothing
+    } else {
+      transactionInfo["token"] = token!.transactionInfo()
+      transactionInfo["address"] = self.postalAddress!.billingInfo()
+    }
+
+    return transactionInfo
   }
 }
