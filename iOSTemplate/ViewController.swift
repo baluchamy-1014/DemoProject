@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPageViewControllerDataSource {
+class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
   var pageController: UIPageViewController!
   var page1 = UIViewController() 
   var page2 = UIViewController()
@@ -42,6 +42,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     self.addChildViewController(self.pageController)
     self.view.addSubview(self.pageController.view)
     self.pageController.dataSource = self
+    self.pageController.delegate   = self
 
     // TODO: theme
 
@@ -92,6 +93,16 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     }
   }
   
+  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    if completed {
+      let currentViewController = (pageViewController.viewControllers?.last)! as UIViewController
+      customSegmentedControl.selectedSegmentIndex = pages.index(of: currentViewController)!
+    }
+  }
+  
+  func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+  }
+  
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
     var previousIndex = Int()
     Swift.print("pages count \(pages.count)")
@@ -102,7 +113,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     else {
       previousIndex = abs((currentIndex - 1) % pages.count)
     }
-    customSegmentedControl.selectedSegmentIndex = currentIndex
     teamFilterButtonRestoreTeamName()
     loadDataForCurrentPageIndex(currentIndex)
     
@@ -112,7 +122,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
     let currentIndex = pages.index(of: viewController)!
     let nextIndex = abs((currentIndex + 1) % pages.count)
-    customSegmentedControl.selectedSegmentIndex = currentIndex
     teamFilterButtonRestoreTeamName()
     loadDataForCurrentPageIndex(currentIndex)
     
