@@ -427,7 +427,11 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   func presentVideoPlayerController() {
     self.navigationController?.setNavigationBarHidden(true, animated: false)
     videoPlayerController.modalTransitionStyle = .crossDissolve
-    present(videoPlayerController, animated: true, completion: nil)
+ 
+    if self.presentedViewController != videoPlayerController {
+      present(videoPlayerController, animated: true, completion: nil)
+    }
+    
     videoPlayerController.playVideo()
   }
   
