@@ -256,8 +256,10 @@ extension PurchaseConfirmViewController {
         "product_id": self.product.id.stringValue,
         "offer_id": self.offer.id.stringValue,
         "offer_uuid": self.offer.uuid,
-        "coupon_code": couponCode
     ]
+    if couponCode != "" {
+      transactionInfo["coupon_code"] = couponCode
+    }
     if (token == nil) {
       // do nothing
     } else {
@@ -265,6 +267,7 @@ extension PurchaseConfirmViewController {
       transactionInfo["address"] = self.postalAddress!.billingInfo()
     }
 
+    transactionInfo["device_platform"] = "iOS"
     return transactionInfo
   }
 }
