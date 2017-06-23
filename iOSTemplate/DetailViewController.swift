@@ -116,8 +116,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     cell.timestampLabel.font = UIFont.systemFont(ofSize: 12)
     cell.timestampLabel.textColor = UIColor(red: 43/255, green: 43/255, blue: 43/255, alpha: 1.0)
-    if let publishedAtString = item.publishedAt {
-      cell.timestampLabel.displayDateTime(publishedAtString)
+    if let createdAtString = item.createdAt {
+      cell.timestampLabel.displayDateTime(createdAtString)
     }
     
     return cell
@@ -182,8 +182,8 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       let dateLabel = AddedAtLabel(frame: CGRect(x: 20, y: articleLabel.frame.height + 230, width: 160, height: 16))
       dateLabel.font = UIFont.systemFont(ofSize: 12)
       dateLabel.backgroundColor = UIColor.white
-      if let publishedAtString = artifact.publishedAt {
-        dateLabel.displayDateTime(publishedAtString)
+      if let createdAtString = artifact.createdAt {
+        dateLabel.displayDateTime(createdAtString)
       }
       reusableHeaderView.addSubview(dateLabel)
 

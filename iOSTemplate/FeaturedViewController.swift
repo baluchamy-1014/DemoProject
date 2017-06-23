@@ -142,8 +142,8 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
       }
       cell.titleLabel.sizeToFit()
       
-      if let publishedAtString = item.publishedAt {
-        cell.timeElapsedLabel.displayDateTime(publishedAtString)
+      if let createdAtString = item.createdAt {
+        cell.timeElapsedLabel.displayDateTime(createdAtString)
       }
       return cell
     }
@@ -172,8 +172,8 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
         relatedCell.authorLabel.text = ""
       }
 
-      if let publishedAtString = item.publishedAt {
-        relatedCell.timestampLabel.displayDateTime(publishedAtString)
+      if let createdAtString = item.createdAt {
+        relatedCell.timestampLabel.displayDateTime(createdAtString)
       }
       return relatedCell
     }
