@@ -21,8 +21,8 @@
 		6253BDCD1DE34F58001CE859 /* SignUpSuccess.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */; };
 		6254A8DC1EE4D8C00036FA26 /* transactionButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 6254A8DB1EE4D8C00036FA26 /* transactionButton.png */; };
 		6254A8DF1EE4DACB0036FA26 /* ApplePay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254A8DE1EE4DACB0036FA26 /* ApplePay.swift */; };
+		626D36591F05130A0052B2D2 /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626D36581F05130A0052B2D2 /* BoxxspringVideoPlayerSDK.framework */; };
 		627484B41E71BC8700621D7B /* UnimatrixConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 627484B31E71BC8700621D7B /* UnimatrixConfig.plist */; };
-		627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */; };
 		627484BB1E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */; };
 		6286290B1EF0359A00B6FB29 /* transaction@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 628629091EF0359A00B6FB29 /* transaction@3x.png */; };
 		6286290C1EF0359A00B6FB29 /* transaction@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6286290A1EF0359A00B6FB29 /* transaction@2x.png */; };
@@ -281,8 +281,8 @@
 		6253BDCC1DE34F58001CE859 /* SignUpSuccess.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpSuccess.xib; sourceTree = "<group>"; };
 		6254A8DB1EE4D8C00036FA26 /* transactionButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transactionButton.png; sourceTree = "<group>"; };
 		6254A8DE1EE4DACB0036FA26 /* ApplePay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplePay.swift; sourceTree = "<group>"; };
+		626D36581F05130A0052B2D2 /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
 		627484B31E71BC8700621D7B /* UnimatrixConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UnimatrixConfig.plist; sourceTree = "<group>"; };
-		627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BoxxspringVideoPlayerSDK.framework; sourceTree = "<group>"; };
 		627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BoxxspringVideoPlayerSDK.bundle; sourceTree = "<group>"; };
 		628629091EF0359A00B6FB29 /* transaction@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transaction@3x.png"; sourceTree = "<group>"; };
 		6286290A1EF0359A00B6FB29 /* transaction@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "transaction@2x.png"; sourceTree = "<group>"; };
@@ -519,7 +519,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				627484BA1E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
+				626D36591F05130A0052B2D2 /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
 				62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
 				62D823301EC3CF8200786A19 /* Stripe.framework in Frameworks */,
 				623EE3661F02B77200E5FD3D /* UnimatrixObjcSDK.framework in Frameworks */,
@@ -850,9 +850,9 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
+				626D36581F05130A0052B2D2 /* BoxxspringVideoPlayerSDK.framework */,
 				623EE3651F02B77200E5FD3D /* UnimatrixObjcSDK.framework */,
 				62D8232F1EC3CF8200786A19 /* Stripe.framework */,
-				627484B81E71C01700621D7B /* BoxxspringVideoPlayerSDK.framework */,
 				627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */,
 				62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */,
 				788C43A21DA46D1000F342B9 /* Assets */,

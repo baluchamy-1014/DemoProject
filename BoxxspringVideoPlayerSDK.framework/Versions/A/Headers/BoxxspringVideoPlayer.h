@@ -30,17 +30,8 @@ typedef NS_ENUM(NSInteger, BoxxspringVideoPlayerControls) {
           forProperty:(int)propertyID
             withFrame:(CGRect)frame;
 
-- (instancetype)init:(NSString *)artifactID
-         forProperty:(int)propertyID
-           withFrame:(CGRect)frame
-       andResolution:(NSString *)resolution;
-
 - (instancetype)init:(NSString *)videoUID
            withFrame:(CGRect)frame;
-
-- (instancetype)init:(NSString *)videoUID
-           withFrame:(CGRect)frame
-       andResolution:(NSString *)resolution;
 
 - (void)description;
 - (UIView *)view;
