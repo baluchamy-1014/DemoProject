@@ -23,14 +23,23 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var totalPriceLabel: UILabel!
   @IBOutlet var promoCodeErrorLabel: UILabel!
   @IBOutlet var applePayButton: UIButton!
-  
+  var postalAddress: CNPostalAddress?
+
   var discountAmount = "0.0"
+  var subTotalAmount: NSDecimalNumber = 0.0
+  var totalAmount: NSDecimalNumber = 0.0
+  var taxAmount: NSDecimalNumber = 0.0
+  
+  var freeTransaction = false
   
   let SupportedPaymentNetworks: [PKPaymentNetwork] = [.visa, .masterCard, .amex]
   
   var product: Product!
   var offer: Offer!
   
+  let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+
   init(product aProduct: Product, anOffer: Offer) {
     super.init(nibName:nil, bundle:nil)
     product = aProduct
@@ -94,7 +103,6 @@ class PurchaseConfirmViewController: UIViewController {
     let locale = NSLocale(localeIdentifier: offer.currency)
     let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
 
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
     
     if let code = promoTextField.text {
@@ -107,6 +115,9 @@ class PurchaseConfirmViewController: UIViewController {
             self.promoTextField.resignFirstResponder()
             self.promoCodeErrorLabel.isHidden = false
             self.promoCodeSuccess(success: true)
+            if self.totalAmount.decimalValue <= 0.0 {
+              self.applePayButton.setImage(UIImage(named: "transactionButton"), for: UIControlState())
+            }
           }
         } else {
           self.discountAmount = "0.0"
@@ -121,6 +132,7 @@ class PurchaseConfirmViewController: UIViewController {
   }
   
   func promoCodeSuccess(success: Bool) {
+    self.freeTransaction = success
     if success == true {
       promoCodeErrorLabel.text = "Success! Your code has been applied."
       promoCodeErrorLabel.textColor = UIColor(red: 103/255, green: 177/255, blue: 22/255, alpha: 1.0)
@@ -132,14 +144,27 @@ class PurchaseConfirmViewController: UIViewController {
   }
 
   @IBAction func userTappedApplePayButton(_ sender: Any) {
-    let viewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest())
-    viewController.delegate = self
-    present(viewController, animated: true)
+    if self.freeTransaction {
+      let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
+      self.offer.purchase(self.transactionInfo(token: nil), forRealm: realm, withAccessToken: Session.shared().accessToken, onCompletion: { (transactions, error) in
+        if (error == nil) {
+          // TODO: redirect to home or video screen
+          let successViewController = SuccessViewController(nibName: "SuccessViewController", bundle: nil)
+          self.navigationController?.present(successViewController, animated: true, completion: nil)
+        } else {
+          let errorViewController = ErrorViewController(nibName: "ErrorViewController", bundle: nil)
+          self.navigationController?.present(errorViewController, animated: true, completion: nil)
+        }
+      })
+    } else {
+      let viewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest())
+      viewController.delegate = self
+      present(viewController, animated: true)
+    }
   }
   
   // MARK: - Apple Pay
   func paymentRequest() -> PKPaymentRequest {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let request = PKPaymentRequest()
     request.merchantIdentifier   = appDelegate.appConfiguration["ApplePayMerchantID"] as! String
     request.supportedNetworks    = SupportedPaymentNetworks
@@ -155,14 +180,16 @@ class PurchaseConfirmViewController: UIViewController {
     let product = PKPaymentSummaryItem(label: self.product.name, amount: NSDecimalNumber(string: "\(offer.price!)"))
     let discount = PKPaymentSummaryItem(label: "Discount", amount: NSDecimalNumber(string: self.discountAmount))
     var taxItem: PKPaymentSummaryItem
-    var totalAmount = product.amount.subtracting(discount.amount)
+    subTotalAmount = product.amount.subtracting(discount.amount)
 
     if tax != nil {
-      taxItem = PKPaymentSummaryItem(label: "Tax", amount: NSDecimalNumber(string: tax?.stringValue))
-      totalAmount = totalAmount.adding(taxItem.amount)
+      taxAmount = NSDecimalNumber(string: tax?.stringValue)
+      taxItem = PKPaymentSummaryItem(label: "Tax", amount: taxAmount)
+      totalAmount = subTotalAmount.adding(taxItem.amount)
       let total = PKPaymentSummaryItem(label: "NLL", amount: totalAmount)
       return [product, discount, taxItem, total]
     } else {
+      totalAmount = subTotalAmount
       let total = PKPaymentSummaryItem(label: "NLL", amount: totalAmount)
       return [product, discount, total]
     }
@@ -175,7 +202,17 @@ class PurchaseConfirmViewController: UIViewController {
 extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDelegate {
   func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: @escaping (PKPaymentAuthorizationStatus) -> Void) {
     STPAPIClient.shared().createToken(with: payment) { (token, error) in
-      print(token ?? "no token")
+      if (token != nil) {
+        let realm = self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
+        self.offer.purchase(self.transactionInfo(token: token!), forRealm: realm, withAccessToken: Session.shared().accessToken, onCompletion:  { (transactions, error) in
+          if (error == nil) {
+            completion(.success)
+          } else {
+            completion(.failure)
+          }
+        })
+      }
+
     }
   }
 
@@ -184,10 +221,10 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
   }
 
   func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didSelectShippingContact contact: PKContact, completion: @escaping (PKPaymentAuthorizationStatus, [PKShippingMethod], [PKPaymentSummaryItem]) -> Void) {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
     if let _ = contact.postalAddress {
       if let user = Session.shared().user {
+        self.postalAddress = contact.postalAddress
         self.offer.getTaxInfo(["uuid": user.uuid, "email_address": user.email_address], billingInfo: contact.postalAddress?.billingInfo(), accessToken: Session.shared().accessToken, realm: realm) { (response, error) in
           if let tax = response {
             completion(.success, [], self.paymentSummaryItems(taxAmount: tax.taxTotal))
@@ -201,15 +238,36 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
   }
 }
 
-extension CNPostalAddress {
-  func billingInfo() -> [String: String] {
-    return [
-        "address_postal_code": self.postalCode,
-        "address_country": self.country,
-        "address_region": self.state,
-        "address_city": self.city,
-        "address_line_1": self.street,
-        "address_line_2": ""
+extension PurchaseConfirmViewController {
+  func transactionInfo(token: STPToken?) -> [String: Any] {
+    let subTotalAmountString: String = self.subTotalAmount.stringValue
+    let totalAmountString: String = self.totalAmount.stringValue
+    let taxAmountString: String = self.taxAmount.stringValue
+    let couponCode = (self.promoTextField.text != nil) ? self.promoTextField.text! : ""
+    var transactionInfo: [String: Any] = [String:Any]()
+    transactionInfo = [
+        "provider": "Stripe",
+        "type_name": "purchase_transaction",
+        "subtotal": subTotalAmountString,
+        "subtotal_usd": subTotalAmountString,
+        "tax": taxAmountString,
+        "total": totalAmountString,
+        "currency": "USD",
+        "product_id": self.product.id.stringValue,
+        "offer_id": self.offer.id.stringValue,
+        "offer_uuid": self.offer.uuid,
     ]
+    if couponCode != "" {
+      transactionInfo["coupon_code"] = couponCode
+    }
+    if (token == nil) {
+      // do nothing
+    } else {
+      transactionInfo["token"] = token!.transactionInfo()
+      transactionInfo["address"] = self.postalAddress!.billingInfo()
+    }
+
+    transactionInfo["device_platform"] = "iOS"
+    return transactionInfo
   }
 }

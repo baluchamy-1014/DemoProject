@@ -24,7 +24,7 @@
 + (Attributes *)attributes;
 + (void)getVideo:(NSString *)providerUID  onCompletion:(APIQueryCompletionBlock)callback;
 
-- (NSURL *)url:(NSString *)resolution mediaHostString:(NSString *)string;
+- (NSURL *)url:(NSString *)string;
 @end
 
 #endif /* Video_h */

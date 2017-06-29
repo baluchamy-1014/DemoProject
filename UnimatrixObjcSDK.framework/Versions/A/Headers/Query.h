@@ -19,7 +19,7 @@ typedef void (^APIQueryCompletionBlock) (id response, NSError *error);
 
 @property (nonatomic, strong) NSNumber *count;
 @property (nonatomic, strong) NSNumber *offset;
-
+@property (nonatomic, strong) NSString *requestSerializer;
 @property (nonatomic) int totalCount;
 
 - (instancetype)initWithPath:(NSString *)path;

@@ -79,7 +79,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     signInButton.isEnabled = true
     buyNowButton.isEnabled = true
   
-    if headerImageView != nil {
+    if headerImageView != nil && videoPlayerState != .ReadyForDisplay {
       setupRestrictionOverlay()
     }
 
