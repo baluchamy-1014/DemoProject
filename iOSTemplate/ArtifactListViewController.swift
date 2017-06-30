@@ -164,8 +164,34 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     refreshControl = UIRefreshControl()
     refreshControl.tintColor = .white
     refreshControl.layer.zPosition = -1
-    refreshControl.addTarget(self, action: #selector(LatestViewController.loadAllTeams), for: .valueChanged)
+    refreshControl.addTarget(self, action: #selector(LatestViewController.refreshCollectionView), for: .valueChanged)
     collectionView!.addSubview(refreshControl)
+  }
+  
+  func refreshCollectionView() {
+    if self.items.count > 0 {
+      let artifact = self.items[0]
+      var params = NSDictionary()
+      
+      if (artifactID != nil) {
+        params = ["type_name.in": self.artifactTypes(), "parent_id": artifactID!, "provider": "Boxxspring"]
+      }
+      else {
+        params = ["type_name.in": self.artifactTypes(), "provider": "Boxxspring"]
+      }
+      
+      Artifact.queryNext(params as! [AnyHashable: Any], count: 20, offset: 0, reference: artifact) { (artifacts, error) in
+        if (error == nil) {
+          self.appendItems(artifacts: artifacts as! [Artifact])
+          self.collectionView.reloadData()
+        }
+        self.refreshControl.endRefreshing()
+      }
+    }
+  }
+  
+  private func appendItems(artifacts: [Artifact]) {
+      self.items = artifacts + self.items
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
