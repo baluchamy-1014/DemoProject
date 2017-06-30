@@ -200,6 +200,7 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
         if (stringValue == "Feedback") {
           if (MFMailComposeViewController.canSendMail()) {
             let feedbackController = FeedbackViewController()
+            feedbackController.navigationBar.tintColor = UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1.0)
             feedbackController.createMailPopup()
             self.navigationController?.present(feedbackController, animated: true, completion: nil)
           }
