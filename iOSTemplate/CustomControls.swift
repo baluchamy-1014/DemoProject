@@ -121,7 +121,7 @@ class TeamFilterButton: UIButton {
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     
-    self.setTitle("All Teams", for: UIControlState())
+    self.setTitle("All Teams ", for: UIControlState())
     self.setTitleColor(UIColor.white, for: UIControlState())
   }
 }
