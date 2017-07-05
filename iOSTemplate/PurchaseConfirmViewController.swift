@@ -11,7 +11,7 @@ import PassKit
 import Stripe
 
 class PurchaseConfirmViewController: UIViewController {
-  @IBOutlet var bodyView: UIView!
+  @IBOutlet var contentView: UIView!
   @IBOutlet var passTitle: UILabel!
   @IBOutlet var passSubtitle: UILabel!
   @IBOutlet var promoApplyButton: UIButton!
@@ -19,13 +19,15 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var passTypeLabel: UILabel!
   @IBOutlet var passPriceLabel: UILabel!
   @IBOutlet var codeValueLabel: UILabel!
-  @IBOutlet var taxPriceLabel: UILabel!
   @IBOutlet var totalPriceLabel: UILabel!
   @IBOutlet var promoCodeErrorLabel: UILabel!
   @IBOutlet var applePayButton: UIButton!
+  @IBOutlet var legalTextView: UITextView!
+  @IBOutlet var scrollview: UIScrollView!
   var postalAddress: CNPostalAddress?
-
+  
   var discountAmount = "0.0"
+  let bottomMargin: CGFloat = 10
   var subTotalAmount: NSDecimalNumber = 0.0
   var totalAmount: NSDecimalNumber = 0.0
   var taxAmount: NSDecimalNumber = 0.0
@@ -66,8 +68,14 @@ class PurchaseConfirmViewController: UIViewController {
     passTitle.text = product.name
     passTypeLabel.text = product.category
     passPriceLabel.text = "\(currencySymbol!) \(offer.price!)"
-    taxPriceLabel.text = "$ 0.00"
     totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: CGFloat(offer.price.floatValue), promoValue: 0))"
+    legalTextView.text = DataFromTextFile().readDataFromFile(file: "PassFooter")
+    legalTextView.sizeToFit()
+  }
+  
+  override func viewDidLayoutSubviews()
+  {
+    scrollview.contentSize = CGSize(width: self.view.bounds.width, height: legalTextView.frame.origin.y + legalTextView.frame.height + bottomMargin)
   }
   
   func setupApplyButton() {
