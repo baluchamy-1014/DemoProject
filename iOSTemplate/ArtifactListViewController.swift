@@ -241,8 +241,8 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
       cell.authorLabel.text = ""
     }
     
-    if let publishedAtString = item.publishedAt {
-      cell.timestampLabel.displayDateTime(publishedAtString)
+    if let createdAtString = item.createdAt {
+      cell.timestampLabel.displayDateTime(createdAtString)
     }
     activityIndicator.stopAnimating()
     return cell

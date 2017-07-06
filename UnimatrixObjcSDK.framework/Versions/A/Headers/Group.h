@@ -20,8 +20,6 @@ typedef void (^APIQueryCompletionGroupBlock) (Group *group, NSError *error);
 @property (nonatomic, strong) NSString     *UID;
 @property (nonatomic, retain) NSDate       *createdAt;
 @property (nonatomic, retain) NSDate       *updatedAt;
-@property (nonatomic, retain) NSDate       *publishedAt;
-
 @property (nonatomic, retain) NSArray      *artifacts;
 @property (nonatomic, retain) NSArray      *pictures;
 @property int propertyID;
