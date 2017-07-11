@@ -13,6 +13,7 @@
 		7132AEB41E8E3E120058225E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEB21E8E3E120058225E /* Main.storyboard */; };
 		7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */; };
 		7132AEBE1E8E3F8C0058225E /* SampleAdded.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */; };
+		71783E8A1F149BE4000B01D3 /* Artifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71783E891F149BE4000B01D3 /* Artifact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7132AEB51E8E3E120058225E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleAdded.swift; sourceTree = "<group>"; };
 		7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleAdded.xib; sourceTree = "<group>"; };
+		71783E891F149BE4000B01D3 /* Artifact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Artifact.swift; path = Resources/Artifact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		7132AEAB1E8E3E120058225E /* DemoProject */ = {
 			isa = PBXGroup;
 			children = (
+				71783E881F149BA3000B01D3 /* Resources */,
 				7132AEAC1E8E3E120058225E /* AppDelegate.swift */,
 				7132AEAE1E8E3E120058225E /* ViewController.swift */,
 				7132AEB01E8E3E120058225E /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */,
 			);
 			path = DemoProject;
+			sourceTree = "<group>";
+		};
+		71783E881F149BA3000B01D3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				71783E891F149BE4000B01D3 /* Artifact.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +153,7 @@
 				7132AEAF1E8E3E120058225E /* ViewController.swift in Sources */,
 				7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */,
 				7132AEAD1E8E3E120058225E /* AppDelegate.swift in Sources */,
+				71783E8A1F149BE4000B01D3 /* Artifact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +306,7 @@
 				7132AEBA1E8E3E120058225E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
