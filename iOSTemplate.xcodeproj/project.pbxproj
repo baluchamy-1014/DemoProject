@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62008DBE1F1830F500D56058 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62008DBD1F1830F500D56058 /* UnimatrixObjcSDK.framework */; };
 		6209A2E21DC398CD00B278B9 /* VideoPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6209A2E11DC398CD00B278B9 /* VideoPlayerController.swift */; };
 		6209A2E41DC398EC00B278B9 /* VideoPlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */; };
 		620C89F01DF7242100DAC962 /* LatestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 620C89EF1DF7242100DAC962 /* LatestViewController.swift */; };
@@ -32,7 +33,6 @@
 		62D7B0D31E96A32B0030C3C8 /* ProductGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */; };
 		62D823301EC3CF8200786A19 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8232F1EC3CF8200786A19 /* Stripe.framework */; };
 		62D823311EC3CF8200786A19 /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 62D8232F1EC3CF8200786A19 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		62AC098E1EFD578200ADF269 /* UnimatrixObjcSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AC098D1EFD578200ADF269 /* UnimatrixObjcSDK.framework */; };
 		780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780578551DC2AA1F0011BBE8 /* TagSection.swift */; };
 		78095A961DC951BE00FAB2B8 /* Cancel_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A931DC951BE00FAB2B8 /* Cancel_icon.png */; };
 		78095A971DC951BE00FAB2B8 /* Cancel_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */; };
@@ -266,6 +266,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		62008DBD1F1830F500D56058 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		6209A2E11DC398CD00B278B9 /* VideoPlayerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerController.swift; sourceTree = "<group>"; };
 		6209A2E31DC398EC00B278B9 /* VideoPlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPlayerController.xib; sourceTree = "<group>"; };
 		620C89EF1DF7242100DAC962 /* LatestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestViewController.swift; sourceTree = "<group>"; };
@@ -292,7 +293,6 @@
 		62B233831E368B2D00A7643F /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		62D7B0D21E96A32B0030C3C8 /* ProductGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductGroup.swift; sourceTree = "<group>"; };
 		62D8232F1EC3CF8200786A19 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
-		62AC098D1EFD578200ADF269 /* UnimatrixObjcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UnimatrixObjcSDK.framework; sourceTree = "<group>"; };
 		780578551DC2AA1F0011BBE8 /* TagSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagSection.swift; sourceTree = "<group>"; };
 		78095A931DC951BE00FAB2B8 /* Cancel_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel_icon.png; path = iOSTemplate/Assets.xcassets/Cancel_icon.png; sourceTree = "<group>"; };
 		78095A941DC951BE00FAB2B8 /* Cancel_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cancel_icon@2x.png"; path = "iOSTemplate/Assets.xcassets/Cancel_icon@2x.png"; sourceTree = "<group>"; };
@@ -522,7 +522,7 @@
 				626D36591F05130A0052B2D2 /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
 				62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
 				62D823301EC3CF8200786A19 /* Stripe.framework in Frameworks */,
-				62AC098E1EFD578200ADF269 /* UnimatrixObjcSDK.framework in Frameworks */,
+				62008DBE1F1830F500D56058 /* UnimatrixObjcSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,11 +850,11 @@
 		78E31E681D99F3F400CB59D3 = {
 			isa = PBXGroup;
 			children = (
+				62008DBD1F1830F500D56058 /* UnimatrixObjcSDK.framework */,
 				626D36581F05130A0052B2D2 /* BoxxspringVideoPlayerSDK.framework */,
 				62D8232F1EC3CF8200786A19 /* Stripe.framework */,
 				627484B91E71C01700621D7B /* BoxxspringVideoPlayerSDK.bundle */,
 				62458FBD1E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework */,
-				62AC098D1EFD578200ADF269 /* UnimatrixObjcSDK.framework */,
 				788C43A21DA46D1000F342B9 /* Assets */,
 				78E31EB11D9C7BA100CB59D3 /* bridge.h */,
 				78E31E731D99F3F400CB59D3 /* iOSTemplate */,
