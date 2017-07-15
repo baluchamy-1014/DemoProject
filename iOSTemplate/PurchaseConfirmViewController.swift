@@ -158,15 +158,14 @@ class PurchaseConfirmViewController: UIViewController {
         if (error == nil) {
           let successViewController = SuccessViewController(nibName: "SuccessViewController", bundle: nil)
           self.navigationController?.present(successViewController, animated: true, completion: nil)
-          let when = DispatchTime.now() + 3
-          DispatchQueue.main.asyncAfter(deadline: when) {
+          DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
             self.dismiss(animated: true, completion: {
               if self.appDelegate.throughBurgerMenu == true {
                 self.appDelegate.sendUserToHomeScreen()
               }
               else {
-                let prevVC: UIViewController = (self.navigationController?.viewControllers[1])!
-                self.navigationController?.popToViewController(prevVC, animated: true)
+                let detailVC: UIViewController = (self.navigationController?.viewControllers[1])!
+                self.navigationController?.popToViewController(detailVC, animated: true)
               }
             })
           }
@@ -234,15 +233,14 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
             self.dismiss(animated: true, completion: {
               let successViewController = SuccessViewController(nibName: "SuccessViewController", bundle: nil)
               self.navigationController?.present(successViewController, animated: true, completion: nil)
-              let when = DispatchTime.now() + 3
-              DispatchQueue.main.asyncAfter(deadline: when) {
+              DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
                 self.dismiss(animated: true, completion: {
                   if self.appDelegate.throughBurgerMenu == true {
                     self.appDelegate.sendUserToHomeScreen()
                   }
                   else {
-                    let prevVC: UIViewController = (self.navigationController?.viewControllers[1])!
-                    self.navigationController?.popToViewController(prevVC, animated: true)
+                    let detailVC: UIViewController = (self.navigationController?.viewControllers[1])!
+                    self.navigationController?.popToViewController(detailVC, animated: true)
                   }
                 })
               }
