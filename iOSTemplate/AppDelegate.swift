@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
   let appConfiguration = Bundle.main.infoDictionary! as NSDictionary
   var archivistProductCategories: [String:Artifact] = [:]
   var customSplashScreen: CustomSplashScreen!
+  var throughBurgerMenu: Bool?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.

@@ -215,6 +215,7 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
         }
       }
       else if item.slug == "/buy" {
+        appDelegate.throughBurgerMenu = true
         let seasonController = SeasonsViewController()
         let navigationController = UINavigationController(rootViewController: seasonController)
         self.revealViewController().pushFrontViewController(navigationController, animated: true)

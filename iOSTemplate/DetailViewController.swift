@@ -446,6 +446,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         if (error == nil) {
           Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, match: self.artifact.id.stringValue, options: [:], onCompletion: { (products, error) in
             let subscriptionsVC = PassTypeViewController()
+            self.appDelegate.throughBurgerMenu = false
             ProductGroup.applyCategoryToProducts(categoryProducts: self.appDelegate.archivistProductCategories, products: products as! [Product])
             let validProducts = (products as! [Product]).filter({ (product) -> Bool in product.category != nil })
             subscriptionsVC.subscriptionItems = validProducts

@@ -156,9 +156,26 @@ class PurchaseConfirmViewController: UIViewController {
       let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
       self.offer.purchase(self.transactionInfo(token: nil), forRealm: realm, withAccessToken: Session.shared().accessToken, onCompletion: { (transactions, error) in
         if (error == nil) {
-          // TODO: redirect to home or video screen
           let successViewController = SuccessViewController(nibName: "SuccessViewController", bundle: nil)
           self.navigationController?.present(successViewController, animated: true, completion: nil)
+          let when = DispatchTime.now() + 3
+          DispatchQueue.main.asyncAfter(deadline: when) {
+            self.dismiss(animated: true, completion: {
+              if self.appDelegate.throughBurgerMenu == true {
+                // TODO: simplify
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
+                let navigationController = UINavigationController(rootViewController: frontVC )
+                self.appDelegate.viewController?.pushFrontViewController(navigationController, animated: true)
+                let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: self.revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+                frontVC.navigationItem.leftBarButtonItem = revealButtomItem
+              }
+              else {
+                let prevVC: UIViewController = (self.navigationController?.viewControllers[1])!
+                self.navigationController?.popToViewController(prevVC, animated: true)
+              }
+            })
+          }
         } else {
           let errorViewController = ErrorViewController(nibName: "ErrorViewController", bundle: nil)
           self.navigationController?.present(errorViewController, animated: true, completion: nil)
@@ -220,12 +237,33 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
         self.offer.purchase(self.transactionInfo(token: token!), forRealm: realm, withAccessToken: Session.shared().accessToken, onCompletion:  { (transactions, error) in
           if (error == nil) {
             completion(.success)
+            self.dismiss(animated: true, completion: {
+              let successViewController = SuccessViewController(nibName: "SuccessViewController", bundle: nil)
+              self.navigationController?.present(successViewController, animated: true, completion: nil)
+              let when = DispatchTime.now() + 3
+              DispatchQueue.main.asyncAfter(deadline: when) {
+                self.dismiss(animated: true, completion: {
+                  if self.appDelegate.throughBurgerMenu == true {
+                    // TODO: simplify
+                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let frontVC: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "containerViewController")
+                    let navigationController = UINavigationController(rootViewController: frontVC )
+                    self.appDelegate.viewController?.pushFrontViewController(navigationController, animated: true)
+                    let revealButtomItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: UIBarButtonItemStyle.plain, target: self.revealViewController(), action: #selector(self.revealViewController().revealToggle(_:)))
+                    frontVC.navigationItem.leftBarButtonItem = revealButtomItem
+                  }
+                  else {
+                    let prevVC: UIViewController = (self.navigationController?.viewControllers[1])!
+                    self.navigationController?.popToViewController(prevVC, animated: true)
+                  }
+                })
+              }
+            })
           } else {
             completion(.failure)
           }
         })
       }
-
     }
   }
 
