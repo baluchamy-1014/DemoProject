@@ -164,8 +164,7 @@ class PurchaseConfirmViewController: UIViewController {
                 self.appDelegate.sendUserToHomeScreen()
               }
               else {
-                let detailVC: UIViewController = (self.navigationController?.viewControllers[1])!
-                self.navigationController?.popToViewController(detailVC, animated: true)
+                self.returnToDetailScreen()
               }
             })
           }
@@ -212,6 +211,18 @@ class PurchaseConfirmViewController: UIViewController {
       return [product, discount, total]
     }
   }
+  
+  func returnToDetailScreen() {
+    let detailVC: DetailViewController = (self.navigationController?.viewControllers[1])! as! DetailViewController
+    detailVC.videoPlayerState = .NotReady
+    for view in detailVC.headerImageView.subviews {
+      view.removeFromSuperview()
+    }
+    detailVC.headerImageView.addSubview(detailVC.button)
+    detailVC.headerImageView.addSubview(detailVC.activityIndicator)
+    detailVC.activityIndicator.stopAnimating()
+    self.navigationController?.popToViewController(detailVC, animated: true)
+  }
 
   func resetAmountValues() {
     subTotalAmount = 0.0
@@ -239,8 +250,7 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
                     self.appDelegate.sendUserToHomeScreen()
                   }
                   else {
-                    let detailVC: UIViewController = (self.navigationController?.viewControllers[1])!
-                    self.navigationController?.popToViewController(detailVC, animated: true)
+                    self.returnToDetailScreen()
                   }
                 })
               }
