@@ -203,6 +203,11 @@ class PurchaseConfirmViewController: UIViewController {
     }
   }
 
+  func resetAmountValues() {
+    subTotalAmount = 0.0
+    totalAmount = 0.0
+    taxAmount = 0.0
+  }
 }
 
 // MARK: - PKPaymentAuthorizationViewControllerDelegate
@@ -226,6 +231,7 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
 
   func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
     dismiss(animated: true)
+    resetAmountValues()
   }
 
   func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didSelectShippingContact contact: PKContact, completion: @escaping (PKPaymentAuthorizationStatus, [PKShippingMethod], [PKPaymentSummaryItem]) -> Void) {
