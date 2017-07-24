@@ -118,13 +118,18 @@ class PurchaseConfirmViewController: UIViewController {
         if error == nil  {
           if let codeValue = coupon?.discountAmount(self.offer.price) {
             self.discountAmount = "\(codeValue)"
-            self.totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: CGFloat(self.offer.price.floatValue), promoValue: CGFloat(codeValue)))"
+            let calculatedTotalForDispaly = self.calculateSum(orginalPrice: CGFloat(self.offer.price.floatValue), promoValue: CGFloat(codeValue))
+            self.totalPriceLabel.text = "\(currencySymbol!) \(calculatedTotalForDispaly)"
             self.codeValueLabel.text = "\(currencySymbol!) \(String(format: "%.2f", codeValue))"
             self.promoTextField.resignFirstResponder()
             self.promoCodeErrorLabel.isHidden = false
             self.promoCodeSuccess(success: true)
-            if self.totalAmount.decimalValue <= 0.0 {
-              self.applePayButton.setImage(UIImage(named: "transactionButton"), for: UIControlState())
+            if let totalAmountValue = Decimal(string: calculatedTotalForDispaly) {
+              let zeroDecimal = Decimal(string: "0.0")
+              if totalAmountValue.isLessThanOrEqualTo(zeroDecimal!) {
+                self.freeTransaction = true
+                self.applePayButton.setImage(UIImage(named: "transactionButton"), for: UIControlState())
+              }
             }
           }
         } else {
@@ -140,7 +145,6 @@ class PurchaseConfirmViewController: UIViewController {
   }
   
   func promoCodeSuccess(success: Bool) {
-    self.freeTransaction = success
     if success == true {
       promoCodeErrorLabel.text = "Success! Your code has been applied."
       promoCodeErrorLabel.textColor = UIColor(red: 103/255, green: 177/255, blue: 22/255, alpha: 1.0)
