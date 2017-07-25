@@ -74,6 +74,9 @@
 		781002B81E70C23E00EF3C8A /* PurchaseConfirmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */; };
 		781347921EC4E5D4006152D9 /* SeasonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781347911EC4E5D4006152D9 /* SeasonsViewController.swift */; };
 		7823149B1E32D19B00FF1F26 /* SignInSignUpBGImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */; };
+		782601391F26B2E10058F89F /* blankButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 782601361F26B2E10058F89F /* blankButton.png */; };
+		7826013A1F26B2E10058F89F /* blankButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782601371F26B2E10058F89F /* blankButton@2x.png */; };
+		7826013B1F26B2E10058F89F /* blankButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782601381F26B2E10058F89F /* blankButton@3x.png */; };
 		782D4DBD1E0A08520078FEC1 /* Placeholder_nll_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */; };
 		782D4DBE1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */; };
 		782D4DBF1E0A08520078FEC1 /* Placeholder_nll_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 782D4DBC1E0A08520078FEC1 /* Placeholder_nll_logo@3x.png */; };
@@ -334,6 +337,9 @@
 		781002B61E70C23E00EF3C8A /* PurchaseConfirmViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PurchaseConfirmViewController.xib; sourceTree = "<group>"; };
 		781347911EC4E5D4006152D9 /* SeasonsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonsViewController.swift; sourceTree = "<group>"; };
 		7823149A1E32D19B00FF1F26 /* SignInSignUpBGImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SignInSignUpBGImage.png; path = iOSTemplate/Assets.xcassets/SignInSignUpBGImage.png; sourceTree = "<group>"; };
+		782601361F26B2E10058F89F /* blankButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blankButton.png; path = iOSTemplate/Assets.xcassets/blankButton.png; sourceTree = "<group>"; };
+		782601371F26B2E10058F89F /* blankButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blankButton@2x.png"; path = "iOSTemplate/Assets.xcassets/blankButton@2x.png"; sourceTree = "<group>"; };
+		782601381F26B2E10058F89F /* blankButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blankButton@3x.png"; path = "iOSTemplate/Assets.xcassets/blankButton@3x.png"; sourceTree = "<group>"; };
 		782D4DBA1E0A08520078FEC1 /* Placeholder_nll_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder_nll_logo.png; path = iOSTemplate/Assets.xcassets/Placeholder_nll_logo.png; sourceTree = "<group>"; };
 		782D4DBB1E0A08520078FEC1 /* Placeholder_nll_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder_nll_logo@2x.png"; path = "iOSTemplate/Assets.xcassets/Placeholder_nll_logo@2x.png"; sourceTree = "<group>"; };
 		782D4DBC1E0A08520078FEC1 /* Placeholder_nll_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Placeholder_nll_logo@3x.png"; path = "iOSTemplate/Assets.xcassets/Placeholder_nll_logo@3x.png"; sourceTree = "<group>"; };
@@ -579,6 +585,9 @@
 		7810027E1E6E1E3400EF3C8A /* Apple Pay */ = {
 			isa = PBXGroup;
 			children = (
+				782601361F26B2E10058F89F /* blankButton.png */,
+				782601371F26B2E10058F89F /* blankButton@2x.png */,
+				782601381F26B2E10058F89F /* blankButton@3x.png */,
 				784269EE1F05C98F001F9E7B /* transactionButton.png */,
 				784269EF1F05C98F001F9E7B /* transactionButton@2x.png */,
 				784269F01F05C98F001F9E7B /* transactionButton@3x.png */,
@@ -1014,6 +1023,7 @@
 				784C3FF61DB9955C001AECD3 /* VideosIconActive.png in Resources */,
 				78A29F281DB5425300782620 /* TeamIconInactive@3x.png in Resources */,
 				78D9FC771E7C7FDA00413F5D /* ApplePayButton.png in Resources */,
+				7826013B1F26B2E10058F89F /* blankButton@3x.png in Resources */,
 				78CE9C851EE9BFFE000D5EB4 /* NLL_Loading_Animation_16.png in Resources */,
 				784C18971E454372008E8EED /* BurgerMenuCell.xib in Resources */,
 				78CE9C7A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_27.png in Resources */,
@@ -1056,6 +1066,7 @@
 				788C439C1DA45F9D00F342B9 /* NewsIconActive@3x.png in Resources */,
 				787867C91DB99CC700958C1B /* TVIcon@2x.png in Resources */,
 				629991DC1E6DC42E0071A15E /* BoxxspringVideoPlayerSDK.bundle in Resources */,
+				782601391F26B2E10058F89F /* blankButton.png in Resources */,
 				78CE9C8A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_11.png in Resources */,
 				78CE9C781EE9BFFE000D5EB4 /* NLL_Loading_Animation_29.png in Resources */,
 				788ABBFE1EE6066400DC66A8 /* confirm@2x.png in Resources */,
@@ -1105,6 +1116,7 @@
 				784C18ED1E455EF2008E8EED /* user_inactive@3x.png in Resources */,
 				784C18D01E455CF3008E8EED /* user_active.png in Resources */,
 				781002991E6E1F3300EF3C8A /* ticketTailSingle.png in Resources */,
+				7826013A1F26B2E10058F89F /* blankButton@2x.png in Resources */,
 				784C18E61E455EF2008E8EED /* contact_inactive@3x.png in Resources */,
 				782D4DC61E0B54F70078FEC1 /* MoreIconInactive.png in Resources */,
 				78B3120C1DBE80C60064EE88 /* slider_bar@3x.png in Resources */,

@@ -136,7 +136,7 @@
                                     <color key="textColor" red="0.79607843137254897" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-Bc-z8l" userLabel="Apple Pay Button">
+                                <button opaque="NO" contentMode="center" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9V-Bc-z8l" userLabel="Apple Pay Button">
                                     <rect key="frame" x="97" y="309" width="180" height="40"/>
                                     <state key="normal" image="ApplePayButton.png"/>
                                     <connections>
