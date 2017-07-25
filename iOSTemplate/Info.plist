@@ -23,7 +23,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>47</string>
+	<string>49</string>
 	<key>DEALER_REALM_UUID</key>
 	<string>${DEALER_REALM_UUID}</string>
 	<key>LSRequiresIPhoneOS</key>
