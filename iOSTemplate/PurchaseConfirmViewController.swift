@@ -213,15 +213,19 @@ class PurchaseConfirmViewController: UIViewController {
   }
   
   func returnToDetailScreen() {
-    let detailVC: DetailViewController = (self.navigationController?.viewControllers[1])! as! DetailViewController
-    detailVC.videoPlayerState = .NotReady
-    for view in detailVC.headerImageView.subviews {
-      view.removeFromSuperview()
+    for viewController in (self.navigationController?.viewControllers)! {
+      if viewController.isKind(of: DetailViewController.self) {
+        let detailVC = viewController as! DetailViewController
+        detailVC.videoPlayerState = .NotReady
+        for view in detailVC.headerImageView.subviews {
+          view.removeFromSuperview()
+        }
+        detailVC.headerImageView.addSubview(detailVC.button)
+        detailVC.headerImageView.addSubview(detailVC.activityIndicator)
+        detailVC.activityIndicator.stopAnimating()
+        self.navigationController?.popToViewController(detailVC, animated: true)
+      }
     }
-    detailVC.headerImageView.addSubview(detailVC.button)
-    detailVC.headerImageView.addSubview(detailVC.activityIndicator)
-    detailVC.activityIndicator.stopAnimating()
-    self.navigationController?.popToViewController(detailVC, animated: true)
   }
 
   func resetAmountValues() {
