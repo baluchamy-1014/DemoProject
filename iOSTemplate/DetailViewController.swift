@@ -71,7 +71,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     detailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     self.navigationController?.navigationBar.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
     videoPlayerController.navController = self.navigationController
-    // is videoPlayerState !=.ReadyForDisplay necessary here?
+    
     if headerImageView != nil && videoPlayerState != .ReadyForDisplay {
       setupRestrictionOverlay()
     }
