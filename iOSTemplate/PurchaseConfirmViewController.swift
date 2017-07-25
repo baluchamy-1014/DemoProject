@@ -243,7 +243,7 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
     if let _ = contact.postalAddress {
       if let user = Session.shared().user {
         self.postalAddress = contact.postalAddress
-        self.offer.getTaxInfo(["uuid": user.uuid, "email_address": user.email_address], billingInfo: contact.postalAddress?.billingInfo(), accessToken: Session.shared().accessToken, realm: realm) { (response, error) in
+        self.offer.getTaxInfo(["uuid": user.uuid, "email_address": user.email_address], billingInfo: contact.postalAddress?.billingInfo(), discountAmount: self.discountAmount, accessToken: Session.shared().accessToken, realm: realm) { (response, error) in
           if let tax = response {
             completion(.success, [], self.paymentSummaryItems(taxAmount: tax.taxTotal))
           } else {
