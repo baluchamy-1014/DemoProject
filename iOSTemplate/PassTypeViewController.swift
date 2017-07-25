@@ -64,13 +64,13 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
           cell.passTrailingImage.image = UIImage(named: "seasonButton")
           cell.passTopBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
           cell.passBottomBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
-          cell.passSubtitle.text = "2016 League Season Pass"
+          cell.passSubtitle.text = product.category
         case "team":
           cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")
           cell.passTrailingImage.image = UIImage(named: "teamButton")
           cell.passTopBorderView.backgroundColor = UIColor(red: 69 / 255, green: 93 / 255, blue: 113 / 255, alpha: 1.0)
           cell.passBottomBorderView.backgroundColor = UIColor(red: 69 / 255, green: 93 / 255, blue: 113 / 255, alpha: 1.0)
-          cell.passSubtitle.text = "Team Season Pass"
+          cell.passSubtitle.text = product.category
         default:
           break
         }
@@ -235,11 +235,9 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
     case "season":
       controller.view.backgroundColor = UIColor(red: 92 / 255, green: 20 / 255, blue: 20 / 255, alpha: 1.0)
       controller.passTitle.text = item.name.uppercased()
-      // TODO: remove hardcode
-      controller.passSubtitle.text = "2016 League Season Pass"
+      controller.passSubtitle.text = item.category
     case "team":
       controller.view.backgroundColor = UIColor(red: 84 / 255, green: 112 / 255, blue: 135 / 255, alpha: 1.0)
-      // TODO: find out where subtitle comes from
       controller.passSubtitle.text = item.category
     default:
       break
