@@ -25,6 +25,7 @@ class PurchaseConfirmViewController: UIViewController {
   @IBOutlet var legalTextView: UITextView!
   @IBOutlet var scrollview: UIScrollView!
   var postalAddress: CNPostalAddress?
+  var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
   
   var discountAmount = "0.0"
   let bottomMargin: CGFloat = 10
@@ -128,7 +129,7 @@ class PurchaseConfirmViewController: UIViewController {
               let zeroDecimal = Decimal(string: "0.0")
               if totalAmountValue.isLessThanOrEqualTo(zeroDecimal!) {
                 self.freeTransaction = true
-                self.applePayButton.setImage(UIImage(named: "transactionButton"), for: UIControlState())
+                self.applePayButton.setImage(UIImage(named: "transactionButton"), for: .normal)
               }
             }
           }
@@ -154,8 +155,25 @@ class PurchaseConfirmViewController: UIViewController {
       promoCodeErrorLabel.text = "This code is invalid. Please try again."
     }
   }
+  
+  func setupSpinnerButtonDisplay() {
+    self.applePayButton.isEnabled = false
+    self.applePayButton.setImage(UIImage(named: "blankButton"), for: .disabled)
+    self.applePayButton.addSubview(activityIndicator)
+    activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+    self.applePayButton.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self.applePayButton, attribute: NSLayoutAttribute.centerX, multiplier: 1, constant: 0))
+    self.applePayButton.addConstraint(NSLayoutConstraint(item: activityIndicator, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: self.applePayButton, attribute: NSLayoutAttribute.centerY, multiplier: 1, constant: 0))
+  }
+  
+  func removeSpinnerButton() {
+    self.activityIndicator.stopAnimating()
+    self.applePayButton.isEnabled = true
+  }
 
   @IBAction func userTappedApplePayButton(_ sender: Any) {
+    promoTextField.resignFirstResponder()
+    setupSpinnerButtonDisplay()
+    activityIndicator.startAnimating()
     if self.freeTransaction {
       let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
       self.offer.purchase(self.transactionInfo(token: nil), forRealm: realm, withAccessToken: Session.shared().accessToken, onCompletion: { (transactions, error) in
@@ -176,11 +194,14 @@ class PurchaseConfirmViewController: UIViewController {
           let errorViewController = ErrorViewController(nibName: "ErrorViewController", bundle: nil)
           self.navigationController?.present(errorViewController, animated: true, completion: nil)
         }
+        self.removeSpinnerButton()
       })
     } else {
       let viewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest())
       viewController.delegate = self
-      present(viewController, animated: true)
+      present(viewController, animated: true, completion: { 
+        self.removeSpinnerButton()
+      })
     }
   }
   
