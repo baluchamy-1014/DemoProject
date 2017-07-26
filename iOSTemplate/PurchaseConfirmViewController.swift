@@ -160,9 +160,18 @@ class PurchaseConfirmViewController: UIViewController {
       let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
       self.offer.purchase(self.transactionInfo(token: nil), forRealm: realm, withAccessToken: Session.shared().accessToken, onCompletion: { (transactions, error) in
         if (error == nil) {
-          // TODO: redirect to home or video screen
           let successViewController = SuccessViewController(nibName: "SuccessViewController", bundle: nil)
           self.navigationController?.present(successViewController, animated: true, completion: nil)
+          DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            self.dismiss(animated: true, completion: {
+              if self.appDelegate.throughBurgerMenu == true {
+                self.appDelegate.sendUserToHomeScreen()
+              }
+              else {
+                self.returnToDetailScreen()
+              }
+            })
+          }
         } else {
           let errorViewController = ErrorViewController(nibName: "ErrorViewController", bundle: nil)
           self.navigationController?.present(errorViewController, animated: true, completion: nil)
@@ -206,6 +215,22 @@ class PurchaseConfirmViewController: UIViewController {
       return [product, discount, total]
     }
   }
+  
+  func returnToDetailScreen() {
+    for viewController in (self.navigationController?.viewControllers)! {
+      if viewController.isKind(of: DetailViewController.self) {
+        let detailVC = viewController as! DetailViewController
+        detailVC.videoPlayerState = .NotReady
+        for view in detailVC.headerImageView.subviews {
+          view.removeFromSuperview()
+        }
+        detailVC.headerImageView.addSubview(detailVC.button)
+        detailVC.headerImageView.addSubview(detailVC.activityIndicator)
+        detailVC.activityIndicator.stopAnimating()
+        self.navigationController?.popToViewController(detailVC, animated: true)
+      }
+    }
+  }
 
   func resetAmountValues() {
     subTotalAmount = 0.0
@@ -224,12 +249,25 @@ extension PurchaseConfirmViewController: PKPaymentAuthorizationViewControllerDel
         self.offer.purchase(self.transactionInfo(token: token!), forRealm: realm, withAccessToken: Session.shared().accessToken, onCompletion:  { (transactions, error) in
           if (error == nil) {
             completion(.success)
+            self.dismiss(animated: true, completion: {
+              let successViewController = SuccessViewController(nibName: "SuccessViewController", bundle: nil)
+              self.navigationController?.present(successViewController, animated: true, completion: nil)
+              DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+                self.dismiss(animated: true, completion: {
+                  if self.appDelegate.throughBurgerMenu == true {
+                    self.appDelegate.sendUserToHomeScreen()
+                  }
+                  else {
+                    self.returnToDetailScreen()
+                  }
+                })
+              }
+            })
           } else {
             completion(.failure)
           }
         })
       }
-
     }
   }
 

@@ -48,7 +48,6 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
   }
 
   func applyCellSettings(cell: TicketTableViewCell, product: Product, passTitle: String) {
-    
       if let category = product.category {
         switch category {
         case "single":
@@ -65,13 +64,13 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
           cell.passTrailingImage.image = UIImage(named: "seasonButton")
           cell.passTopBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
           cell.passBottomBorderView.backgroundColor = UIColor(red: 92 / 255, green: 19 / 255, blue: 20 / 255, alpha: 1.0)
-          cell.passSubtitle.text = "2016 League Season Pass"
+          cell.passSubtitle.text = product.category
         case "team":
           cell.passLeadingImage.image = UIImage(named: "ticketTailTeam")
           cell.passTrailingImage.image = UIImage(named: "teamButton")
           cell.passTopBorderView.backgroundColor = UIColor(red: 69 / 255, green: 93 / 255, blue: 113 / 255, alpha: 1.0)
           cell.passBottomBorderView.backgroundColor = UIColor(red: 69 / 255, green: 93 / 255, blue: 113 / 255, alpha: 1.0)
-          cell.passSubtitle.text = "Team Season Pass"
+          cell.passSubtitle.text = product.category
         default:
           break
         }
@@ -167,30 +166,7 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
           let offer = offers[0]
           let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
           viewController.title = "Purchase Confirmation"
-
-          switch item.category {
-          case "single":
-            viewController.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
-            // TODO: create central date formatter class
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM d, yyyy"
-            viewController.passSubtitle.text = dateFormatter.string(from: item.startsAt)
-
-              // only if through burger menu
-              //      let viewController = SingleGamePassViewController(product: item, anOffer: offer)
-              //      self.navigationController?.pushViewController(viewController, animated: true)
-          case "season":
-            viewController.view.backgroundColor = UIColor(red: 92 / 255, green: 20 / 255, blue: 20 / 255, alpha: 1.0)
-            viewController.passTitle.text = item.name.uppercased()
-            viewController.passSubtitle.text = "2016 League Season Pass"
-          case "team":
-            viewController.view.backgroundColor = UIColor(red: 84 / 255, green: 112 / 255, blue: 135 / 255, alpha: 1.0)
-            // TODO: find out where subtitle comes from
-            viewController.passSubtitle.text = item.category
-            break
-          default:
-            break
-          }
+          checkForItemCategory(item: item, controller: viewController)
           if Session.shared().isValid() {
             self.navigationController?.pushViewController(viewController, animated: true)
           }
@@ -211,11 +187,60 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
         }
       }
     } else if let productGroup = subscriptionItems[indexPath.row] as? ProductGroup {
-      let passController = PassTypeViewController()
-      self.navigationController?.pushViewController(passController, animated: true)
-      self.title = ""
-      passController.subscriptionItems = productGroup.products
-      passController.tableView.reloadData()
+      if productGroup.products.count > 1 {
+        let passController = PassTypeViewController()
+        self.navigationController?.pushViewController(passController, animated: true)
+        self.title = ""
+        passController.subscriptionItems = productGroup.products
+        passController.tableView.reloadData()
+      }
+      else {
+        let item = productGroup.products[0]
+        if let offers = item.offers as? [Offer] {
+          if offers.count > 0 {
+            let offer = offers[0]
+            let viewController = PurchaseConfirmViewController(product: item, anOffer: offer)
+            viewController.title = "Purchase Confirmation"
+            checkForItemCategory(item: item, controller: viewController)
+            if Session.shared().isValid() {
+              self.navigationController?.pushViewController(viewController, animated: true)
+            }
+            else {
+              let alertController = UIAlertController(title: "Sign In Required!", message: "We're rerouting you to the\nSign In/Sign Up page", preferredStyle: .alert)
+              let noAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+              alertController.addAction(noAction)
+              let yesAction = UIAlertAction(title: "OK", style: .default) { action in
+                let userController = UserController(nibName: "UserAccount", bundle: nil)
+                userController.sessionDelegate = self
+                self.selectedIndexPath = indexPath as NSIndexPath
+                self.navigationController?.navigationBar.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0) // this
+                self.navigationController?.pushViewController(userController, animated: true)
+              }
+              alertController.addAction(yesAction)
+              self.present(alertController, animated: true, completion: nil)
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  func checkForItemCategory(item: Product, controller:PurchaseConfirmViewController) {
+    switch item.category {
+    case "single":
+      controller.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "MMMM d, yyyy"
+      controller.passSubtitle.text = dateFormatter.string(from: item.startsAt)
+    case "season":
+      controller.view.backgroundColor = UIColor(red: 92 / 255, green: 20 / 255, blue: 20 / 255, alpha: 1.0)
+      controller.passTitle.text = item.name.uppercased()
+      controller.passSubtitle.text = item.category
+    case "team":
+      controller.view.backgroundColor = UIColor(red: 84 / 255, green: 112 / 255, blue: 135 / 255, alpha: 1.0)
+      controller.passSubtitle.text = item.category
+    default:
+      break
     }
   }
   

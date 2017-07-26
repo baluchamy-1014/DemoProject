@@ -71,17 +71,16 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     detailCollectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     self.navigationController?.navigationBar.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
     videoPlayerController.navController = self.navigationController
-
+    
+    if headerImageView != nil && videoPlayerState != .ReadyForDisplay {
+      setupRestrictionOverlay()
+    }
     self.view.addSubview(detailCollectionView)
   }
   
   override func viewWillAppear(_ animated: Bool) {
     signInButton.isEnabled = true
     buyNowButton.isEnabled = true
-  
-    if headerImageView != nil && videoPlayerState != .ReadyForDisplay {
-      setupRestrictionOverlay()
-    }
 
     self.navigationController?.navigationBar.isTranslucent = false
     self.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
@@ -446,6 +445,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         if (error == nil) {
           Product.query(self.appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String, match: self.artifact.id.stringValue, options: [:], onCompletion: { (products, error) in
             let subscriptionsVC = PassTypeViewController()
+            self.appDelegate.throughBurgerMenu = false
             ProductGroup.applyCategoryToProducts(categoryProducts: self.appDelegate.archivistProductCategories, products: products as! [Product])
             let validProducts = (products as! [Product]).filter({ (product) -> Bool in product.category != nil })
             subscriptionsVC.subscriptionItems = validProducts
