@@ -40,6 +40,7 @@ typedef void (^DealerAPITransactionQueryCompletionBlock) (NSArray *transactions,
 
 - (void)getTaxInfo:(NSDictionary *)customerInfo
        billingInfo:(NSDictionary *)billingInfo
+    discountAmount:(NSString *)discount
        accessToken:(NSString *)accessToken
              realm:(NSString *)realm
       onCompletion:(DealerAPITaxQueryCompletionBlock)callback;

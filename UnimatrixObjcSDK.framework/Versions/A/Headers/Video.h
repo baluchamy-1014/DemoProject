@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString     *typeName;
 @property (nonatomic, strong) NSString     *pictureID;
 @property (nonatomic, strong) NSString     *storageKey;
+@property (nonatomic, strong) NSNumber     *duration;
 @property (nonatomic, strong) NSArray      *videoSources;
 @property (nonatomic, strong) NSArray      *tracks;
 
