@@ -92,7 +92,7 @@ class PurchaseConfirmViewController: UIViewController {
   
   func calculateSum(orginalPrice: CGFloat, promoValue: CGFloat) -> String {
     let totalPrice = (promoValue > orginalPrice) ? 0.0 : (orginalPrice - promoValue)
-    return String(format: "%.2f", totalPrice)
+    return String(format: "%.02f", Double(round(1000*totalPrice)/1000))
   }
   
   override func didReceiveMemoryWarning() {
