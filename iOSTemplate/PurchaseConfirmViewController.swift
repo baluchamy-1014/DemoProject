@@ -171,6 +171,7 @@ class PurchaseConfirmViewController: UIViewController {
   }
 
   @IBAction func userTappedApplePayButton(_ sender: Any) {
+    promoTextField.resignFirstResponder()
     setupSpinnerButtonDisplay()
     activityIndicator.startAnimating()
     if self.freeTransaction {
