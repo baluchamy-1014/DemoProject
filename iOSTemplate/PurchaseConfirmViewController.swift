@@ -113,7 +113,8 @@ class PurchaseConfirmViewController: UIViewController {
     let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
 
     let realm = appDelegate.appConfiguration["DEALER_REALM_UUID"] as! String
-    
+    self.freeTransaction = false
+
     if let code = promoTextField.text {
       Coupon.query(realm, withCode: code, accessToken: Session.shared().accessToken, onCompletion: { (coupon, error) in
         if error == nil  {
@@ -130,6 +131,8 @@ class PurchaseConfirmViewController: UIViewController {
               if totalAmountValue.isLessThanOrEqualTo(zeroDecimal!) {
                 self.freeTransaction = true
                 self.applePayButton.setImage(UIImage(named: "transactionButton"), for: .normal)
+              } else {
+                self.applePayButton.setImage(UIImage(named: "ApplePayButton"), for: .normal)
               }
             }
           }
