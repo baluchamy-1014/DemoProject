@@ -55,7 +55,7 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
           cell.passTrailingImage.image = UIImage(named: "singleButton")
           
           let dateFormatter = DateFormatter()
-          dateFormatter.dateFormat = "MMMM d, yyyy"
+          dateFormatter.dateFormat = "MMMM d, yyyy @ h:mm a"
           if product.startsAt != nil {
             cell.passSubtitle.text = dateFormatter.string(from: product.startsAt)
           }
@@ -230,7 +230,7 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
     case "single":
       controller.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
       let dateFormatter = DateFormatter()
-      dateFormatter.dateFormat = "MMMM d, yyyy"
+      dateFormatter.dateFormat = "MMMM d, yyyy @ h:mm a"
       controller.passSubtitle.text = dateFormatter.string(from: item.startsAt)
     case "season":
       controller.view.backgroundColor = UIColor(red: 92 / 255, green: 20 / 255, blue: 20 / 255, alpha: 1.0)
