@@ -66,12 +66,25 @@ class PurchaseConfirmViewController: UIViewController {
   func setLabelValues() {
     let locale = NSLocale(localeIdentifier: offer.currency)
     let currencySymbol = locale.displayName(forKey: .currencySymbol, value: offer.currency)
+    
     passTitle.text = product.name
+    
     passTypeLabel.text = product.category
     passPriceLabel.text = "\(currencySymbol!) \(offer.price!)"
-    totalPriceLabel.text = "\(currencySymbol!) \(self.calculateSum(orginalPrice: CGFloat(offer.price.floatValue), promoValue: 0))"
+    
+    let calculatedTotalForDispaly = self.calculateSum(orginalPrice: CGFloat(self.offer.price.floatValue), promoValue: 0)
+    totalPriceLabel.text = "\(currencySymbol!) \(calculatedTotalForDispaly)"
+
     legalTextView.text = DataFromTextFile().readDataFromFile(file: "PassFooter")
     legalTextView.sizeToFit()
+    
+    if let totalAmountValue = Decimal(string: calculatedTotalForDispaly) {
+      let zeroDecimal = Decimal(string: "0.0")
+      if totalAmountValue.isLessThanOrEqualTo(zeroDecimal!) {
+        self.freeTransaction = true
+        self.applePayButton.setImage(UIImage(named: "transactionButton"), for: .normal)
+      }
+    }
   }
   
   override func viewDidLayoutSubviews()
