@@ -224,7 +224,7 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
         seasonController.navigationController?.navigationBar.isTranslucent = false
         seasonController.navigationController?.navigationBar.barTintColor = UIColor(red: 16 / 255, green: 24 / 255, blue: 31 / 255, alpha: 1.0)
         seasonController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        Property.getProperty("nll_purchasing") { property, error in
+        Property.getProperty(self.appDelegate.appConfiguration["purchasingPropertyCode"] as! String) { property, error in
           if (error == nil) {
             Group.getGroup("/home", forProperty: Int32(Int((property?.id)!)), onCompletion: { (group, error) in
               if (error == nil) && (group != nil) {

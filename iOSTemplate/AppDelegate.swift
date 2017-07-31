@@ -115,7 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
   }
   
   func getArchivistCategories() {
-    Property.getProperty("nll_purchasing") { property, error in
+    Property.getProperty(appConfiguration["purchasingPropertyCode"] as! String) { property, error in
       if (error == nil) {
         Group.getGroup("/home", forProperty: Int32(Int((property?.id)!)), onCompletion: { (group, error) in
           if (error == nil) && (group != nil) {

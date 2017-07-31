@@ -60,5 +60,7 @@
 	</dict>
 	<key>propertyCode</key>
 	<string>nll</string>
+	<key>purchasingPropertyCode</key>
+	<string>nll_purchasing</string>
 </dict>
 </plist>
