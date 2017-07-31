@@ -15,16 +15,15 @@ NSString* addPropertyException = @"addPropertyException";
   }
 
   +( void ) addObjectProperty: ( NSString* ) name
-					  associationPolicy: ( objc_AssociationPolicy ) policy {
+            associationPolicy: ( objc_AssociationPolicy ) policy {
 
-		if ( !name.length ) {
-			[
-			  [ NSException exceptionWithName: addPropertyException
-																 reason: @"property must not be empty"
-															 userInfo: @{@"name": name, @"policy": @( policy )}
-				] raise
-			];
-		}
+      if ( !name.length ) {
+        [ [ NSException exceptionWithName: addPropertyException
+                                   reason: @"property must not be empty"
+                                 userInfo: @{@"name": name, @"policy": @( policy )}
+          ] raise
+        ];
+  }
 
 		NSString* key = [ NSString stringWithFormat: @"%p_%@", self, name ];
 
