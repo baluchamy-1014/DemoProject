@@ -15,6 +15,8 @@
 		7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */; };
 		7132AEBE1E8E3F8C0058225E /* SampleAdded.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */; };
 		71783E871F1499F6000B01D3 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71783E861F1499F6000B01D3 /* Resource.swift */; };
+		718891821F2F06D100FA6A06 /* UnimatrixConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 718891811F2F06D100FA6A06 /* UnimatrixConfiguration.m */; };
+		718891851F2F07C300FA6A06 /* NSObject+NewProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 718891841F2F07C300FA6A06 /* NSObject+NewProperty.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleAdded.swift; sourceTree = "<group>"; };
 		7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleAdded.xib; sourceTree = "<group>"; };
 		71783E861F1499F6000B01D3 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = Resources/Resource.swift; sourceTree = "<group>"; };
+		718891801F2F06D100FA6A06 /* UnimatrixConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnimatrixConfiguration.h; sourceTree = "<group>"; };
+		718891811F2F06D100FA6A06 /* UnimatrixConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnimatrixConfiguration.m; sourceTree = "<group>"; };
+		718891831F2F07C300FA6A06 /* NSObject+NewProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+NewProperty.h"; sourceTree = "<group>"; };
+		718891841F2F07C300FA6A06 /* NSObject+NewProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+NewProperty.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,16 +74,12 @@
 				7132AEB51E8E3E120058225E /* Info.plist */,
 				7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */,
 				7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */,
+				718891801F2F06D100FA6A06 /* UnimatrixConfiguration.h */,
+				718891811F2F06D100FA6A06 /* UnimatrixConfiguration.m */,
+				718891831F2F07C300FA6A06 /* NSObject+NewProperty.h */,
+				718891841F2F07C300FA6A06 /* NSObject+NewProperty.m */,
 			);
 			path = DemoProject;
-			sourceTree = "<group>";
-		};
-		71783E851F149958000B01D3 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				71783E861F1499F6000B01D3 /* Resource.swift */,
-			);
-			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +114,7 @@
 				TargetAttributes = {
 					7132AEA81E8E3E120058225E = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -154,6 +157,8 @@
 			files = (
 				7132AEAF1E8E3E120058225E /* ViewController.swift in Sources */,
 				71783E871F1499F6000B01D3 /* Resource.swift in Sources */,
+				718891821F2F06D100FA6A06 /* UnimatrixConfiguration.m in Sources */,
+				718891851F2F07C300FA6A06 /* NSObject+NewProperty.m in Sources */,
 				7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */,
 				7132AEAD1E8E3E120058225E /* AppDelegate.swift in Sources */,
 				712678F21F29EBF400A1222B /* Artifact.swift in Sources */,
@@ -268,11 +273,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DemoProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.angler.DemoProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -281,6 +288,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = DemoProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
