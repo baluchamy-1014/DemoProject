@@ -14,9 +14,9 @@
                                                           ofType: @"plist"
                                     ];
 
-			NSMutableDictionary* configuration = [
+      NSMutableDictionary* configuration = [
         NSMutableDictionary dictionaryWithContentsOfFile: configurationPath
-			];
+      ];
 
       NSString* applicationEnvironment = [ configuration valueForKey: @"ENV" ];
 
