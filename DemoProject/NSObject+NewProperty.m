@@ -17,39 +17,38 @@ NSString* addPropertyException = @"addPropertyException";
   +( void ) addObjectProperty: ( NSString* ) name
             associationPolicy: ( objc_AssociationPolicy ) policy {
 
-      if ( !name.length ) {
-        [ [ NSException exceptionWithName: addPropertyException
-                                   reason: @"property must not be empty"
-                                 userInfo: @{@"name": name, @"policy": @( policy )}
-          ] raise
-        ];
+    if ( !name.length ) {
+      [ [ NSException exceptionWithName: addPropertyException
+                                 reason: @"property must not be empty"
+                               userInfo: @{@"name": name, @"policy": @( policy )}
+        ] raise
+      ];
+    }
+    NSString* key = [ NSString stringWithFormat: @"%p_%@", self, name ];
+
+    id setblock = ^( id self, id value ) {
+      objc_setAssociatedObject( self, ( __bridge void* ) key, value, policy );
+    };
+
+    IMP selectorPointer = imp_implementationWithBlock( setblock );
+    NSString* selectorString = setterSelectorNameofProperty( name );
+
+    BOOL result = class_addMethod(
+                    [ self class ],
+                    NSSelectorFromString( selectorString ),
+                    selectorPointer,
+                    "v@:@"
+                  );
+
+    assert( result );
+
+    id getBlock = ^id( id self ) {
+      return objc_getAssociatedObject( self, ( __bridge void* ) key );
+    };
+
+    IMP getSelector = imp_implementationWithBlock( getBlock );
+    result = class_addMethod( [ self class ], NSSelectorFromString( name ), getSelector, "@@:" );
+    assert( result );
   }
 
-		NSString* key = [ NSString stringWithFormat: @"%p_%@", self, name ];
-
-		id setblock = ^( id self, id value ) {
-			objc_setAssociatedObject( self, ( __bridge void* ) key, value, policy );
-		};
-
-		IMP selectorPointer = imp_implementationWithBlock( setblock );
-		NSString* selectorString = setterSelectorNameofProperty( name );
-
-		BOOL result = class_addMethod(
-									  [ self class ],
-										NSSelectorFromString( selectorString ),
-										selectorPointer,
-										"v@:@"
-									);
-
-		assert( result );
-
-		id getBlock = ^id( id self ) {
-			return objc_getAssociatedObject( self, ( __bridge void* ) key );
-		};
-
-		IMP getSelector = imp_implementationWithBlock( getBlock );
-		result = class_addMethod( [ self class ], NSSelectorFromString( name ), getSelector, "@@:" );
-		assert( result );
-  }
-  
 @end
