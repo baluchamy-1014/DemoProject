@@ -11,8 +11,8 @@
       NSBundle* mainBundle = [ NSBundle mainBundle ];
 
       NSString* configurationPath = [ mainBundle pathForResource: @"Configuration"
-																													ofType: @"plist"
-																		];
+                                                          ofType: @"plist"
+                                    ];
 
 			NSMutableDictionary* configuration = [
         NSMutableDictionary dictionaryWithContentsOfFile: configurationPath
