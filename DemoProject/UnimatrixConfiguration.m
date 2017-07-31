@@ -23,7 +23,7 @@
       [ [ UnimatrixConfiguration class ] addObjectProperty: @"applicationEnvironment"
                                                   forClass: className
                                          withPropertyClass: NSStringFromClass( [ NSString class ] )
-			];
+      ];
 
       NSMutableDictionary* environmentConfiguration = [
         configuration valueForKey: applicationEnvironment
