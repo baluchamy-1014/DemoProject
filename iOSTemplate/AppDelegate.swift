@@ -84,6 +84,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
 
     self.getBurgerMenuData()
     self.getArchivistCategories()
+    
+    do {
+      try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+      try AVAudioSession.sharedInstance().setActive(true)
+    } catch {
+      print("audio session error")
+    }
+
     return true
   }
   
