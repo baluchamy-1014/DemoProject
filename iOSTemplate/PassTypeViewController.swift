@@ -231,7 +231,9 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
       controller.view.backgroundColor = UIColor(red: 167 / 255, green: 147 / 255, blue: 25 / 255, alpha: 1.0)
       let dateFormatter = DateFormatter()
       dateFormatter.dateFormat = "MMMM d, yyyy @ h:mm a"
-      controller.passSubtitle.text = dateFormatter.string(from: item.startsAt)
+      if item.startsAt != nil {
+        controller.passSubtitle.text = dateFormatter.string(from: item.startsAt)
+      }
     case "season":
       controller.view.backgroundColor = UIColor(red: 92 / 255, green: 20 / 255, blue: 20 / 255, alpha: 1.0)
       controller.passTitle.text = item.name.uppercased()
