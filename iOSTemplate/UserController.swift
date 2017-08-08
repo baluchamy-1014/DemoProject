@@ -90,6 +90,7 @@ class UserController: UIViewController {
 
   func popSelfFromNavigationController() {
     _ = self.navigationController?.popViewController(animated: true)
+    self.signUpController.view.isHidden = true
     self.sessionDelegate?.userDidSignIn()
   }
 
