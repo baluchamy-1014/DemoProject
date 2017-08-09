@@ -131,13 +131,20 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
       
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeCell", for: indexPath) as! LargeCollectionViewCell
       let item = artifactItems[indexPath.row]
+      var cellHeight = Int32(cell.imageView.frame.height)
+      
+      if DeviceChecker.DeviceType.IS_IPAD {
+        // TODO: get actual desired value
+        cellHeight = 432
+      }
 
-      if let thumbnailURL = item.pictureURLwithWidth(Int32(cell.frame.width), height: Int32(cell.imageView.frame.height)) {
+      if let thumbnailURL = item.pictureURLwithWidth(Int32(cell.frame.width), height: cellHeight) {
         cell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
-      } else {
+      }
+      else {
         cell.imageView.image = placeholderImage
       }
-      
+    
       cell.titleLabel.textColor = UIColor.black
       if let aTitle = item.name {
         cell.titleLabel.text = aTitle
@@ -187,7 +194,10 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
     
     if indexPath.row == 0 || indexPath.row == 1 {
-      if DeviceChecker.DeviceType.IS_IPHONE_5 {
+      if DeviceChecker.DeviceType.IS_IPAD {
+        return CGSize(width: self.view.frame.width, height: 500)
+      }
+      else if DeviceChecker.DeviceType.IS_IPHONE_5 {
         return CGSize(width: self.view.frame.width, height: 270)
       }
       else {
