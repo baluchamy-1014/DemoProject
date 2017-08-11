@@ -166,10 +166,16 @@ class TagButton:UIButton {
 class CustomCollectionViewFlowLayout: UICollectionViewFlowLayout {
   override init() {
     super.init()
-    
-    self.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    self.minimumLineSpacing = 0.5
-    self.minimumInteritemSpacing = 1
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      self.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+      self.minimumLineSpacing = 20
+      self.minimumInteritemSpacing = 18
+    }
+    else {
+      self.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+      self.minimumLineSpacing = 0.5
+      self.minimumInteritemSpacing = 1
+    }
   }
   
   required init?(coder aDecoder: NSCoder) {
