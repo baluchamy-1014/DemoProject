@@ -183,10 +183,21 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     let item = items[indexPath.row]
     cell.backgroundColor = UIColor.white
     
-    let collectionViewWidth = detailCollectionView.bounds.size.width
-    cell.frame.size.width = collectionViewWidth
+    var collectionViewWidth = detailCollectionView.bounds.size.width
+    var pictureWidth:Int32 = 320
+    var pictureHeight:Int32 = 180
     
-    if let imageURL = item.pictureURLwithWidth(320, height: 180) {
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      collectionViewWidth = (detailCollectionView.bounds.size.width/2) - 29
+      pictureWidth = Int32(cell.frame.width)
+      pictureHeight = Int32(cell.frame.width * (9/16))
+      cell.frame.size.width = collectionViewWidth
+    }
+    else {
+      cell.frame.size.width = collectionViewWidth
+    }
+    
+    if let imageURL = item.pictureURLwithWidth(pictureWidth, height: pictureHeight) {
       cell.imageView.setImageWith(imageURL, placeholderImage: placeholderImage)
     }
     else {
@@ -211,6 +222,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     if let createdAtString = item.createdAt {
       cell.timestampLabel.displayDateTime(createdAtString)
     }
+    cell.backgroundColor = UIColor.white
     
     return cell
   }
@@ -350,8 +362,12 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-
-    return CGSize(width: collectionView.bounds.size.width, height: CGFloat(120))
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      return CGSize(width: (collectionView.bounds.size.width/2) - 29, height: 378)
+    }
+    else {
+      return CGSize(width: collectionView.bounds.size.width, height: CGFloat(120))
+    }
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
