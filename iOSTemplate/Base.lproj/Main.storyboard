@@ -42,13 +42,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.062745098039215685" green="0.094117647058823528" blue="0.12156862745098039" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cL0-Eg-7hx" firstAttribute="centerX" secondItem="TnR-Kh-l0W" secondAttribute="centerX" id="AqO-tf-Wo3"/>
-                            <constraint firstItem="TnR-Kh-l0W" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="LaC-gy-fSO"/>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="TnR-Kh-l0W" secondAttribute="bottom" constant="17" id="N9q-n0-wuv"/>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="117" id="fAG-af-1vq"/>
+                            <constraint firstItem="cL0-Eg-7hx" firstAttribute="centerX" secondItem="TnR-Kh-l0W" secondAttribute="centerX" id="i06-IA-0mk"/>
+                            <constraint firstItem="TnR-Kh-l0W" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kU5-2U-gtB"/>
                             <constraint firstItem="cL0-Eg-7hx" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="qCp-l8-b5z"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cL0-Eg-7hx" secondAttribute="bottom" constant="-10" id="y1C-bD-tD9"/>
-                            <constraint firstAttribute="trailing" secondItem="TnR-Kh-l0W" secondAttribute="trailing" constant="5" id="zWE-fi-tSA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="I2A-JP-NPx">
@@ -98,7 +97,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CRI-yU-Tfg" id="1WQ-pp-3OW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
