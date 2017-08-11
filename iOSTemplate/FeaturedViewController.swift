@@ -133,18 +133,16 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
       let item = artifactItems[indexPath.row]
       var cellHeight = Int32(cell.imageView.frame.height)
       
-      if DeviceChecker.DeviceType.IS_IPAD {
+      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
         // TODO: get actual desired value
         cellHeight = 432
       }
-
       if let thumbnailURL = item.pictureURLwithWidth(Int32(cell.frame.width), height: cellHeight) {
         cell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
       }
       else {
         cell.imageView.image = placeholderImage
       }
-    
       cell.titleLabel.textColor = UIColor.black
       if let aTitle = item.name {
         cell.titleLabel.text = aTitle
@@ -159,16 +157,27 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     else {
       let relatedCell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! ListCollectionViewCell
       let item = artifactItems[indexPath.row]
-    
-      let collectionViewWidth = self.collectionView.bounds.size.width
-      relatedCell.frame.size.width = collectionViewWidth
+      var collectionViewWidth = self.collectionView.bounds.size.width
       
-      if let thumbnailURL = item.pictureURLwithWidth(320, height: 180) {
-        relatedCell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
-      } else {
-        relatedCell.imageView.image = placeholderImage
+      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+        collectionViewWidth = (self.collectionView.bounds.size.width/2) - 29
+        relatedCell.frame.size.width = collectionViewWidth
+        if let thumbnailURL = item.pictureURLwithWidth(Int32(relatedCell.frame.width), height: Int32(relatedCell.frame.width * (9/16))) {
+          relatedCell.imageView.setImageWith(thumbnailURL, placeholderImage: self.placeholderImage)
+        }
+        else {
+          relatedCell.imageView.image = self.placeholderImage
+        }
+        relatedCell.backgroundColor = UIColor.blue
       }
-
+      else {
+        relatedCell.frame.size.width = collectionViewWidth
+        if let thumbnailURL = item.pictureURLwithWidth(320, height: 180) {
+          relatedCell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
+        } else {
+          relatedCell.imageView.image = placeholderImage
+        }
+      }
       relatedCell.artifactNameLabel.text = item.name.uppercased()
       relatedCell.artifactNameLabel.numberOfLines = 2
       relatedCell.artifactNameLabel.backgroundColor = UIColor.white
@@ -194,8 +203,8 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
     
     if indexPath.row == 0 || indexPath.row == 1 {
-      if DeviceChecker.DeviceType.IS_IPAD {
-        return CGSize(width: self.view.frame.width, height: 500)
+      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO{
+         return CGSize(width: self.view.frame.width-64, height: 670)
       }
       else if DeviceChecker.DeviceType.IS_IPHONE_5 {
         return CGSize(width: self.view.frame.width, height: 270)
@@ -204,7 +213,13 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
         return CGSize(width: self.view.frame.width, height: 305)
       }
     } else {
-      return CGSize(width: self.view.frame.width, height: 120)
+      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+        print(collectionView.bounds.size.width)
+        return CGSize(width: (self.collectionView.bounds.size.width/2) - 29, height: 378)
+      }
+      else {
+        return CGSize(width: self.view.frame.width, height: 120)
+      }
     }
   }
   
