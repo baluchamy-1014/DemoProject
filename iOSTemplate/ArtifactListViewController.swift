@@ -214,11 +214,18 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! ListCollectionViewCell
     let item = self.items[indexPath.row]
     cell.backgroundColor = UIColor.white
+    var collectionViewWidth = self.collectionView.bounds.size.width
+    var pictureWidth:Int32 = 320
+    var pictureHeight:Int32 = 180
     
-    let collectionViewWidth = self.collectionView.bounds.size.width
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      collectionViewWidth = (self.collectionView.bounds.size.width/2) - 29
+      pictureWidth = Int32(cell.frame.width)
+      pictureHeight = Int32(cell.frame.width * (9/16))
+    }
     cell.frame.size.width = collectionViewWidth
     
-    if let imageURL = item.pictureURLwithWidth(320, height: 180) {
+    if let imageURL = item.pictureURLwithWidth(pictureWidth, height: pictureHeight) {
       cell.imageView.setImageWith(imageURL, placeholderImage: placeholderImage)
     }
     else {
@@ -251,7 +258,12 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-    return CGSize(width: collectionView.bounds.size.width, height: CGFloat(120))
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      return CGSize(width: (self.collectionView.bounds.size.width/2) - 29, height: 378)
+    }
+    else {
+      return CGSize(width: collectionView.bounds.size.width, height: CGFloat(120))
+    }
   }
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
