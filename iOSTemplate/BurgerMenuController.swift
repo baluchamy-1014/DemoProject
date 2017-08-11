@@ -159,7 +159,7 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
     
     let backgroundColorView = SelectedCellBurgerMenuBackgroundColorView(frame: cell.frame)
     cell.selectedBackgroundView = backgroundColorView
-    
+    cell.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
     cell.burgerCellLabel.highlightedTextColor = UIColor.white
     cell.burgerCellLabel.textColor = UIColor(red: 135/255, green: 139/255, blue: 143/255, alpha: 1.0)
 
