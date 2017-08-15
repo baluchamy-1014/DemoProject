@@ -240,8 +240,13 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     if (kind == UICollectionElementKindSectionHeader) {
       reusableHeaderView = detailCollectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as UICollectionReusableView
       reusableHeaderView.backgroundColor = UIColor.white
+      var headerImageHeight: CGFloat = 220
       
-      headerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: reusableHeaderView.frame.size.width, height: 200))
+      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+        headerImageHeight = 433
+      }
+      
+      headerImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: reusableHeaderView.frame.size.width, height: headerImageHeight))
       headerImageView.isUserInteractionEnabled = true
       reusableHeaderView.addSubview(headerImageView)
 
@@ -265,11 +270,9 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       } else {
         headerImageView.image = placeholderImage
       }
-        
-
       
       // Todo: Create custom labels
-      let articleLabel = UILabel(frame: CGRect(x: 20, y: 220, width: reusableHeaderView.frame.size.width-40, height: 45))
+      let articleLabel = UILabel(frame: CGRect(x: 20, y: headerImageHeight + 20, width: reusableHeaderView.frame.size.width-40, height: 45))
       articleLabel.font = UIFont.boldSystemFont(ofSize: 20)
       articleLabel.numberOfLines = 2
       articleLabel.text = artifact.name
@@ -286,7 +289,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
         authorLabel.text = authorString.name
       }
       
-      let dateLabel = AddedAtLabel(frame: CGRect(x: 20, y: articleLabel.frame.height + 230, width: 160, height: 16))
+      let dateLabel = AddedAtLabel(frame: CGRect(x: 20, y: headerImageHeight + articleLabel.frame.height + 30, width: 160, height: 16))
       dateLabel.font = UIFont.systemFont(ofSize: 12)
       dateLabel.backgroundColor = UIColor.white
       if let createdAtString = artifact.createdAt {
@@ -313,7 +316,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       }
       
       if counter != 0 {
-      let relatedVideosLabel = UILabel(frame: CGRect(x: 20, y: reusableHeaderView.frame.size.height-40, width: 400, height: 26))
+      let relatedVideosLabel = UILabel(frame: CGRect(x: 20, y: reusableHeaderView.frame.size.height - 46, width: 400, height: 26))
       relatedVideosLabel.font = UIFont.boldSystemFont(ofSize: 24)
       relatedVideosLabel.textColor = UIColor.black
       relatedVideosLabel.text = "Related Content"
@@ -327,7 +330,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       counter += 1
       reusableHeaderView.backgroundColor = UIColor.white
       if tagSection != nil {
-        tagSection.view.frame.origin.y = articleDescriptionTextView.frame.height + articleLabel.frame.height + 271
+        tagSection.view.frame.origin.y = articleDescriptionTextView.frame.height + articleLabel.frame.height + headerImageHeight + 72
       }
       return reusableHeaderView
     }
@@ -336,7 +339,13 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   
   func collectionView(_ collectionView: UICollectionView!, layout collectionViewLayout: UICollectionViewLayout!, referenceSizeForHeaderInSection section: Int) -> CGSize
   {
-    let articleDescriptionTextView = UITextView(frame: CGRect(x: 41, y: 220, width: self.view.frame.width - 32, height: 0))
+    var headerImageHeight: CGFloat = 220
+    
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      headerImageHeight = 433
+    }
+
+    let articleDescriptionTextView = UITextView(frame: CGRect(x: 41, y: headerImageHeight + 101, width: self.view.frame.width - 32, height: 0))
     articleDescriptionTextView.font = UIFont.systemFont(ofSize: 15)
     if let artifactDescription = artifact.longDescription {
       articleDescriptionTextView.text = artifactDescription
@@ -345,17 +354,17 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       }
     }
 
-    let articleLabel = UILabel(frame: CGRect(x: 20, y: 220, width: self.view.frame.width - 40, height: 45))
+    let articleLabel = UILabel(frame: CGRect(x: 20, y: headerImageHeight + 20, width: self.view.frame.width - 40, height: 45))
     articleLabel.font = UIFont.boldSystemFont(ofSize: 20)
     articleLabel.numberOfLines = 2
     articleLabel.text = artifact.name
     articleLabel.sizeToFit()
  
     if tagSection != nil {
-      return CGSize(width: self.view.frame.width, height: articleDescriptionTextView.frame.height + articleLabel.frame.height + tagSection.view.frame.height + 335)
+      return CGSize(width: self.view.frame.width, height: articleDescriptionTextView.frame.height + articleLabel.frame.height + tagSection.view.frame.height + headerImageHeight + 146)
     }
     else {
-      return CGSize(width: self.view.frame.width, height: articleDescriptionTextView.frame.height + articleLabel.frame.height + 333)
+      return CGSize(width: self.view.frame.width, height: articleDescriptionTextView.frame.height + articleLabel.frame.height + headerImageHeight + 132)
     }
   }
   
