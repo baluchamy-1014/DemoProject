@@ -79,7 +79,7 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
       }
 
       cell.passTitle?.text = passTitle
-
+      cell.backgroundColor = .black
       cell.bounds = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 200)
       cell.contentView.bounds = cell.bounds
       cell.layoutIfNeeded()

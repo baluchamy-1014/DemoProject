@@ -47,7 +47,7 @@ class SeasonsViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     tableView.register(UINib(nibName: "SeasonTicketCell", bundle: nil), forCellReuseIdentifier: "SeasonTicketCell")
     let cell = tableView.dequeueReusableCell(withIdentifier: "SeasonTicketCell", for: indexPath) as! SeasonTicketCell
-
+    cell.backgroundColor = .black
     if seasonItems.count > 0 {
       if let item = seasonItems[indexPath.row] as? Group {
         cell.seasonPassTitle.text = item.name
