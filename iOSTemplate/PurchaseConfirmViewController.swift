@@ -213,11 +213,33 @@ class PurchaseConfirmViewController: UIViewController {
         self.removeSpinnerButton()
       })
     } else {
-      let viewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest())
-      viewController.delegate = self
-      present(viewController, animated: true, completion: { 
-        self.removeSpinnerButton()
-      })
+      if PKPaymentAuthorizationViewController.canMakePayments() {
+        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: SupportedPaymentNetworks) {
+          let viewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest())
+          viewController.delegate = self
+          present(viewController, animated: true, completion: {
+            self.removeSpinnerButton()
+          })
+        }
+        else {
+          let alertController = UIAlertController(title: "Apple Pay Required", message: "Go to Settings > Wallet & Apple Pay to add a Credit or Debit Card or purchase on https://tv.nlltv.com/", preferredStyle: .alert)
+          let yesAction = UIAlertAction(title: "OK", style: .default) { action in
+            self.removeSpinnerButton()
+            // TODO: send user to homescreen?
+          }
+          alertController.addAction(yesAction)
+          self.present(alertController, animated: true, completion: nil)
+        }
+      }
+      else {
+        let alertController = UIAlertController(title: "Apple Pay Unsupported On Device", message: "Please purchase on https://tv.nlltv.com/", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "OK", style: .default) { action in
+          self.removeSpinnerButton()
+          // TODO: send user to homescreen?
+        }
+        alertController.addAction(yesAction)
+        self.present(alertController, animated: true, completion: nil)
+      }
     }
   }
   
