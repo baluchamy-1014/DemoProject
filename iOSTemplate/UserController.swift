@@ -37,6 +37,7 @@ class UserController: UIViewController {
   }
 
   override func viewDidLoad() {
+    signInController.view.frame = CGRect(x: 0, y: 0, width: self.formView.bounds.size.width, height: self.formView.bounds.size.height)
     self.formView.addSubview(signInController.view)
     self.title = "Welcome To NLL TV!"
     self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
@@ -69,6 +70,7 @@ class UserController: UIViewController {
   }
   @IBAction func switchToSignInView(_ sender: AnyObject) {
     self.removeSubviews()
+    signInController.view.frame = CGRect(x: 0, y: 0, width: self.formView.bounds.size.width, height: self.formView.bounds.size.height)
     self.formView.addSubview(signInController.view)
     
     self.signInButton.isSelected = true
