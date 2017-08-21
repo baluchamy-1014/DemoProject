@@ -19,7 +19,6 @@ class UserController: UIViewController {
   @IBOutlet weak var formView: UIView!
   @IBOutlet weak var signInButton: UserScreenButton!
   @IBOutlet weak var signUpButton: UserScreenButton!
-  @IBOutlet weak var backgroundImageView: UIImageView!
   
   let signInController: SignInController
   let signUpController: SignUpController
@@ -63,8 +62,6 @@ class UserController: UIViewController {
   @IBAction func switchToSignUpView(_ sender: AnyObject) {
     self.removeSubviews()
     signUpController.view.frame = CGRect(x: 0, y: 0, width: self.formView.bounds.size.width, height: self.formView.bounds.size.height)
-    self.formView.addSubview(backgroundImageView)
-    self.addBackgroundImageViewConstraints()
     self.formView.addSubview(signUpController.view)
 
     self.signInButton.isSelected = false
@@ -72,20 +69,10 @@ class UserController: UIViewController {
   }
   @IBAction func switchToSignInView(_ sender: AnyObject) {
     self.removeSubviews()
-    self.formView.addSubview(backgroundImageView)
-    self.addBackgroundImageViewConstraints()
     self.formView.addSubview(signInController.view)
     
     self.signInButton.isSelected = true
     self.signUpButton.isSelected = false
-  }
-  
-  func addBackgroundImageViewConstraints() {
-    backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
-    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: formView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0))
-    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: formView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0))
-    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: formView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0))
-    view.addConstraint(NSLayoutConstraint(item: backgroundImageView, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: selectionView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0))
   }
 
   func popSelfFromNavigationController() {
