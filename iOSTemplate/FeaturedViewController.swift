@@ -125,75 +125,88 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return artifactItems.count
   }
-
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    if indexPath.row == 0 || indexPath.row == 1 {
-      
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeCell", for: indexPath) as! LargeCollectionViewCell
-      let item = artifactItems[indexPath.row]
-      var cellHeight = Int32(cell.imageView.frame.height)
-      
-      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
-        // TODO: get actual desired value
-        cellHeight = 432
-      }
-      if let thumbnailURL = item.pictureURLwithWidth(Int32(cell.frame.width), height: cellHeight) {
-        cell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
-      }
-      else {
-        cell.imageView.image = placeholderImage
-      }
-      cell.titleLabel.textColor = UIColor.black
-      if let aTitle = item.name {
-        cell.titleLabel.text = aTitle
-      }
-      cell.titleLabel.sizeToFit()
-      
-      if let createdAtString = item.createdAt {
-        cell.timeElapsedLabel.displayDateTime(createdAtString)
-      }
-      return cell
+  
+  func applyLargeCellSettings(cell: LargeCollectionViewCell, item: Artifact, cellHeight: Int32) {
+    if let thumbnailURL = item.pictureURLwithWidth(Int32(cell.frame.width), height: cellHeight) {
+      cell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
     }
     else {
-      let relatedCell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! ListCollectionViewCell
-      let item = artifactItems[indexPath.row]
-      var collectionViewWidth = self.collectionView.bounds.size.width
-      
-      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
-        collectionViewWidth = (self.collectionView.bounds.size.width/2) - 29
-        relatedCell.frame.size.width = collectionViewWidth
-        if let thumbnailURL = item.pictureURLwithWidth(Int32(relatedCell.frame.width), height: Int32(relatedCell.frame.width * (9/16))) {
-          relatedCell.imageView.setImageWith(thumbnailURL, placeholderImage: self.placeholderImage)
-        }
-        else {
-          relatedCell.imageView.image = self.placeholderImage
-        }
-        relatedCell.backgroundColor = UIColor.blue
-      }
-      else {
-        relatedCell.frame.size.width = collectionViewWidth
-        if let thumbnailURL = item.pictureURLwithWidth(320, height: 180) {
-          relatedCell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
-        } else {
-          relatedCell.imageView.image = placeholderImage
-        }
-      }
-      relatedCell.artifactNameLabel.text = item.name.uppercased()
-      relatedCell.artifactNameLabel.numberOfLines = 2
-      relatedCell.artifactNameLabel.backgroundColor = UIColor.white
-      relatedCell.backgroundColor = UIColor.white
-      
-      if let aAuthor = item.author() {
-        relatedCell.authorLabel.text = aAuthor.name
-      }
-      else {
-        relatedCell.authorLabel.text = ""
-      }
+      cell.imageView.image = placeholderImage
+    }
+    cell.titleLabel.textColor = UIColor.black
+    if let aTitle = item.name {
+      cell.titleLabel.text = aTitle
+    }
+    cell.titleLabel.sizeToFit()
+    
+    if let createdAtString = item.createdAt {
+      cell.timeElapsedLabel.displayDateTime(createdAtString)
+    }
 
-      if let createdAtString = item.createdAt {
-        relatedCell.timestampLabel.displayDateTime(createdAtString)
+  }
+  
+  func applyListCellSettings(cell: ListCollectionViewCell, item: Artifact, cellHeight: Int32, cellWidth: Int32) {
+    if let thumbnailURL = item.pictureURLwithWidth(cellWidth, height: cellHeight) {
+      cell.imageView.setImageWith(thumbnailURL, placeholderImage: self.placeholderImage)
+    }
+    else {
+      cell.imageView.image = self.placeholderImage
+    }
+    cell.artifactNameLabel.text = item.name.uppercased()
+    cell.artifactNameLabel.numberOfLines = 2
+    cell.artifactNameLabel.backgroundColor = UIColor.white
+    cell.backgroundColor = UIColor.white
+    
+    if let aAuthor = item.author() {
+      cell.authorLabel.text = aAuthor.name
+    }
+    else {
+      cell.authorLabel.text = ""
+    }
+    
+    if let createdAtString = item.createdAt {
+      cell.timestampLabel.displayDateTime(createdAtString)
+    }
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      if indexPath.row == 0 {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeCell", for: indexPath) as! LargeCollectionViewCell
+        let item = artifactItems[indexPath.row]
+        let cellHeight: Int32 = 432
+
+        applyLargeCellSettings(cell: cell, item: item, cellHeight: cellHeight)
+        return cell
       }
-      return relatedCell
+      else {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! ListCollectionViewCell
+        let item = artifactItems[indexPath.row]
+        let collectionViewWidth = (self.collectionView.bounds.size.width/2) - 29
+        cell.frame.size.width = collectionViewWidth
+        
+        applyListCellSettings(cell: cell, item: item, cellHeight:Int32(cell.frame.width * (9/16)), cellWidth: Int32(collectionViewWidth))
+
+        return cell
+      }
+    }
+    else {
+      if indexPath.row == 0 || indexPath.row == 1 {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeCell", for: indexPath) as! LargeCollectionViewCell
+        let item = artifactItems[indexPath.row]
+        let cellHeight = Int32(cell.imageView.frame.height)
+        
+        applyLargeCellSettings(cell: cell, item: item, cellHeight: cellHeight)
+        return cell
+      }
+      else {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "listCell", for: indexPath) as! ListCollectionViewCell
+        let item = artifactItems[indexPath.row]
+        applyListCellSettings(cell: cell, item: item, cellHeight: 180, cellWidth: 320)
+
+        return cell
+      }
     }
   }
   // MARK: UICollectionViewFlowLayoutDelegate
@@ -201,24 +214,31 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-    
-    if indexPath.row == 0 || indexPath.row == 1 {
-      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO{
-         return CGSize(width: self.view.frame.width-64, height: 670)
-      }
-      else if DeviceChecker.DeviceType.IS_IPHONE_5 {
-        return CGSize(width: self.view.frame.width, height: 270)
+
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      if indexPath.row == 0 {
+        return CGSize(width: self.view.frame.width-64, height: 670)
       }
       else {
-        return CGSize(width: self.view.frame.width, height: 305)
-      }
-    } else {
-      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
-        print(collectionView.bounds.size.width)
         return CGSize(width: (self.collectionView.bounds.size.width/2) - 29, height: 378)
       }
+    }
+    else {
+      if DeviceChecker.DeviceType.IS_IPHONE_5 {
+        if indexPath.row == 0 || indexPath.row == 1 {
+          return CGSize(width: self.view.frame.width, height: 270)
+        }
+        else {
+          return CGSize(width: self.view.frame.width, height: 120)
+        }
+      }
       else {
-        return CGSize(width: self.view.frame.width, height: 120)
+        if indexPath.row == 0 || indexPath.row == 1 {
+          return CGSize(width: self.view.frame.width, height: 305)
+        }
+        else {
+          return CGSize(width: self.view.frame.width, height: 120)
+        }
       }
     }
   }
