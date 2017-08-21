@@ -24,9 +24,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="NLL_Loading_Animation_splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Yp-Es-HHV">
                                 <rect key="frame" x="150" y="229" width="300" height="116"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="0wf-OO-kqm"/>
-                                    <constraint firstAttribute="height" constant="116" id="3AO-Ha-4m9"/>
+                                    <constraint firstAttribute="width" constant="290" id="0wf-OO-kqm">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="600"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="116" id="3AO-Ha-4m9">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="237"/>
+                                    </constraint>
                                 </constraints>
+                                <variation key="heightClass=regular-widthClass=regular" image="NLL_Loading_Animation_iPad_31.png"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -42,6 +47,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NLL_Loading_Animation_iPad_31.png" width="1823" height="720"/>
         <image name="NLL_Loading_Animation_splash.png" width="1823" height="720"/>
     </resources>
 </document>
