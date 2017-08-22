@@ -20,7 +20,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: CustomCollectionViewFlowLayout())
+    collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 67), collectionViewLayout: CustomCollectionViewFlowLayout())
     self.view.addSubview(collectionView)
     
     collectionView.alwaysBounceVertical = true

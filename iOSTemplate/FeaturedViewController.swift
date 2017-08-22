@@ -17,7 +17,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
 
   override func viewDidLoad() {
     // TODO: move out in CollectionView setup
-    collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height-95), collectionViewLayout: CustomCollectionViewFlowLayout())
+    collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 100), collectionViewLayout: CustomCollectionViewFlowLayout())
     self.view.addSubview(collectionView)
     collectionView.allowsSelection = true
     collectionView.delegate = self

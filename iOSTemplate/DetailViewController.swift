@@ -62,7 +62,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    detailCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height), collectionViewLayout: CustomCollectionViewFlowLayout())
+    detailCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 60), collectionViewLayout: CustomCollectionViewFlowLayout())
     detailCollectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
     detailCollectionView.delegate = self
     detailCollectionView.dataSource = self
