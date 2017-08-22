@@ -222,20 +222,19 @@ class PurchaseConfirmViewController: UIViewController {
           })
         }
         else {
-          let alertController = UIAlertController(title: "Apple Pay Required", message: "Go to Settings > Wallet & Apple Pay to add a Credit or Debit Card or purchase on https://tv.nlltv.com/", preferredStyle: .alert)
+          let alertController = UIAlertController(title: "Apple Pay Required", message: "Go to Settings > Wallet & Apple Pay to add a Credit or Debit Card or purchase at https://tv.nlltv.com/", preferredStyle: .alert)
           let yesAction = UIAlertAction(title: "OK", style: .default) { action in
             self.removeSpinnerButton()
-            // TODO: send user to homescreen?
           }
           alertController.addAction(yesAction)
           self.present(alertController, animated: true, completion: nil)
         }
       }
       else {
-        let alertController = UIAlertController(title: "Apple Pay Unsupported On Device", message: "Please purchase on https://tv.nlltv.com/", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Apple Pay Unsupported On Device", message: "Please purchase at \n https://tv.nlltv.com/", preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "OK", style: .default) { action in
           self.removeSpinnerButton()
-          // TODO: send user to homescreen?
+          self.appDelegate.sendUserToHomeScreen()
         }
         alertController.addAction(yesAction)
         self.present(alertController, animated: true, completion: nil)
