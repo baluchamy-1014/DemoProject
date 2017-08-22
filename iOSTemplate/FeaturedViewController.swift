@@ -217,7 +217,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
       if indexPath.row == 0 {
-        return CGSize(width: self.view.frame.width-64, height: 670)
+        return CGSize(width: self.view.frame.width-40, height: 670)
       }
       else {
         return CGSize(width: (self.collectionView.bounds.size.width/2) - 29, height: 378)
