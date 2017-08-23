@@ -77,6 +77,7 @@ class PurchaseConfirmViewController: UIViewController {
 
     legalTextView.text = DataFromTextFile().readDataFromFile(file: "PassFooter")
     legalTextView.sizeToFit()
+    legalTextView.textAlignment = .center
     
     if let totalAmountValue = Decimal(string: calculatedTotalForDispaly) {
       let zeroDecimal = Decimal(string: "0.0")

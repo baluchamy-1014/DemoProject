@@ -251,6 +251,7 @@
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=regular">
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.47421875000000002" colorSpace="calibratedRGB"/>
                                         <mask key="constraints">
                                             <exclude reference="hDD-43-yjL"/>
                                         </mask>
@@ -314,11 +315,11 @@
                                     <exclude reference="Phe-nk-6j4"/>
                                     <exclude reference="BBk-Xd-HyQ"/>
                                     <exclude reference="oyt-Gj-anm"/>
+                                    <exclude reference="0WA-dT-QUr"/>
+                                    <exclude reference="A0T-rC-Gbw"/>
                                     <exclude reference="GF1-dc-2yO"/>
                                     <exclude reference="LRq-Uh-Pli"/>
                                     <exclude reference="uQ9-gZ-fBF"/>
-                                    <exclude reference="0WA-dT-QUr"/>
-                                    <exclude reference="A0T-rC-Gbw"/>
                                     <exclude reference="5ba-Qt-mfl"/>
                                     <exclude reference="K8N-kZ-VUm"/>
                                     <exclude reference="aPU-uM-JZM"/>
@@ -329,11 +330,11 @@
                                     <include reference="Phe-nk-6j4"/>
                                     <exclude reference="BBk-Xd-HyQ"/>
                                     <include reference="oyt-Gj-anm"/>
+                                    <include reference="0WA-dT-QUr"/>
+                                    <include reference="A0T-rC-Gbw"/>
                                     <exclude reference="GF1-dc-2yO"/>
                                     <exclude reference="LRq-Uh-Pli"/>
                                     <include reference="uQ9-gZ-fBF"/>
-                                    <include reference="0WA-dT-QUr"/>
-                                    <include reference="A0T-rC-Gbw"/>
                                     <exclude reference="5ba-Qt-mfl"/>
                                     <exclude reference="K8N-kZ-VUm"/>
                                     <include reference="aPU-uM-JZM"/>
@@ -344,11 +345,11 @@
                                     <include reference="Phe-nk-6j4"/>
                                     <include reference="BBk-Xd-HyQ"/>
                                     <exclude reference="oyt-Gj-anm"/>
+                                    <include reference="0WA-dT-QUr"/>
+                                    <include reference="A0T-rC-Gbw"/>
                                     <include reference="GF1-dc-2yO"/>
                                     <include reference="LRq-Uh-Pli"/>
                                     <exclude reference="uQ9-gZ-fBF"/>
-                                    <include reference="0WA-dT-QUr"/>
-                                    <include reference="A0T-rC-Gbw"/>
                                     <include reference="5ba-Qt-mfl"/>
                                     <include reference="K8N-kZ-VUm"/>
                                     <exclude reference="aPU-uM-JZM"/>
