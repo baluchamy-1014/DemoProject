@@ -79,7 +79,7 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
       }
 
       cell.passTitle?.text = passTitle
-
+      cell.backgroundColor = .black
       cell.bounds = CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 200)
       cell.contentView.bounds = cell.bounds
       cell.layoutIfNeeded()
@@ -136,8 +136,14 @@ class PassTypeViewController: UITableViewController, UserSessionDelegate {
     footerLabel.font = UIFont.systemFont(ofSize: 12.0)
     footerLabel.textAlignment = .center
     footerView.addSubview(footerLabel)
-
-    let footerTextView = UITextView(frame: CGRect(x: 10, y: 24, width: view.frame.size.width - 20, height: 124))
+    
+    var footerWidth: CGFloat = view.frame.size.width - 20
+    var footerXValue:CGFloat = 10
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      footerWidth = tableView.frame.width * 0.76 
+      footerXValue = (tableView.frame.width - footerWidth) / 2
+    }
+    let footerTextView = UITextView(frame: CGRect(x: footerXValue, y: 24, width: footerWidth, height: 124))
     footerTextView.textAlignment = .center
     footerTextView.font = UIFont.systemFont(ofSize: 12.0)
     footerTextView.text = DataFromTextFile().readDataFromFile(file: "PassFooter")

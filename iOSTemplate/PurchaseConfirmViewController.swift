@@ -77,6 +77,7 @@ class PurchaseConfirmViewController: UIViewController {
 
     legalTextView.text = DataFromTextFile().readDataFromFile(file: "PassFooter")
     legalTextView.sizeToFit()
+    legalTextView.textAlignment = .center
     
     if let totalAmountValue = Decimal(string: calculatedTotalForDispaly) {
       let zeroDecimal = Decimal(string: "0.0")
@@ -213,11 +214,32 @@ class PurchaseConfirmViewController: UIViewController {
         self.removeSpinnerButton()
       })
     } else {
-      let viewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest())
-      viewController.delegate = self
-      present(viewController, animated: true, completion: { 
-        self.removeSpinnerButton()
-      })
+      if PKPaymentAuthorizationViewController.canMakePayments() {
+        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: SupportedPaymentNetworks) {
+          let viewController = PKPaymentAuthorizationViewController(paymentRequest: paymentRequest())
+          viewController.delegate = self
+          present(viewController, animated: true, completion: {
+            self.removeSpinnerButton()
+          })
+        }
+        else {
+          let alertController = UIAlertController(title: "Apple Pay Required", message: "Go to Settings > Wallet & Apple Pay to add a Credit or Debit Card or purchase at https://tv.nlltv.com/", preferredStyle: .alert)
+          let yesAction = UIAlertAction(title: "OK", style: .default) { action in
+            self.removeSpinnerButton()
+          }
+          alertController.addAction(yesAction)
+          self.present(alertController, animated: true, completion: nil)
+        }
+      }
+      else {
+        let alertController = UIAlertController(title: "Apple Pay Unsupported On Device", message: "Please purchase at \n https://tv.nlltv.com/", preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: "OK", style: .default) { action in
+          self.removeSpinnerButton()
+          self.appDelegate.sendUserToHomeScreen()
+        }
+        alertController.addAction(yesAction)
+        self.present(alertController, animated: true, completion: nil)
+      }
     }
   }
   

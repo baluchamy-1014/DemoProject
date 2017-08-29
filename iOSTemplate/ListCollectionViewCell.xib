@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -21,6 +25,21 @@
                             <constraint firstAttribute="height" constant="90" id="ezk-r8-uL9"/>
                             <constraint firstAttribute="width" secondItem="32s-dY-bNW" secondAttribute="height" multiplier="16:9" id="u6E-WG-kqW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ezk-r8-uL9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="ezk-r8-uL9"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="ezk-r8-uL9"/>
+                            </mask>
+                        </variation>
                     </imageView>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axG-iD-81W" userLabel="Author Label" customClass="AuthorLabel" customModule="NLL" customModuleProvider="target">
                         <rect key="frame" x="166" y="57" width="158" height="21"/>
@@ -28,7 +47,7 @@
                             <constraint firstAttribute="width" constant="158" id="z3d-hY-17C"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ERs-5v-CG7" customClass="ArtifactTitleLabel" customModule="NLL" customModuleProvider="target">
@@ -42,20 +61,66 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="ERs-5v-CG7" firstAttribute="top" secondItem="19L-N6-VOL" secondAttribute="top" constant="20" id="1NU-JQ-Rhb"/>
-                <constraint firstAttribute="bottom" secondItem="GiT-Hv-vCG" secondAttribute="bottom" constant="25" id="8Jg-qV-xrF"/>
-                <constraint firstItem="32s-dY-bNW" firstAttribute="top" secondItem="19L-N6-VOL" secondAttribute="top" constant="15" id="9Ce-3U-g2N"/>
-                <constraint firstItem="axG-iD-81W" firstAttribute="leading" secondItem="32s-dY-bNW" secondAttribute="trailing" constant="10" id="DXI-VW-lFB"/>
-                <constraint firstItem="ERs-5v-CG7" firstAttribute="leading" secondItem="32s-dY-bNW" secondAttribute="trailing" constant="10" id="Jnr-zR-Y57"/>
-                <constraint firstItem="GiT-Hv-vCG" firstAttribute="leading" secondItem="32s-dY-bNW" secondAttribute="trailing" constant="10" id="Oxc-ya-Imp"/>
-                <constraint firstAttribute="trailing" secondItem="ERs-5v-CG7" secondAttribute="trailing" constant="20" id="ah7-RG-awH"/>
-                <constraint firstAttribute="bottom" secondItem="axG-iD-81W" secondAttribute="bottom" constant="8" id="rPk-6W-LQy"/>
-                <constraint firstItem="32s-dY-bNW" firstAttribute="leading" secondItem="19L-N6-VOL" secondAttribute="leading" constant="20" id="zBd-ow-8x2"/>
+                <constraint firstItem="ERs-5v-CG7" firstAttribute="top" secondItem="19L-N6-VOL" secondAttribute="top" constant="20" identifier="TitleTop" id="1NU-JQ-Rhb"/>
+                <constraint firstAttribute="bottom" secondItem="GiT-Hv-vCG" secondAttribute="bottom" constant="25" identifier="timestampbottom" id="8Jg-qV-xrF">
+                    <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                </constraint>
+                <constraint firstItem="32s-dY-bNW" firstAttribute="top" secondItem="19L-N6-VOL" secondAttribute="top" constant="15" identifier="topImageView" id="9Ce-3U-g2N">
+                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                </constraint>
+                <constraint firstItem="axG-iD-81W" firstAttribute="leading" secondItem="32s-dY-bNW" secondAttribute="trailing" constant="10" placeholder="YES" id="DXI-VW-lFB"/>
+                <constraint firstItem="ERs-5v-CG7" firstAttribute="leading" secondItem="32s-dY-bNW" secondAttribute="trailing" constant="10" identifier="titleleadingimgviewtrailing" id="Jnr-zR-Y57"/>
+                <constraint firstItem="GiT-Hv-vCG" firstAttribute="leading" secondItem="32s-dY-bNW" secondAttribute="trailing" constant="10" identifier="timestampleadingimgviewtrailing" id="Oxc-ya-Imp"/>
+                <constraint firstAttribute="trailing" secondItem="ERs-5v-CG7" secondAttribute="trailing" constant="20" identifier="titletrailing" id="ah7-RG-awH"/>
+                <constraint firstAttribute="trailing" secondItem="GiT-Hv-vCG" secondAttribute="trailing" constant="10" identifier="timestampTrailing" id="nYs-Tg-9fP"/>
+                <constraint firstItem="32s-dY-bNW" firstAttribute="width" secondItem="19L-N6-VOL" secondAttribute="width" identifier="widthImageView" id="oIm-3x-Uy0"/>
+                <constraint firstItem="ERs-5v-CG7" firstAttribute="top" secondItem="32s-dY-bNW" secondAttribute="bottom" constant="15" identifier="titletopimgviewbottom" id="oVK-8J-vMU"/>
+                <constraint firstItem="ERs-5v-CG7" firstAttribute="leading" secondItem="19L-N6-VOL" secondAttribute="leading" constant="10" id="otf-mM-bdS"/>
+                <constraint firstAttribute="bottom" secondItem="axG-iD-81W" secondAttribute="bottom" constant="8" placeholder="YES" id="rPk-6W-LQy"/>
+                <constraint firstItem="32s-dY-bNW" firstAttribute="leading" secondItem="19L-N6-VOL" secondAttribute="leading" constant="20" identifier="imageViewLeading" id="zBd-ow-8x2">
+                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                </constraint>
             </constraints>
             <size key="customSize" width="374" height="134"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="oIm-3x-Uy0"/>
+                    <exclude reference="zBd-ow-8x2"/>
+                    <exclude reference="1NU-JQ-Rhb"/>
+                    <exclude reference="Jnr-zR-Y57"/>
+                    <exclude reference="oVK-8J-vMU"/>
+                    <exclude reference="otf-mM-bdS"/>
+                    <exclude reference="Oxc-ya-Imp"/>
+                    <exclude reference="nYs-Tg-9fP"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="constraints">
+                    <exclude reference="oIm-3x-Uy0"/>
+                    <include reference="zBd-ow-8x2"/>
+                    <include reference="1NU-JQ-Rhb"/>
+                    <include reference="Jnr-zR-Y57"/>
+                    <exclude reference="oVK-8J-vMU"/>
+                    <include reference="Oxc-ya-Imp"/>
+                    <exclude reference="nYs-Tg-9fP"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <include reference="oIm-3x-Uy0"/>
+                    <exclude reference="zBd-ow-8x2"/>
+                    <exclude reference="1NU-JQ-Rhb"/>
+                    <exclude reference="Jnr-zR-Y57"/>
+                    <exclude reference="ah7-RG-awH"/>
+                    <include reference="oVK-8J-vMU"/>
+                    <include reference="otf-mM-bdS"/>
+                    <include reference="rPk-6W-LQy"/>
+                    <exclude reference="Oxc-ya-Imp"/>
+                    <include reference="nYs-Tg-9fP"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="artifactNameLabel" destination="ERs-5v-CG7" id="7tY-b6-kFw"/>
                 <outlet property="authorLabel" destination="axG-iD-81W" id="Du7-9C-2hk"/>

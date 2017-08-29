@@ -58,7 +58,6 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ticketSelectSeasonTail.png" translatesAutoresizingMaskIntoConstraints="NO" id="Nn0-g4-pdw">
                         <rect key="frame" x="5" y="0.0" width="24" height="128"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="128" id="Ooc-Th-JXk"/>
                             <constraint firstAttribute="width" constant="24" id="usa-Sc-jbv"/>
                         </constraints>
                     </imageView>

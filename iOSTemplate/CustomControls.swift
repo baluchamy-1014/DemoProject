@@ -166,10 +166,16 @@ class TagButton:UIButton {
 class CustomCollectionViewFlowLayout: UICollectionViewFlowLayout {
   override init() {
     super.init()
-    
-    self.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    self.minimumLineSpacing = 0.5
-    self.minimumInteritemSpacing = 1
+    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+      self.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
+      self.minimumLineSpacing = 20
+      self.minimumInteritemSpacing = 18
+    }
+    else {
+      self.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+      self.minimumLineSpacing = 0.5
+      self.minimumInteritemSpacing = 1
+    }
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -281,6 +287,7 @@ class DeviceChecker {
     static let IS_IPHONE_6          = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 667.0
     static let IS_IPHONE_6P         = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.SCREEN_MAX_LENGTH == 736.0
     static let IS_IPAD              = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1024.0
+    static let IS_IPAD_PRO          = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.SCREEN_MAX_LENGTH == 1366.0
   }
 }
 

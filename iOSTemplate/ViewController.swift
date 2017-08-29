@@ -33,8 +33,11 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     self.pageController.view.frame = CGRect(x: 0, y: 100, width: self.view.frame.size.width, height: self.view.frame.size.height)
     self.pageController.setViewControllers([page1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
     if self.pageController.viewControllers![0].isKind(of: FeaturedViewController.self) {
-       teamFilterButton.setTitle("NLL TV ", for: UIControlState())
-       teamFilterButton.setImage(nil, for: UIControlState())
+      teamFilterButton.setTitle("NLL TV ", for: UIControlState())
+      teamFilterButton.setImage(nil, for: UIControlState())
+      if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+        self.navigationItem.setRightBarButton(UIBarButtonItem(customView: teamFilterButton), animated: true)
+      }
     }
     else {
       teamFilterButton.setTitle(selectedTeam + " ", for: UIControlState())
