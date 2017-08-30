@@ -57,7 +57,7 @@
                 <constraint firstItem="WfL-dQ-nw4" firstAttribute="top" secondItem="6Ig-nX-G1a" secondAttribute="bottom" constant="10" id="AP0-0G-zlp"/>
                 <constraint firstAttribute="trailing" secondItem="WfL-dQ-nw4" secondAttribute="trailing" constant="20" id="Bad-Ue-A8n"/>
                 <constraint firstItem="6Ig-nX-G1a" firstAttribute="top" secondItem="RDQ-ij-WzP" secondAttribute="bottom" constant="10" id="LVH-9b-bjn">
-                    <variation key="heightClass=regular-widthClass=regular" constant="10"/>
+                    <variation key="heightClass=regular-widthClass=regular" constant="15"/>
                 </constraint>
                 <constraint firstItem="RDQ-ij-WzP" firstAttribute="leading" secondItem="cHh-8C-55Y" secondAttribute="leading" id="OhS-Ua-Bca"/>
                 <constraint firstAttribute="trailing" secondItem="6Ig-nX-G1a" secondAttribute="trailing" constant="20" id="WWM-Kr-e3P"/>
