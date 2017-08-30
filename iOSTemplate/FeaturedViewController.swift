@@ -175,7 +175,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
       if indexPath.row == 0 {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeCell", for: indexPath) as! LargeCollectionViewCell
         let item = artifactItems[indexPath.row]
-        let cellHeight: Int32 = 432
+        let cellHeight = Int32(cell.frame.width * (9/16))
 
         applyLargeCellSettings(cell: cell, item: item, cellHeight: cellHeight)
         return cell
