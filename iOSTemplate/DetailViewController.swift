@@ -265,7 +265,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
 
 //      displayPlaybackButton()
       
-      if let thumbnailImageURL = artifact.pictureURLwithWidth(Int32(headerImageView.frame.width), height: Int32(headerImageView.frame.height)) {
+      if let thumbnailImageURL = artifact.pictureURLwithWidth(Int32(headerImageView.frame.width), height: Int32(headerImageView.frame.width * (9/16))) {
         headerImageView.setImageWith(thumbnailImageURL, placeholderImage: placeholderImage)
       } else {
         headerImageView.image = placeholderImage
