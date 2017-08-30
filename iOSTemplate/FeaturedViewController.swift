@@ -221,7 +221,15 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
 
-    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+    if DeviceChecker.DeviceType.IS_IPAD {
+      if indexPath.row == 0 {
+        return CGSize(width: self.view.frame.width-40, height: 570)
+      }
+      else {
+        return CGSize(width: (self.collectionView.bounds.size.width/2) - 29, height: 378)
+      }
+    }
+    else if DeviceChecker.DeviceType.IS_IPAD_PRO {
       if indexPath.row == 0 {
         return CGSize(width: self.view.frame.width-40, height: 670)
       }
