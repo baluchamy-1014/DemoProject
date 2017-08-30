@@ -139,6 +139,12 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     cell.titleLabel.sizeToFit()
     
+    if let longDescriptionString = item.longDescription
+    {
+      cell.descriptionLabel.numberOfLines = 2
+      cell.descriptionLabel.text = longDescriptionString
+    }
+    
     if let createdAtString = item.createdAt {
       cell.timeElapsedLabel.displayDateTime(createdAtString)
     }
