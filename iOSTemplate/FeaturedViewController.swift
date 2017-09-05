@@ -139,6 +139,12 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     cell.titleLabel.sizeToFit()
     
+    if let longDescriptionString = item.longDescription
+    {
+      cell.descriptionLabel.numberOfLines = 2
+      cell.descriptionLabel.text = longDescriptionString
+    }
+    
     if let createdAtString = item.createdAt {
       cell.timeElapsedLabel.displayDateTime(createdAtString)
     }
@@ -175,7 +181,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
       if indexPath.row == 0 {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeCell", for: indexPath) as! LargeCollectionViewCell
         let item = artifactItems[indexPath.row]
-        let cellHeight: Int32 = 432
+        let cellHeight = Int32(cell.frame.width * (9/16))
 
         applyLargeCellSettings(cell: cell, item: item, cellHeight: cellHeight)
         return cell
@@ -215,7 +221,15 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
 
-    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+    if DeviceChecker.DeviceType.IS_IPAD {
+      if indexPath.row == 0 {
+        return CGSize(width: self.view.frame.width-40, height: 550)
+      }
+      else {
+        return CGSize(width: (self.collectionView.bounds.size.width/2) - 29, height: 308)
+      }
+    }
+    else if DeviceChecker.DeviceType.IS_IPAD_PRO {
       if indexPath.row == 0 {
         return CGSize(width: self.view.frame.width-40, height: 670)
       }

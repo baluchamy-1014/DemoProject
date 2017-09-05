@@ -258,7 +258,10 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+    if DeviceChecker.DeviceType.IS_IPAD {
+      return CGSize(width: (self.collectionView.bounds.size.width/2) - 29, height: 300)
+    }
+    else if DeviceChecker.DeviceType.IS_IPAD_PRO {
       return CGSize(width: (self.collectionView.bounds.size.width/2) - 29, height: 378)
     }
     else {

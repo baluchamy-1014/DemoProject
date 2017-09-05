@@ -265,7 +265,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
 
 //      displayPlaybackButton()
       
-      if let thumbnailImageURL = artifact.pictureURLwithWidth(Int32(headerImageView.frame.width), height: Int32(headerImageView.frame.height)) {
+      if let thumbnailImageURL = artifact.pictureURLwithWidth(Int32(headerImageView.frame.width), height: Int32(headerImageView.frame.width * (9/16))) {
         headerImageView.setImageWith(thumbnailImageURL, placeholderImage: placeholderImage)
       } else {
         headerImageView.image = placeholderImage
@@ -371,7 +371,10 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                              sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-    if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
+    if DeviceChecker.DeviceType.IS_IPAD {
+      return CGSize(width: (collectionView.bounds.size.width/2) - 29, height: 308)
+    }
+    else if DeviceChecker.DeviceType.IS_IPAD_PRO {
       return CGSize(width: (collectionView.bounds.size.width/2) - 29, height: 378)
     }
     else {

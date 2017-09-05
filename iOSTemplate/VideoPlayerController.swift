@@ -26,6 +26,7 @@ class VideoPlayerController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
+    self.videoContainerView.backgroundColor = .black
     self.videoContainerView.addSubview(self.player.view())
   }
   
