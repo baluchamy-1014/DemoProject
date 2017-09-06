@@ -33,6 +33,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   var button: PlayButton!
   let signInButton = UIButton(type: .roundedRect)
   let buyNowButton = UIButton(type: .roundedRect)
+  var md = Markdown()
 
   var videoPlayerState: VideoPlayerState = .NotReady {
     didSet {
@@ -298,13 +299,28 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
       reusableHeaderView.addSubview(dateLabel)
 
       let articleDescriptionTextView = UITextView(frame: CGRect(x: 16, y: dateLabel.frame.origin.y + dateLabel.frame.height + 10, width: reusableHeaderView.frame.size.width - 32, height: 0))
+      articleDescriptionTextView.dataDetectorTypes = .all
       articleDescriptionTextView.backgroundColor = UIColor.white
       articleDescriptionTextView.font = UIFont.systemFont(ofSize: 15)
       articleDescriptionTextView.isEditable = false
       articleDescriptionTextView.isScrollEnabled = false
       if let longDescriptionString = artifact.longDescription
       {
-        articleDescriptionTextView.text = longDescriptionString
+        // TODO: move out markdown options into subclass
+        var mdOptions = MarkdownOptions()
+        mdOptions.autoHyperlink = true
+        mdOptions.autoNewlines = true
+        mdOptions.linkEmails = true
+        md = Markdown(options: mdOptions)
+        
+        let htmlOutput = md.transform(longDescriptionString)
+        let informationData = htmlOutput.data(using: String.Encoding.unicode)
+        let options: [AnyHashable: Any] = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+        let markdownOutput = try? NSMutableAttributedString(data: informationData!, options: options as! [String : Any], documentAttributes: nil)
+        let font: UIFont = UIFont.systemFont(ofSize: 15)
+        markdownOutput?.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyleAttributeName, NSFontAttributeName:font], range: NSMakeRange(0, (markdownOutput?.length)!))
+      
+        articleDescriptionTextView.attributedText = markdownOutput
         if articleDescriptionTextView.text != "" {
           articleDescriptionTextView.sizeToFit()
         }
@@ -348,7 +364,24 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
     let articleDescriptionTextView = UITextView(frame: CGRect(x: 41, y: headerImageHeight + 101, width: self.view.frame.width - 32, height: 0))
     articleDescriptionTextView.font = UIFont.systemFont(ofSize: 15)
     if let artifactDescription = artifact.longDescription {
-      articleDescriptionTextView.text = artifactDescription
+      var mdOptions = MarkdownOptions()
+      mdOptions.autoHyperlink = true
+      mdOptions.autoNewlines = true
+      mdOptions.emptyElementSuffix = ">"
+      mdOptions.encodeProblemUrlCharacters = true
+      mdOptions.linkEmails = true
+      mdOptions.strictBoldItalic = true
+      md = Markdown(options: mdOptions)
+      
+      let htmlOutput = md.transform(artifactDescription)
+      let informationData = htmlOutput.data(using: String.Encoding.unicode, allowLossyConversion: false)
+      let options: [AnyHashable: Any] = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+      let markdownOutput = try? NSMutableAttributedString(data: informationData!, options: options as! [String : Any], documentAttributes: nil)
+      
+      let font: UIFont = UIFont.systemFont(ofSize: 15)
+      markdownOutput?.addAttributes([NSUnderlineStyleAttributeName:NSUnderlineStyleAttributeName, NSFontAttributeName:font], range: NSMakeRange(0, (markdownOutput?.length)!))
+      articleDescriptionTextView.attributedText = markdownOutput
+      articleDescriptionTextView.backgroundColor = .white
       if articleDescriptionTextView.text != "" {
         articleDescriptionTextView.sizeToFit()
       }

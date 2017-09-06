@@ -26,7 +26,6 @@
 		6296FA5C1DD4E7170096B04D /* SignIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5B1DD4E7170096B04D /* SignIn.xib */; };
 		6296FA601DD50EFB0096B04D /* SignUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA5F1DD50EFB0096B04D /* SignUp.xib */; };
 		6296FA641DD533510096B04D /* UserAccount.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6296FA631DD533510096B04D /* UserAccount.xib */; };
-		629991DC1E6DC42E0071A15E /* BoxxspringVideoPlayerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 629991D81E6DC42E0071A15E /* BoxxspringVideoPlayerSDK.bundle */; };
 		62A8F2871E60C5A600361495 /* UnimatrixConfigStaging.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */; };
 		62A8F28A1E60C5B000361495 /* UnimatrixConfigProduction.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */; };
 		62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B233831E368B2D00A7643F /* SWRevealViewController.m */; };
@@ -99,6 +98,7 @@
 		782E3AAF1DF9307700FCF5CC /* NLL_Loading_Animation@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 782E3AAB1DF9307700FCF5CC /* NLL_Loading_Animation@2x.gif */; };
 		782E3AB01DF9307700FCF5CC /* NLL_Loading_Animation@3x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 782E3AAC1DF9307700FCF5CC /* NLL_Loading_Animation@3x.gif */; };
 		7834C4BA1DFBA8DB00E285B3 /* ArticleArtifactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7834C4B91DFBA8DB00E285B3 /* ArticleArtifactViewController.swift */; };
+		78354CCF1F5771DD0019595D /* Markdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78354CCE1F5771DD0019595D /* Markdown.swift */; };
 		784269F11F05C98F001F9E7B /* transactionButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 784269EE1F05C98F001F9E7B /* transactionButton.png */; };
 		784269F21F05C98F001F9E7B /* transactionButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 784269EF1F05C98F001F9E7B /* transactionButton@2x.png */; };
 		784269F31F05C98F001F9E7B /* transactionButton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 784269F01F05C98F001F9E7B /* transactionButton@3x.png */; };
@@ -320,7 +320,6 @@
 		6296FA5B1DD4E7170096B04D /* SignIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignIn.xib; sourceTree = "<group>"; };
 		6296FA5F1DD50EFB0096B04D /* SignUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUp.xib; sourceTree = "<group>"; };
 		6296FA631DD533510096B04D /* UserAccount.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAccount.xib; sourceTree = "<group>"; };
-		629991D81E6DC42E0071A15E /* BoxxspringVideoPlayerSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BoxxspringVideoPlayerSDK.bundle; sourceTree = "<group>"; };
 		62A8F2861E60C5A600361495 /* UnimatrixConfigStaging.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UnimatrixConfigStaging.xcconfig; sourceTree = "<group>"; };
 		62A8F2881E60C5B000361495 /* UnimatrixConfigProduction.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = UnimatrixConfigProduction.xcconfig; sourceTree = "<group>"; };
 		62B233821E368B2D00A7643F /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -393,6 +392,7 @@
 		782E3AAB1DF9307700FCF5CC /* NLL_Loading_Animation@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "NLL_Loading_Animation@2x.gif"; path = "iOSTemplate/Assets.xcassets/NLL_Loading_Animation@2x.gif"; sourceTree = "<group>"; };
 		782E3AAC1DF9307700FCF5CC /* NLL_Loading_Animation@3x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "NLL_Loading_Animation@3x.gif"; path = "iOSTemplate/Assets.xcassets/NLL_Loading_Animation@3x.gif"; sourceTree = "<group>"; };
 		7834C4B91DFBA8DB00E285B3 /* ArticleArtifactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleArtifactViewController.swift; sourceTree = "<group>"; };
+		78354CCE1F5771DD0019595D /* Markdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Markdown.swift; sourceTree = "<group>"; };
 		784269EE1F05C98F001F9E7B /* transactionButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = transactionButton.png; path = iOSTemplate/Assets.xcassets/transactionButton.png; sourceTree = "<group>"; };
 		784269EF1F05C98F001F9E7B /* transactionButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "transactionButton@2x.png"; path = "iOSTemplate/Assets.xcassets/transactionButton@2x.png"; sourceTree = "<group>"; };
 		784269F01F05C98F001F9E7B /* transactionButton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "transactionButton@3x.png"; path = "iOSTemplate/Assets.xcassets/transactionButton@3x.png"; sourceTree = "<group>"; };
@@ -676,6 +676,14 @@
 				781002A11E6F552E00EF3C8A /* ticketTailSingle@3x.png */,
 			);
 			name = "Apple Pay";
+			sourceTree = "<group>";
+		};
+		78354CD01F5771EC0019595D /* Markdown */ = {
+			isa = PBXGroup;
+			children = (
+				78354CCE1F5771DD0019595D /* Markdown.swift */,
+			);
+			name = Markdown;
 			sourceTree = "<group>";
 		};
 		784AFDFD1DAD57F600FA157B /* Controllers */ = {
@@ -983,6 +991,7 @@
 		78E31E731D99F3F400CB59D3 /* iOSTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				78354CD01F5771EC0019595D /* Markdown */,
 				6254A8DD1EE4DAAD0036FA26 /* ApplePay */,
 				620DA8241EB39EE300FF5CD1 /* NLL.entitlements */,
 				62A8F28C1E60C5B400361495 /* UnimatrixConfig */,
@@ -1013,6 +1022,7 @@
 				78E31E6E1D99F3F400CB59D3 /* Frameworks */,
 				78E31E6F1D99F3F400CB59D3 /* Resources */,
 				62D823321EC3CF8200786A19 /* Embed Frameworks */,
+				78354CCD1F572B460019595D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1178,7 +1188,6 @@
 				788DF8401F4AA67800D365C7 /* NLL_Loading_Animation_iPad_26.png in Resources */,
 				788C439C1DA45F9D00F342B9 /* NewsIconActive@3x.png in Resources */,
 				787867C91DB99CC700958C1B /* TVIcon@2x.png in Resources */,
-				629991DC1E6DC42E0071A15E /* BoxxspringVideoPlayerSDK.bundle in Resources */,
 				782601391F26B2E10058F89F /* blankButton.png in Resources */,
 				78CE9C8A1EE9BFFE000D5EB4 /* NLL_Loading_Animation_11.png in Resources */,
 				78CE9C781EE9BFFE000D5EB4 /* NLL_Loading_Animation_29.png in Resources */,
@@ -1308,6 +1317,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		78354CCD1F572B460019595D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		78E31E6D1D99F3F400CB59D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1340,6 +1365,7 @@
 				78E31E751D99F3F400CB59D3 /* AppDelegate.swift in Sources */,
 				781347921EC4E5D4006152D9 /* SeasonsViewController.swift in Sources */,
 				78E31E871D99FC6600CB59D3 /* TeamsFilterListViewController.swift in Sources */,
+				78354CCF1F5771DD0019595D /* Markdown.swift in Sources */,
 				780578561DC2AA1F0011BBE8 /* TagSection.swift in Sources */,
 				788ABC031EE6068000DC66A8 /* SuccessViewController.swift in Sources */,
 				78E31E891D9A01DE00CB59D3 /* CustomControls.swift in Sources */,
