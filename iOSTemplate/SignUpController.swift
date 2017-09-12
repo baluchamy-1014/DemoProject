@@ -54,6 +54,7 @@ class SignUpController: UIViewController {
   var containerController: UserController?
 
   override func viewDidLoad() {
+    Analytics.logEvent("SignUpScreen", parameters: nil)
     self.activityIndicator.isHidden = true
     self.signUpButton.isEnabled = false
     

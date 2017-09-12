@@ -15,6 +15,7 @@ class FeedbackViewController: MFMailComposeViewController, MFMailComposeViewCont
   let info: NSDictionary = Bundle.main.infoDictionary! as NSDictionary
   
   override func viewDidLoad() {
+    Analytics.logEvent("FeedbackFormOpened", parameters: nil)
     super.viewDidLoad()
   }
   

@@ -18,7 +18,7 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    Analytics.logEvent("TeamFilterScreen", parameters: nil)
     setupActivitySpinner()
     
     // TODO: theme

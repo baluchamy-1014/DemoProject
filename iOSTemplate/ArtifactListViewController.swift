@@ -54,6 +54,7 @@ class ArtifactListViewController: UIViewController, UICollectionViewDelegate, UI
           if let response = response as? Artifact {
             let theTitle = response.name as String
             self.title = theTitle
+            Analytics.logEvent("ArtifactListScreen", parameters: ["ScreenTitle" : self.title!])
           }
         }
       }

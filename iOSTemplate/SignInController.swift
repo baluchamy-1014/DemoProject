@@ -48,6 +48,7 @@ class SignInController: UIViewController {
   
   
   override func viewDidLoad() {
+    Analytics.logEvent("SignInScreen", parameters: nil)
     self.alertViewController = UIAlertController.init(title: "Login Successful!", message: "You will now be redirected to home screen", preferredStyle: UIAlertControllerStyle.alert)
     
     self.alertAction = UIAlertAction.init(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
