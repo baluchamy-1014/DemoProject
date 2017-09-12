@@ -171,6 +171,7 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
     case 0:
       let item = menuItems[indexPath.row]
       if item.name == "Home" {
+        Analytics.logEvent("TappedHome", parameters: nil)
         self.appDelegate.sendUserToHomeScreen()
       }
       else if item.typeName == "playlist_artifact" || item.typeName == "tag_artifact" || item.typeName == "group_artifact" {
