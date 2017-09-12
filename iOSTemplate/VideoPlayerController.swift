@@ -54,6 +54,7 @@ class VideoPlayerController: UIViewController {
   }
 
   func playVideo() {
+    Analytics.logEvent("VideoPlayed", parameters: nil)
     self.player.play()
   }
 
