@@ -79,6 +79,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
  }
   
   @IBAction func segmentChanged(_ sender: AnyObject) {
+    Analytics.logEvent("UserTappedSegmentControl", parameters: nil)
     switch sender.selectedSegmentIndex {
     case 0:
       teamFilterButtonRestoreTeamName()
@@ -119,6 +120,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     teamFilterButtonRestoreTeamName()
     loadDataForCurrentPageIndex(currentIndex)
     
+    Analytics.logEvent("UserSwipedRight", parameters: nil)
     return pages[previousIndex]
   }
   
@@ -128,6 +130,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     teamFilterButtonRestoreTeamName()
     loadDataForCurrentPageIndex(currentIndex)
     
+    Analytics.logEvent("UserSwipedLeft", parameters: nil)
     return pages[nextIndex]
   }
   
