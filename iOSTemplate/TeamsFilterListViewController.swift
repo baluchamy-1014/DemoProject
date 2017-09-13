@@ -106,6 +106,7 @@ class TeamsFilterListViewController: UIViewController, UITableViewDelegate, UITa
         self.teamID = Int(item.id)
         self.teamName = item.name
       }
+      Analytics.logEvent("TeamFilterSelection", parameters: ["TeamName" : self.teamName])
     }
   }
   
