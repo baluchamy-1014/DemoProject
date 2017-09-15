@@ -171,7 +171,7 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
     case 0:
       let item = menuItems[indexPath.row]
       if item.name == "Home" {
-        Analytics.logEvent("TappedHome", parameters: nil)
+        Analytics.logEvent("UserTappedHome", parameters: nil)
         self.appDelegate.sendUserToHomeScreen()
       }
       else if item.typeName == "playlist_artifact" || item.typeName == "tag_artifact" || item.typeName == "group_artifact" {
@@ -186,6 +186,7 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
         viewController.shouldBeTranslucent(translucent: false)
         viewController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         viewController.title = item.name
+        Analytics.logEvent("UserTappedBurgerMenuItem", parameters: ["BurgerMenuItem" : viewController.title!])
       }
       else if item.typeName == "link_artifact" {
         if var urlString = item.providerURL {
@@ -216,6 +217,7 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
         }
       }
       else if item.slug == "/buy" {
+        Analytics.logEvent("UserTappedBurgerMenuBuy", parameters: nil)
         appDelegate.throughBurgerMenu = true
         let seasonController = SeasonsViewController()
         let navigationController = UINavigationController(rootViewController: seasonController)
