@@ -61,7 +61,7 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    Analytics.logEvent("DetailScreen", parameters: ["VideoTitle" : artifact.name])
+    Analytics.logEvent("VideoDetailScreen", parameters: ["VideoTitle" : artifact.name])
     detailCollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height - 60), collectionViewLayout: CustomCollectionViewFlowLayout())
     detailCollectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
     detailCollectionView.delegate = self
