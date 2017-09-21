@@ -155,6 +155,8 @@
 		78503A071E4D80B0005F81EC /* link_artifact_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 78503A011E4D80B0005F81EC /* link_artifact_inactive.png */; };
 		78503A081E4D80B0005F81EC /* link_artifact_inactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78503A021E4D80B0005F81EC /* link_artifact_inactive@2x.png */; };
 		78503A091E4D80B0005F81EC /* link_artifact_inactive@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78503A031E4D80B0005F81EC /* link_artifact_inactive@3x.png */; };
+		7862F1F11F743F4700E7887E /* iPadHeroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7862F1EF1F743F4700E7887E /* iPadHeroCollectionViewCell.swift */; };
+		7862F1F21F743F4700E7887E /* iPadHeroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7862F1F01F743F4700E7887E /* iPadHeroCollectionViewCell.xib */; };
 		7863652A1E92FB79008DF719 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786365281E92FB79008DF719 /* ErrorViewController.swift */; };
 		7863652B1E92FB79008DF719 /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 786365291E92FB79008DF719 /* ErrorViewController.xib */; };
 		7863652F1E93047E008DF719 /* Error_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7863652C1E93047E008DF719 /* Error_icon.png */; };
@@ -449,6 +451,8 @@
 		78503A011E4D80B0005F81EC /* link_artifact_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = link_artifact_inactive.png; path = iOSTemplate/Assets.xcassets/link_artifact_inactive.png; sourceTree = "<group>"; };
 		78503A021E4D80B0005F81EC /* link_artifact_inactive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "link_artifact_inactive@2x.png"; path = "iOSTemplate/Assets.xcassets/link_artifact_inactive@2x.png"; sourceTree = "<group>"; };
 		78503A031E4D80B0005F81EC /* link_artifact_inactive@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "link_artifact_inactive@3x.png"; path = "iOSTemplate/Assets.xcassets/link_artifact_inactive@3x.png"; sourceTree = "<group>"; };
+		7862F1EF1F743F4700E7887E /* iPadHeroCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iPadHeroCollectionViewCell.swift; sourceTree = "<group>"; };
+		7862F1F01F743F4700E7887E /* iPadHeroCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPadHeroCollectionViewCell.xib; sourceTree = "<group>"; };
 		786365281E92FB79008DF719 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		786365291E92FB79008DF719 /* ErrorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
 		7863652C1E93047E008DF719 /* Error_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Error_icon.png; path = iOSTemplate/Assets.xcassets/Error_icon.png; sourceTree = "<group>"; };
@@ -776,6 +780,8 @@
 				6253BDCB1DE34F12001CE859 /* User */,
 				780578551DC2AA1F0011BBE8 /* TagSection.swift */,
 				784C3FEE1DB8348D001AECD3 /* LargeCollectionViewCell.xib */,
+				7862F1EF1F743F4700E7887E /* iPadHeroCollectionViewCell.swift */,
+				7862F1F01F743F4700E7887E /* iPadHeroCollectionViewCell.xib */,
 				78E31E781D99F3F400CB59D3 /* Main.storyboard */,
 				784C3FEB1DB73141001AECD3 /* ListCollectionViewCell.xib */,
 				784C18941E454372008E8EED /* BurgerMenuCell.swift */,
@@ -1290,6 +1296,7 @@
 				78CE9C891EE9BFFE000D5EB4 /* NLL_Loading_Animation_12.png in Resources */,
 				78D9FC781E7C7FDA00413F5D /* ApplePayButton@2x.png in Resources */,
 				784C18E81E455EF2008E8EED /* home_inactive@3x.png in Resources */,
+				7862F1F21F743F4700E7887E /* iPadHeroCollectionViewCell.xib in Resources */,
 				CA47329CD3426049E916B50D /* reveal-icon.png in Resources */,
 				78503A071E4D80B0005F81EC /* link_artifact_inactive.png in Resources */,
 				784C18B01E45513D008E8EED /* home_icon_inactive.png in Resources */,
@@ -1327,6 +1334,7 @@
 				781002A01E6E296200EF3C8A /* PassTypeViewController.swift in Sources */,
 				78E31EDE1D9DB87B00CB59D3 /* DetailViewController.swift in Sources */,
 				620C89F01DF7242100DAC962 /* LatestViewController.swift in Sources */,
+				7862F1F11F743F4700E7887E /* iPadHeroCollectionViewCell.swift in Sources */,
 				6229013B1E5CC3FB00E021EE /* SubscriptionsViewController.swift in Sources */,
 				62D7B0D31E96A32B0030C3C8 /* ProductGroup.swift in Sources */,
 				62B233841E368B2D00A7643F /* SWRevealViewController.m in Sources */,
