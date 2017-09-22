@@ -9,5 +9,5 @@
 import Cocoa
 
 class DefaultParser: NSObject {
-
+ Resource arti_resource = Resource()
 }
