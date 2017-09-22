@@ -18,6 +18,9 @@
 
 		713331DE1F74CDED00FAB1E2 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331DD1F74CDED00FAB1E2 /* Parser.swift */; };
 		713331E31F74D04900FAB1E2 /* DefaultParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331E21F74D04900FAB1E2 /* DefaultParser.swift */; };
+
+		713331E71F74D42200FAB1E2 /* CouponResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331E61F74D42200FAB1E2 /* CouponResource.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +35,12 @@
 		7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleAdded.xib; sourceTree = "<group>"; };
 		713331DA1F74CCAA00FAB1E2 /* Reource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reource.swift; path = Resource/Reource.swift; sourceTree = "<group>"; };
 
+
 		713331DD1F74CDED00FAB1E2 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Parser/Parser.swift; sourceTree = "<group>"; };
 		713331E21F74D04900FAB1E2 /* DefaultParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultParser.swift; path = Parser/DefaultParser.swift; sourceTree = "<group>"; };
+
+		713331E61F74D42200FAB1E2 /* CouponResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CouponResource.swift; path = Resource/CouponResource.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				713331DA1F74CCAA00FAB1E2 /* Reource.swift */,
-
+				713331E61F74D42200FAB1E2 /* CouponResource.swift */,
 			);
 			name = Resource;
       sourceTree = "<group>";
@@ -177,6 +184,7 @@
 				7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */,
 				71EEACE51F692B17005781F1 /* ResourceArtifact.swift in Sources */,
 				713331DE1F74CDED00FAB1E2 /* Parser.swift in Sources */,
+				713331E71F74D42200FAB1E2 /* CouponResource.swift in Sources */,
 				7132AEAD1E8E3E120058225E /* AppDelegate.swift in Sources */,
 				712678F21F29EBF400A1222B /* Artifact.swift in Sources */,
 			);
