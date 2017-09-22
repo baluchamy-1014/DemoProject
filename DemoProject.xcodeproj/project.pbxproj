@@ -22,6 +22,7 @@
 		713331E71F74D42200FAB1E2 /* CouponResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331E61F74D42200FAB1E2 /* CouponResource.swift */; };
 
 		713331E11F74CEC100FAB1E2 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331E01F74CEC100FAB1E2 /* Operation.swift */; };
+		713331E51F74D13A00FAB1E2 /* OperastionCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331E41F74D13A00FAB1E2 /* OperastionCallBack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		713331E61F74D42200FAB1E2 /* CouponResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CouponResource.swift; path = Resource/CouponResource.swift; sourceTree = "<group>"; };
 
 		713331E01F74CEC100FAB1E2 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operation.swift; path = Operation/Operation.swift; sourceTree = "<group>"; };
+		713331E41F74D13A00FAB1E2 /* OperastionCallBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperastionCallBack.swift; path = Operation/OperastionCallBack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				713331E01F74CEC100FAB1E2 /* Operation.swift */,
+				713331E41F74D13A00FAB1E2 /* OperastionCallBack.swift */,
 			);
 			name = Operation;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				713331E71F74D42200FAB1E2 /* CouponResource.swift in Sources */,
 				7132AEAD1E8E3E120058225E /* AppDelegate.swift in Sources */,
 				713331E11F74CEC100FAB1E2 /* Operation.swift in Sources */,
+				713331E51F74D13A00FAB1E2 /* OperastionCallBack.swift in Sources */,
 				712678F21F29EBF400A1222B /* Artifact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
