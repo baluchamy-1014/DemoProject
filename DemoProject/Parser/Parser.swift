@@ -9,5 +9,7 @@
 import Cocoa
 
 class Parser: NSObject {
+  var resource = 8
+  var parser = 10
 
 }
