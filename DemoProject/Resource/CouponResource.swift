@@ -9,5 +9,5 @@
 import Cocoa
 
 class CouponResource: NSObject {
-
+ var couponCount = 10
 }
