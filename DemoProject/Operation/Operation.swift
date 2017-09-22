@@ -9,5 +9,8 @@
 import Cocoa
 
 class Operation: NSObject {
+var  request = 8
+ var response = 0
+ 
 
 }
