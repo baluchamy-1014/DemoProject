@@ -14,7 +14,8 @@
 		7132AEB41E8E3E120058225E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEB21E8E3E120058225E /* Main.storyboard */; };
 		7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */; };
 		7132AEBE1E8E3F8C0058225E /* SampleAdded.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */; };
-		71EEACE51F692B17005781F1 /* ResourceArtifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EEACE41F692B17005781F1 /* ResourceArtifact.swift */; };
+		713331DB1F74CCAA00FAB1E2 /* Reource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331DA1F74CCAA00FAB1E2 /* Reource.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,7 @@
 		7132AEB51E8E3E120058225E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleAdded.swift; sourceTree = "<group>"; };
 		7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleAdded.xib; sourceTree = "<group>"; };
-		71EEACE41F692B17005781F1 /* ResourceArtifact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourceArtifact.swift; path = Resource/ResourceArtifact.swift; sourceTree = "<group>"; };
+		713331DA1F74CCAA00FAB1E2 /* Reource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reource.swift; path = Resource/Reource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +61,8 @@
 		7132AEAB1E8E3E120058225E /* DemoProject */ = {
 			isa = PBXGroup;
 			children = (
-				71EEACE31F692ACB005781F1 /* Resource */,
+				713331D91F74CC6800FAB1E2 /* Resource */,
+
 				712678F11F29EBF400A1222B /* Artifact.swift */,
 				7132AEAC1E8E3E120058225E /* AppDelegate.swift */,
 				7132AEAE1E8E3E120058225E /* ViewController.swift */,
@@ -73,10 +75,11 @@
 			path = DemoProject;
 			sourceTree = "<group>";
 		};
-		71EEACE31F692ACB005781F1 /* Resource */ = {
+		713331D91F74CC6800FAB1E2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				71EEACE41F692B17005781F1 /* ResourceArtifact.swift */,
+				713331DA1F74CCAA00FAB1E2 /* Reource.swift */,
+
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7132AEAF1E8E3E120058225E /* ViewController.swift in Sources */,
+				713331DB1F74CCAA00FAB1E2 /* Reource.swift in Sources */,
 				7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */,
 				71EEACE51F692B17005781F1 /* ResourceArtifact.swift in Sources */,
 				7132AEAD1E8E3E120058225E /* AppDelegate.swift in Sources */,
