@@ -1,5 +1,5 @@
 //
-//  Operation.swift
+//  OperastionCallBack.swift
 //  DemoProject
 //
 //  Created by Baluchamy, ANGLER - EIT on 9/22/17.
@@ -8,7 +8,6 @@
 
 import Cocoa
 
-class Operation: NSObject {
- var  request = 8
- var response = 0
+class OperastionCallBack: NSObject {
+
 }
