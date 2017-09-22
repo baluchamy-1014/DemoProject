@@ -14,6 +14,7 @@
 		7132AEB41E8E3E120058225E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEB21E8E3E120058225E /* Main.storyboard */; };
 		7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */; };
 		7132AEBE1E8E3F8C0058225E /* SampleAdded.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */; };
+		713331E11F74CEC100FAB1E2 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331E01F74CEC100FAB1E2 /* Operation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7132AEB51E8E3E120058225E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleAdded.swift; sourceTree = "<group>"; };
 		7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleAdded.xib; sourceTree = "<group>"; };
+		713331E01F74CEC100FAB1E2 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operation.swift; path = Operation/Operation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		7132AEAB1E8E3E120058225E /* DemoProject */ = {
 			isa = PBXGroup;
 			children = (
+				713331DF1F74CE8A00FAB1E2 /* Operation */,
 				712678F11F29EBF400A1222B /* Artifact.swift */,
 				7132AEAC1E8E3E120058225E /* AppDelegate.swift */,
 				7132AEAE1E8E3E120058225E /* ViewController.swift */,
@@ -68,6 +71,14 @@
 				7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */,
 			);
 			path = DemoProject;
+			sourceTree = "<group>";
+		};
+		713331DF1F74CE8A00FAB1E2 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				713331E01F74CEC100FAB1E2 /* Operation.swift */,
+			);
+			name = Operation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +156,7 @@
 				7132AEAF1E8E3E120058225E /* ViewController.swift in Sources */,
 				7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */,
 				7132AEAD1E8E3E120058225E /* AppDelegate.swift in Sources */,
+				713331E11F74CEC100FAB1E2 /* Operation.swift in Sources */,
 				712678F21F29EBF400A1222B /* Artifact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
