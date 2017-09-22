@@ -35,6 +35,8 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     setup()
     loadData()
     
+    Analytics.logEvent("FeaturedScreen", parameters: nil)
+    
     super.viewDidLoad()
   }
   

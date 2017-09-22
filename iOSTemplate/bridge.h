@@ -19,4 +19,6 @@
 
 #import <UnimatrixObjcSDK/UnimatrixDealerSDK.h>
 
+#import "Firebase.h"
+
 #endif /* bridge_h */

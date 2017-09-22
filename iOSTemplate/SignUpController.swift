@@ -54,6 +54,7 @@ class SignUpController: UIViewController {
   var containerController: UserController?
 
   override func viewDidLoad() {
+    Analytics.logEvent("SignUpScreen", parameters: nil)
     self.activityIndicator.isHidden = true
     self.signUpButton.isEnabled = false
     
@@ -126,6 +127,7 @@ class SignUpController: UIViewController {
                 if (Session.shared().isValid()) {
                   self.appDelegate.keymakerOrganizer.saveKeymakerToken(Session.shared().accessToken)
                   self.clearTextFields()
+                  Analytics.logEvent(AnalyticsEventSignUp, parameters: [AnalyticsParameterSignUpMethod: "iOSApp"])
                   self.successViewController = SignUpSuccessViewController(nibName: "SignUpSuccess", bundle: nil)
                   self.successViewController?.containerController = self.containerController
                   self.present(self.successViewController!, animated: true, completion: nil)

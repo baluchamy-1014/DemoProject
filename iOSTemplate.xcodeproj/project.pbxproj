@@ -45,6 +45,13 @@
 		780995B31EC0EC38008F0B22 /* ticketSelectSeasonTail@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780995AD1EC0EC38008F0B22 /* ticketSelectSeasonTail@3x.png */; };
 		780995B61EC0F0CE008F0B22 /* SeasonTicketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780995B41EC0F0CE008F0B22 /* SeasonTicketCell.swift */; };
 		780995B71EC0F0CE008F0B22 /* SeasonTicketCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 780995B51EC0F0CE008F0B22 /* SeasonTicketCell.xib */; };
+		780AC1AD1F62185700417381 /* FirebaseAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780AC1A61F62185700417381 /* FirebaseAnalytics.framework */; };
+		780AC1AE1F62185700417381 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780AC1A71F62185700417381 /* FirebaseCore.framework */; };
+		780AC1AF1F62185700417381 /* FirebaseCoreDiagnostics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780AC1A81F62185700417381 /* FirebaseCoreDiagnostics.framework */; };
+		780AC1B01F62185700417381 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780AC1A91F62185700417381 /* FirebaseInstanceID.framework */; };
+		780AC1B11F62185700417381 /* FirebaseNanoPB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780AC1AA1F62185700417381 /* FirebaseNanoPB.framework */; };
+		780AC1B21F62185700417381 /* GoogleToolboxForMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780AC1AB1F62185700417381 /* GoogleToolboxForMac.framework */; };
+		780AC1B31F62185700417381 /* nanopb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780AC1AC1F62185700417381 /* nanopb.framework */; };
 		780B686E1DC7CC62007F206F /* expand_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686B1DC7CC62007F206F /* expand_indicator.png */; };
 		780B686F1DC7CC62007F206F /* expand_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686C1DC7CC62007F206F /* expand_indicator@2x.png */; };
 		780B68701DC7CC62007F206F /* expand_indicator@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B686D1DC7CC62007F206F /* expand_indicator@3x.png */; };
@@ -339,6 +346,15 @@
 		780995AD1EC0EC38008F0B22 /* ticketSelectSeasonTail@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ticketSelectSeasonTail@3x.png"; path = "iOSTemplate/Assets.xcassets/ticketSelectSeasonTail@3x.png"; sourceTree = "<group>"; };
 		780995B41EC0F0CE008F0B22 /* SeasonTicketCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonTicketCell.swift; sourceTree = "<group>"; };
 		780995B51EC0F0CE008F0B22 /* SeasonTicketCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SeasonTicketCell.xib; sourceTree = "<group>"; };
+		780AC1A41F62182A00417381 /* Firebase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = iOSTemplate/Firebase/Firebase.h; sourceTree = "<group>"; };
+		780AC1A61F62185700417381 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = iOSTemplate/Firebase/Analytics/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		780AC1A71F62185700417381 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = iOSTemplate/Firebase/Analytics/FirebaseCore.framework; sourceTree = "<group>"; };
+		780AC1A81F62185700417381 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = iOSTemplate/Firebase/Analytics/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		780AC1A91F62185700417381 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = iOSTemplate/Firebase/Analytics/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		780AC1AA1F62185700417381 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = iOSTemplate/Firebase/Analytics/FirebaseNanoPB.framework; sourceTree = "<group>"; };
+		780AC1AB1F62185700417381 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = iOSTemplate/Firebase/Analytics/GoogleToolboxForMac.framework; sourceTree = "<group>"; };
+		780AC1AC1F62185700417381 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = iOSTemplate/Firebase/Analytics/nanopb.framework; sourceTree = "<group>"; };
+		780AC1B41F62189500417381 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = iOSTemplate/Firebase/module.modulemap; sourceTree = "<group>"; };
 		780B686B1DC7CC62007F206F /* expand_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = expand_indicator.png; path = iOSTemplate/Assets.xcassets/expand_indicator.png; sourceTree = "<group>"; };
 		780B686C1DC7CC62007F206F /* expand_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expand_indicator@2x.png"; path = "iOSTemplate/Assets.xcassets/expand_indicator@2x.png"; sourceTree = "<group>"; };
 		780B686D1DC7CC62007F206F /* expand_indicator@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "expand_indicator@3x.png"; path = "iOSTemplate/Assets.xcassets/expand_indicator@3x.png"; sourceTree = "<group>"; };
@@ -587,6 +603,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780AC1AD1F62185700417381 /* FirebaseAnalytics.framework in Frameworks */,
+				780AC1AE1F62185700417381 /* FirebaseCore.framework in Frameworks */,
+				780AC1AF1F62185700417381 /* FirebaseCoreDiagnostics.framework in Frameworks */,
+				780AC1B01F62185700417381 /* FirebaseInstanceID.framework in Frameworks */,
+				780AC1B11F62185700417381 /* FirebaseNanoPB.framework in Frameworks */,
+				780AC1B21F62185700417381 /* GoogleToolboxForMac.framework in Frameworks */,
+				780AC1B31F62185700417381 /* nanopb.framework in Frameworks */,
 				626D36591F05130A0052B2D2 /* BoxxspringVideoPlayerSDK.framework in Frameworks */,
 				62458FC11E56227200069642 /* UnimatrixAnalyticsObjcSDK.framework in Frameworks */,
 				62D823301EC3CF8200786A19 /* Stripe.framework in Frameworks */,
@@ -642,6 +665,29 @@
 				62B233831E368B2D00A7643F /* SWRevealViewController.m */,
 			);
 			path = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+		780AC1951F6217BF00417381 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				780AC1B41F62189500417381 /* module.modulemap */,
+				780AC1A41F62182A00417381 /* Firebase.h */,
+			);
+			name = Firebase;
+			sourceTree = "<group>";
+		};
+		780AC1A51F62185600417381 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				780AC1A61F62185700417381 /* FirebaseAnalytics.framework */,
+				780AC1A71F62185700417381 /* FirebaseCore.framework */,
+				780AC1A81F62185700417381 /* FirebaseCoreDiagnostics.framework */,
+				780AC1A91F62185700417381 /* FirebaseInstanceID.framework */,
+				780AC1AA1F62185700417381 /* FirebaseNanoPB.framework */,
+				780AC1AB1F62185700417381 /* GoogleToolboxForMac.framework */,
+				780AC1AC1F62185700417381 /* nanopb.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7810027E1E6E1E3400EF3C8A /* Apple Pay */ = {
@@ -969,6 +1015,8 @@
 				78E31EB11D9C7BA100CB59D3 /* bridge.h */,
 				78E31E731D99F3F400CB59D3 /* iOSTemplate */,
 				78E31E721D99F3F400CB59D3 /* Products */,
+				780AC1951F6217BF00417381 /* Firebase */,
+				780AC1A51F62185600417381 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1474,6 +1522,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSTemplate",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/iOSTemplate/Firebase",
+					"$(PROJECT_DIR)/iOSTemplate/Firebase/Analytics",
 				);
 				INFOPLIST_FILE = iOSTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
@@ -1499,6 +1549,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/iOSTemplate",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/iOSTemplate/Firebase",
+					"$(PROJECT_DIR)/iOSTemplate/Firebase/Analytics",
 				);
 				INFOPLIST_FILE = iOSTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;

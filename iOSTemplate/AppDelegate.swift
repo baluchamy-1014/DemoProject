@@ -8,6 +8,7 @@
 
 import UIKit
 import Stripe
+import FirebaseAnalytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDelegate {
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    FirebaseApp.configure()
     
     let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
     self.window = UIWindow(frame: UIScreen.main.bounds)
