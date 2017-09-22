@@ -31,6 +31,7 @@
 		7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleAdded.swift; sourceTree = "<group>"; };
 		7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleAdded.xib; sourceTree = "<group>"; };
 		713331DA1F74CCAA00FAB1E2 /* Reource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reource.swift; path = Resource/Reource.swift; sourceTree = "<group>"; };
+
 		713331DD1F74CDED00FAB1E2 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Parser/Parser.swift; sourceTree = "<group>"; };
 		713331E21F74D04900FAB1E2 /* DefaultParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultParser.swift; path = Parser/DefaultParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -87,6 +88,8 @@
 
 			);
 			name = Resource;
+      sourceTree = "<group>";
+		};
 		713331DC1F74CDAF00FAB1E2 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
