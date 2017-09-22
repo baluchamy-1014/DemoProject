@@ -16,6 +16,7 @@
 		7132AEBE1E8E3F8C0058225E /* SampleAdded.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */; };
 		713331DB1F74CCAA00FAB1E2 /* Reource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331DA1F74CCAA00FAB1E2 /* Reource.swift */; };
 
+		713331DE1F74CDED00FAB1E2 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331DD1F74CDED00FAB1E2 /* Parser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		7132AEBB1E8E3F8C0058225E /* SampleAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleAdded.swift; sourceTree = "<group>"; };
 		7132AEBC1E8E3F8C0058225E /* SampleAdded.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SampleAdded.xib; sourceTree = "<group>"; };
 		713331DA1F74CCAA00FAB1E2 /* Reource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reource.swift; path = Resource/Reource.swift; sourceTree = "<group>"; };
+		713331DD1F74CDED00FAB1E2 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = Parser/Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				713331D91F74CC6800FAB1E2 /* Resource */,
 
+				713331DC1F74CDAF00FAB1E2 /* Parser */,
 				712678F11F29EBF400A1222B /* Artifact.swift */,
 				7132AEAC1E8E3E120058225E /* AppDelegate.swift */,
 				7132AEAE1E8E3E120058225E /* ViewController.swift */,
@@ -82,6 +85,12 @@
 
 			);
 			name = Resource;
+		713331DC1F74CDAF00FAB1E2 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				713331DD1F74CDED00FAB1E2 /* Parser.swift */,
+			);
+			name = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +169,7 @@
 				713331DB1F74CCAA00FAB1E2 /* Reource.swift in Sources */,
 				7132AEBD1E8E3F8C0058225E /* SampleAdded.swift in Sources */,
 				71EEACE51F692B17005781F1 /* ResourceArtifact.swift in Sources */,
+				713331DE1F74CDED00FAB1E2 /* Parser.swift in Sources */,
 				7132AEAD1E8E3E120058225E /* AppDelegate.swift in Sources */,
 				712678F21F29EBF400A1222B /* Artifact.swift in Sources */,
 			);
