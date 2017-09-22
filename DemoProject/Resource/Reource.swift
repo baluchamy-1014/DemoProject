@@ -12,5 +12,6 @@ class Reource: NSObject {
 
 var resource = 10
 var attributes = 15
+var association = 78
 
 }
