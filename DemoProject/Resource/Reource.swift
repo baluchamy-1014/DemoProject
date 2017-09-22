@@ -14,4 +14,9 @@ var resource = 10
 var attributes = 15
 var association = 78
 
+
+func getResource() {
+
+}
+
 }
