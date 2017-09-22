@@ -18,5 +18,6 @@ var association = 78
 func getResource() {
 
 }
-
+ func setResource() {
+ }
 }
