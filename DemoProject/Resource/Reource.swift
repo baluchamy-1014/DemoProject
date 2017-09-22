@@ -10,4 +10,7 @@ import Cocoa
 
 class Reource: NSObject {
 
+var resource = 10
+var attributes = 15
+
 }
