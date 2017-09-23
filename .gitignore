@@ -65,3 +65,6 @@ fastlane/screenshots
 fastlane/test_output
 .DS_Store
 .idea*
+iOSTemplate/ProductionKeys.xcconfig
+iOSTemplate/StagingKeys.xcconfig
+iOSTemplate/Firebase/GoogleService-Info.plist
