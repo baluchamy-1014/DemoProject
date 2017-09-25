@@ -9,5 +9,7 @@
 import Cocoa
 
 class RealmOperation: NSObject {
+var realm = "Realm";
+var url = "RealmURL"
 
 }
