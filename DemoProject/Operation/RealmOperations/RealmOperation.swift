@@ -12,4 +12,8 @@ class RealmOperation: NSObject {
 var realm = "Realm";
 var url = "RealmURL"
 
+func realmSession() {
+
+}
+
 }
