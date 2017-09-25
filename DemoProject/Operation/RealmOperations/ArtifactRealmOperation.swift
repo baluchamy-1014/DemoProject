@@ -8,6 +8,12 @@
 
 import Cocoa
 
-class ArtifactRealmOperation: NSObject {
+class ArtifactRealmOperation: Reource {
 
+func artifact() {
+
+}
+ func artifactURL()  {
+    print("Welcom Swift")
+ }
 }
