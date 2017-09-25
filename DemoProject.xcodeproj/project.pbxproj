@@ -17,6 +17,7 @@
 		713331E11F74CEC100FAB1E2 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331E01F74CEC100FAB1E2 /* Operation.swift */; };
 		713331E51F74D13A00FAB1E2 /* OperastionCallBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713331E41F74D13A00FAB1E2 /* OperastionCallBack.swift */; };
 		7177E2A11F78D3910061C701 /* RealmOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177E2A01F78D3910061C701 /* RealmOperation.swift */; };
+		7177E2A31F78D4BA0061C701 /* ArtifactRealmOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177E2A21F78D4BA0061C701 /* ArtifactRealmOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		713331E01F74CEC100FAB1E2 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operation.swift; path = Operation/Operation.swift; sourceTree = "<group>"; };
 		713331E41F74D13A00FAB1E2 /* OperastionCallBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OperastionCallBack.swift; path = Operation/OperastionCallBack.swift; sourceTree = "<group>"; };
 		7177E2A01F78D3910061C701 /* RealmOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmOperation.swift; path = Operation/RealmOperations/RealmOperation.swift; sourceTree = "<group>"; };
+		7177E2A21F78D4BA0061C701 /* ArtifactRealmOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArtifactRealmOperation.swift; path = Operation/RealmOperations/ArtifactRealmOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				7177E2A01F78D3910061C701 /* RealmOperation.swift */,
+				7177E2A21F78D4BA0061C701 /* ArtifactRealmOperation.swift */,
 			);
 			name = RealmOperations;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				713331E11F74CEC100FAB1E2 /* Operation.swift in Sources */,
 				713331E51F74D13A00FAB1E2 /* OperastionCallBack.swift in Sources */,
 				712678F21F29EBF400A1222B /* Artifact.swift in Sources */,
+				7177E2A31F78D4BA0061C701 /* ArtifactRealmOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
