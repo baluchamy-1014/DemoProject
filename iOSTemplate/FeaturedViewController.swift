@@ -26,6 +26,7 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     collectionView.isUserInteractionEnabled = true
     collectionView.register(UINib(nibName: "LargeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "largeCell")
     collectionView.register(UINib(nibName: "ListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "listCell")
+    collectionView.register(UINib(nibName: "iPadHeroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "iPadFeatureHero")
     // TODO: Theme
     collectionView.backgroundColor = UIColor(red: 36/255, green: 35/255, blue: 38/255, alpha: 1.0)
     collectionView!.alwaysBounceVertical = true
@@ -128,6 +129,30 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     return artifactItems.count
   }
   
+  func applyiPadHeroCellSettings(cell: iPadHeroCollectionViewCell, item: Artifact, cellHeight: Int32) {
+    if let thumbnailURL = item.pictureURLwithWidth(Int32(cell.frame.width), height: cellHeight) {
+      cell.iPadFeatureHeroImageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
+    }
+    else {
+      cell.iPadFeatureHeroImageView.image = placeholderImage
+    }
+    cell.iPadFeatureHeroTitleLabel.textColor = UIColor.black
+    if let aTitle = item.name {
+      cell.iPadFeatureHeroTitleLabel.text = aTitle
+    }
+    cell.iPadFeatureHeroTitleLabel.sizeToFit()
+    
+    if let longDescriptionString = item.longDescription
+    {
+      cell.iPadFeatureHeroDescriptionLabel.numberOfLines = 2
+      cell.iPadFeatureHeroDescriptionLabel.text = longDescriptionString
+    }
+    
+    if let createdAtString = item.createdAt {
+      cell.iPadFeatureHeroTimeElapsedLabel.displayDateTime(createdAtString)
+    }
+  }
+  
   func applyLargeCellSettings(cell: LargeCollectionViewCell, item: Artifact, cellHeight: Int32) {
     if let thumbnailURL = item.pictureURLwithWidth(Int32(cell.frame.width), height: cellHeight) {
       cell.imageView.setImageWith(thumbnailURL, placeholderImage: placeholderImage)
@@ -181,11 +206,10 @@ class FeaturedViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     if DeviceChecker.DeviceType.IS_IPAD || DeviceChecker.DeviceType.IS_IPAD_PRO {
       if indexPath.row == 0 {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeCell", for: indexPath) as! LargeCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "iPadFeatureHero", for: indexPath) as! iPadHeroCollectionViewCell
         let item = artifactItems[indexPath.row]
         let cellHeight = Int32(cell.frame.width * (9/16))
-
-        applyLargeCellSettings(cell: cell, item: item, cellHeight: cellHeight)
+        applyiPadHeroCellSettings(cell: cell, item: item, cellHeight: cellHeight)
         return cell
       }
       else {
