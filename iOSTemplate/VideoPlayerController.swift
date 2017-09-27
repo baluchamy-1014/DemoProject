@@ -67,4 +67,9 @@ class VideoPlayerController: UIViewController {
     }
     self.navController?.setNavigationBarHidden(false, animated: false)
   }
+  
+  func setPlayerToNil() {
+    self.player = nil
+  }
+
 }
