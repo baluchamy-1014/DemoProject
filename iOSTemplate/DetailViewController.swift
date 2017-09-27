@@ -55,6 +55,12 @@ class DetailViewController: UIViewController, UICollectionViewDelegate, UICollec
 
   }
   
+  override func willMove(toParentViewController parent: UIViewController?) {
+    if parent == nil {
+      videoPlayerController.setPlayerToNil()
+    }
+  }
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
   }
