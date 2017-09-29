@@ -12,6 +12,7 @@ class ArticleArtifactViewController: UIViewController {
   var scrollView:UIScrollView!
   var articleTextView:UITextView!
   var artifact:Artifact!
+  var translucentBool: Bool?
   
   init(artifact anArtifact: Artifact) {
     super.init(nibName:nil, bundle:nil)
@@ -31,6 +32,17 @@ class ArticleArtifactViewController: UIViewController {
     self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: 188 + self.articleTextView.frame.size.height)
     
     self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    if self.translucentBool != nil {
+      self.navigationController?.navigationBar.isTranslucent = self.translucentBool!
+    }
+    super.viewWillAppear(animated)
+  }
+  
+  func shouldBeTranslucent(translucent: Bool) {
+    self.translucentBool = translucent
   }
   
   func setupScrollView() {
