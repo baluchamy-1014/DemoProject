@@ -287,6 +287,7 @@ class BurgerMenuController: UITableViewController, UserSessionDelegate {
           viewController.navigationController?.navigationBar.barTintColor = UIColor(red: 16/255, green: 24/255, blue: 31/255, alpha: 1.0)
           viewController.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
           viewController.title = item.name
+          Analytics.logEvent("UserTappedBurgerMenuItem", parameters: ["BurgerMenuItem" : viewController.title!])
         }
       }
     default:
